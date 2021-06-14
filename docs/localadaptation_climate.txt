@@ -1,0 +1,54 @@
+Started 24 May 2021
+Updating my local adaptation idea ...
+
+
+See also local adaptation climates in Google Drive
+
+<><><><><><><><>
+Overall questions:
+
+(a) Is local adaptation of spring (leafout or budburst) phenology stronger (or occur on a smaller spatial scale) in Europe versus North America?
+(b) Does interannual climate variability relative to spatial climate variability explain local adaptation in spring phenology
+
+
+<><><><><><><><>
+First step... 
+
+Can we get good metrics of local adaptation for spring phenology in trees across Europe and North America?
+
+(1) Look at Aitken and Bemmels and take notes on how they did their meta-analysis so we can figure out how to copy it.
+
+(2) Also look at Alberto et al. and do the same for (1).
+
+* Tell Lizzie when steps 1-2 are done. *
+
+(3) Start looking around Google Scholar, ISI Web of Science and elsewhere for papers similar to what Aitken & Bemmels used but in EUROPE, and any new relevant papers in North America. Drop the good ones in a google drive folder. 
+
+
+<><><><><><><><>
+Notes ...
+
+From chatting with Sally Aitken (3 May 2021)
+
+- Aitken & Bemmels:
+	- How much work was it? Jordan Bemmels was a great UG she hired to do this (most of the literature is in old forest service papers etc.); challenge in Europe is all the small countries do their own things (EU projects maybe have done it? GenTree is a recent project and they may have some data). 
+- Alberto et al. is the European paper
+- Check out Finns and Swedes (Norwegian did epigenetic) 
+	- Why not expand to 'common garden' search term?
+- She has had the same debate with Antoine Kramer
+- She thinks maybe it's deciduous and evergreen divergence: European work is on Beech and Oak (they will be less conservative) 
+- When they move doug fir into western Europe they have spring frost damage... so she thinks they are getting GDD met too early; they also do seem phenotypically different when from older European stands (UG worked on this) 
+- Andreas Hamman (U Alberta) did a false spring transfer experiment (higher risk for fall frosts than spring frosts)
+
+
+
+(From randomizes.txt...)
+
+Remember when we discussed trying to look at whether -- climatically -- we might expect less local adaptation in some places (i.e., North America) versus others (i.e., Europe) because of inter-annual climate variability? [Basically you might predict to start to see local adaptation once spatial differences in climate exceed interannual differences.]
+
+I discussed how to measure this and notes are below:
+
+Measuring spatial versus temporal variance (for local adaptation in phenology):
+(1) Get a measure of interannual variability (say GDD in two particular months or min and max in those two months) for a bunch of grid cells (with one being focal: say HF)...
+(2) Then come up with some metric — like, when is the 10% tail (i.e., in 10% of years the GDD is 180 or lower) of your focal distribution and look for where that number falls in all surrounding distributions.
+* The trick may then be dealing with phenology … so should it be two months before leafout or such (or maybe one month before and one month after leafout ... as always might be best to do a phenologically-adjusted estimate and an estimate of static months (i.e., also do April-May)) 

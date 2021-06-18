@@ -1,0 +1,76 @@
+June-18, 2021
+Here Alina listed out the 11 datasets (8 species) for spring events taken from Aitken & Bemmels 2015
+only 3 datasets (2 species) are angiosperms
+
+Note: Aitken & Bemmels 2015 data has been archived and are available here: https://datadryad.org/stash/dataset/doi:10.5061/dryad.rj15h
+(already saved to github here at:
+
+
+spring event: population mean date of spring event (days relative to a reference date)
+-> Need to figure out the reference date for each dataset
+
+we have Lat, Long, Elev, MAT, MSP100 (provenance mean summer precipitation (100 mm)) for these 11 datasets
+
+link to papers:
+
+ALNURU Cannell et al. 1987
+Alnus rubra (budburst)
+Cannell, M. G. R., M. B. Murray, and L. J. Sheppard. 1987. Frost hardiness of red alder (Alnus rubra) provenances in Britain. Forestry 60:57-67.
+
+# reference date: April 1
+
+ALNURU Hamann et al. 1998  (should be 2014)
+Alnus rubra (budburst)
+Hamann, A., El-Kassaby, Y. A., Koshy, M. P., & Namkoong, G. (1998). Multivariate analysis of allozymic and quantitative trait variation in alnus rubra: Geographic patterns and evolutionary implications NRC Research Press. doi:10.1139/cjfr-28-10-1557
+
+
+PICEEN Rehfeldt 1994
+Picea engelmannii (budburst)
+Rehfeldt, G. E. 1994. Adaptation of Picea engelmannii populations to the heterogeneous environments of the Intermountain West. Canadian Journal of Botany 72:1197-1208.
+# reference date: when the greenhouse was warmed -> "in early March of the second growing season [greenhouses] were exposed to a daytime temperature of about 24"C, which was allowed to cool to a minimum of 13°C at night"
+
+
+PICEPU Bongarten 1978
+Picea pungens (leafout)
+Bongarten, B. C. 1978. Genetic and environmental variation in shoot growth and other traits of blue spruce (Picea pungens). PhD thesis, Michigan State University, East Lansing, MI.
+# reference date: April 1
+
+PICESI Mimura & Aitken 2007
+Picea sitchensis (budburst)
+Mimura, M., S.N. Aitken. 2007. Adaptive gradients and isolation-by-distance with postglacial migration in Picea sitchensis. Heredity 99:224-232.
+
+
+PINUAL Bower & Aitken 2008
+Pinus albicaulis (needle flush)
+Bower, A. D. and S. N. Aitken. 2008. Ecological genetics and seed transfer guidelines for Pinus albicaulis (Pinaceae). American Journal of Botany 95:66-76.
+
+** note: "Populations differed significantly for nearly all traits, and at a broad geographic scale, those from higher latitude environ ments with lower winter 
+temperatures flushed earlier in the spring, suffered less cold injury in the fall, and allocated more biomass to shoots in the common-garden environment than 
+those from milder environments. However, clinal variation pat terns that corresponded to climatic gradients varied by region"
+
+POPUTR McKown et al. 2013
+Populus trichocarpa (budburst)
+McKown, A. D., R. D. Guy, J. Klápště, A. Geraldes, M. Friedmann, Q. C. B. Cronk, Y. A. El-Kassaby, S. D. Mansfield, and C. J. Douglas. 2013. Geographical and environmental gradients shape phenotypic trait variation and genetic structure in Populus trichocarpa. New Phytologist 201:1263-1276.
+
+
+PSEUME Lavadinovic et al. 2013
+Pseudotsuga menziesii
+Lavadinović, V., V. Isajev, L. Rakonjac, V. Popović, and A. Lučić. 2013. Douglas-fir provenance phenology observations. Ekológia (Bratislava) 32: 376-382.
+** note: we also have date for 2013-15 which were not used by Aitken & Bemmels 2015
+
+
+PSEUME Sweet 1965
+Pseudotsuga menziesii
+Sweet, G. B. 1965. Provenance differences in Pacific coast Douglas-fir. Silvae Genetica 14:46-56.
+** note: study conducted in New Zealand
+
+
+PSEUME White et al. 1979
+Pseudotsuga menziesii
+White T. L., K. K. Ching, and J. Walters. 1979. Effects of provenance, years, and planting location on bud burst of Douglas-fir. Forest Science 25:161-167.
+link online: https://academic.oup.com/forestscience/article-abstract/25/1/161/4656387   (no open access)
+
+
+TSUGHE Kuser 1980
+Tsuga heterophylla
+Kuser, J. E. 1980. Provenance variation in western hemlock (Tsuga heterophylla (Raf.) Sarg.) seedlings. Oregon State University, Corvallis, OR.

@@ -10,3 +10,4 @@
 *.Rapp.history
 *.Rhistory
 *.Rdata
+.Rproj.user

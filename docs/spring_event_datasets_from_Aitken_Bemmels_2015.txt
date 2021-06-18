@@ -3,15 +3,15 @@ Here Alina listed out the 11 datasets (8 species) for spring events taken from A
 only 3 datasets (2 species) are angiosperms
 
 Note: Aitken & Bemmels 2015 data has been archived and are available here: https://datadryad.org/stash/dataset/doi:10.5061/dryad.rj15h
-(already saved to github here at:
+(already saved to github here at: https://github.com/lizzieinvancouver/localadaptclim/blob/main/data/Aitken_Bemmels%20_2015_Dryad_dataset_SpringEvents.xlsx
 
 
 spring event: population mean date of spring event (days relative to a reference date)
--> Need to figure out the reference date for each dataset
+-> Need to figure out the reference date for each dataset (done)
 
 we have Lat, Long, Elev, MAT, MSP100 (provenance mean summer precipitation (100 mm)) for these 11 datasets
 
-link to papers:
+link to papers: https://github.com/lizzieinvancouver/localadaptclim/tree/main/data/journal_articles_sourced_from_SB2015
 
 ALNURU Cannell et al. 1987
 Alnus rubra (budburst)

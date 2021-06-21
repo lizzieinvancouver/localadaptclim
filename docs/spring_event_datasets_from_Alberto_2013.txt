@@ -3,6 +3,9 @@ Here Alina listed out the 17 papers (16 species) for bud flush events (alditudin
 only 6 species are angiosperms
 (hmmm they are mostly North American too....)
 
+pdfs of papers can be found here: https://github.com/lizzieinvancouver/localadaptclim/tree/main/data/journal_articles_sourced_from_Alberto2013
+
+
 37 studies were used by Alberto et al. to calculate mean QST and QST range, and the trend of population differentiation (refer to Table 3).
 
 
@@ -30,7 +33,6 @@ Acer pseudoplatanus
 
 *dont have provenance, elev, lat, long
 *have plots of bb dates and temperature, but dont have the exact doys (need to estimate)
-
 
 
 Von Wuehlisch 1995

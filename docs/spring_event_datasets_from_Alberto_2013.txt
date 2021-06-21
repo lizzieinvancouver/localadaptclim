@@ -1,0 +1,164 @@
+June-21, 2021
+Here Alina listed out the 17 papers (16 species) for bud flush events (alditudinal and latitudinal) taken from Alberto et al. 2013
+only 6 species are angiosperms
+(hmmm they are mostly North American too....)
+
+37 studies were used by Alberto et al. to calculate mean QST and QST range, and the trend of population differentiation (refer to Table 3).
+
+
+# Altitudinal
+
+Worrall 1983
+Worrall J (1983) Temperature - bud-burst relationships in Amabilis and Subalpine fir provenance tests replicated at different elevations. Silvae Genetica, 32, 203–209.
+
+Abies amabilis
+Abies lasiocarpa
+
+*we have provenance, elev, lat, long
+*have plots of bb dates, but dont have the exact doys (need to estimate)
+
+
+
+
+Vitasse et al. 2009
+Vitasse Y, Delzon S, Bresson CC, Michalet R, Kremer A (2009) Altitudinal differentiation in growth and phenology among populations of temperate-zone tree species growing in a common garden. Canadian Journal of Forest Research, 39, 1259–1269.
+
+Fagus sylvatica
+Abies alba
+Fraxinus excelsior
+Acer pseudoplatanus
+
+*dont have provenance, elev, lat, long
+*have plots of bb dates and temperature, but dont have the exact doys (need to estimate)
+
+
+
+Von Wuehlisch 1995
+Von Wuehlisch G, Krusche D, Muhs HJ (1995) Variation in temperature sum requirement for flushing of beech provenances. Silvae Genetica, 44, 343–346.
+
+Fagus sylvatica
+
+*dont have access to this journal article :'))
+
+
+
+
+Acevedo-Rodriguez et al 2006
+Acevedo-Rodriguez R, Vargas-Hernandez JJ, Lopez-Upton J, Mendoza JV (2006) Effect of geographic origin and nutrition on shoot prenology of Mexican Douglas-Fir (Pseudotsuga sp.) seedlings. Agrociencia, 40, 125–137.
+Pseudotsuga menziesii
+
+*dont have provenance, elev, lat, long
+*have plots of bb dates and temperature, but dont have the exact doys (need to estimate)
+
+
+Rehfeldt 1978
+Rehfeldt GE (1978) Genetic differentiation of Douglas fir populations from the northern Rocky Mountains. Ecology, 59, 1264–1270.
+Pseudotsuga menziesii
+
+*dont have provenance, elev, lat, long, doy
+
+
+
+Chmura 2006
+Chmura DJ (2006) Phenology differs among Norway spruce populations in relation to local variation in altitude of maternal stands in the Beskidy Mountains. New Forests, 32, 21–31.
+Picea abies
+
+*we have provenance, elev, doy
+*dont have lat, long
+
+
+
+
+Skroppa Magnussen 1993
+Skroppa T, Magnussen S (1993) Provenance variation in shoot growth components of Norway spruce. Silvae Genetica, 42, 111–120.
+Picea abies
+
+*dont have access to this journal article :'))
+
+
+Rehfeldt 1882
+Rehfeldt GE (1982) Differentiation of Larix occidentalis populations from the northern Rocky Mountains. Silvae Genetica, 31, 13–19.
+
+
+*dont have access to this journal article :'))
+
+
+
+Alberto 2011
+Alberto F, Bouffier L, Louvet JM, Lamy JB, Delzon S, Kremer A (2011) Adaptive responses for seed and leaf phenology in natural populations of sessile oak along an altitudinal gradient. Journal of Evolutionary Biology, 24, 1442–1454.
+Quercus petraea
+
+*have plots of bb dates and elev, but dont have the exact doys (need to estimate)
+*dont have lat, long, provenance
+
+
+
+Gee 1973
+Mc Gee CE (1973) Is variation in budbreak of Red oak the result of heredity or environment? In: Proceeding of the 12th Southern Forest Tree Improvement Conference. Baton Rouge, LA, June 12th-13th 1973, pp. 185–189.
+Quercus rubra
+
+*dont have access to this article :'))
+
+
+
+
+Latitudinal
+
+Sogaard et al 2008
+Sogaard G, Johnsen O, Nilsen J, Junttila O (2008) Climatic control of bud burst in young seedlings of nine provenances of Norway spruce. Tree Physiology, 28, 311–320.
+Picea abies
+
+*have plots of bb dates and elev, but dont have the exact doys (need to estimate)
+*have lat, long, provenance
+
+
+
+
+Li et al. 1997a
+Li P, Beaulieu J, Bousquet J (1997a) Genetic structure and patterns of genetic variation among populations in eastern white spruce. Canadian Journal of Forest Research, 27, 19–198.
+Picea glauca
+
+*have mean doy, but dont have the exact dates
+*dont have lat, long, provenance
+
+
+
+Mimura Aitken 2007
+Mimura M, Aitken SN (2007) Adaptive gradients and isolation-by-distance with postglacial migration in Picea sitchensis. Heredity, 98, 224–232.
+Picea sitchensis 
+*dont have lat, long, doy, provenance
+
+
+
+Li et al. 1997b
+Li P, Beaulieu J, Daoust G, Plourde A (1997b) Patterns of adaptive genetic variation in eastern white pine (Pinus strobus) from Quebec. Canadian Journal of Forest Research-Revue Canadienne De Recherche Forestiere, 27, 199–206.
+Picea strobus
+
+*have mean doy, but dont have the exact dates
+*dont have lat, long, provenance
+
+
+Farmer 1993
+Farmer RE (1993) Latitudinal variation in height and phenology of balsam poplar. Silvae Genetica, 42, 148–153.
+Populus balsamifera
+*have doy, provenance
+*dont have lat, long, elev
+
+
+
+Deans Harvey 1996
+Deans JD, Harvey FJ (1996) Frost hardiness of 16 European provenances of sessile oak growing in Scotland. Forestry, 69, 5–11.
+Picea petraea
+
+*have provenance, lat, long, elev
+*have plots of bb dates and frost hardiness, but dont have the exact doys (need to estimate)
+
+
+
+
+Hannerz et al. 1999
+Hannerz M, Aitken SN, King JN, Budge S (1999) Effects of genetic selection for growth on frost hardiness in western hemlock. Canadian Journal of Forest Research-Revue Canadienne De Recherche Forestiere, 29, 509–516.
+Tsuga heterophylla
+
+*dont have doy
+*have lat, long, elev, provenance

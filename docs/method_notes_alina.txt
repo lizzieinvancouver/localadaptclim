@@ -1,0 +1,126 @@
+Started June-16, 2021
+alina.zeng(at)ubc.ca
+
+
+(Sally $ Bemmels, 2015)
+
+(1) review the history of genecological research in forest trees, emphasizing the relationships between populations and climate
+(2) highlight advances in genecology and other relevant fields in recent decades;
+(3) summarize key findings from population genetics and genomics relevant to local adaptation; 
+(4)present data on the concordance of genetic clines among tree species in
+western North America;
+(5) discuss the implications for managing tree populations in a rapidly warming world
+
+in this synthesis we focus on phenotypic variation in common garden experiments
+for characterizing patterns of local adaptation as few
+comprehensive population genomic studies are available at
+this time.
+
+
+
+# need to come back to this
+This study builds on recent reviews and syntheses by the
+senior author (Box 1) and others describing the range of
+potential responses of forest trees to climate change and
+the factors controlling them; the potential for evolutionary and plastic responses to climate change in trees (Alberto et al. 2013) and plants in general
+(Franks et al. 2014); and the genetic risks and benefits of
+AGF (Aitken and Whitlock 2013).
+
+
+
+# other papers to check out
+(St Clair and Howe 2007; K.J. Liepe, A. Hamann, P. Smets,
+C.R. Fitzpatrick and S.N. Aitken, unpublished data)  # Methods have been developed
+to phenotype seedlings for cold hardiness, drought
+hardiness and phenology in common garden experiments
+in controlled nursery or growth chamber environments
+
+(Howe et al. 2004;
+Savolainen et al. 2007; Alberto et al. 2013) # Fall cold hardiness and bud set phenology show strong population differentiation and strong clines
+along provenance thermal gradients, and less
+phenotypic plasticity than spring events.
+
+(Cooke et al. 2012) # Height growth cessation and bud set in temperate and boreal trees can be triggered by photoperiod, temperature cues or endogenous
+factors, depending on the species (Cooke et al. 2012), and
+drought or other stresses can result in earlier cessation
+(Howe et al. 2004).
+
+
+(Duputie et al. 2015; Harrington and Gould 2015) # Winter and spring cold hardiness and bud flush phenology show weaker and more variable patterns
+of variation among populations and show strong
+plasticity in response to variation in chilling and heat sum
+accumulation
+
+
+(Rehfeldt et al. 1999;
+St Clair et al. 2005; Wang et al. 2006; K.J. Liepe, A.
+Hamann, P. Smets, C.R. Fitzpatrick and S.N. Aitken,
+unpublished data) # Clines in growth rate in provenance trials are often more
+strongly correlated with provenance temperature regimes
+than with annual or seasonal precipitation variables for
+many temperate and boreal species 
+
+
+the degree growth stage model of Fuchigami et al. (1982).  # figure 2 caption
+
+
+
+Aitken & Bemmels reanalysed data from the literature
+on provenance trials in temperate tree species from western
+North America to address these questions (To what extent are patterns of local adaptation along climatic
+gradients similar among species within a given geographic
+region? If clines in phenotypic traits are similar,
+can average patterns of sympatric variation guide AGF or
+identify critical climatic variables as a first approximation
+for untested species?)
+
+Methods- Provenance trial dataset
+
+We focused on adaptive clines in three traits expected to
+impact fitness of natural populations that are commonly
+phenotyped: 
+(1) height growth potential
+(2)timing of spring shoot phenological events associated with growth initiation (‘spring events’)
+(3) timing of fall phenological events associated with growth cessation (‘fall events’)
+
+
+We identified
+clines along gradients in mean annual temperature
+(MAT), selected as a broad proxy for overall climate, and
+mean summer precipitation (MSP), intended to reflect
+growing season drought stress. Due to few studies on trees
+species from very dry climates, and less consistent adaptive
+clines identified along the gradient in MSP, we focus primarily
+on results for MAT and caution that our results may
+not be applicable to species and regions where climates are
+becoming much drier and drought-related mortality is a
+major concern (Allen et al. 2010).
+
+
+
+We searched the literature for data sets from provenance
+trials in which height or timing of spring or fall shoot
+events was reported. 
+Our search was restricted to temperate
+tree species native to western Canada and the United States,
+west of and including the Rocky Mountains. Species native
+to this region but found primarily in boreal forests, deserts,
+grasslands or Mediterranean climates were excluded. We
+initially searched using Web of Science (Thompson Reuters,
+New York, NY) for articles on provenance trials and common
+gardens individually for each tree species native to
+British Columbia (Klinka et al. 2000). We then expanded
+this search to include all conifers and common angiosperm
+trees (Little 1971) that met our broader geographic and
+ecological criteria, by scanning titles of search results for
+species plus the word ‘provenance’ in the University of
+Michigan Library (using Summon, ProQuest, Ann Arbor,
+MI, USA). We retained data sets in which multiple populations
+were grown in a common environment, including
+greenhouse environments and field sites within and beyond
+the species’ native range.
+
+
+Our results are consistent with studies including
+other species and regions (Howe et al. 2004; Savolainen
+et al. 2007; Alberto et al. 2013).

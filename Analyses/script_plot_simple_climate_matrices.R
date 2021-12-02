@@ -172,6 +172,198 @@ fall.mat.plots %>%              # the saving call within the do function
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+# Plot everything on one figure
+# separate angiosperm and gymnosperm otherwise there is too much to look at
+
+# Lat & Angiosperm ----
+png(filename="lat_angiosperm.png", 				
+    type="cairo", 		
+    units="in", 				
+    width=8, 				
+    height=6, 				
+    res=300)				
+ggplot(subset(d, species_type == "angiosperm"),
+       (aes(x = diff_LAT, y = spring_event, color = lat_garden, shape = species))) +
+  geom_point()+
+theme_bw()+				
+  guides(col=guide_legend("Common garden latitude")) + 		# changing the title of the legend
+  guides(shape=guide_legend("Species"))+
+  labs(title = "DOY of spring events and LAT difference", 									
+       x = "\n LAT difference (degree)", y = "Day of year \n")     # \n adds space before x and after y axis text									
+dev.off()								
+
+# Mat & Angiosperm ----
+png(filename="mat_angiosperm.png", 				
+    type="cairo", 		
+    units="in", 				
+    width=8, 				
+    height=6, 				
+    res=300)				
+ggplot(subset(d, species_type == "angiosperm"),
+       (aes(x = diff_MAT, y = spring_event, color = lat_garden, shape = species))) +
+  geom_point()+
+  theme_bw()+						
+  guides(col=guide_legend("Common garden latitude")) + 		# changing the title of the legend
+  guides(shape=guide_legend("Species"))+
+  labs(title = "DOY of spring events and MAT difference", 									
+       x = "\n MAT difference(\u00B0C)", y = "Day of year \n")     # \n adds space before x and after y axis text									
+dev.off()		
+
+
+# Lat & Gymnosperm ----
+png(filename="lat_gymnosperm.png", 				
+    type="cairo", 		
+    units="in", 				
+    width=8, 				
+    height=6, 				
+    res=300)				
+ggplot(subset(d, species_type == "gymnosperm"),
+       (aes(x = diff_LAT, y = spring_event, color = lat_garden, shape = species))) +
+  geom_point()+
+  theme_bw()+				
+  guides(col=guide_legend("Common garden latitude")) + 		# changing the title of the legend
+  guides(shape=guide_legend("Species"))+
+  labs(title = "DOY of spring events and LAT difference", 									
+       x = "\n LAT difference (degree)", y = "Day of year \n")     # \n adds space before x and after y axis text									
+dev.off()								
+
+# Mat & Gymnosperm ----
+png(filename="mat_gymnosperm.png", 						
+    type="cairo", 		
+    units="in", 				
+    width=8, 				
+    height=6, 				
+    res=300)				
+ggplot(subset(d, species_type == "gymnosperm"),
+       (aes(x = diff_MAT, y = spring_event, color = lat_garden, shape = species))) +
+  geom_point()+
+  theme_bw()+						
+  guides(col=guide_legend("Common garden latitude")) + 		# changing the title of the legend
+  guides(shape=guide_legend("Species"))+
+  labs(title = "DOY of spring events and MAT difference", 									
+       x = "\n MAT difference(\u00B0C)", y = "Day of year \n")     # \n adds space before x and after y axis text									
+dev.off()		
+								
+# Facet by species ----
+
+# LAT
+png(filename="lat_facet_by_species.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+ggplot(d, aes(x = diff_LAT, y = spring_event, color = lat_garden, shape = prov_continent), fill = lat_garden) +
+  geom_point()+
+  theme_bw()+	
+  ylab("Day of year\n") +                             
+  xlab("\n LAT difference (degree)")  +
+  facet_wrap(~ species, scales = "fixed") +   
+  theme(axis.text.x = element_text(size = 7, angle = 45, vjust = 1, hjust = 1),  # Angled labels, so text doesn't overlap
+        axis.text.y = element_text(size = 10),
+        axis.title = element_text(size = 14, face = "plain"),                      
+        panel.grid = element_blank(),                                          
+        #   legend.position = "none" ,
+        plot.margin = unit(c(1,1,1,1), units = , "cm"))+
+  guides(col=guide_legend("Common garden latitude")) + 
+  guides(shape=guide_legend("Provenance continent")) + 
+  labs(title = "DOY against Lat Difference for Each Species")
+dev.off()
+
+
+#MAT
+png(filename="mat_facet_by_species.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+ggplot(d, aes(x = diff_MAT, y = spring_event, color = lat_garden, shape = prov_continent), fill = lat_garden) +
+  geom_point()+
+  theme_bw()+	
+  ylab("Day of year\n") +                             
+  xlab("\n MAT difference(\u00B0C)")  +
+  facet_wrap(~ species, scales = "fixed") +   
+  theme(axis.text.x = element_text(size = 7, angle = 45, vjust = 1, hjust = 1),  # Angled labels, so text doesn't overlap
+        axis.text.y = element_text(size = 10),
+        axis.title = element_text(size = 14, face = "plain"),                      
+        panel.grid = element_blank(),                                          
+        #   legend.position = "none" ,
+        plot.margin = unit(c(1,1,1,1), units = , "cm"))+
+  guides(col=guide_legend("Common garden latitude")) + 
+  guides(shape=guide_legend("Provenance continent")) + 
+  labs(title = "DOY against Mat Difference for Each Species")
+dev.off()
+
+
+
+# plot by species
+# lat
+lat.spp.plots <-  
+  d  %>%      # the data frame
+  group_by(species) %>% 
+  do(plots =           # the plotting call within the do function -> plots are generated as lists
+       ggplot(data = .) + # the do() function requires that we supply the data as space dot
+       geom_point(aes(x = diff_LAT, y = spring_event, color = lat_garden, shape = prov_continent )) +
+       labs(title = paste("Plot of", .$species, "showing LAT Difference ", sep = " ")) +
+       theme_bw() +  
+       theme(axis.text.x = element_text(size = 14, angle = 0),
+             axis.text.y = element_text(size = 10, angle = 0),
+             plot.title = element_text(size = 10)) +
+       guides(col=guide_legend("Common garden latitude")) + 
+       guides(shape=guide_legend("Provenance continent")) + 
+       labs(y = "\n Spring Event DOY", 
+            x = "Difference in Lat between Garden and Prov (Decimal Degree) \n")
+  )
+
+
+# Saving the plots to file
+
+lat.spp.plots %>%              # the saving call within the do function
+  do(.,
+     ggsave(.$plots, filename = paste("C:/Users/alina/Documents/git/localadaptclim/Output/plotNov23/LAT", "/", "Plot-", .$species,"-spring-", "LAT", ".png", sep = ""), device = "png", height = 12, width = 16, units = "cm"))
+
+
+
+
+# mat
+mat.spp.plots <-  
+  d  %>%      # the data frame
+  group_by(species) %>% 
+  do(plots =           # the plotting call within the do function -> plots are generated as lists
+       ggplot(data = .) + # the do() function requires that we supply the data as space dot
+       geom_point(aes(x = diff_MAT, y = spring_event, color = lat_garden, shape = prov_continent ), alpha = 0.5) +
+       labs(title = paste("Plot of", .$species, "showing MAT Difference ", sep = " ")) +
+       theme_bw() +  
+       theme(axis.text.x = element_text(size = 14, angle = 0),
+             axis.text.y = element_text(size = 10, angle = 0),
+             plot.title = element_text(size = 10)) +
+       guides(col=guide_legend("Common garden latitude")) + 
+       guides(shape=guide_legend("Provenance continent")) + 
+       labs(y = "\n Spring Event DOY", 
+            x = "Difference in MAT between Garden and Prov (Decimal Degree) \n")
+  )
+
+
+# Saving the plots to file
+mat.spp.plots %>%              # the saving call within the do function
+  do(.,
+     ggsave(.$plots, filename = paste("C:/Users/alina/Documents/git/localadaptclim/Output/plotNov23/MAT", "/", "Plot-", .$species,"-spring-", "MAT", ".png", sep = ""), device = "png", height = 12, width = 16, units = "cm"))
+
+
+
 # need to try loop
 # need more european studies
 # need to do reading sent by lizzie

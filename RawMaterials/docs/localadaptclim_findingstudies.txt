@@ -1,0 +1,61 @@
+Started 2 December 2021
+Tracking down data ...
+
+
+<><><><><><><><><><><>
+Searching papers ...
+
+ADD INFO here on what we've done...
+
+<><><><><><><><><><><>
+Emails!
+
+Emailed Rob, Isabelle, Sally (no reply yet from Sally) on 1 December 2021.
+
+NEXT -- email Yann Vitasse once we have updated European data list
+
+---------
+On 1 Dec 2021 from Rob Guy:
+
+Hi Lizzie,
+
+I would have thought there should be lots more common garden studies of spring phenology, but perhaps they are quite old or the data are somehow buried in other topics. For example, we've published common garden studies using phenology data for Populus balsamifera and P. tremuloides (not all in the same gardens), but it would not be so obvious from the titles (see Soolanayakanahally papers attached - you probably have these already).  Still, the data exist somewhere, along with lots of totally unprocessed raw data that none of has ever even ventured into yet (sheesh). In fact, Raju no doubt has boxes (literally) of phenology data for several species (they have some interesting, and old, provenance collections out there on the prairies).
+
+I've attached a study by Chris Hawkins on paper birch in BC that you may not have (maybe doesn't have the data you need). I was also just leafing through an old paper by John Worrall that describes some of his experiments on chilling + photoperiod interactions in breaking dormancy in gymnosperms. There's some common garden data buried in there too.  Sally's GCB review from 2013 lists a number of papers, many of which you've got already I think (doi: 10.1111/gcb.12181).  What about studies utilizing botanical gardens and arboreta with multiple species (like Panchin et al. 2014 attached)?  You would best know about any of those though.
+
+Cheers,
+Rob
+
+Papers attached:
+
+Panchen et al. 2014: 
+Leaf out times of temperate woody plants are related to phylogeny, deciduousness, growth habit and wood anatomy
+
+Soolanayakanahally et al. 2015: 
+Comparative physiology of allopatric Populus species: geographic clines in photosynthesis, height growth, and carbon isotope discrimination in common gardens
+
+Soolanayakanahally et al. 2013: 
+Timing of photoperiodic competency causes phenological mismatch in balsam poplar (Populus balsamifera L.)pce_2560 
+
+Hawkins & Dhar 2012: 
+Spring bud phenology of 18 Betula papyrifera populations in British Columbia
+
+Worrall & Mergen 1967 (OSPREE paper)
+
+
+
+---------
+1 December 2021 from Isabelle Chuine:
+
+Hi Lizzie and Alina,
+
+I haven’t made the bibliography on this question recently, but all studies I remember are already in your list except the one attached.
+
+All the best,
+
+Isabelle
+
+Paper attached:
+
+Etterson & Shaw: 
+Constraint to Adaptive Evolution in Response to Global Warming

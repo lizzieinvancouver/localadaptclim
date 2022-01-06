@@ -3,7 +3,7 @@
 # alina.zeng@ubc.ca
 
 
-install.packages("rstanarm")
+install.packages("ncdf4")
 library(ggplot2)
 library(bayesplot)
 theme_set(bayesplot::theme_default())

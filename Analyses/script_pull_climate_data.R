@@ -27,9 +27,15 @@ stday <- strptime(paste(styr, "01-01", sep="-"),"%Y-%m-%d", tz="GMT")
 endday <- strptime(paste(endyr, "12-31", sep="-"),"%Y-%m-%d", tz = "GMT")
 
 # Import data ----
-d <- read.csv("input/experiment_euro_sites_Jan06.csv", header = TRUE)
-la <- 57.484	
+# d <- read.csv("input/experiment_euro_sites_Jan06.csv", header = TRUE)
+
+# experiment on Jan 6-7 (need to come up with loop later)
+la <- 57.484	# provenance location to graph out
 lo <- -3.17
+
+la <- 51.9	# garden location to graph out
+lo <- -3.8
+
 
 # need to write a loop -> task for Jan 7 (so that this can be done to multiple locations simultaneously)
 # think about how to give identifiers to each site  
@@ -65,6 +71,16 @@ dailytemp<- data.frame(Lat = la,Long = lo,Date = seq(stday, endday, by = "day"),
 dailytemp$Date<-strptime(dailytemp$Date,"%Y-%m-%d", tz="GMT")
 dailytemp$Year<-as.numeric(format(dailytemp$Date, "%Y"))
 dailytemp$Month = as.numeric(format(dailytemp$Date, "%m"))
+dailytemp$label <- "EA FRAXEX Rosique-Esplugas 2021" # need to think about how to loop this.... label must be present when importing
+# need to think about making the column names consistent
+
+# need to convert everything to doy
+d$doy <- yday(d$Date)
+# identifier & status
+
+
+# add an identifier so that I can combine all csv into one -> to loop.....
+
 
 ## hmmm need to get rid of 07-01 thru 12-30 in a separate step
 dailytemp <- filter(dailytemp, Month < 7) 

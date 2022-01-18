@@ -3,7 +3,7 @@
 
 
 # data download: https://cds.climate.copernicus.eu/cdsapp#!/dataset/insitu-gridded-observations-europe?tab=overview
-
+# EMW says -- I didn't have time (yet) to download these data, but I can later as neededd...
 
 # Housekeeping ----
 rm(list=ls()) 
@@ -11,6 +11,9 @@ options(stringsAsFactors = FALSE)
 library(plyr)
 library(dplyr)
 library(ncdf4) # to open NC files
+
+# setwd for Lizzie
+# setwd("~/Documents/git/projects/treegarden/misc/localadaptclim")
 
 
 # Select the lat/long(s) and years of climate data you'd like
@@ -33,19 +36,33 @@ d <- read.csv("input/experiment_euro_sites_Jan06.csv", header = TRUE)
 # read climate file
 euro20112020 <- nc_open( "C:/Users/~/git/localadaptclim/input/tg_ens_mean_0.1deg_reg_2011-2020_v23.1e.nc")
 
-# Loop should start here
+# set up dataframe to add to in loop ...
+# the way I did this may not work as you need the columns to all be the same format (numeric/character/etc.) as what you'll eventually end up with
+# the date column might need to be specified more carefully, but this suggests a format with empty vectors could work...
+# https://stackoverflow.com/questions/10689055/create-an-empty-data-frame
+# You can find out what format a column is through: mode(df$colname)
+dailytemp <- data.frame(Lat = NA, Long = NA, Date = NA,
+                       Temp = NA)
 
+# Loop should start here
+for (rownum in c(1:nrow(d))){
+    la <- d$lat_prov[rownum]
+    lo <- d$long_prov[rownum]
+    print(paste(la, lo)) # EMW says -- you can delete this ... it it just to see what's happening
 # at the moment I have been manually assigning values to lat and long like this 
 # but hopefully this can be integrated into a loop
-la <- 49.53333333	# provenance location to graph out
-lo <- 0.766666667
+# la <- 49.53333333	# provenance location to graph out
+# lo <- 0.766666667
 
 #code to get daily climate data for focal lat/long
 diff.long.cell <- abs(euro20112020$dim$longitude$vals-as.numeric(lo))
 diff.lat.cell <- abs(euro20112020$dim$latitude$vals-as.numeric(la))
-long.cell <- which(diff.long.cell==min(diff.long.cell))[1] #btw I dont know what "[1]" does in this situation, maybe it is not doing anything
+long.cell <- which(diff.long.cell==min(diff.long.cell))[1] 
 lat.cell <- which(diff.lat.cell==min(diff.lat.cell))[1]
-
+#btw I dont know what "[1]" does in this situation, maybe it is not doing anything
+# EMW says -- it is taking the FIRST row of the object. So I would check what this looks like
+    # which(diff.lat.cell==min(diff.lat.cell))
+# And make sure it's okay just to take the first row (in all cases); I suspect it is okay as the command takes the minimum and so that [1] might just cover cases where there are several identical values?
 # pull climate data
 temp<-ncvar_get(euro20112020,'tg', 
                 start=c(long.cell,lat.cell,st+1), 
@@ -53,12 +70,16 @@ temp<-ncvar_get(euro20112020,'tg',
 )
 
 # make data frame
-dailytemp<- data.frame(Lat = la,Long = lo,Date = seq(stday, endday, by = "day"),
+dailytempadd<- data.frame(Lat = la,Long = lo,Date = seq(stday, endday, by = "day"),
                        Temp = temp)
-dailytemp$Date<-strptime(dailytemp$Date,"%Y-%m-%d", tz="GMT")
-dailytemp$Year<-as.numeric(format(dailytemp$Date, "%Y"))
-dailytemp$Month = as.numeric(format(dailytemp$Date, "%m"))
-dailytemp$doy <- yday(dailytemp$Date)
-dailytemp$identifier <- "prov1" # would like for the loop to set the identifier to the same as d$identifier
-
+dailytempadd$Date<-strptime(dailytempadd$Date,"%Y-%m-%d", tz="GMT")
+dailytempadd$Year<-as.numeric(format(dailytempadd$Date, "%Y"))
+dailytempadd$Month = as.numeric(format(dailytempadd$Date, "%m"))
+dailytempadd$doy <- yday(dailytempadd$Date)
+dailytempadd$identifier <- rep(identifier_prov[rownum], nrow(temp)) # EMW -- see if this works, you may need to adjut 'nrow' command
+# EMW -- Here you'll need to rbind the old and new data each time
+dailytemp <- rbind(dailytemp, dailytempadd)
+    
+    
+    }
 # thank you so much Lizzie

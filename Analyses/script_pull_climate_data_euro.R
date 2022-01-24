@@ -14,6 +14,7 @@ options(stringsAsFactors = FALSE)
 library(plyr)
 library(dplyr)
 library(ncdf4) # to open NC files
+library(lubridate)
 
 # Set Working Directory ----
 setwd("C:/Users/alina/Documents/git/localadaptclim")
@@ -27,31 +28,12 @@ endday <- strptime(paste(endyr, "12-31", sep="-"),"%Y-%m-%d", tz = "GMT")
 # Import data ----
 # d <- read.csv("input/experiment_euro_sites_Jan06.csv", header = TRUE)
 
-# experiment on Jan 6-7 (need to come up with loop later)
-
-#study1
-la <- 57.484	# provenance location to graph out
-lo <- -3.17
-
-la <- 51.9	# garden location to graph out
-lo <- -3.8
-
-#study2 EA FAGUSY Gömöry & Paule 2011
-la <- 49.53333333	# provenance location to graph out
-lo <- 0.766666667
-
-la <- 48.63333333	# garden location to graph out
-lo <- 19.03333333	
-
-# need to write a loop -> task for Jan 7 (so that this can be done to multiple locations simultaneously)
-# think about how to give identifiers to each site  
-for(l in 1:dim(d)[1]){
-  la<- d$LAT[l] 
-  lo<- d$LON[l] 
-}
+# experiment on Jan 6-7 
+la <- 48.63333333	
+lo <- 19.03333333
 
 # read climate file
-euro20112020 <- nc_open( "C:/Users/alina/Documents/git/localadaptclim/input/tg_ens_mean_0.1deg_reg_2011-2020_v23.1e.nc")
+euro20112020 <- nc_open( "C:/Users/alina/Documents/git/localadaptclim/input/DailyClimRaw/Europe/tg_ens_mean_0.1deg_reg_2011-2020_v23.1e.nc")
 
 #code to get daily climate data for focal lat/long
 diff.long.cell <- abs(euro20112020$dim$longitude$vals-as.numeric(lo))
@@ -71,23 +53,21 @@ temp<-ncvar_get(euro20112020,'tg',
                 count=c(1,1,en-st+1) # this is where we move through the 'cube' to get the one vector of Temp mins
 )
 
-dailytemp<- data.frame(Lat = la,Long = lo,Date = seq(stday, endday, by = "day"),
-                       Temp = temp)
+dailytemp_euro<- data.frame(lat = la,long = lo,date = seq(stday, endday, by = "day"),
+                       temp = temp)
 
-dailytemp$Date<-strptime(dailytemp$Date,"%Y-%m-%d", tz="GMT")
-dailytemp$Year<-as.numeric(format(dailytemp$Date, "%Y"))
-dailytemp$Month = as.numeric(format(dailytemp$Date, "%m"))
-dailytemp$label <- "EA FAGUSY Gömöry & Paule 2011" 
-dailytemp$identifier <- "prov1"
-dailytemp$status <- "provenance"
-dailytemp$identifier <- "garden1"
-dailytemp$status <- "garden"
-# need to think about how to loop this.... label must be present when importing
-# need to think about making the column names consistent
+dailytemp_euro$date<-strptime(dailytemp_euro$Date,"%Y-%m-%d", tz="GMT")
+dailytemp_euro$year<-as.numeric(format(dailytemp_euro$date, "%Y"))
+dailytemp_euro$month = as.numeric(format(dailytemp_euro$date, "%m"))
+dailytemp_euro$label <- "EA FAGUSY Gömöry & Paule 2011" 
+dailytemp_euro$identifier <- "garden1"
+dailytemp_euro$status <- "garden"
 
 # need to convert everything to doy
-dailytemp$doy <- yday(dailytemp$Date)
-# identifier & status
+dailytemp_euro$doy <- yday(dailytemp_euro$date)
+name<-paste("output/dailyclim/dailytemp","_garden_",unique(dailytemp_euro$label),"_",styr,"_",endyr,".csv",sep="")
+if(length(unique(dailytemp_euro$Temp))==1){next}
+write.csv(dailytemp_euro,name, row.names = FALSE)
 
 
 # add an identifier so that I can combine all csv into one -> to loop.....
@@ -96,11 +76,10 @@ dailytemp$doy <- yday(dailytemp$Date)
 ## hmmm need to get rid of 07-01 thru 12-30 in a separate step
 # dailytemp <- filter(dailytemp, Month < 7) 
 
+label <- "EA FAGUSY Petkova et al 2017"
 #hmmm need to add in identifier and label (study name)and status in naming
-name<-paste("output/dailyclim/dailytemp","_",la,"_",lo,"_",styr,"_",endyr,".csv",sep="")
+name<-paste("output/dailyclim/dailytemp","_",label, "_",la,"_",lo,"_",styr,"_",endyr,".csv",sep="")
 #write out the daily temperature file, in case its useful later
-if(length(unique(dailytemp$Temp))==1){next}
-write.csv(dailytemp,name, row.names = FALSE)
 
 # hmmm if not too much i can set up different folder for each study.....
 

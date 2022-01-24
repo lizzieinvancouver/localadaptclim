@@ -10,9 +10,9 @@ rm(list=ls())
 options(stringsAsFactors = FALSE)
 library(plyr)
 library(dplyr)
+library(lubridate)
 library(ncdf4) # to open NC files
 
-# setwd for Lizzie
 # setwd("~/Documents/git/projects/treegarden/misc/localadaptclim")
 
 
@@ -30,30 +30,30 @@ if(endday<stday){endday=stday}
 
 # Import data ----
 d <- read.csv("input/experiment_euro_sites_Jan06.csv", header = TRUE)
-# hi lizzie, this file has the provenance locations for 1 study which you could 
 # use to experiment with the loop
 
 # read climate file
-euro20112020 <- nc_open( "C:/Users/~/git/localadaptclim/input/tg_ens_mean_0.1deg_reg_2011-2020_v23.1e.nc")
+euro20112020 <- nc_open( "C:/Users/alina/Documents/git/localadaptclim/Input/DailyClimRaw/Europe/tg_ens_mean_0.1deg_reg_2011-2020_v23.1e.nc")
 
 # set up dataframe to add to in loop ...
 # the way I did this may not work as you need the columns to all be the same format (numeric/character/etc.) as what you'll eventually end up with
 # the date column might need to be specified more carefully, but this suggests a format with empty vectors could work...
 # https://stackoverflow.com/questions/10689055/create-an-empty-data-frame
 # You can find out what format a column is through: mode(df$colname)
-dailytemp <- data.frame(Lat = NA, Long = NA, Date = NA,
-                       Temp = NA)
+# dailytemp <- data.frame(Lat = NA, Long = NA, Date = NA,
+#                      # Temp = NA, Year = NA, Month = NA, doy = NA, identifier = NA)
+# dailytemp <- dailytemp[-1,]
+#hmm instead of NAs,
 
-# Loop should start here
+dailytemp <- data.frame(Lat = numeric(), Long = numeric(), Date = as.Date(character()),
+                        Temp = integer(), Year = integer(), Month = integer(), 
+                        doy = integer(), identifier = character())
+
+# Loop starts here
 for (rownum in c(1:nrow(d))){
     la <- d$lat_prov[rownum]
     lo <- d$long_prov[rownum]
-    print(paste(la, lo)) # EMW says -- you can delete this ... it it just to see what's happening
-# at the moment I have been manually assigning values to lat and long like this 
-# but hopefully this can be integrated into a loop
-# la <- 49.53333333	# provenance location to graph out
-# lo <- 0.766666667
-
+  #  print(paste(la, lo)) # EMW says -- you can delete this ... it it just to see what's happening
 #code to get daily climate data for focal lat/long
 diff.long.cell <- abs(euro20112020$dim$longitude$vals-as.numeric(lo))
 diff.lat.cell <- abs(euro20112020$dim$latitude$vals-as.numeric(la))
@@ -68,7 +68,7 @@ temp<-ncvar_get(euro20112020,'tg',
                 start=c(long.cell,lat.cell,st+1), 
                 count=c(1,1,en-st+1) # this is where we move through the 'cube' to get the one vector of Temp mins
 )
-
+# perhaps also add label (but this could be mannual since there isn't too much)
 # make data frame
 dailytempadd<- data.frame(Lat = la,Long = lo,Date = seq(stday, endday, by = "day"),
                        Temp = temp)
@@ -76,10 +76,22 @@ dailytempadd$Date<-strptime(dailytempadd$Date,"%Y-%m-%d", tz="GMT")
 dailytempadd$Year<-as.numeric(format(dailytempadd$Date, "%Y"))
 dailytempadd$Month = as.numeric(format(dailytempadd$Date, "%m"))
 dailytempadd$doy <- yday(dailytempadd$Date)
-dailytempadd$identifier <- rep(identifier_prov[rownum], nrow(temp)) # EMW -- see if this works, you may need to adjut 'nrow' command
+dailytempadd$identifier <- rep(d$identifier_prov[rownum], nrow(temp)) # EMW -- see if this works, you may need to adjut 'nrow' command
 # EMW -- Here you'll need to rbind the old and new data each time
 dailytemp <- rbind(dailytemp, dailytempadd)
-    
-    
     }
-# thank you so much Lizzie
+
+
+dailytemp$label <- d$label 
+dailytemp$status <- "provenance"
+# change column names
+ dailytemp <- dplyr::rename(dailytemp, lat=Lat,long=Long,date = Date, 					
+             year=Year, month=Month, 					
+             temp = Temp)			
+
+# get rid of Date column (its a moot now)
+# test<- dplyr::select(test, -Date)
+
+# export
+name<-paste("output/dailyclim/dailytemp","_", unique(dailytemp$status), "_",unique(dailytemp$label), "_",styr,"_",endyr,".csv",sep="")
+write.csv(dailytemp,name, row.names = FALSE)

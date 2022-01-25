@@ -38,6 +38,21 @@ garden <- read.csv("output/dailyclim/dailytemp_garden_EG PICEAB Sogaard et al. 2
 prov <- read.csv("output/dailyclim/dailytemp_provenance_EA FAGUSY Gömöry & Paule 2011_2011_2020.csv", header = TRUE)
 garden <- read.csv("output/dailyclim/dailytemp_garden_EA FAGUSY Gömöry & Paule 2011_2011_2020.csv", header = TRUE)
 
+
+# NA ALNURU Cannell et al. 1987
+
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NA ALNURU Cannell et al. 1987_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NA ALNURU Cannell et al. 1987_2011_2020.csv", header = TRUE)
+# need to get rid of the 366s in european data....
+ garden <- subset(garden,garden$doy != "366")
+
+ # NA ALNURU Hamann et al. 1998
+ 
+ prov <- read.csv("output/dailyclim/dailytemp_provenance_NA ALNURU Hamann et al. 1998_2011_2020.csv", header = TRUE)
+ garden <- read.csv("output/dailyclim/dailytemp_garden_NA ALNURU Hamann et al. 1998_2011_2020.csv", header = TRUE)
+
+ 
+
 # add doy for gardern
 # garden$doy<-  yday(garden$date)
   # drop Date
@@ -46,7 +61,7 @@ garden <- read.csv("output/dailyclim/dailytemp_garden_EA FAGUSY Gömöry & Paule
 # for facet (see line 134) before merging I need to replicate garden and make 42 copies...
 test<- garden %>% slice(rep(1:n(), each = length(unique(prov$identifier))))      # repeat by # of provenance times
 test$identifier <- rep(1:length(unique(prov$identifier)), times = 3653)  # assign prov# to all garden data for facet loop
-test$yay <- "prov"
+test$yay <- "prov"# times = 3650 when working with Daymet data
 test$identifier <- paste(test$yay, test$identifier, sep = "")
 # yayy it worked
 
@@ -163,16 +178,9 @@ oneyear_interannual_variability_plots %>%              # the saving call within 
   # Saving the plots to file
   facet_all_provenances %>%              # the saving call within the do function
     do(.,
-       ggsave(.$plots, filename = paste("C:/Users/alina/Documents/git/localadaptclim/Output/plotJan7/EA FAGUSY Petkova et al 2017", "/", "Plot-facet", .$identifier, .$label,"-", .$year, ".png", sep = ""), device = "png", height = 12, width = 16, units = "cm"))
+       ggsave(.$plots, filename = paste("C:/Users/alina/Documents/git/localadaptclim/Output/plotJan7/NA ALNURU Hamann et al. 1998", "/", "Plot-facet", .$identifier, .$label,"-", .$year, ".png", sep = ""), device = "png", height = 12, width = 16, units = "cm"))
   
 
-  
-  
-  
-  
-  
-  
-  
   
 # take the average and compare
 MAT20112020 <- d %>% 

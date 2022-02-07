@@ -1,9 +1,5 @@
 # loop extract North America Data
 
-# Housekeeping ----
-rm(list=ls()) 
-options(stringsAsFactors = FALSE)
-
 
 library(devtools)
 library(cli)
@@ -15,9 +11,14 @@ library(tidyverse)
 install.packages("daymetr")
 library(daymetr)
 
+
+# Housekeeping ----
+rm(list=ls()) 
+options(stringsAsFactors = FALSE)
+
+
 # Import data ----
 d <- read.csv("input/experiment_euro_sites_Jan06.csv", header = TRUE)
-# use to experiment with the loop
 
 # empty dataframe
 dailytemp <- data.frame(lat = numeric(), long = numeric(), date = as.Date(character()),

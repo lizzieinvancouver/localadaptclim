@@ -29,10 +29,11 @@ endday <- strptime(paste(endyr, "12-31", sep="-"),"%Y-%m-%d", tz = "GMT")
 # d <- read.csv("input/experiment_euro_sites_Jan06.csv", header = TRUE)
 
 
-label <- "NA ALNURU Cannell et al. 1987"
+label <- "NG PSEUME Lavadinovic etal 2013"
 # garden 	
-la <- 55.85	
-lo <- -3.226081
+la <- 43.783333	
+lo <- 18.966667
+
 
 # read climate file
 euro20112020 <- nc_open( "C:/Users/alina/Documents/git/localadaptclim/input/DailyClimRaw/Europe/tg_ens_mean_0.1deg_reg_2011-2020_v23.1e.nc")

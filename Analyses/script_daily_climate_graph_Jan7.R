@@ -19,7 +19,6 @@ library(lubridate)
 setwd("C:/Users/alina/Documents/git/localadaptclim")
 
 # Import data ----
-# Jan 19 update (lizzie's loop worked)
 
 # EA FRAXEX Rosique-Esplugas 2021
 prov <- read.csv("output/dailyclim/dailytemp_provenance_EA FRAXEX Rosique-Esplugas 2021_2011_2020.csv", header = TRUE)
@@ -36,6 +35,7 @@ garden <- read.csv("output/dailyclim/dailytemp_garden_EG PICEAB Sogaard et al. 2
 # EA FAGUSY Gömöry & Paule 2011
 
 prov <- read.csv("output/dailyclim/dailytemp_provenance_EA FAGUSY Gömöry & Paule 2011_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
 garden <- read.csv("output/dailyclim/dailytemp_garden_EA FAGUSY Gömöry & Paule 2011_2011_2020.csv", header = TRUE)
 
 
@@ -52,7 +52,71 @@ garden <- read.csv("output/dailyclim/dailytemp_garden_NA ALNURU Cannell et al. 1
  garden <- read.csv("output/dailyclim/dailytemp_garden_NA ALNURU Hamann et al. 1998_2011_2020.csv", header = TRUE)
 
  
+ # NG PICEEN Rehfeldt 1994
+ prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PICEEN Rehfeldt 1994_2011_2020.csv", header = TRUE)
+ garden <- read.csv("output/dailyclim/dailytemp_garden_NG PICEEN Rehfeldt 1994_2011_2020.csv", header = TRUE)
+ 
 
+ # NG PICESI Mimura & Aitken 2007
+ prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PICESI Mimura & Aitken 2007_2011_2020.csv", header = TRUE)
+ garden <- read.csv("output/dailyclim/dailytemp_garden_NG PICESI Mimura & Aitken 2007_2011_2020.csv", header = TRUE)
+ 
+ # NG PINUAL Bower and Aitken 2008
+ prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PINUAL Bower and Aitken 2008_2011_2020.csv", header = TRUE)
+ garden <- read.csv("output/dailyclim/dailytemp_garden_NG PINUAL Bower and Aitken 2008_2011_2020.csv", header = TRUE)
+ 
+ # NA POPUTR McKown et al. 2013
+ prov <- read.csv("output/dailyclim/dailytemp_provenance_NA POPUTR McKown et al. 2013_2011_2020.csv", header = TRUE)
+ garden <- read.csv("output/dailyclim/dailytemp_garden_NA POPUTR McKown et al. 2013_2011_2020.csv", header = TRUE)
+
+ 
+ 
+ # NG PSEUME Lavadinovic etal 2013
+ prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PSEUME Lavadinovic etal 2013_2011_2020.csv", header = TRUE)
+ garden <- read.csv("output/dailyclim/dailytemp_garden_NG PSEUME Lavadinovic etal 2013_2011_2020.csv", header = TRUE)
+ prov <- na.omit(prov)
+ garden <- subset(garden,garden$doy != "366")
+ 
+ # NG PSEUME Lavadinovic etal 2018
+ prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PSEUME Lavadinovic etal 2018_2011_2020.csv", header = TRUE)
+ garden <- read.csv("output/dailyclim/dailytemp_garden_NG PSEUME Lavadinovic etal 2018_2011_2020.csv", header = TRUE)
+ prov <- na.omit(prov)
+ garden <- subset(garden,garden$doy != "366")
+ 
+ # NG PSEUME Sweet 1965
+ prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PSEUME Sweet 1965_2011_2020.csv", header = TRUE)
+ garden <- read.csv("output/dailyclim/dailytemp_garden_NG PSEUME Sweet 1965_2011_2020.csv", header = TRUE)
+ # hmmm havnt got daily temp for new zealand yet
+ 
+ # NG TSUGHE Kuser 1980
+ prov <- read.csv("output/dailyclim/dailytemp_provenance_NG TSUGHE Kuser 1980_2011_2020.csv", header = TRUE)
+ garden <- read.csv("output/dailyclim/dailytemp_garden_NG TSUGHE Kuser 1980_2011_2020.csv", header = TRUE)
+ 
+ # NG PSEUME White et al. 1979
+ prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PSEUME White et al. 1979_2011_2020.csv", header = TRUE)
+ garden <- read.csv("output/dailyclim/dailytemp_garden_NG PSEUME White et al. 1979_2011_2020.csv", header = TRUE)
+ 
+ # NA POPUBA Farmer 1993
+ prov <- read.csv("output/dailyclim/dailytemp_provenance_NA POPUBA Farmer 1993_2011_2020.csv", header = TRUE)
+ garden <- read.csv("output/dailyclim/dailytemp_garden_NA POPUBA Farmer 1993_2011_2020.csv", header = TRUE)
+ prov <- na.omit(prov)
+ 
+ # NG TSUGHE Hannerz et al. 1999
+ prov <- read.csv("output/dailyclim/dailytemp_provenance_NG TSUGHE Hannerz et al. 1999_2011_2020.csv", header = TRUE)
+ garden <- read.csv("output/dailyclim/dailytemp_garden_NG TSUGHE Hannerz et al. 1999_2011_2020.csv", header = TRUE)
+ prov <- na.omit(prov)
+ 
+ # NG PINUPO Dixit et al 2020
+ prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PINUPO Dixit et al 2020_2011_2020.csv", header = TRUE)
+ garden <- read.csv("output/dailyclim/dailytemp_garden_NG PINUPO Dixit et al 2020_2011_2020.csv", header = TRUE)
+ 
+ # NG PICEMA Guo et al 2021
+ prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PICEMA Guo et al 2021_2011_2020.csv", header = TRUE)
+ garden <- read.csv("output/dailyclim/dailytemp_garden_NG PICEMA Guo et al 2021_2011_2020.csv", header = TRUE)
+ 
+ 
+ 
+ 
 # add doy for gardern
 # garden$doy<-  yday(garden$date)
   # drop Date
@@ -60,7 +124,7 @@ garden <- read.csv("output/dailyclim/dailytemp_garden_NA ALNURU Cannell et al. 1
 
 # for facet (see line 134) before merging I need to replicate garden and make 42 copies...
 test<- garden %>% slice(rep(1:n(), each = length(unique(prov$identifier))))      # repeat by # of provenance times
-test$identifier <- rep(1:length(unique(prov$identifier)), times = 3653)  # assign prov# to all garden data for facet loop
+test$identifier <- rep(1:length(unique(prov$identifier)), times = 3650)  # assign prov# to all garden data for facet loop
 test$yay <- "prov"# times = 3650 when working with Daymet data
 test$identifier <- paste(test$yay, test$identifier, sep = "")
 # yayy it worked
@@ -153,13 +217,14 @@ oneyear_interannual_variability_plots %>%              # the saving call within 
 # facet loop ----
   # okayy, I need to modify garden identifier just for the sake of plotting -> 
   # if you have questions, please contact alina
+  # update on Feb-2, 2022, doy 50-150
   facet_all_provenances <-  
     d  %>%      # the data frame
     group_by(identifier) %>%  
     do(plots =           # the plotting call within the do function -> plots are generated as lists
          ggplot(data = .) + # the do() function requires that we supply the data as space dot
          geom_line(aes(x = doy, y = temp, color = status))+
-         scale_x_continuous(limits = c(0, 180))+
+         scale_x_continuous(limits = c(50, 150))+
          facet_wrap(year~., scales = "fixed") +
          guides(col=guide_legend("Type")) + 			# set legend title
          labs(title = paste("Plot of",.$identifier,.$label, "daily temperature in", .$year, sep = " ")) +
@@ -178,7 +243,7 @@ oneyear_interannual_variability_plots %>%              # the saving call within 
   # Saving the plots to file
   facet_all_provenances %>%              # the saving call within the do function
     do(.,
-       ggsave(.$plots, filename = paste("C:/Users/alina/Documents/git/localadaptclim/Output/plotJan7/NA ALNURU Hamann et al. 1998", "/", "Plot-facet", .$identifier, .$label,"-", .$year, ".png", sep = ""), device = "png", height = 12, width = 16, units = "cm"))
+       ggsave(.$plots, filename = paste("C:/Users/alina/Documents/git/localadaptclim/Output/plotFeb2/", d$label, "/", "Plot-facet", .$identifier,"-", d$label,".png", sep = ""), device = "png", height = 12, width = 16, units = "cm"))
   
 
   

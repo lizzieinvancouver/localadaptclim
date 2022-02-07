@@ -92,6 +92,7 @@ dailytemp$status <- "provenance"
 # get rid of Date column (its a moot now)
 # test<- dplyr::select(test, -Date)
 
+
 # export
 name<-paste("output/dailyclim/dailytemp","_", unique(dailytemp$status), "_",unique(dailytemp$label), "_",styr,"_",endyr,".csv",sep="")
 write.csv(dailytemp,name, row.names = FALSE)

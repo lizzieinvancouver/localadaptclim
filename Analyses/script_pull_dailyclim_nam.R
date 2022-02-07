@@ -7,9 +7,6 @@
 
 # code adopted from sophia
 
-# Housekeeping ----
-rm(list=ls()) 
-options(stringsAsFactors = FALSE)
 
 
 library(devtools)
@@ -23,11 +20,22 @@ install.packages("daymetr")
 library(daymetr)
 
 
-label <- "NA ALNURU Hamann et al. 1998"
+# Housekeeping ----
+rm(list=ls()) 
+options(stringsAsFactors = FALSE)
+
+label <- "NG PINUPO Dixit et al 2020"
+
 
 # garden 	
-la <- 49.2186	
-lo <- -123.0548
+la <-  35.16	
+lo <-	-111.73
+
+
+
+
+
+	
 
 
 

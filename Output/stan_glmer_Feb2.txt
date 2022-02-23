@@ -1,0 +1,188 @@
+1a ----------------------------------------------------------------------------------------------------------------------------------------
+stan_glmer(spring_event~lat_prov+ + (1|species)+ (1|garden_identifier), data = d)
+
+
+ family:       gaussian [identity]
+ formula:      spring_event ~ lat_prov + +(1 | species) + (1 | garden_identifier)
+ observations: 762
+------
+            Median MAD_SD
+(Intercept) 132.5    9.5 
+lat_prov     -0.4    0.1 
+
+Auxiliary parameter(s):
+      Median MAD_SD
+sigma 8.6    0.2   
+
+Error terms:
+ Groups            Name        Std.Dev.
+ garden_identifier (Intercept) 15.3    
+ species           (Intercept) 26.5    
+ Residual                       8.6    
+Num. levels: garden_identifier 20, species 14 
+
+------
+* For help interpreting the printed output see ?print.stanreg
+* For info on the priors used see ?prior_summary.stanreg
+
+1b ----------------------------------------------------------------------------------------------------------------------------------------
+
+stan_glmer
+ family:       gaussian [identity]
+ formula:      spring_event ~ MAT_prov + +(1 | species) + (1 | garden_identifier)
+ observations: 762
+------
+            Median MAD_SD
+(Intercept) 106.1    8.2 
+MAT_prov      0.7    0.2 
+
+Auxiliary parameter(s):
+      Median MAD_SD
+sigma 8.6    0.2   
+
+Error terms:
+ Groups            Name        Std.Dev.
+ garden_identifier (Intercept) 15.7    
+ species           (Intercept) 27.3    
+ Residual                       8.6    
+Num. levels: garden_identifier 20, species 14 
+
+2a ----------------------------------------------------------------------------------------------------------------------------------------
+
+
+stan_glmer
+ family:       gaussian [identity]
+ formula:      spring_event ~ lat_prov * prov_continent + (1 | species) + (1 | 
+	   garden_identifier)
+ observations: 762
+------
+                                     Median MAD_SD
+(Intercept)                          87.8   22.2  
+lat_prov                              0.2    0.3  
+prov_continentNorth America          52.9   24.8  
+lat_prov:prov_continentNorth America -0.8    0.3  
+
+Auxiliary parameter(s):
+      Median MAD_SD
+sigma 8.6    0.2   
+
+Error terms:
+ Groups            Name        Std.Dev.
+ garden_identifier (Intercept) 15.6    
+ species           (Intercept) 28.2    
+ Residual                       8.6    
+Num. levels: garden_identifier 20, species 14 
+
+2b ----------------------------------------------------------------------------------------------------------------------------------------
+
+
+stan_glmer
+ family:       gaussian [identity]
+ formula:      spring_event ~ MAT_prov * prov_continent + (1 | species) + (1 | 
+	   garden_identifier)
+ observations: 762
+------
+                                     Median MAD_SD
+(Intercept)                          97.2   17.6  
+MAT_prov                              0.5    0.5  
+prov_continentNorth America          10.9   20.3  
+MAT_prov:prov_continentNorth America  0.3    0.5  
+
+Auxiliary parameter(s):
+      Median MAD_SD
+sigma 8.6    0.2   
+
+Error terms:
+ Groups            Name        Std.Dev.
+ garden_identifier (Intercept) 15.5    
+ species           (Intercept) 28.3    
+ Residual                       8.6    
+Num. levels: garden_identifier 20, species 14 
+
+3a ----------------------------------------------------------------------------------------------------------------------------------------
+
+stan_glmer
+ family:       gaussian [identity]
+ formula:      spring_event ~ (lat_prov | species) + (1 | garden_identifier)
+ observations: 762
+------
+            Median MAD_SD
+(Intercept) 112.4    8.6 
+
+Auxiliary parameter(s):
+      Median MAD_SD
+sigma 8.0    0.2   
+
+Error terms:
+ Groups            Name        Std.Dev. Corr 
+ garden_identifier (Intercept) 16            
+ species           (Intercept) 45            
+                   lat_prov     1       -0.73
+ Residual                       8            
+Num. levels: garden_identifier 20, species 14 
+
+3b ----------------------------------------------------------------------------------------------------------------------------------------
+
+stan_glmer
+ family:       gaussian [identity]
+ formula:      spring_event ~ (MAT_prov | species) + (1 | garden_identifier)
+ observations: 762
+------
+            Median MAD_SD
+(Intercept) 108.4    8.2 
+
+Auxiliary parameter(s):
+      Median MAD_SD
+sigma 8.2    0.2   
+
+Error terms:
+ Groups            Name        Std.Dev. Corr 
+ garden_identifier (Intercept) 18.0          
+ species           (Intercept) 26.7          
+                   MAT_prov     1.9     -0.24
+ Residual                       8.2          
+Num. levels: garden_identifier 20, species 14 
+
+4a ----------------------------------------------------------------------------------------------------------------------------------------
+
+stan_glmer
+ family:       gaussian [identity]
+ formula:      spring_event ~ lat_prov + lat_garden + (1 | species)
+ observations: 762
+------
+            Median MAD_SD
+(Intercept) 121.3   10.2 
+lat_prov     -0.5    0.1 
+lat_garden    0.3    0.0 
+
+Auxiliary parameter(s):
+      Median MAD_SD
+sigma 10.5    0.3  
+
+Error terms:
+ Groups   Name        Std.Dev.
+ species  (Intercept) 33      
+ Residual             11      
+Num. levels: species 14 
+
+
+4b ----------------------------------------------------------------------------------------------------------------------------------------
+stan_glmer
+ family:       gaussian [identity]
+ formula:      spring_event ~ MAT_prov + MAT_garden + (1 | species)
+ observations: 762
+------
+            Median MAD_SD
+(Intercept) 135.6    9.1 
+MAT_prov      0.6    0.2 
+MAT_garden   -3.9    0.3 
+
+Auxiliary parameter(s):
+      Median MAD_SD
+sigma 9.9    0.3   
+
+Error terms:
+ Groups   Name        Std.Dev.
+ species  (Intercept) 35.9    
+ Residual              9.9    
+Num. levels: species 14 

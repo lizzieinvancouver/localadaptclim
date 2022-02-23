@@ -27,6 +27,7 @@ garden <- read.csv("output/dailyclim/dailytemp_garden_EA FRAXEX Rosique-Esplugas
 # EA FAGUSY Petkova et al 2017
 prov <- read.csv("output/dailyclim/dailytemp_provenance_EA FAGUSY Petkova et al 2017_2011_2020.csv", header = TRUE)
 garden <- read.csv("output/dailyclim/dailytemp_garden_EA FAGUSY Petkova et al 2017_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
 
 # EG PICEAB Sogaard et al. 2008
 prov <- read.csv("output/dailyclim/dailytemp_provenance_EG PICEAB Sogaard et al. 2008_2011_2020.csv", header = TRUE)

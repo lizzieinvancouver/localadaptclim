@@ -20,10 +20,10 @@ setwd("C:/Users/alina/Documents/git/localadaptclim")
 
 # Import data ----
 d <- read.csv("input/data_plot_Nov13_AllStudiesToDate.csv", header = TRUE)
+d$fall_event <- as.numeric(d$fall_event)
 
 # length(unique(d$lat_garden)) #20
 # length(unique(d$garden_identifier)) #20
-
 
 #1 ----
 fit1_lat <- stan_glmer(spring_event~lat_prov + (1|species)+ (1|garden_identifier), data = d)

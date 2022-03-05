@@ -15,13 +15,75 @@ library(ggplot2)
 library(RColorBrewer)
 
 # Import data ----
-
-# EA FRAXEX Rosique-Esplugas 2021
+label <- "EA FRAXEX Rosique-Esplugas 2021"
 prov <- read.csv("output/dailyclim/dailytemp_provenance_EA FRAXEX Rosique-Esplugas 2021_2011_2020.csv", header = TRUE)
 garden <- read.csv("output/dailyclim/dailytemp_garden_EA FRAXEX Rosique-Esplugas 2021_2011_2020.csv", header = TRUE)
 prov <- na.omit(prov)
 garden<- na.omit(garden)
 
+label <- "EA FAGUSY Petkova et al 2017"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_EA FAGUSY Petkova et al 2017_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_EA FAGUSY Petkova et al 2017_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+
+#keep only temp and identifier column for March April May 
+prov <- subset(prov,prov$month == "3"|prov$month == "4" | prov$month == "5")
+temp_prov <- dplyr::select(prov, temp, identifier)
+garden <- subset(garden,garden$month == "3"|garden$month == "4" | garden$month == "5")
+temp_garden <- dplyr::select(garden, temp)
+temp_garden <- temp_garden$temp
+  
+# split prov df into lists based on identifier
+experiment <- split(temp_prov, f = temp_prov$identifier) #omg it worked!! 
+# keep only temp in each list
+for( i in 1:length(experiment) ){
+  experiment[[i]] <- dplyr::select(experiment[[i]], -identifier)
+}
+# change df in the list to just values
+for( i in 1:length(experiment) ){
+  experiment[[i]]<- experiment[[i]][,1] #store as values # isn't working...
+}
+
+# experiment[["prov10"]]<- experiment[["prov10"]][,1]
+
+
+#loop overlap()
+# empty dataframe
+distribution_overlap <- data.frame(identifier = character(), percentage = character())
+
+for( i in 1:length(experiment) ){
+  dataList <- list( G1 = experiment[[i]], G2 = temp_garden)
+  percentage <- overlap( dataList )$OV * 100
+  
+  distribution_overlap_add <- data.frame(percentage = percentage)
+  distribution_overlap_add$identifier <- names(experiment[[i]]) # identifier didn't get added successfully
+  # EMW -- Here you'll need to rbind the old and new data each time
+  distribution_overlap <- rbind(distribution_overlap, distribution_overlap_add)
+}
+
+# add identifier and label
+distribution_overlap$identifier <- names(experiment)
+distribution_overlap$label <- label
+
+#save
+name<-paste("Output/plot_distribution/",label, "_dailyclim_distribution_overlap.csv",sep="")
+write.csv(distribution_overlap,name, row.names = FALSE)
+
+
+
+# distribution
+ggplot(distribution_overlap, aes(x=percentage)) + geom_histogram(binwidth=.5)
+
+
+# OG overlap steps
+dataList <- list( G1 = temp_garden, G2 = temp_garden)
+overlap( dataList )$OV * 100
+
+
+# for plotting ----
+# need to do the following so that lines of both prov and garden show on the same plot in a loop
 test<- garden %>% slice(rep(1:n(), each = length(unique(prov$identifier))))      # repeat by # of provenance times
 test$identifier <- rep(1:length(unique(prov$identifier)), times = 3653)  # assign prov# to all garden data for facet loop
 test$yay <- "prov"# times = 3650 when working with Daymet data
@@ -31,34 +93,7 @@ test$identifier <- paste(test$yay, test$identifier, sep = "")
 dailyclim <- full_join(test, prov)
 
 # subset and only focus on March April May
-dailyclim <- subset(dailyclim,dailyclim$month != "1")
-dailyclim <- subset(dailyclim,dailyclim$month != "2")
-dailyclim <- subset(dailyclim,dailyclim$month != "6")
-dailyclim <- subset(dailyclim,dailyclim$month != "7")
-dailyclim <- subset(dailyclim,dailyclim$month != "8")
-dailyclim <- subset(dailyclim,dailyclim$month != "9")
-dailyclim <- subset(dailyclim,dailyclim$month != "10")
-dailyclim <- subset(dailyclim,dailyclim$month != "11")
-dailyclim <- subset(dailyclim,dailyclim$month != "12")
-
-
-
-# hmmm first find the way to calculate
-# and then loop it
-
-dailyclim %>% group_by(year,identifier,status) %>% overlap(dailyclim$temp)
-
-
-for 
-
-# or make list: list 1 = garden temp, list 2-1X provenance 
- <- dailyclim %>% group_by (identifier)
-
-G1 <- dailyclim[dailyclim$status"garden"$temp
-
-
-dataList <- list(G1 = garden, G2 = G2)
-overlap(dataList)
+dailyclim <- subset(dailyclim,dailyclim$month == "3" |dailyclim$month == "4" |dailyclim$month == "5")
 
 # plotting two distribution lines tgt
 # group_by(identifier)

@@ -1,2 +1,19 @@
-identifier_prov,lat_prov,long_prov,elev_prov,MAT_prov,MSP100_prov,spring_event,fall_event,lat_garden,long_garden,elev_garden,year,MAT_garden,MSP100_garden,prov_continent,species,species_type,label
-prov4,53.5,-132.15,30,7.2,4.17,133.5,N.A.,48.41666667,-124.0166667,75,1998,8.9,2.67,North America,Tsuga heterophylla,gymnosperm,NG TSUGHE Hannerz et al. 1999
+prov_identifier,lat_prov,long_prov,elev_prov,MAT_prov,MSP100_prov,spring_event,fall_event,lat_garden,long_garden,elev_garden,year,MAT_garden,MSP100_garden,prov_continent,garden_continent,prov_garden_continent,species,species_type,garden_identifier,label
+prov1,49.25,-117.1666667,840,4.9,,71.5,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov2,49.63333333,-116.05,990,4.3,,73.786,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov3,50.06666667,-117.3833333,915,5,,74.071,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov4,51.36666667,-118.3,990,3.5,,78.357,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov5,50.56666667,-118.8333333,850,5.1,,81.5,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov6,50.76666667,-119.5333333,600,5.8,,74.071,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov7,50.81666667,-119.75,1250,3.8,,76.929,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov8,52.51666667,-122.4,760,4.7,,80.643,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov9,52.51666667,-121.5166667,830,3.8,,77.786,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov10,52.78333333,-122.2333333,760,4,,84.071,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov11,53.78333333,-122.6333333,975,2.9,,90.357,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov12,53.91666667,-122.3666667,915,2.7,,88.071,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov13,54.1,-122.35,685,3.4,,81.5,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov14,54.13333333,-121.7833333,760,3.1,,79.786,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov15,54.5,-128.5666667,70,6.5,,66.929,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov16,54.7,-128.2666667,270,5.9,,71.786,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov17,55.13333333,-127.7166667,350,5.5,,85.786,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov18,55.18333333,-127.7833333,480,4.1,,92.357,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012

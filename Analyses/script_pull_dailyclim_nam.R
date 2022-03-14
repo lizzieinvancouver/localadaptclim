@@ -24,19 +24,12 @@ library(daymetr)
 rm(list=ls()) 
 options(stringsAsFactors = FALSE)
 
-label <- "NG PINUPO Dixit et al 2020"
+label <- "NA BETUPA Hawkins & Dhar 2012"
 
 
 # garden 	
-la <-  35.16	
-lo <-	-111.73
-
-
-
-
-
-	
-
+la <-  48.48333333	
+lo <-	-123.4
 
 
 # load in daymet data
@@ -74,7 +67,7 @@ dailytemp_nam$month = as.numeric(format(dailytemp_nam$date, "%m"))
 dailytemp_nam$status <- "garden"
 dailytemp_nam <- dplyr::rename(dailytemp_nam, doy = yday)
 dailytemp_nam$label <- label
-dailytemp_nam$identifier <- "garden1"
+dailytemp_nam$identifier <- "R"
 
 
 name<-paste("output/dailyclim/dailytemp","_garden_",unique(dailytemp_nam$label), "_2011_2020.csv",sep="")

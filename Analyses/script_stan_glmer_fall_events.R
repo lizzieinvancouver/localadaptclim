@@ -9,8 +9,8 @@ library(bayesplot)
 
 #get rid of NAs
 d <- read.csv("input/data_plot_Nov13_AllStudiesToDate.csv", header = TRUE)
-d$fall_event <- as.numeric(d$fall_event)
 d_fall <- subset(d, d$fall_event != "N.A.")
+d_fall$fall_event <- as.numeric(d_fall$fall_event)
 
 #1 ----
 fit_fall_1_lat <- stan_glmer(fall_event~lat_prov + (1|species)+ (1|garden_identifier), data = d_fall)
@@ -20,6 +20,18 @@ fit_fall_1_mat <- stan_glmer(fall_event~MAT_prov + (1|species)+ (1|garden_identi
 fit_fall_2_lat <- stan_glmer(fall_event~lat_prov*prov_continent + (1|species)+ (1|garden_identifier), data = d_fall)
 fit_fall_2_mat <- stan_glmer(fall_event~MAT_prov*prov_continent + (1|species)+ (1|garden_identifier), data = d_fall)
 
+
+#3 ---- 
+fit_fall_3_lat <- stan_glmer(fall_event~(lat_prov|species)+(1|garden_identifier), data = d_fall)
+fit_fall_3_mat <- stan_glmer(fall_event~(MAT_prov|species)+(1|garden_identifier), data = d_fall)
+
+#4 ----
+fit_fall_4_lat <- stan_glmer(fall_event~lat_prov + lat_garden + (1|species), data = d_fall)
+fit_fall_4_mat <- stan_glmer(fall_event~MAT_prov + MAT_garden + (1|species), data = d_fall)
+
+
+
+# plot fit 2
 # Here's an example of how to plot for latitude model ... can you repeat for MAT model?
 fit_fall_2_latsum <- summary(fit_fall_2_lat)
 fit_fall_2_latsum["(Intercept)", "mean"] # Intercept value for Europe #112.9426
@@ -40,6 +52,8 @@ posterior <- as.matrix(fit_fall_2_lat)
 mcmc_areas(posterior,
            pars = c("lat_prov", "lat_prov:prov_continentNorth America"),
            prob = 0.8)
+
+# But we also want to look at the estimates for each species and garden -- these values are high, so likely explain much of the variation #how?
 
 # MAT ----
 fit_fall_2_matsum <- summary(fit_fall_2_mat)
@@ -63,10 +77,4 @@ mcmc_areas(posterior,
            pars = c("MAT_prov", "MAT_prov:prov_continentNorth America"),
            prob = 0.8)
 
-#3 ---- 
-fit_fall_3_lat <- stan_glmer(spring_event~(lat_prov|species)+(1|garden_identifier), data = d_fall)
-fit_fall_3_mat <- stan_glmer(spring_event~(MAT_prov|species)+(1|garden_identifier), data = d_fall)
 
-#4 ----
-fit_fall_4_lat <- stan_glmer(fall_event~lat_prov + lat_garden + (1|species), data = d_fall)
-fit_fall_4_mat <- stan_glmer(fall_event~MAT_prov + MAT_garden + (1|species), data = d_fall)

@@ -27,13 +27,148 @@ garden <- read.csv("output/dailyclim/dailytemp_garden_EA FAGUSY Petkova et al 20
 prov <- na.omit(prov)
 garden<- na.omit(garden)
 
+label <- "EG PICEAB Sogaard et al. 2008"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_EG PICEAB Sogaard et al. 2008_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_EG PICEAB Sogaard et al. 2008_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "EA FAGUSY Gömöry & Paule 2011"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_EA FAGUSY Gömöry & Paule 2011_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden <- read.csv("output/dailyclim/dailytemp_garden_EA FAGUSY Gömöry & Paule 2011_2011_2020.csv", header = TRUE)
+garden<- na.omit(garden)
+
+label <- "NA ALNURU Cannell et al. 1987"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NA ALNURU Cannell et al. 1987_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NA ALNURU Cannell et al. 1987_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "NA ALNURU Hamann et al. 1998"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NA ALNURU Hamann et al. 1998_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NA ALNURU Hamann et al. 1998_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "NG PICEEN Rehfeldt 1994"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PICEEN Rehfeldt 1994_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NG PICEEN Rehfeldt 1994_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "NG PICESI Mimura & Aitken 2007"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PICESI Mimura & Aitken 2007_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NG PICESI Mimura & Aitken 2007_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "NG PINUAL Bower and Aitken 2008"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PINUAL Bower and Aitken 2008_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NG PINUAL Bower and Aitken 2008_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <-  "NA POPUTR McKown et al. 2013"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NA POPUTR McKown et al. 2013_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NA POPUTR McKown et al. 2013_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <-  "NG PSEUME Lavadinovic etal 2013"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PSEUME Lavadinovic etal 2013_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NG PSEUME Lavadinovic etal 2013_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "NG PSEUME Lavadinovic etal 2018"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PSEUME Lavadinovic etal 2018_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NG PSEUME Lavadinovic etal 2018_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+# NG PSEUME Sweet 1965
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PSEUME Sweet 1965_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NG PSEUME Sweet 1965_2011_2020.csv", header = TRUE)
+# hmmm havnt got daily temp for new zealand yet
+
+
+label <- "NG TSUGHE Kuser 1980"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NG TSUGHE Kuser 1980_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NG TSUGHE Kuser 1980_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "NG PSEUME White et al. 1979"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PSEUME White et al. 1979_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NG PSEUME White et al. 1979_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "NA POPUBA Farmer 1993"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NA POPUBA Farmer 1993_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NA POPUBA Farmer 1993_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "NG TSUGHE Hannerz et al. 1999"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NG TSUGHE Hannerz et al. 1999_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NG TSUGHE Hannerz et al. 1999_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "NG PINUPO Dixit et al 2020"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PINUPO Dixit et al 2020_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NG PINUPO Dixit et al 2020_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "NG PICEMA Guo et al 2021"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NG PICEMA Guo et al 2021_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NG PICEMA Guo et al 2021_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "NA BETUPA Hawkins & Dhar 2012"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NA BETUPA Hawkins & Dhar 2012_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NA BETUPA Hawkins & Dhar 2012_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+
+# combine all distribution overlap files
+setwd("C:/Users/alina/Documents/git/localadaptclim/Output/plot_distribution/distribution_overlap_percentage")
+file_list <- list.files()
+# https://michaelinom.medium.com/how-to-combine-all-csv-files-from-the-same-folder-into-one-data-frame-automatically-with-r-1775876a876c
+for (data in list.files()){
+  # Create the first data if no data exist yet
+  if (!exists("dataset")){
+    dataset <- read.csv(data, header=TRUE)
+  }
+  
+  # if data already exist, then append it together
+  if (exists("dataset")){
+    tempory <-read.csv(data, header=TRUE)
+    dataset <-unique(rbind(dataset, tempory))
+    rm(tempory)
+  }
+}
+View(dataset)
+
+# ascend
+dataset <- dataset[with(dataset, order(percentage)), ]
+
+# export
+# name<-paste("Output/plot_distribution/distribution_overlap_percentage","all_studies_dailyclim_distribution_overlap.csv",sep="")
+write.csv(dataset,"all_studies_dailyclim_distribution_overlap.csv", row.names = FALSE)
+
 
 #keep only temp and identifier column for March April May 
 prov <- subset(prov,prov$month == "3"|prov$month == "4" | prov$month == "5")
 temp_prov <- dplyr::select(prov, temp, identifier)
 garden <- subset(garden,garden$month == "3"|garden$month == "4" | garden$month == "5")
 temp_garden <- dplyr::select(garden, temp)
-temp_garden <- temp_garden$temp
+temp_garden <- temp_garden$temp # store as vector
   
 # split prov df into lists based on identifier
 experiment <- split(temp_prov, f = temp_prov$identifier) #omg it worked!! 
@@ -43,7 +178,7 @@ for( i in 1:length(experiment) ){
 }
 # change df in the list to just values
 for( i in 1:length(experiment) ){
-  experiment[[i]]<- experiment[[i]][,1] #store as values # isn't working...
+  experiment[[i]]<- experiment[[i]][,1] #store as values 
 }
 
 # experiment[["prov10"]]<- experiment[["prov10"]][,1]
@@ -51,24 +186,23 @@ for( i in 1:length(experiment) ){
 
 #loop overlap()
 # empty dataframe
-distribution_overlap <- data.frame(identifier = character(), percentage = character())
+distribution_overlap <- data.frame(identifier = character(), percentage = character(), sd = numeric())
 
 for( i in 1:length(experiment) ){
   dataList <- list( G1 = experiment[[i]], G2 = temp_garden)
   percentage <- overlap( dataList )$OV * 100
-  
-  distribution_overlap_add <- data.frame(percentage = percentage)
+  sd <- sd(experiment[[i]])
+  distribution_overlap_add <- data.frame(percentage = percentage, sd = sd)
   distribution_overlap_add$identifier <- names(experiment[[i]]) # identifier didn't get added successfully
-  # EMW -- Here you'll need to rbind the old and new data each time
   distribution_overlap <- rbind(distribution_overlap, distribution_overlap_add)
 }
 
 # add identifier and label
-distribution_overlap$identifier <- names(experiment)
+distribution_overlap$identifier <- names(experiment) # reintroduce the provenance names
 distribution_overlap$label <- label
 
 #save
-name<-paste("Output/plot_distribution/",label, "_dailyclim_distribution_overlap.csv",sep="")
+name<-paste("Output/plot_distribution/distribution_overlap_percentage",label, "_dailyclim_distribution_overlap.csv",sep="")
 write.csv(distribution_overlap,name, row.names = FALSE)
 
 

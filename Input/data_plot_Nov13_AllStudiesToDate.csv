@@ -426,64 +426,64 @@ prov16,46.36666667,-122,900,6.5,3.47,118,239,44.5657,-123.276,70,1978,11.3,1.47,
 prov17,48.35,-116.93,700,7.1,2.19,107,221,44.5657,-123.276,70,1978,11.3,1.47,North America,North America,same,Tsuga heterophylla,gymnosperm,H,NG TSUGHE Kuser 1980
 prov18,48.35,-116.93,1400,4.8,2.74,96,204,44.5657,-123.276,70,1978,11.3,1.47,North America,North America,same,Tsuga heterophylla,gymnosperm,H,NG TSUGHE Kuser 1980
 prov19,49.13333333,-116.8,1400,3.3,4.08,90,215,44.5657,-123.276,70,1978,11.3,1.47,North America,North America,same,Tsuga heterophylla,gymnosperm,H,NG TSUGHE Kuser 1980
-prov1,57.484,-3.17,102,6.383333333,8.3524,146.509,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov2,57.426,-5.591,78,7.533333333,26.235,151.846,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov3,57.368,-4.345,56,5.016666667,8.5279,145.296,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov4,57.176,-5.751,18,7.866666667,20.414,147.965,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov5,56.623,-3.258,152,7.85,7.8769,149.178,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov6,56.602,-4.248,183,5.9166667,17.786,150.876,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov7,56.579,-4.037,142,6.45833333,13.584,149.259,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov8,56.574,-5.232,33,7.075,25.053,148.854,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov9,56.56,-5.741,20,7.6,21.45,150.957,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov10,56.53,-6.208,71,8.125,17.411,151.442,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov11,56.3,-3.573,119,7.608333333,13.182,150.714,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov12,56.106,-5.42,30,8.158333333,17.711,146.348,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov13,55.911,-4.825,107,7.85,17.677,147.965,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov14,55.68,-3.913,159,6.933333333,10.562,149.744,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov15,55.588,-2.662,68,7.9,7.1221,148.693,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov16,55.381,-3.929,162,7.158333333,12.709,149.663,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov17,55.32,-3.829,141,7.441666667,14.551,151.442,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov18,55.235,-3.853,90,8.03333,12.943,149.016,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov19,55.088,-2.222,90,7.866666667,8.2579,155,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov20,54.743,-1.352,102,8.891666667,7.0849,149.744,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov21,54.274,-0.49,52,8.825,7.7292,146.105,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov22,54.264,-2.87,79,8.716666667,14.735,148.288,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov23,54.262,-1.133,142,8.175,8.6285,149.34,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov24,54.203,-2.104,202,7.25,16.194,145.943,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov25,54.182,-2.689,170,7.933333333,12.08,149.097,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov26,53.308,-0.861,54,9.266666667,6.1642,146.348,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov27,53.104,-1.619,239,8.616666667,9.8075,148.127,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov28,53.079,-3.799,57,7.091666667,18.995,144.569,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov29,52.852,-1.82,142,9.35,7.2146,145.054,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov30,52.621,-2.523,99,9.116666667,7.1433,145.216,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov31,52.43,-4.059,90,8.4,10.512,145.782,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov32,52.166,0.415,96,9.45,6.2385,146.995,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov33,52.158,-0.11,79,9.533333333,5.6216,145.539,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov34,52.05,0.883,66,9.791666667,5.6555,139.636,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov35,51.986,-3.213,198,7.941666667,9.4339,146.59,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov36,51.678,-2.679,208,9.966666667,10.524,141.577,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov37,51.606,-2.285,160,9.475,8.615,144.973,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov38,51.546,-3.234,158,9.216666667,13.293,144.407,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov39,51.189,-3.583,102,8.958333333,15.412,145.135,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov40,51.011,-0.628,60,10.79,8.5963,141.739,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov41,50.908,-0.616,194,10.449165,9.3624,142.466,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov42,50.637,-2.136,126,10.10833,8.6759,141.725,N.A.,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
-prov1,48.45583333,10.06333333,560,8.1,7.05,116.96,N.A.,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov2,50.13333333,12.18333333,611,6,7,115.01,N.A.,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov3,50.50416667,11.32805556,650,6.5,9,115.62,N.A.,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov4,48.21833333,10.42305556,565,7,8,116.96,N.A.,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov5,49.95166667,10.48833333,344,8,8,117.36,N.A.,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov6,41.97361111,24.37722222,1300,7,9.6,115.62,N.A.,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov7,43.35583333,23.17416667,850,10.4,8.25,113.63,N.A.,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov8,43.255,23.23888889,800,10.4,10.04,114.35,N.A.,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov1,48.45583333,10.06333333,560,8.1,7.05,107.93,N.A.,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov2,50.13333333,12.18333333,611,6,7,105.11,N.A.,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov3,50.50416667,11.32805556,650,6.5,9,105.88,N.A.,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov4,48.21833333,10.42305556,565,7,8,108.18,N.A.,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov5,49.95166667,10.48833333,344,8,8,107.16,N.A.,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov6,41.97361111,24.37722222,1300,7,9.6,105.75,N.A.,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov7,43.35583333,23.17416667,850,10.4,8.25,101.15,N.A.,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
-prov8,43.255,23.23888889,800,10.4,10.04,103.83,N.A.,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov1,57.484,-3.17,102,6.383333333,8.3524,146.509,297.006,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov2,57.426,-5.591,78,7.533333333,26.235,151.846,298.034,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov3,57.368,-4.345,56,5.016666667,8.5279,145.296,293.8,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov4,57.176,-5.751,18,7.866666667,20.414,147.965,293.982,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov5,56.623,-3.258,152,7.85,7.8769,149.178,294.768,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov6,56.602,-4.248,183,5.9166667,17.786,150.876,296.764,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov7,56.579,-4.037,142,6.45833333,13.584,149.259,296.038,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov8,56.574,-5.232,33,7.075,25.053,148.854,304.385,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov9,56.56,-5.741,20,7.6,21.45,150.957,299.486,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov10,56.53,-6.208,71,8.125,17.411,151.442,299.002,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov11,56.3,-3.573,119,7.608333333,13.182,150.714,298.276,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov12,56.106,-5.42,30,8.158333333,17.711,146.348,292.409,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov13,55.911,-4.825,107,7.85,17.677,147.965,297.127,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov14,55.68,-3.913,159,6.933333333,10.562,149.744,297.127,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov15,55.588,-2.662,68,7.9,7.1221,148.693,298.155,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov16,55.381,-3.929,162,7.158333333,12.709,149.663,296.28,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov17,55.32,-3.829,141,7.441666667,14.551,151.442,291.018,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov18,55.235,-3.853,90,8.03333,12.943,149.016,295.252,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov19,55.088,-2.222,90,7.866666667,8.2579,155,297.308,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov20,54.743,-1.352,102,8.891666667,7.0849,149.744,298.337,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov21,54.274,-0.49,52,8.825,7.7292,146.105,298.639,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov22,54.264,-2.87,79,8.716666667,14.735,148.288,300.091,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov23,54.262,-1.133,142,8.175,8.6285,149.34,300.696,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov24,54.203,-2.104,202,7.25,16.194,145.943,298.942,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov25,54.182,-2.689,170,7.933333333,12.08,149.097,299.486,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov26,53.308,-0.861,54,9.266666667,6.1642,146.348,298.579,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov27,53.104,-1.619,239,8.616666667,9.8075,148.127,304.99,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov28,53.079,-3.799,57,7.091666667,18.995,144.569,302.329,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov29,52.852,-1.82,142,9.35,7.2146,145.054,301.603,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov30,52.621,-2.523,99,9.116666667,7.1433,145.216,302.933,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov31,52.43,-4.059,90,8.4,10.512,145.782,303.054,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov32,52.166,0.415,96,9.45,6.2385,146.995,301.3,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov33,52.158,-0.11,79,9.533333333,5.6216,145.539,307.046,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov34,52.05,0.883,66,9.791666667,5.6555,139.636,305.655,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov35,51.986,-3.213,198,7.941666667,9.4339,146.59,303.296,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov36,51.678,-2.679,208,9.966666667,10.524,141.577,301.3,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov37,51.606,-2.285,160,9.475,8.615,144.973,303.901,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov38,51.546,-3.234,158,9.216666667,13.293,144.407,304.264,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov39,51.189,-3.583,102,8.958333333,15.412,145.135,299.909,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov40,51.011,-0.628,60,10.79,8.5963,141.739,300.696,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov41,50.908,-0.616,194,10.449165,9.3624,142.466,302.994,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov42,50.637,-2.136,126,10.10833,8.6759,141.725,303.659,51.9,-3.8,215,2013,9.175,14.80833333,Europe,Europe,same,Fraxinus excelsior,angiosperm,I,EA FRAXEX Rosique-Esplugas 2021
+prov1,48.45583333,10.06333333,560,8.1,7.05,116.96,302.94,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov2,50.13333333,12.18333333,611,6,7,115.01,302.644,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov3,50.50416667,11.32805556,650,6.5,9,115.62,303.088,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov4,48.21833333,10.42305556,565,7,8,116.96,303.729,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov5,49.95166667,10.48833333,344,8,8,117.36,305.307,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov6,41.97361111,24.37722222,1300,7,9.6,115.62,296.727,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov7,43.35583333,23.17416667,850,10.4,8.25,113.63,298.699,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov8,43.255,23.23888889,800,10.4,10.04,114.35,306.688,42.9575,26.62833,350,2013,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov1,48.45583333,10.06333333,560,8.1,7.05,107.93,307.415,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov2,50.13333333,12.18333333,611,6,7,105.11,309.974,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov3,50.50416667,11.32805556,650,6.5,9,105.88,311.971,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov4,48.21833333,10.42305556,565,7,8,108.18,310.384,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov5,49.95166667,10.48833333,344,8,8,107.16,310.742,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov6,41.97361111,24.37722222,1300,7,9.6,105.75,309.718,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov7,43.35583333,23.17416667,850,10.4,8.25,101.15,307.978,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
+prov8,43.255,23.23888889,800,10.4,10.04,103.83,309.411,42.9575,26.62833,350,2016,10.325,5.475,Europe,Europe,same,Fagus sylvatica,angiosperm,J,EA FAGUSY Petkova et al 2017
 prov1,44.9466,-91.3956,273,5.975,6.566666667,119,N.A.,48.3809,-89.2477,189,1985,2.691666667,6.116666667,North America,North America,same,Populus balsamifera,angiosperm,K,NA POPUBA Farmer 1993
 prov2,48.3809,-89.2477,189,2.691666667,6.116666667,120,N.A.,48.3809,-89.2477,189,1985,2.691666667,6.116666667,North America,North America,same,Populus balsamifera,angiosperm,K,NA POPUBA Farmer 1993
 prov3,51.4678,-90.1938,365,-0.783333333,6.475,119,N.A.,48.3809,-89.2477,189,1985,2.691666667,6.116666667,North America,North America,same,Populus balsamifera,angiosperm,K,NA POPUBA Farmer 1993
@@ -662,111 +662,111 @@ prov18,35.99,-105.794,2560,6.3,4.7,165.1,N.A.,35.16,-111.73,2200,2019,7.86666666
 prov19,34.006,-107.215,2565,8.9,5.12,169.4,N.A.,35.16,-111.73,2200,2019,7.866666667,4.716666667,North America,North America,same,Pinus ponderosa,gymnosperm,Q,NG PINUPO Dixit et al 2020
 prov20,34.126,-109.535,2760,5.7,6.71,168.1,N.A.,35.16,-111.73,2200,2019,7.866666667,4.716666667,North America,North America,same,Pinus ponderosa,gymnosperm,Q,NG PINUPO Dixit et al 2020
 prov21,35.266,-107.633,2814,6.1,7.22,168.9,N.A.,35.16,-111.73,2200,2019,7.866666667,4.716666667,North America,North America,same,Pinus ponderosa,gymnosperm,Q,NG PINUPO Dixit et al 2020
-prov1,49.25,117.1666667,840,4.9,,71.5,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov2,49.63333333,116.05,990,4.3,,73.786,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov3,50.06666667,117.3833333,915,5,,74.071,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov4,51.36666667,118.3,990,3.5,,78.357,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov5,50.56666667,118.8333333,850,5.1,,81.5,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov6,50.76666667,119.5333333,600,5.8,,74.071,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov7,50.81666667,119.75,1250,3.8,,76.929,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov8,52.51666667,122.4,760,4.7,,80.643,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov9,52.51666667,121.5166667,830,3.8,,77.786,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov10,52.78333333,122.2333333,760,4,,84.071,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov11,53.78333333,122.6333333,975,2.9,,90.357,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov12,53.91666667,122.3666667,915,2.7,,88.071,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov13,54.1,122.35,685,3.4,,81.5,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov14,54.13333333,121.7833333,760,3.1,,79.786,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov15,54.5,128.5666667,70,6.5,,66.929,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov16,54.7,128.2666667,270,5.9,,71.786,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov17,55.13333333,127.7166667,350,5.5,,85.786,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov18,55.18333333,127.7833333,480,4.1,,92.357,N.A.,48.48333333,123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov1,49.25,117.1666667,840,4.9,,99.5,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov2,49.63333333,116.05,990,4.3,,104.071,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov3,50.06666667,117.3833333,915,5,,96.929,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov4,51.36666667,118.3,990,3.5,,108.071,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov5,50.56666667,118.8333333,850,5.1,,101.786,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov6,50.76666667,119.5333333,600,5.8,,94.357,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov7,50.81666667,119.75,1250,3.8,,97.214,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov8,52.51666667,122.4,760,4.7,,111.214,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov9,52.51666667,121.5166667,830,3.8,,105.214,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov10,52.78333333,122.2333333,760,4,,112.071,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov11,53.78333333,122.6333333,975,2.9,,108.643,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov12,53.91666667,122.3666667,915,2.7,,111.214,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov13,54.1,122.35,685,3.4,,110.357,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov14,54.13333333,121.7833333,760,3.1,,107.214,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov15,54.5,128.5666667,70,6.5,,96.929,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov16,54.7,128.2666667,270,5.9,,101.786,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov17,55.13333333,127.7166667,350,5.5,,109.786,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov18,55.18333333,127.7833333,480,4.1,,110.929,N.A.,50.78333333,119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov1,49.25,117.1666667,840,4.9,,110.726,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov2,49.63333333,116.05,990,4.3,,111.011,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov3,50.06666667,117.3833333,915,5,,108.447,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov4,51.36666667,118.3,990,3.5,,114.715,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov5,50.56666667,118.8333333,850,5.1,,110.726,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov6,50.76666667,119.5333333,600,5.8,,106.453,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov7,50.81666667,119.75,1250,3.8,,106.168,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov8,52.51666667,122.4,760,4.7,,114.43,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov9,52.51666667,121.5166667,830,3.8,,111.866,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov10,52.78333333,122.2333333,760,4,,115.285,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov11,53.78333333,122.6333333,975,2.9,,115.855,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov12,53.91666667,122.3666667,915,2.7,,114.715,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov13,54.1,122.35,685,3.4,,116.994,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov14,54.13333333,121.7833333,760,3.1,,116.425,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov15,54.5,128.5666667,70,6.5,,109.872,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov16,54.7,128.2666667,270,5.9,,111.866,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov17,55.13333333,127.7166667,350,5.5,,116.709,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov18,55.18333333,127.7833333,480,4.1,,117.849,N.A.,53.75,122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov1,49.25,117.1666667,840,4.9,,74.701,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov2,49.63333333,116.05,990,4.3,,78.881,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov3,50.06666667,117.3833333,915,5,,81.866,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov4,51.36666667,118.3,990,3.5,,89.925,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov5,50.56666667,118.8333333,850,5.1,,79.478,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov6,50.76666667,119.5333333,600,5.8,,72.91,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov7,50.81666667,119.75,1250,3.8,,77.687,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov8,52.51666667,122.4,760,4.7,,95.896,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov9,52.51666667,121.5166667,830,3.8,,89.925,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov10,52.78333333,122.2333333,760,4,,93.507,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov11,53.78333333,122.6333333,975,2.9,,97.985,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov12,53.91666667,122.3666667,915,2.7,,83.955,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov13,54.1,122.35,685,3.4,,88.433,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov14,54.13333333,121.7833333,760,3.1,,86.642,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov15,54.5,128.5666667,70,6.5,,74.403,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov16,54.7,128.2666667,270,5.9,,75.299,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov17,55.13333333,127.7166667,350,5.5,,88.433,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov18,55.18333333,127.7833333,480,4.1,,93.209,N.A.,48.48333333,123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
-prov1,49.25,117.1666667,840,4.9,,107.836,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov2,49.63333333,116.05,990,4.3,,109.03,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov3,50.06666667,117.3833333,915,5,,106.94,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov4,51.36666667,118.3,990,3.5,,112.313,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov5,50.56666667,118.8333333,850,5.1,,109.03,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov6,50.76666667,119.5333333,600,5.8,,105.448,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov7,50.81666667,119.75,1250,3.8,,106.94,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov8,52.51666667,122.4,760,4.7,,112.91,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov9,52.51666667,121.5166667,830,3.8,,111.119,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov10,52.78333333,122.2333333,760,4,,115,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov11,53.78333333,122.6333333,975,2.9,,115,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov12,53.91666667,122.3666667,915,2.7,,114.104,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov13,54.1,122.35,685,3.4,,113.806,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov14,54.13333333,121.7833333,760,3.1,,112.91,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov15,54.5,128.5666667,70,6.5,,106.94,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov16,54.7,128.2666667,270,5.9,,109.03,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov17,55.13333333,127.7166667,350,5.5,,114.403,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov18,55.18333333,127.7833333,480,4.1,,116.791,N.A.,50.78333333,119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
-prov1,49.25,117.1666667,840,4.9,,113.209,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov2,49.63333333,116.05,990,4.3,,112.91,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov3,50.06666667,117.3833333,915,5,,113.507,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov4,51.36666667,118.3,990,3.5,,117.09,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov5,50.56666667,118.8333333,850,5.1,,115,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov6,50.76666667,119.5333333,600,5.8,,110.821,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov7,50.81666667,119.75,1250,3.8,,112.612,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov8,52.51666667,122.4,760,4.7,,115.597,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov9,52.51666667,121.5166667,830,3.8,,114.104,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov10,52.78333333,122.2333333,760,4,,121.269,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov11,53.78333333,122.6333333,975,2.9,,119.776,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov12,53.91666667,122.3666667,915,2.7,,117.985,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov13,54.1,122.35,685,3.4,,119.179,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov14,54.13333333,121.7833333,760,3.1,,120.075,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov15,54.5,128.5666667,70,6.5,,111.418,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov16,54.7,128.2666667,270,5.9,,115.896,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov17,55.13333333,127.7166667,350,5.5,,118.881,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
-prov18,55.18333333,127.7833333,480,4.1,,123.955,N.A.,53.75,122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov1,49.25,-117.1666667,840,4.9,,71.5,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov2,49.63333333,-116.05,990,4.3,,73.786,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov3,50.06666667,-117.3833333,915,5,,74.071,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov4,51.36666667,-118.3,990,3.5,,78.357,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov5,50.56666667,-118.8333333,850,5.1,,81.5,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov6,50.76666667,-119.5333333,600,5.8,,74.071,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov7,50.81666667,-119.75,1250,3.8,,76.929,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov8,52.51666667,-122.4,760,4.7,,80.643,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov9,52.51666667,-121.5166667,830,3.8,,77.786,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov10,52.78333333,-122.2333333,760,4,,84.071,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov11,53.78333333,-122.6333333,975,2.9,,90.357,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov12,53.91666667,-122.3666667,915,2.7,,88.071,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov13,54.1,-122.35,685,3.4,,81.5,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov14,54.13333333,-121.7833333,760,3.1,,79.786,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov15,54.5,-128.5666667,70,6.5,,66.929,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov16,54.7,-128.2666667,270,5.9,,71.786,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov17,55.13333333,-127.7166667,350,5.5,,85.786,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov18,55.18333333,-127.7833333,480,4.1,,92.357,N.A.,48.48333333,-123.4,20,1998,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov1,49.25,-117.1666667,840,4.9,,99.5,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov2,49.63333333,-116.05,990,4.3,,104.071,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov3,50.06666667,-117.3833333,915,5,,96.929,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov4,51.36666667,-118.3,990,3.5,,108.071,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov5,50.56666667,-118.8333333,850,5.1,,101.786,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov6,50.76666667,-119.5333333,600,5.8,,94.357,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov7,50.81666667,-119.75,1250,3.8,,97.214,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov8,52.51666667,-122.4,760,4.7,,111.214,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov9,52.51666667,-121.5166667,830,3.8,,105.214,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov10,52.78333333,-122.2333333,760,4,,112.071,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov11,53.78333333,-122.6333333,975,2.9,,108.643,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov12,53.91666667,-122.3666667,915,2.7,,111.214,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov13,54.1,-122.35,685,3.4,,110.357,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov14,54.13333333,-121.7833333,760,3.1,,107.214,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov15,54.5,-128.5666667,70,6.5,,96.929,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov16,54.7,-128.2666667,270,5.9,,101.786,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov17,55.13333333,-127.7166667,350,5.5,,109.786,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov18,55.18333333,-127.7833333,480,4.1,,110.929,N.A.,50.78333333,-119.4,560,1998,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov1,49.25,-117.1666667,840,4.9,,110.726,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov2,49.63333333,-116.05,990,4.3,,111.011,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov3,50.06666667,-117.3833333,915,5,,108.447,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov4,51.36666667,-118.3,990,3.5,,114.715,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov5,50.56666667,-118.8333333,850,5.1,,110.726,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov6,50.76666667,-119.5333333,600,5.8,,106.453,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov7,50.81666667,-119.75,1250,3.8,,106.168,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov8,52.51666667,-122.4,760,4.7,,114.43,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov9,52.51666667,-121.5166667,830,3.8,,111.866,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov10,52.78333333,-122.2333333,760,4,,115.285,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov11,53.78333333,-122.6333333,975,2.9,,115.855,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov12,53.91666667,-122.3666667,915,2.7,,114.715,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov13,54.1,-122.35,685,3.4,,116.994,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov14,54.13333333,-121.7833333,760,3.1,,116.425,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov15,54.5,-128.5666667,70,6.5,,109.872,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov16,54.7,-128.2666667,270,5.9,,111.866,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov17,55.13333333,-127.7166667,350,5.5,,116.709,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov18,55.18333333,-127.7833333,480,4.1,,117.849,N.A.,53.75,-122.7166667,630,1998,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov1,49.25,-117.1666667,840,4.9,,74.701,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov2,49.63333333,-116.05,990,4.3,,78.881,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov3,50.06666667,-117.3833333,915,5,,81.866,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov4,51.36666667,-118.3,990,3.5,,89.925,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov5,50.56666667,-118.8333333,850,5.1,,79.478,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov6,50.76666667,-119.5333333,600,5.8,,72.91,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov7,50.81666667,-119.75,1250,3.8,,77.687,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov8,52.51666667,-122.4,760,4.7,,95.896,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov9,52.51666667,-121.5166667,830,3.8,,89.925,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov10,52.78333333,-122.2333333,760,4,,93.507,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov11,53.78333333,-122.6333333,975,2.9,,97.985,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov12,53.91666667,-122.3666667,915,2.7,,83.955,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov13,54.1,-122.35,685,3.4,,88.433,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov14,54.13333333,-121.7833333,760,3.1,,86.642,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov15,54.5,-128.5666667,70,6.5,,74.403,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov16,54.7,-128.2666667,270,5.9,,75.299,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov17,55.13333333,-127.7166667,350,5.5,,88.433,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov18,55.18333333,-127.7833333,480,4.1,,93.209,N.A.,48.48333333,-123.4,20,1999,10.2,,North America,North America,same,Betula papyrifera,angiosperm,R,NA BETUPA Hawkins & Dhar 2012
+prov1,49.25,-117.1666667,840,4.9,,107.836,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov2,49.63333333,-116.05,990,4.3,,109.03,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov3,50.06666667,-117.3833333,915,5,,106.94,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov4,51.36666667,-118.3,990,3.5,,112.313,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov5,50.56666667,-118.8333333,850,5.1,,109.03,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov6,50.76666667,-119.5333333,600,5.8,,105.448,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov7,50.81666667,-119.75,1250,3.8,,106.94,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov8,52.51666667,-122.4,760,4.7,,112.91,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov9,52.51666667,-121.5166667,830,3.8,,111.119,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov10,52.78333333,-122.2333333,760,4,,115,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov11,53.78333333,-122.6333333,975,2.9,,115,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov12,53.91666667,-122.3666667,915,2.7,,114.104,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov13,54.1,-122.35,685,3.4,,113.806,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov14,54.13333333,-121.7833333,760,3.1,,112.91,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov15,54.5,-128.5666667,70,6.5,,106.94,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov16,54.7,-128.2666667,270,5.9,,109.03,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov17,55.13333333,-127.7166667,350,5.5,,114.403,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov18,55.18333333,-127.7833333,480,4.1,,116.791,N.A.,50.78333333,-119.4,560,1999,6.2,,North America,North America,same,Betula papyrifera,angiosperm,S,NA BETUPA Hawkins & Dhar 2012
+prov1,49.25,-117.1666667,840,4.9,,113.209,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov2,49.63333333,-116.05,990,4.3,,112.91,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov3,50.06666667,-117.3833333,915,5,,113.507,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov4,51.36666667,-118.3,990,3.5,,117.09,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov5,50.56666667,-118.8333333,850,5.1,,115,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov6,50.76666667,-119.5333333,600,5.8,,110.821,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov7,50.81666667,-119.75,1250,3.8,,112.612,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov8,52.51666667,-122.4,760,4.7,,115.597,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov9,52.51666667,-121.5166667,830,3.8,,114.104,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov10,52.78333333,-122.2333333,760,4,,121.269,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov11,53.78333333,-122.6333333,975,2.9,,119.776,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov12,53.91666667,-122.3666667,915,2.7,,117.985,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov13,54.1,-122.35,685,3.4,,119.179,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov14,54.13333333,-121.7833333,760,3.1,,120.075,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov15,54.5,-128.5666667,70,6.5,,111.418,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov16,54.7,-128.2666667,270,5.9,,115.896,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov17,55.13333333,-127.7166667,350,5.5,,118.881,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012
+prov18,55.18333333,-127.7833333,480,4.1,,123.955,N.A.,53.75,-122.7166667,630,1999,4.2,,North America,North America,same,Betula papyrifera,angiosperm,T,NA BETUPA Hawkins & Dhar 2012

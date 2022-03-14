@@ -58,7 +58,7 @@ for (rownum in c(1:nrow(d))){
 #  dailytempadd$year<-as.numeric(format(dailytempadd$date, "%Y"))
   dailytempadd$month = as.numeric(format(dailytempadd$date, "%m"))
   dailytempadd <- dplyr::rename(dailytempadd, doy = yday)
-  dailytempadd$identifier <- rep(d$identifier_prov[rownum], times = 3650)# AZ: 3650 instead of 3653 becuz Daymet omits Leap day
+  dailytempadd$identifier <- rep(d$prov_identifier[rownum], times = 3650)# AZ: 3650 instead of 3653 becuz Daymet omits Leap day
   # EMW -- Here you'll need to rbind the old and new data each time
   dailytemp <- rbind(dailytemp, dailytempadd)
 }

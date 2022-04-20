@@ -6,11 +6,14 @@ library(Rcpp)
 library(rstanarm)
 library(bayesplot)
 
-
+d <- read.csv("input/percentage_overlap_doy_difference_earth_calculated.csv", header = TRUE)
+d$spring_event_difference <- as.numeric(d$spring_event_difference)
 #get rid of NAs
-d <- read.csv("input/data_plot_Nov13_AllStudiesToDate.csv", header = TRUE)
 d_fall <- subset(d, d$fall_event != "N.A.")
 d_fall$fall_event <- as.numeric(d_fall$fall_event)
+
+# d <- read.csv("input/data_plot_Nov13_AllStudiesToDate.csv", header = TRUE)
+
 
 #1 ----
 fit_fall_1_lat <- stan_glmer(fall_event~lat_prov + (1|species)+ (1|garden_identifier), data = d_fall)
@@ -78,3 +81,33 @@ mcmc_areas(posterior,
            prob = 0.8)
 
 
+
+# histograms
+
+# lat ----
+posterior <- as.matrix(fit_fall_1_lat)
+
+mcmc_areas(posterior,
+           pars = c("lat_prov"),
+           prob = 0.8)
+
+
+posterior <- as.matrix(fit_fall_4_lat)
+
+mcmc_areas(posterior,
+           pars = c("lat_prov"),
+           prob = 0.8)
+
+# MAT ----
+posterior <- as.matrix(fit_fall_1_mat)
+
+mcmc_areas(posterior,
+           pars = c("MAT_prov"),
+           prob = 0.8)
+
+
+posterior <- as.matrix(fit_fall_4_mat)
+
+mcmc_areas(posterior,
+           pars = c("MAT_prov"),
+           prob = 0.8)

@@ -1,0 +1,75 @@
+prov_identifier,lat_prov,long_prov,elev_prov,MAT_prov,MSP100_prov,spring_event,fall_event,lat_garden,long_garden,elev_garden,year,MAT_garden,MSP100_garden,prov_continent,garden_continent,prov_garden_continent,species,species_type,garden_identifier,label
+prov1,49.58333333,18.91666667,700,5.7,,132,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov2,49.58333333,18.91666667,760,5.7,,123,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov3,49.58333333,18.91666667,740,5.7,,136,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov4,49.58333333,18.91666667,700,5.7,,126,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov5,49.58333333,18.91666667,670,5.7,,133,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov6,49.58333333,18.91666667,800,5.7,,134,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov7,49.58333333,18.91666667,560,5.7,,134,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov8,49.58333333,18.91666667,540,5.7,,131,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov9,49.58333333,18.91666667,630,5.7,,136,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov10,49.58333333,18.91666667,580,5.7,,136,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov11,49.58333333,18.91666667,660,5.7,,131,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov12,49.58333333,18.91666667,720,5.7,,133,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov13,49.58333333,18.91666667,760,5.7,,129,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov14,49.58333333,18.91666667,630,5.7,,131,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov15,49.58333333,18.91666667,630,5.7,,130,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov16,49.58333333,18.91666667,630,5.7,,128,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov17,49.58333333,18.91666667,595,5.7,,129,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov18,49.58333333,18.91666667,660,5.7,,133,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov19,49.58333333,18.91666667,650,5.7,,135,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov20,49.58333333,18.91666667,650,5.7,,120,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov21,49.58333333,18.91666667,640,5.7,,127,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov22,49.58333333,18.91666667,640,5.7,,134,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov23,49.58333333,18.91666667,750,5.7,,124,N.A.,52.25,17.06666667,70,2000,8.633333333,,Europe,Europe,same,Picea abies,gymnosperm,W,ALT EG PSEMEN Chmura 2005
+prov1,43.1056,0.4283,1551,6.16,,96.857,N.A.,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Abies alba,gymnosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov2,43.1056,0.4283,1604,6.56,,95.804,N.A.,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Abies alba,gymnosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov3,43.1056,0.4283,1190,6.7,,95.453,N.A.,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Abies alba,gymnosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov4,43.1056,0.4283,1186,7.44,,94.664,N.A.,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Abies alba,gymnosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov5,43.1056,0.4283,840,10.31,,96.155,N.A.,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Abies alba,gymnosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov6,43.1056,0.4283,824,10.37,,95.015,N.A.,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Abies alba,gymnosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov7,43.1056,0.4283,1190,6.7,,136.734,N.A.,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Ilex aquifolium,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov8,43.1056,0.4283,1186,7.44,,126.633,N.A.,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Ilex aquifolium,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov9,43.1056,0.4283,815,9.73,,125.421,N.A.,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Ilex aquifolium,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov10,43.1056,0.4283,824,10.37,,136.33,N.A.,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Ilex aquifolium,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov11,43.1056,0.4283,148,11.58,,121.785,N.A.,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Ilex aquifolium,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov12,43.1056,0.4283,422,12.43,,127.037,N.A.,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Ilex aquifolium,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov13,43.1056,0.4283,427,12.48,,124.613,N.A.,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Ilex aquifolium,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov14,43.1056,0.4283,131,13.04,,130.269,N.A.,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Ilex aquifolium,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov15,43.1056,0.4283,1630,7.68,,110.451,309.159,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Quercus petraea,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov16,43.1056,0.4283,1349,8.55,,108.16,304.646,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Quercus petraea,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov17,43.1056,0.4283,841,9.04,,104.618,304.115,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Quercus petraea,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov18,43.1056,0.4283,1194,9.04,,107.326,301.195,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Quercus petraea,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov19,43.1056,0.4283,1235,9.73,,110.243,305.177,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Quercus petraea,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov20,43.1056,0.4283,1082,9.82,,108.993,310.221,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Quercus petraea,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov21,43.1056,0.4283,803,10.96,,108.368,304.646,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Quercus petraea,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov22,43.1056,0.4283,627,11.83,,107.743,299.867,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Quercus petraea,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov23,43.1056,0.4283,422,12.27,,106.285,301.195,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Quercus petraea,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov24,43.1056,0.4283,427,12.33,,105.035,304.912,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Quercus petraea,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov25,43.1056,0.4283,387,12.45,,103.16,300.398,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Quercus petraea,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov26,43.1056,0.4283,131,12.89,,102.951,299.602,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Quercus petraea,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov27,43.1056,0.4283,1533,6.7,,118.523,296.124,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Faxinus excelsior,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov28,43.1056,0.4283,1186,7.44,,120.549,307.287,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Faxinus excelsior,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov29,43.1056,0.4283,1250,8.12,,118.776,302.636,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Faxinus excelsior,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov30,43.1056,0.4283,885,9.86,,113.966,297.984,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Faxinus excelsior,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov31,43.1056,0.4283,824,10.37,,115.485,297.519,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Faxinus excelsior,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov32,43.1056,0.4283,481,10.72,,110.675,300.775,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Faxinus excelsior,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov33,43.1056,0.4283,450,11.43,,111.435,307.287,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Faxinus excelsior,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov34,43.1056,0.4283,148,11.58,,112.194,301.705,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Faxinus excelsior,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov35,43.1056,0.4283,130,12.79,,108.65,301.24,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Faxinus excelsior,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov36,43.1056,0.4283,1533,6.7,,111.351,309.281,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Acer pseudoplatanus,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov37,43.1056,0.4283,1186,7.44,,110.642,307.32,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Acer pseudoplatanus,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov38,43.1056,0.4283,1250,8.12,,106.744,308.105,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Acer pseudoplatanus,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov39,43.1056,0.4283,885,9.86,,110.819,309.281,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Acer pseudoplatanus,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov40,43.1056,0.4283,824,10.37,,111.174,307.32,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Acer pseudoplatanus,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov41,43.1056,0.4283,481,10.72,,107.63,303.399,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Acer pseudoplatanus,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov42,43.1056,0.4283,450,11.43,,109.491,308.105,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Acer pseudoplatanus,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov43,43.1056,0.4283,1551,6.05,,114.281,283.986,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Fagus sylvatica,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov44,43.1056,0.4283,1604,6.46,,115.604,289.203,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Fagus sylvatica,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov45,43.1056,0.4283,1190,6.59,,114.23,280.072,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Fagus sylvatica,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov46,43.1056,0.4283,773,10.24,,116.113,292.681,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Fagus sylvatica,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov47,43.1056,0.4283,824,10.25,,119.167,287.464,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Fagus sylvatica,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov48,43.1056,0.4283,488,11.37,,117.691,283.551,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Fagus sylvatica,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov49,43.1056,0.4283,148,11.52,,118.2,289.638,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Fagus sylvatica,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov50,43.1056,0.4283,422,12.27,,117.691,290.942,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Fagus sylvatica,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009
+prov51,43.1056,0.4283,131,12.89,,115.604,304.42,44.56666667,0.266666667,23,2007,12.875,,Europe,Europe,same,Fagus sylvatica,angiosperm,X,ALT EX XXXXXX Vitasse et al 2009

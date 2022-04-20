@@ -135,6 +135,17 @@ garden <- read.csv("output/dailyclim/dailytemp_garden_NA BETUPA Hawkins & Dhar 2
 prov <- na.omit(prov)
 garden<- na.omit(garden)
 
+label <- "EA QUEPET Alberto et al 2011 Garden U"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_EA QUEPET Alberto et al 2011_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_EA QUEPET Alberto et al 2011 Garden U_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "EA QUEPET Alberto et al 2011 Garden V"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_EA QUEPET Alberto et al 2011_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_EA QUEPET Alberto et al 2011 Garden V_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
 
 # combine all distribution overlap files
 setwd("C:/Users/alina/Documents/git/localadaptclim/Output/plot_distribution/distribution_overlap_percentage")
@@ -202,7 +213,7 @@ distribution_overlap$identifier <- names(experiment) # reintroduce the provenanc
 distribution_overlap$label <- label
 
 #save
-name<-paste("Output/plot_distribution/distribution_overlap_percentage",label, "_dailyclim_distribution_overlap.csv",sep="")
+name<-paste("Output/plot_distribution/distribution_overlap_percentage/",label, "_dailyclim_distribution_overlap.csv",sep="")
 write.csv(distribution_overlap,name, row.names = FALSE)
 
 

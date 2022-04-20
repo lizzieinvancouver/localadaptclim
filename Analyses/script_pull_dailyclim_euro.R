@@ -29,10 +29,10 @@ endday <- strptime(paste(endyr, "12-31", sep="-"),"%Y-%m-%d", tz = "GMT")
 # d <- read.csv("input/experiment_euro_sites_Jan06.csv", header = TRUE)
 
 
-label <- "NG PSEUME Lavadinovic etal 2013"
+label <- "ALT EA QUEPET Alberto et al 2011 Garden V"
 # garden 	
-la <- 43.783333	
-lo <- 18.966667
+la <- 44.56666667	
+lo <- 0.266666667
 
 
 # read climate file
@@ -63,11 +63,11 @@ dailytemp_euro$date<-strptime(dailytemp_euro$Date,"%Y-%m-%d", tz="GMT")
 dailytemp_euro$year<-as.numeric(format(dailytemp_euro$date, "%Y"))
 dailytemp_euro$month = as.numeric(format(dailytemp_euro$date, "%m"))
 dailytemp_euro$label <- label
-dailytemp_euro$identifier <- "garden1"
+dailytemp_euro$identifier <- "V"
 dailytemp_euro$status <- "garden"
 # need to convert everything to doy
 dailytemp_euro$doy <- yday(dailytemp_euro$date)
-name<-paste("output/dailyclim/dailytemp","_garden_",unique(dailytemp_euro$label),"_",styr,"_",endyr,".csv",sep="")
+name<-paste("output/dailyclim/dailytemp","_garden_",label,"_",styr,"_",endyr,".csv",sep="")
 if(length(unique(dailytemp_euro$Temp))==1){next}
 write.csv(dailytemp_euro,name, row.names = FALSE)
 

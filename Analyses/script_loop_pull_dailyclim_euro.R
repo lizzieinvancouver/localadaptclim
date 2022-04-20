@@ -30,7 +30,6 @@ if(endday<stday){endday=stday}
 
 # Import data ----
 d <- read.csv("input/experiment_euro_sites_Jan06.csv", header = TRUE)
-# use to experiment with the loop
 
 # read climate file
 euro20112020 <- nc_open( "C:/Users/alina/Documents/git/localadaptclim/Input/DailyClimRaw/Europe/tg_ens_mean_0.1deg_reg_2011-2020_v23.1e.nc")
@@ -83,14 +82,12 @@ dailytemp <- rbind(dailytemp, dailytempadd)
 
 
 dailytemp$label <- d$label 
+dailytemp$identifier <- rep(d$prov_identifier, each = 3653)
 dailytemp$status <- "provenance"
 # change column names
  dailytemp <- dplyr::rename(dailytemp, lat=Lat,long=Long,date = Date, 					
              year=Year, month=Month, 					
              temp = Temp)			
-
-# get rid of Date column (its a moot now)
-# test<- dplyr::select(test, -Date)
 
 
 # export

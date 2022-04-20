@@ -9,6 +9,7 @@ options(stringsAsFactors = FALSE)
 library(Rcpp)
 library(rstanarm)
 library(bayesplot)
+library(dplyr)
 
 
 # Set Working Directory ----
@@ -19,11 +20,42 @@ if(length(grep("Lizzie", getwd())>0)) {
 setwd("C:/Users/alina/Documents/git/localadaptclim")
 
 # Import data ----
-d <- read.csv("input/data_plot_Nov13_AllStudiesToDate.csv", header = TRUE)
+d <- read.csv("input/data_plot_Nov13_AllStudiesToDate.csv", header = TRUE)  #768
 d$fall_event <- as.numeric(d$fall_event)
 
-# length(unique(d$lat_garden)) #20
-# length(unique(d$garden_identifier)) #20
+### Attention: April 16
+# need to get rid of studies happening on different continents
+d <- subset(d, d$prov_garden_continent != "different")	#680														
+
+length(unique(d$species))  #15 different species, 7 angiosperms and 8 gymnosperms
+length(unique(d$label))    #18 studies
+length(unique(d$garden_identifier))  #19 gardens -> get rid of diffo continent studies
+
+# count European provenances
+test <- subset(d, d$garden_continent != "North America") #151	
+# paste tgt and then unique and length
+test$uniqueProv<- with(test, paste(prov_identifier, garden_identifier, sep = " "))
+length(unique(test$uniqueProv)) #111 -> minus 1 becuz Alberto has two gardens double counted
+length(unique(test$garden_identifier)) # 6 gardens
+
+# 101 European provenances
+unique(test$species) #4
+# "Fraxinus excelsior" "Fagus sylvatica"    "Picea abies"        "Quercus petraea" 
+
+# count North American provenances
+test2 <- subset(d, d$garden_continent != "Europe") #529	
+# paste tgt and then unique and length
+test2$uniqueProv<- with(test2, paste(prov_identifier, label, sep = " "))
+length(unique(test2$uniqueProv)) #420 -> minus 36 becuz H & D has 3 gardens double counted
+# 384 North American provenances
+length(unique(test2$garden_identifier)) #13 gardens
+
+unique(test2$species) #11
+# "Alnus rubra"           "Picea engelmannii"     "Picea sitchensis"      "Pinus albicaulis"     
+# [5] "Populus trichocarpa"   "Tsuga heterophylla"    "Populus balsamifera"   "Pseudotsuga menziesii"
+# [9] "Picea mariana"         "Pinus ponderosa"       "Betula papyrifera"
+
+# doy ----
 
 #1 ----
 fit1_lat <- stan_glmer(spring_event~lat_prov + (1|species)+ (1|garden_identifier), data = d)
@@ -105,3 +137,34 @@ fit3_mat <- stan_glmer(spring_event~(MAT_prov|species)+(1|garden_identifier), da
 #4 ----
 fit4_lat <- stan_glmer(spring_event~lat_prov + lat_garden + (1|species), data = d)
 fit4_mat <- stan_glmer(spring_event~MAT_prov + MAT_garden + (1|species), data = d)
+
+
+# histograms
+
+# lat ----
+posterior <- as.matrix(fit1_lat)
+
+mcmc_areas(posterior,
+           pars = c("lat_prov"),
+           prob = 0.8)
+
+
+posterior <- as.matrix(fit4_lat)
+
+mcmc_areas(posterior,
+           pars = c("lat_prov"),
+           prob = 0.8)
+
+# MAT ----
+posterior <- as.matrix(fit1_mat)
+
+mcmc_areas(posterior,
+           pars = c("MAT_prov"),
+           prob = 0.8)
+
+
+posterior <- as.matrix(fit4_mat)
+
+mcmc_areas(posterior,
+           pars = c("MAT_prov"),
+           prob = 0.8)

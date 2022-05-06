@@ -3,23 +3,24 @@
 # alinazengziyun@yahoo.com
 
 # Housekeeping ----
-rm(list=ls()) 
-options(stringsAsFactors = FALSE)
-
-library(Rcpp)
-library(rstanarm)
-library(dplyr)
-library(bayesplot)
-install.packages("geosphere")
-library(geosphere)
+# rm(list=ls()) 
+# options(stringsAsFactors = FALSE)
+# 
+# library(Rcpp)
+# library(rstanarm)
+# library(dplyr)
+# library(bayesplot)
+# install.packages("geosphere")
+# library(geosphere)
 
 
 # Import data ----
 d <- read.csv("input/data_plot_Nov13_AllStudiesToDate.csv", header = TRUE)
 d$fall_event <- as.numeric(d$fall_event)
-### Attention: April 16
+### Attentiopercentage_overlap_doy_difference_earth_calculatedn: April 16
 # need to get rid of studies happening on different continents
-d <- subset(d, d$prov_garden_continent != "different")	#680		
+d <- 
+  # subset(d, d$prov_garden_continent != "different")	#680		
 
 # d <- d[,1:21]
 percentage <- read.csv("Output/plot_distribution/distribution_overlap_percentage/all_studies_dailyclim_distribution_overlap.csv", header = TRUE)

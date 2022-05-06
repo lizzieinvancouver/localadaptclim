@@ -23,8 +23,9 @@ library(svglite)
 #import
 
 # earth distance
-d <- read.csv("input/percentage_overlap_doy_difference_earth_calculated.csv", header = TRUE)
+d <- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included.csv", header = TRUE)
 d$spring_event_difference <- as.numeric(d$spring_event_difference)
+d$fall_event_difference <- as.numeric(d$fall_event_difference)
 d <- rename(d, Species=species, "Provenance_continent" =prov_continent)
 
 
@@ -533,6 +534,62 @@ ggplot(d, aes(elev_prov, lat_prov, colour = garden_identifier, shape = Provenanc
 dev.off()
 ggsave(file="elev_latitudestudies~lat.svg", width=12, height=12)														# saving svg.
 
+
+
+
+
+# plot1 part ... dk what number ----
+png(filename="lat~fall_diffo.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+
+ggplot(d, aes(lat_prov, fall_event_difference, colour = garden_identifier, shape = Species)) +
+  geom_point(size = 3.5)+
+  scale_shape_manual(values = c(0,1,15,16,17,2,3,4,5,6,7,8,9,18,10))+
+  theme_classic()+
+  ylab("Difference of fall event day of year\n") +                             		
+  xlab("\n Provenance latitude (decimal degrees)")+
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))      +       # Legend text
+  guides(col=guide_legend("Garden ID")) + 
+  scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
+
+dev.off()
+ggsave(file="lat~fall_diffo.svg", width=12, height=12)		
+
+
+# plot1 part.. dk what number  ----
+png(filename="mat~fall_diffo.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+
+ggplot(d, aes(MAT_prov, fall_event_difference, colour = garden_identifier, shape = Species)) +
+  geom_point(size = 3.5)+
+  scale_shape_manual(values = c(0,1,15,16,17,2,3,4,5,6,7,8,9,18,10))+
+  theme_classic()+
+  ylab("Difference of fall event day of year\n") +                             		
+  xlab("\n Provenance mean annual temperature (\u00B0C)")+
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))      +       # Legend text
+  guides(col=guide_legend("Garden ID")) + 
+  scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
+
+dev.off()
+ggsave(file="mat~fall_diffo.svg", width=12, height=12)		
 
 
 

@@ -9,7 +9,6 @@
 # ospree/analyses/bb_dailyclimate/pull_daily_temp_for_forecasting.R
 
 # Housekeeping ----
-rm(list=ls()) 
 options(stringsAsFactors = FALSE)
 library(plyr)
 library(dplyr)

@@ -20,7 +20,7 @@ if(length(grep("Lizzie", getwd())>0)) {
 setwd("C:/Users/alina/Documents/git/localadaptclim")
 
 # Import data ----
-d <- read.csv("input/data_plot_Nov13_AllStudiesToDate.csv", header = TRUE)  #768
+d <- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included.csv", header = TRUE)  #768
 d$fall_event <- as.numeric(d$fall_event)
 
 ### Attention: April 16

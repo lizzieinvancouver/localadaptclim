@@ -11,7 +11,9 @@ library(Rcpp)
 library(rstanarm)
 library(bayesplot)
 library(dplyr)
-
+library(ggplot2)
+library(viridis)
+library(svglite)
 
 d <- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included.csv", header = TRUE)  #680
 d$fall_event <- as.numeric(d$fall_event)
@@ -71,7 +73,6 @@ plot(coef(fit5)$species["lat_prov"][,]~coef(fit4)$species["lat_prov"][,])
 # spring doy models
 fitA_spring_lat <- stan_glmer(spring_event~(lat_prov|species), data = d)
 fitA_spring_mat <- stan_glmer(spring_event~(MAT_prov|species), data = d)
-
 fitA_spring_overlap <- stan_glmer(spring_event~(percentage|species), data = d)
 fitA_spring_sd <- stan_glmer(spring_event~(sd|species), data = d)
 
@@ -94,9 +95,52 @@ fitA_fall_diffo_overlap <- stan_glmer(fall_event_difference~(percentage|species)
 fitA_fall_diffo_sd <- stan_glmer(fall_event_difference~(sd|species), data = d)
 
 
+# plotting for two predictors
+fitB_spring_percentage_sd <- stan_glmer(spring_event~((percentage*sd)|species), data = d)
+fitB_fall_percentage_sd <- stan_glmer(fall_event~((percentage*sd)|species), data = d)
+
+# saving fit
+# http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata
+saveRDS(fitA_spring_lat, file = "output/model_fit/fitA_spring_lat.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+saveRDS(fitA_spring_mat, file = "output/model_fit/fitA_spring_mat.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+saveRDS(fitA_spring_overlap, file = "output/model_fit/fitA_spring_overlap.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+saveRDS(fitA_spring_sd, file = "output/model_fit/fitA_spring_sd.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+saveRDS(fitA_fall_lat, file = "output/model_fit/fitA_fall_lat.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+saveRDS(fitA_fall_mat, file = "output/model_fit/fitA_fall_mat.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+saveRDS(fitA_fall_overlap, file = "output/model_fit/fitA_fall_overlap.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+saveRDS(fitA_fall_sd, file = "output/model_fit/fitA_fall_sd.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+
+saveRDS(fitB_spring_percentage_sd , file = "output/model_fit/fitB_spring_percentage_sd .RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+saveRDS(fitB_fall_percentage_sd , file = "output/model_fit/fitB_fall_percentage_sd .RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
 
 
-fitB <- stan_glmer(spring_event~((overlap*sd)|species), data = d)
+# or
+# save(fitA_fall_lat, file = "fitA_fall_lat.RData")
+# load("fitA_fall_lat.RData")
+
+
+# restore
+fitA_spring_lat <- readRDS("output/model_fit/fitA_spring_lat.RDS")
+fitA_spring_mat <- readRDS("output/model_fit/fitA_spring_mat.RDS")
+fitA_spring_overlap <- readRDS("output/model_fit/fitA_spring_overlap.RDS")
+fitA_spring_sd <- readRDS("output/model_fit/fitA_spring_sd.RDS")
+fitA_fall_lat <- readRDS("output/model_fit/fitA_fall_lat.RDS")
+fitA_fall_mat <- readRDS("output/model_fit/fitA_fall_mat.RDS")
+fitA_fall_overlap <- readRDS("output/model_fit/fitA_fall_overlap.RDS")
+fitA_fall_sd <- readRDS("output/model_fit/fitA_fall_sd.RDS")
+
+fitB_spring_percentage_sd<- readRDS("output/model_fit/fitB_spring_percentage_sd.RDS")
+fitB_fall_percentage_sd <- readRDS("output/model_fit/fitB_fall_percentage_sd.RDS")
 
 
 # extract slope and intercept

@@ -22,7 +22,8 @@ prov <- na.omit(prov)
 garden<- na.omit(garden)
 
 label <- "EA FAGUSY Petkova et al 2017"
-prov <- read.csv("output/dailyclim/dailytemp_provenance_EA FAGUSY Petkova et al 2017_2011_2020.csv", header = TRUE)
+
+prov <- read.csv("output/dailyclim/dailytemp_provenance_EA FAGUSY Petkova et al 2017_2011_2020.csv"  , header = TRUE)
 garden <- read.csv("output/dailyclim/dailytemp_garden_EA FAGUSY Petkova et al 2017_2011_2020.csv", header = TRUE)
 prov <- na.omit(prov)
 garden<- na.omit(garden)
@@ -129,9 +130,21 @@ garden <- read.csv("output/dailyclim/dailytemp_garden_NG PICEMA Guo et al 2021_2
 prov <- na.omit(prov)
 garden<- na.omit(garden)
 
-label <- "NA BETUPA Hawkins & Dhar 2012"
+label <- "NA BETUPA Hawkins & Dhar 2012 K"
 prov <- read.csv("output/dailyclim/dailytemp_provenance_NA BETUPA Hawkins & Dhar 2012_2011_2020.csv", header = TRUE)
-garden <- read.csv("output/dailyclim/dailytemp_garden_NA BETUPA Hawkins & Dhar 2012_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NA BETUPA Hawkins & Dhar K 2012_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "NA BETUPA Hawkins & Dhar 2012 L"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NA BETUPA Hawkins & Dhar 2012_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NA BETUPA Hawkins & Dhar L 2012_2011_2020.csv", header = TRUE)
+prov <- na.omit(prov)
+garden<- na.omit(garden)
+
+label <- "NA BETUPA Hawkins & Dhar 2012 M"
+prov <- read.csv("output/dailyclim/dailytemp_provenance_NA BETUPA Hawkins & Dhar 2012_2011_2020.csv", header = TRUE)
+garden <- read.csv("output/dailyclim/dailytemp_garden_NA BETUPA Hawkins & Dhar M 2012_2011_2020.csv", header = TRUE)
 prov <- na.omit(prov)
 garden<- na.omit(garden)
 
@@ -146,6 +159,8 @@ prov <- read.csv("output/dailyclim/dailytemp_provenance_EA QUEPET Alberto et al 
 garden <- read.csv("output/dailyclim/dailytemp_garden_EA QUEPET Alberto et al 2011 Garden V_2011_2020.csv", header = TRUE)
 prov <- na.omit(prov)
 garden<- na.omit(garden)
+
+
 
 # combine all distribution overlap files
 setwd("C:/Users/alina/Documents/git/localadaptclim/Output/plot_distribution/distribution_overlap_percentage")
@@ -166,8 +181,20 @@ for (data in list.files()){
 }
 View(dataset)
 
+
+# NEW METHOD
+# https://stackoverflow.com/questions/44329362/merge-multiple-csv-files-into-one
+# Load library
+library(data.table)
+
+# Get a List of all files in directory named with a key word, say all `.csv` files
+filenames <- list.files(getwd(), pattern="*.csv", full.names=TRUE)
+
+# read and row bind all data sets
+dataset <- rbindlist(lapply(filenames,fread))
+
 # ascend
-dataset <- dataset[with(dataset, order(percentage)), ]
+# dataset <- dataset[with(dataset, order(percentage)), ]
 
 # export
 # name<-paste("Output/plot_distribution/distribution_overlap_percentage","all_studies_dailyclim_distribution_overlap.csv",sep="")

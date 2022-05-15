@@ -37,7 +37,7 @@ fit6 <- stan_glmer(spring_event~(lat_prov|species) + (1|garden_identifier), data
 summary(fit1)
 # 'Model info' is just that, it tells up what model we fit and how many observations, groups etc... You'll see here that it uses 'stan_lmer.' You should always give this a quick glance to make sure it sounds right to you.   
 # Below are the estimates, these are what we need to plot, understand and report to our audiences (people at talks, eventually the readers and reviewers of papers)
-# (Intercept) is just that -- so for this model the intercept is 89.5 day of year.
+# (Intercept) is just that -- so for this model the intercept is 114.2 day of year.
 # lat_prov  is the effect of latitude of provenance (in degrees of latitude). So for every 1 degree north the day of year gets 0.7 days later ... but since we have an effect of continent this estimate is for EUROPE. This is a small effect but the uncertainty interavals for 2.5 to 97.5 are 0.2 to 1.1, meaning there is likely a small effect
 # prov_continentNorth America  gives us the effect for NA, it says for every 1 degree north the day of year gets 16.8 days later
 # Next, it gives us the species offsets, so Alnus rubra has an intercept of (Intercept) + -28.3 roughly and so on ... rstanarm will actually calculate these for you. Check out ...

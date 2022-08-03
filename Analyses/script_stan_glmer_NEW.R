@@ -379,10 +379,10 @@ ggplot(d, aes(lat_prov, spring_event, colour = garden_identifier, shape = Specie
   theme_classic()+
   ylab("Spring event day of year\n") +                             		
   xlab("\n Provenance latitude (decimal degrees)")+
-  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
-  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
-  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
-  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 40))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 40)) +           # y-axis title
   theme(legend.title = element_text(size = 15))       +     # Legend title
   theme(legend.text = element_text(size = 10))      +       # Legend text
   theme(plot.title = element_text(size = 21))  +            # plot title
@@ -390,6 +390,7 @@ ggplot(d, aes(lat_prov, spring_event, colour = garden_identifier, shape = Specie
   labs(title = "Spring Event Day of Year (DOY) ~ Provenance Latitude")+				
  scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
 dev.off()
+
 ggsave(file="lat~spring_lines_added_fitA.svg", width=12, height=12)														# saving svg.
 
 
@@ -415,10 +416,10 @@ ggplot(d, aes(MAT_prov, spring_event, colour = garden_identifier, shape = Specie
   theme_classic()+
   ylab("Spring event day of year\n") +                             		
   xlab("\n Provenance MAT (\u00B0C)")+
-  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
-  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
-  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
-  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 40))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 40)) +           # y-axis title
   theme(legend.title = element_text(size = 15))       +     # Legend title
   theme(legend.text = element_text(size = 10))      +       # Legend text
   theme(plot.title = element_text(size = 21))  +            # plot title
@@ -449,10 +450,10 @@ ggplot(d, aes(percentage, spring_event, colour = garden_identifier, shape = Spec
   theme_classic()+
   ylab("Spring event day of year\n") +                             		
   xlab("\n Provenance climate overlap percentage")+
-  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
-  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
-  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
-  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 40))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 40)) +           # y-axis title
   theme(legend.title = element_text(size = 15))       +     # Legend title
   theme(legend.text = element_text(size = 10))      +       # Legend text
   theme(plot.title = element_text(size = 21))  +            # plot title
@@ -657,10 +658,10 @@ ggplot(d, aes(lat_prov, fall_event, colour = garden_identifier, shape = Species)
   theme_classic()+
   ylab("Fall event day of year\n") +                             		
   xlab("\n Provenance latitude (decimal degrees)")+
-  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
-  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
-  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
-  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 40))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 40)) +           # y-axis title
   theme(legend.title = element_text(size = 15))       +     # Legend title
   theme(legend.text = element_text(size = 10))      +       # Legend text
   theme(plot.title = element_text(size = 21))  +            # plot title
@@ -693,10 +694,10 @@ ggplot(d, aes(MAT_prov, fall_event, colour = garden_identifier, shape = Species)
   theme_classic()+
   ylab("Fall event day of year\n") +                             		
   xlab("\n Provenance MAT (\u00B0C)")+
-  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
-  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
-  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
-  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 40))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 40)) +           # y-axis title
   theme(legend.title = element_text(size = 15))       +     # Legend title
   theme(legend.text = element_text(size = 10))      +       # Legend text
   theme(plot.title = element_text(size = 21))  +            # plot title
@@ -727,10 +728,10 @@ ggplot(d, aes(percentage, fall_event, colour = garden_identifier, shape = Specie
   theme_classic()+
   ylab("Fall event day of year\n") +                             		
   xlab("\n Provenance climate overlap percentage")+
-  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
-  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
-  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
-  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 40))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 40)) +           # y-axis title
   theme(legend.title = element_text(size = 15))       +     # Legend title
   theme(legend.text = element_text(size = 10))      +       # Legend text
   theme(plot.title = element_text(size = 21))  +            # plot title

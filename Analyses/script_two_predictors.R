@@ -30,6 +30,143 @@ fitB_fall_percentage_sd <- readRDS("output/model_fit/fitB_fall_percentage_sd.RDS
 fitB_spring_percentage_sd_intercept_df <- as.data.frame(coef(fitB_spring_percentage_sd)$species)
 
 
+#rename columns
+fitB_spring_percentage_sd_intercept_df  <- rename(fitB_spring_percentage_sd_intercept_df, 
+                                                  fitB_spring_percentage_sd_slope="percentage:sd", 
+                                                  fitB_spring_percentage_slope=percentage,
+                                                  fitB_spring_sd_slope=sd,
+                                                  fitB_spring_percentage_sd_intercept="(Intercept)")
+fitB_spring_percentage_sd_intercept_df$species <- row.names(fitB_spring_percentage_sd_intercept_df)
+
+# get rid of columns
+# fitB_spring_percentage_sd_intercept_df <- dplyr::select(fitB_spring_percentage_sd_intercept_df,
+                                    #                    -c(percentage,sd))
+
+# try joining
+d <- full_join(d,fitB_spring_percentage_sd_intercept_df)
+
+
+# adding lines
+
+# d <- rename(d, species=Species)
+d <- rename(d, Species=species)
+d <- rename(d, Species=species, "Provenance_continent" =prov_continent)
+# color by garden, symbol by species
+
+# spring_two_predictors_percentage:sd
+png(filename="spring_two_predictors_percentage_sd_lines_added_fitB.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+
+ggplot(d, aes(lat_prov, spring_event, colour = garden_identifier, shape = Species)) +
+  geom_point(size = 3.5)+
+  geom_abline(data=d,aes(slope= fitB_spring_percentage_sd_slope,intercept=fitB_spring_percentage_sd_intercept,linetype = Species, color = garden_identifier))+
+  scale_shape_manual(values = c(0,1,15,16,17,2,3,4,5,6,7,8,9,18,10))+
+  scale_linetype_manual(values = c("Alnus rubra" = "solid", "Betula papyrifera" ="dashed", "Fagus sylvatica" = "dotted", 
+                                   "Fraxinus excelsior" = "dotdash", "Picea abies" = "longdash", "Picea engelmannii"="twodash", 
+                                   "Picea mariana"="1F", "Picea sitchensis"="F1", "Pinus albicaulis" = "4C88C488", 
+                                   "Populus balsamifera" = "solid", "Pinus ponderosa" = "12345678","Populus trichocarpa" = "dashed",
+                                   "Pseudotsuga menziesii" = "dotdash", "Quercus petraea"="dashed", "Tsuga heterophylla" ="4C88C488"))+
+  theme_classic()+
+  ylab("Spring event day of year\n") +                             		
+  xlab("\n Provenance latitude (decimal degrees)")+
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))      +       # Legend text
+  theme(plot.title = element_text(size = 15))  +            # plot title
+  guides(col=guide_legend("Garden ID")) + 
+  labs(title = "Spring Event Day of Year (DOY) ~ Climate overlap percentage:sd")+				
+  scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
+dev.off()
+
+
+# spring_two_predictors_percentage
+png(filename="spring_two_predictors_percentage_lines_added_fitB.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+
+ggplot(d, aes(percentage, spring_event, colour = garden_identifier, shape = Species)) +
+  geom_point(size = 3.5)+
+  geom_abline(data=d,aes(slope= fitB_spring_percentage_slope,intercept=fitB_spring_percentage_sd_intercept,linetype = Species, color = garden_identifier))+
+  scale_shape_manual(values = c(0,1,15,16,17,2,3,4,5,6,7,8,9,18,10))+
+  scale_linetype_manual(values = c("Alnus rubra" = "solid", "Betula papyrifera" ="dashed", "Fagus sylvatica" = "dotted", 
+                                   "Fraxinus excelsior" = "dotdash", "Picea abies" = "longdash", "Picea engelmannii"="twodash", 
+                                   "Picea mariana"="1F", "Picea sitchensis"="F1", "Pinus albicaulis" = "4C88C488", 
+                                   "Populus balsamifera" = "solid", "Pinus ponderosa" = "12345678","Populus trichocarpa" = "dashed",
+                                   "Pseudotsuga menziesii" = "dotdash", "Quercus petraea"="dashed", "Tsuga heterophylla" ="4C88C488"))+
+  theme_classic()+
+  ylab("Spring event day of year\n") +                             		
+  xlab("\n Climate overlap percentage")+
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))      +       # Legend text
+  theme(plot.title = element_text(size = 15))  +            # plot title
+  guides(col=guide_legend("Garden ID")) + 
+  labs(title = "Spring Event Day of Year (DOY) ~ Climate overlap percentage")+				
+  scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
+dev.off()
+
+# spring_two_predictors_sd
+png(filename="spring_two_predictors_sd_lines_added_fitB.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+
+ggplot(d, aes(sd, spring_event, colour = garden_identifier, shape = Species)) +
+  geom_point(size = 3.5)+
+  geom_abline(data=d,aes(slope= fitB_spring_sd_slope,intercept=fitB_spring_percentage_sd_intercept,linetype = Species, color = garden_identifier))+
+  scale_shape_manual(values = c(0,1,15,16,17,2,3,4,5,6,7,8,9,18,10))+
+  scale_linetype_manual(values = c("Alnus rubra" = "solid", "Betula papyrifera" ="dashed", "Fagus sylvatica" = "dotted", 
+                                   "Fraxinus excelsior" = "dotdash", "Picea abies" = "longdash", "Picea engelmannii"="twodash", 
+                                   "Picea mariana"="1F", "Picea sitchensis"="F1", "Pinus albicaulis" = "4C88C488", 
+                                   "Populus balsamifera" = "solid", "Pinus ponderosa" = "12345678","Populus trichocarpa" = "dashed",
+                                   "Pseudotsuga menziesii" = "dotdash", "Quercus petraea"="dashed", "Tsuga heterophylla" ="4C88C488"))+
+  theme_classic()+
+  ylab("Spring event day of year\n") +                             		
+  xlab("\n Climate overlap standard deviation")+
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))      +       # Legend text
+  theme(plot.title = element_text(size = 15))  +            # plot title
+  guides(col=guide_legend("Garden ID")) + 
+  labs(title = "Spring Event Day of Year (DOY) ~ Climate overlap sd")+				
+  scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
+dev.off()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Steps for plotting your own interactions:
 # First, there is no easy way to know if you should subset percentage or sd to high 
 # and low values. I generally just try both. I will call these just x1 and x2 below.

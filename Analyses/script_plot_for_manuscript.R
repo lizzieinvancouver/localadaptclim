@@ -606,3 +606,164 @@ ggsave(file="mat~fall_diffo.svg", width=12, height=12)
 # "Picea engelmannii" "Picea mariana" "Picea sitchensis" "Pinus albicaulis" "Pinus ponderosa"                       
 # "Populus balsamifera" "Populus trichocarpa"  "Pseudotsuga menziesii"              
 # "Quercus petraea"  "Tsuga heterophylla"
+
+
+# updated May 18, 2022 night 
+
+d <- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included.csv", header = TRUE)  #680
+d$fall_event <- as.numeric(d$fall_event)
+d$spring_event_difference <- as.numeric(d$spring_event_difference)
+d$fall_event_difference <- as.numeric(d$fall_event_difference)
+d <- rename(d, Species=species, "Provenance_continent" =prov_continent)
+
+
+png(filename="percentage~earth.distance.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+
+ggplot(d, aes(earth_distance_from_garden, percentage,colour = Provenance_continent, shape = Species)) +
+  geom_point(size = 3.5)+
+  scale_shape_manual(values = c(0,1,15,16,17,2,3,4,5,6,7,8,9,18,10))+
+  theme_classic()+
+  ylab("Climate overlap percentage\n") +                             		
+  xlab("\n Distance from common garden (m)")+
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))            # Legend text
+#  guides(col=guide_legend("Garden ID")) + 
+#scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
+dev.off()
+
+
+png(filename="percentage~doy_diffo.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+
+ggplot(d, aes(spring_event_difference, percentage,colour = Provenance_continent, shape = Species)) +
+  geom_point(size = 3.5)+
+  scale_shape_manual(values = c(0,1,15,16,17,2,3,4,5,6,7,8,9,18,10))+
+  theme_classic()+
+  ylab("Climate overlap percentage\n") +                             		
+  xlab("\n Spring event DOY difference")+
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))            # Legend text
+# guides(col=guide_legend("Garden ID")) + 
+#scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
+dev.off()
+
+
+
+png(filename="lat~spring_doy.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+
+ggplot(d, aes(lat_prov, spring_event, colour = Provenance_continent, shape = Species)) +
+  geom_point(size = 3.5)+
+  scale_shape_manual(values = c(0,1,15,16,17,2,3,4,5,6,7,8,9,18,10))+
+  theme_classic()+
+  ylab("Spring event DOY \n") +                             		
+  xlab("\n Provenance latitude (degrees)")+
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))            # Legend text
+# guides(col=guide_legend("Garden ID")) + 
+#scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
+dev.off()
+
+
+
+
+png(filename="lat~fall_doy.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+
+ggplot(d, aes(lat_prov, fall_event, colour = Provenance_continent, shape = Species)) +
+  geom_point(size = 3.5)+
+  scale_shape_manual(values = c(0,1,15,16,17,2,3,4,5,6,7,8,9,18,10))+
+  theme_classic()+
+  ylab("Fall event DOY \n") +                             		
+  xlab("\n Provenance latitude (degrees)")+
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))            # Legend text
+# guides(col=guide_legend("Garden ID")) + 
+#scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
+dev.off()
+
+
+
+png(filename="mat~fall_doy.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+
+ggplot(d, aes(MAT_prov, fall_event, colour = Provenance_continent, shape = Species)) +
+  geom_point(size = 3.5)+
+  scale_shape_manual(values = c(0,1,15,16,17,2,3,4,5,6,7,8,9,18,10))+
+  theme_classic()+
+  ylab("Fall event DOY \n") +                             		
+  xlab("\n Provenance mean annual temperature")+
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))            # Legend text
+# guides(col=guide_legend("Garden ID")) + 
+#scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
+dev.off()
+
+
+# updated May 22
+# graph climate overlap 
+
+ggplot(d, aes(x=Provenance_continent, y=percentage)) + 
+  geom_jitter()
+
+
+png(filename="climate_overlap_comparison_continents.png", 
+    type="cairo",    ### this helps with resolution A LOT 
+    units="in", 
+    width=12,
+    height=10, 
+    res=300)
+ggplot(d, aes(x=Provenance_continent, y=percentage)) + 
+  geom_boxplot(outlier.shape = NA)+
+  theme_classic() +
+  ylab("Climate overlap percentage") +                             
+  xlab("Continent")  +
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 20))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 20)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))      +       # Legend text
+  theme(plot.title = element_text(size = 15))         # plot title
+dev.off()

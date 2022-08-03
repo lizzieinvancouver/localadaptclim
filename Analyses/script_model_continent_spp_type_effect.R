@@ -33,6 +33,7 @@ hist(alnrubslope)
 # Here I show an incomplete example for evergreen/deciduous,
 # but we especially want to do for continent (group species by continent)
 d <- dplyr::group_by(d, prov_continent)
+d <- dplyr::group_by(d, Provenance_continent)
 # Add the posteriors of all the species in one group ...
 # Example ... many ways to do this, I just created different vectors (I made very incomplete lists!)
 colnames(draws)
@@ -79,8 +80,8 @@ color_scheme_set("viridis")
 new_labels_leaftype <- c("Angiosperm","Gymnosperm")
 mcmc_areas(leaftypeplot)+ 
   plot_title +
-  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
-  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
   theme(text=element_text(family="sans"))+
   scale_y_discrete(labels = rev(new_labels_leaftype))
@@ -130,8 +131,8 @@ color_scheme_set("viridis")
 new_labels_continent <- c("Europe","North America")
 mcmc_areas(continentplot)+ 
   plot_title +
-  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
-  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
   theme(text=element_text(family="sans"))+
   scale_y_discrete(labels = rev(new_labels_continent))
@@ -298,8 +299,8 @@ color_scheme_set("viridis")
 new_labels_leaftype <- c("Angiosperm","Gymnosperm")
 mcmc_areas(leaftypeplot)+ 
   plot_title +
-  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
-  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
   theme(text=element_text(family="sans"))+
   scale_y_discrete(labels = rev(new_labels_leaftype))
@@ -343,14 +344,14 @@ png(filename="continent_effect_percentage_spring.png",
     width=14, 
     height=8, 
     res=300)
-continentplot <- as.matrix(cbind(northamericanpost, europeanpost ))
+continentplot <- as.matrix(cbind(northamericanpost, europeanpost))
 plot_title <- ggtitle("Continental Effects on Spring DOY in Relation to Climate Overlap Percentage")
 color_scheme_set("viridis") 
 new_labels_continent <- c("Europe","North America")
 mcmc_areas(continentplot)+ 
   plot_title +
-  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
-  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
   theme(text=element_text(family="sans"))+
   scale_y_discrete(labels = rev(new_labels_continent))

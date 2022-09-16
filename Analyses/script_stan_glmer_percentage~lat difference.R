@@ -7,6 +7,12 @@ library(rstanarm)
 library(bayesplot)
 
 
+uninstall
+
+remove.packages("ggplot2")
+install.packages("ggplot2")
+library(ggplot2)
+
 d <- read.csv("input/percentage_overlap_doy_difference_earth_calculated.csv", header = TRUE)
 d$percentage_difference <- as.numeric(d$percentage_difference)
 

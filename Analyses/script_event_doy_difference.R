@@ -10,7 +10,9 @@ library(bayesplot)
 install.packages("geosphere")
  library(geosphere)
 
+install.packages("ggplot2")
 
+library(ggplot2)
 
 # spring
 

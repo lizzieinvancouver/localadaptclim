@@ -12,6 +12,7 @@ library(rstanarm)
 library(bayesplot)
 library(dplyr)
 library(ggplot2)
+library(viridisLite)
 library(viridis)
 library(svglite)
 
@@ -99,6 +100,54 @@ fitA_fall_diffo_sd <- stan_glmer(fall_event_difference~(sd|species), data = d)
 fitB_spring_percentage_sd <- stan_glmer(spring_event~((percentage*sd)|species), data = d)
 fitB_fall_percentage_sd <- stan_glmer(fall_event~((percentage*sd)|species), data = d)
 
+
+
+
+# new addition Sept 16, 2022
+fitA_spring_lat_diffo <- stan_glmer(spring_event~(distance_from_garden|Species), data = d)
+fitA_fall_lat_diffo <- stan_glmer(fall_event~(distance_from_garden|Species), data = d)
+fitA_spring_earth_distance <- stan_glmer(spring_event~(earth_distance_from_garden|Species), data = d)
+fitA_fall_earth_distance <- stan_glmer(fall_event~(earth_distance_from_garden|Species), data = d)
+
+fitA_spring_mat_diffo <- stan_glmer(spring_event~(MAT_diffo|species), data = d)
+fitA_fall_mat_diffo <- stan_glmer(fall_event~(MAT_diffo|species), data = d)
+
+
+fitC_spring_lat <- stan_glmer(spring_event~(lat_prov|species_garden), data = d)
+fitC_fall_lat <- stan_glmer(fall_event~(lat_prov|species_garden), data = d)
+
+fitC_spring_mat <- stan_glmer(spring_event~(MAT_prov|species_garden), data = d)
+fitC_fall_mat <- stan_glmer(fall_event~(MAT_prov|species_garden), data = d)
+
+fitD_spring_lat <- stan_glmer(spring_gdd~(lat_prov|species), data = d)
+fitD_spring_mat <- stan_glmer(spring_gdd~(MAT_prov|species), data = d)
+
+#save fit Sept 16, 2022
+saveRDS(fitA_spring_lat_diffo, file = "output/model_fit/fitA_spring_lat_diffo.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+saveRDS(fitA_fall_lat_diffo, file = "output/model_fit/fitA_fall_lat_diffo.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+
+saveRDS(fitA_spring_earth_distance, file = "output/model_fit/fitA_spring_earth_distance.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+saveRDS(fitA_fall_earth_distance, file = "output/model_fit/fitA_fall_earth_distance.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+
+saveRDS(fitA_spring_mat_diffo, file = "output/model_fit/fitA_spring_mat_diffo.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+saveRDS(fitA_fall_mat_diffo, file = "output/model_fit/fitA_fall_mat_diffo.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+
+
+
+saveRDS(fitC_spring_lat, file = "output/model_fit/fitC_spring_lat.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+
+saveRDS(fitC_fall_lat, file = "output/model_fit/fitC_fall_lat.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+
+
+
 # saving fit
 # http://www.sthda.com/english/wiki/saving-data-into-r-data-format-rds-and-rdata
 saveRDS(fitA_spring_lat, file = "output/model_fit/fitA_spring_lat.RDS", ascii = FALSE, version = NULL,
@@ -143,6 +192,20 @@ fitB_spring_percentage_sd<- readRDS("output/model_fit/fitB_spring_percentage_sd.
 fitB_fall_percentage_sd <- readRDS("output/model_fit/fitB_fall_percentage_sd.RDS")
 
 
+
+
+fitA_spring_lat_diffo <- readRDS("output/model_fit/fitA_spring_lat_diffo.RDS")
+fitA_fall_lat_diffo <- readRDS("output/model_fit/fitA_fall_lat_diffo.RDS")
+fitA_spring_earth_distance <- readRDS("output/model_fit/fitA_spring_earth_distance.RDS")
+fitA_fall_earth_distance <- readRDS("output/model_fit/fitA_fall_earth_distance.RDS")
+fitA_spring_mat_diffo <- readRDS("output/model_fit/fitA_spring_mat_diffo.RDS")
+fitA_fall_mat_diffo <- readRDS("output/model_fit/fitA_fall_mat_diffo.RDS")
+fitC_spring_lat <- readRDS("output/model_fit/fitC_spring_lat.RDS")
+fitC_fall_lat <- readRDS("output/model_fit/fitC_fall_lat.RDS")
+
+
+
+
 # extract slope and intercept
 # spring_lat
 coef(fitA_spring_lat)$species
@@ -156,6 +219,86 @@ fitA_spring_lat_slope_intercept_df$species <- row.names(fitA_spring_lat_slope_in
 # try joining
 d <- full_join(d,fitA_spring_lat_slope_intercept_df)
 
+# spring_lat_diffo
+coef(fitA_spring_lat_diffo)$Species
+fitA_spring_lat_diffo_slope_intercept_df <- as.data.frame(coef(fitA_spring_lat_diffo)$Species)
+
+#rename columns
+fitA_spring_lat_diffo_slope_intercept_df <- rename(fitA_spring_lat_diffo_slope_intercept_df, 
+                                             fitA_spring_lat_diffo_slope=distance_from_garden, 
+                                             fitA_spring_lat_diffo_intercept="(Intercept)")
+fitA_spring_lat_diffo_slope_intercept_df$Species <- row.names(fitA_spring_lat_diffo_slope_intercept_df)
+# try joining
+d$Species<- d$species
+d <- full_join(d,fitA_spring_lat_diffo_slope_intercept_df)
+
+
+# fall_lat_diffo
+coef(fitA_fall_lat_diffo)$Species
+fitA_fall_lat_diffo_slope_intercept_df <- as.data.frame(coef(fitA_fall_lat_diffo)$Species)
+
+#rename columns
+fitA_fall_lat_diffo_slope_intercept_df <- rename(fitA_fall_lat_diffo_slope_intercept_df, 
+                                                 fitA_fall_lat_diffo_slope=distance_from_garden, 
+                                                 fitA_fall_lat_diffo_intercept="(Intercept)")
+fitA_fall_lat_diffo_slope_intercept_df$Species <- row.names(fitA_fall_lat_diffo_slope_intercept_df)
+# try joining
+d <- full_join(d,fitA_fall_lat_diffo_slope_intercept_df)
+
+
+# spring_earth_distance
+coef(fitA_spring_earth_distance)$Species
+fitA_spring_earth_distance_slope_intercept_df <- as.data.frame(coef(fitA_spring_earth_distance)$Species)
+
+#rename columns
+fitA_spring_earth_distance_slope_intercept_df <- rename(fitA_spring_earth_distance_slope_intercept_df, 
+                                                        fitA_spring_earth_distance_slope=earth_distance_from_garden, 
+                                                        fitA_spring_earth_distance_intercept="(Intercept)")
+fitA_spring_earth_distance_slope_intercept_df$Species <- row.names(fitA_spring_earth_distance_slope_intercept_df)
+# try joining
+d <- full_join(d,fitA_spring_earth_distance_slope_intercept_df)
+
+
+# fall_earth_distance # couldn't calculate this
+coef(fitA_fall_earth_distance)$species
+fitA_fall_earth_distance_slope_intercept_df <- as.data.frame(coef(fitA_fall_earth_distance)$Species)
+
+#rename columns
+fitA_fall_earth_distance_slope_intercept_df <- rename(fitA_fall_earth_distance_slope_intercept_df, 
+                                                      fitA_fall_earth_distance_slope=earth_distance_from_garden, 
+                                                      fitA_fall_earth_distance_intercept="(Intercept)")
+fitA_fall_earth_distance_slope_intercept_df$Species <- row.names(fitA_fall_earth_distance_slope_intercept_df)
+# try joining
+d <- full_join(d,fitA_fall_earth_distance_slope_intercept_df, by = Species)
+
+# spring_mat_diffo
+coef(fitA_spring_mat_diffo)$species
+fitA_spring_mat_diffo_slope_intercept_df <- as.data.frame(coef(fitA_spring_mat_diffo)$species)
+
+#rename columns
+fitA_spring_mat_diffo_slope_intercept_df <- rename(fitA_spring_mat_diffo_slope_intercept_df, 
+                                                   fitA_spring_mat_diffo_slope=MAT_diffo, 
+                                                   fitA_spring_mat_diffo_intercept="(Intercept)")
+fitA_spring_mat_diffo_slope_intercept_df$Species <- row.names(fitA_spring_mat_diffo_slope_intercept_df)
+# try joining
+d <- full_join(d,fitA_spring_mat_diffo_slope_intercept_df)
+
+
+# fall_mat_diffo
+coef(fitA_fall_mat_diffo)$species
+fitA_fall_mat_diffo_slope_intercept_df <- as.data.frame(coef(fitA_fall_mat_diffo)$species)
+
+#rename columns
+fitA_fall_mat_diffo_slope_intercept_df <- rename(fitA_fall_mat_diffo_slope_intercept_df, 
+                                                 fitA_fall_mat_diffo_slope=MAT_diffo, 
+                                                 fitA_fall_mat_diffo_intercept="(Intercept)")
+fitA_fall_mat_diffo_slope_intercept_df$Species <- row.names(fitA_fall_mat_diffo_slope_intercept_df)
+# try joining
+d <- full_join(d,fitA_fall_mat_diffo_slope_intercept_df)
+
+
+
+
 # spring_mat
 coef(fitA_spring_mat)$species
 fitA_spring_mat_slope_intercept_df <- as.data.frame(coef(fitA_spring_mat)$species)
@@ -167,6 +310,36 @@ fitA_spring_mat_slope_intercept_df <- rename(fitA_spring_mat_slope_intercept_df,
 fitA_spring_mat_slope_intercept_df$species <- row.names(fitA_spring_mat_slope_intercept_df)
 # try joining
 d <- full_join(d,fitA_spring_mat_slope_intercept_df)
+
+
+
+# spring_lat_spp_garden
+coef(fitC_spring_lat)$species
+fitC_spring_lat_slope_intercept_df <- as.data.frame(coef(fitC_spring_lat)$species)
+
+#rename columns
+fitC_spring_lat_slope_intercept_df <- rename(fitC_spring_lat_slope_intercept_df, 
+                                             fitC_spring_lat_slope=lat_prov, 
+                                             fitC_spring_lat_intercept="(Intercept)")
+fitC_spring_lat_slope_intercept_df$species_garden <- row.names(fitC_spring_lat_slope_intercept_df)
+# try joining
+d <- full_join(d,fitC_spring_lat_slope_intercept_df)
+
+
+
+# fall_lat_spp_garden
+coef(fitC_fall_lat)$species
+fitC_fall_lat_slope_intercept_df <- as.data.frame(coef(fitC_fall_lat)$species)
+
+#rename columns
+fitC_fall_lat_slope_intercept_df <- rename(fitC_fall_lat_slope_intercept_df, 
+                                           fitC_fall_lat_slope=lat_prov, 
+                                           fitC_fall_lat_intercept="(Intercept)")
+fitC_fall_lat_slope_intercept_df$species_garden <- row.names(fitC_fall_lat_slope_intercept_df)
+# try joining
+d <- full_join(d,fitC_fall_lat_slope_intercept_df)
+
+
 
 
 
@@ -379,9 +552,9 @@ ggplot(d, aes(lat_prov, spring_event, colour = garden_identifier, shape = Specie
   theme_classic()+
   ylab("Spring event day of year\n") +                             		
   xlab("\n Provenance latitude (decimal degrees)")+
-  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.x = element_text(size = 25))+             # x-axis text size
   theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
-  theme(axis.title.x = element_text(size = 40))    +        # x-axis title
+  theme(axis.title.x = element_text(size = 30))    +        # x-axis title
   theme(axis.title.y = element_text(size = 40)) +           # y-axis title
   theme(legend.title = element_text(size = 15))       +     # Legend title
   theme(legend.text = element_text(size = 10))      +       # Legend text
@@ -416,9 +589,9 @@ ggplot(d, aes(MAT_prov, spring_event, colour = garden_identifier, shape = Specie
   theme_classic()+
   ylab("Spring event day of year\n") +                             		
   xlab("\n Provenance MAT (\u00B0C)")+
-  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.x = element_text(size = 25))+             # x-axis text size
   theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
-  theme(axis.title.x = element_text(size = 40))    +        # x-axis title
+  theme(axis.title.x = element_text(size = 30))    +        # x-axis title
   theme(axis.title.y = element_text(size = 40)) +           # y-axis title
   theme(legend.title = element_text(size = 15))       +     # Legend title
   theme(legend.text = element_text(size = 10))      +       # Legend text
@@ -450,9 +623,9 @@ ggplot(d, aes(percentage, spring_event, colour = garden_identifier, shape = Spec
   theme_classic()+
   ylab("Spring event day of year\n") +                             		
   xlab("\n Provenance climate overlap percentage")+
-  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.x = element_text(size = 25))+             # x-axis text size
   theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
-  theme(axis.title.x = element_text(size = 40))    +        # x-axis title
+  theme(axis.title.x = element_text(size = 30))    +        # x-axis title
   theme(axis.title.y = element_text(size = 40)) +           # y-axis title
   theme(legend.title = element_text(size = 15))       +     # Legend title
   theme(legend.text = element_text(size = 10))      +       # Legend text
@@ -658,9 +831,9 @@ ggplot(d, aes(lat_prov, fall_event, colour = garden_identifier, shape = Species)
   theme_classic()+
   ylab("Fall event day of year\n") +                             		
   xlab("\n Provenance latitude (decimal degrees)")+
-  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.x = element_text(size = 25))+             # x-axis text size
   theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
-  theme(axis.title.x = element_text(size = 40))    +        # x-axis title
+  theme(axis.title.x = element_text(size = 30))    +        # x-axis title
   theme(axis.title.y = element_text(size = 40)) +           # y-axis title
   theme(legend.title = element_text(size = 15))       +     # Legend title
   theme(legend.text = element_text(size = 10))      +       # Legend text
@@ -694,9 +867,9 @@ ggplot(d, aes(MAT_prov, fall_event, colour = garden_identifier, shape = Species)
   theme_classic()+
   ylab("Fall event day of year\n") +                             		
   xlab("\n Provenance MAT (\u00B0C)")+
-  theme(axis.text.x = element_text(size = 40))+             # x-axis text size
+  theme(axis.text.x = element_text(size = 25))+             # x-axis text size
   theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
-  theme(axis.title.x = element_text(size = 40))    +        # x-axis title
+  theme(axis.title.x = element_text(size = 30))    +        # x-axis title
   theme(axis.title.y = element_text(size = 40)) +           # y-axis title
   theme(legend.title = element_text(size = 15))       +     # Legend title
   theme(legend.text = element_text(size = 10))      +       # Legend text

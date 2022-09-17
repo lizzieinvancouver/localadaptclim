@@ -33,6 +33,8 @@ d <- d[!is.na(d$lat_prov), ] #get rid of rows with NAs
 # calculate difference of the doy of the provenance closest to garden and other provenances' doy
 # 1. distance by taking the difference between prov lat and garden lat
 d$distance_from_garden <- abs(d$lat_prov - d$lat_garden)
+d$MAT_diffo <- abs(d$MAT_prov - d$MAT_garden)
+
 # 2. distance by using distm()
 for (i in c(1:nrow(d))){
         d$earth_distance_from_garden[i] <- geosphere::distm(c(d$long_prov[i],d$lat_prov[i]), c(d$long_garden[i],d$lat_garden[i]), fun= geosphere::distGeo)

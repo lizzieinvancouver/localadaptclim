@@ -102,7 +102,7 @@ ggplot(d, aes(distance_from_garden, fall_event, colour = garden_identifier, shap
 dev.off()
 
 
-# earth_distance~spring ---- hmmm looks like something is wrong with this
+# earth_distance~spring 
 png(filename="earth_distance~spring_lines_added_fitA.png", 
     type="cairo", 
     units="in", 
@@ -135,6 +135,39 @@ ggplot(d, aes(earth_distance_from_garden, spring_event, colour = garden_identifi
 dev.off()
 
 
+
+
+# earth_distance~fall 
+png(filename="earth_distance~fall_lines_added_fitA.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+
+ggplot(d, aes(earth_distance_from_garden, fall_event, colour = garden_identifier, shape = Species)) +
+  geom_point(size = 3.5)+
+  geom_abline(data=d,aes(slope=fitA_fall_earth_distance_slope,intercept=fitA_fall_earth_distance_intercept,linetype = Species, color = garden_identifier))+
+  scale_shape_manual(values = c(0,1,15,16,17,2,3,4,5,6,7,8,9,18,10))+
+  scale_linetype_manual(values = c("Alnus rubra" = "solid", "Betula papyrifera" ="dashed", "Fagus sylvatica" = "dotted", 
+                                   "Fraxinus excelsior" = "dotdash", "Picea abies" = "longdash", "Picea engelmannii"="twodash", 
+                                   "Picea mariana"="1F", "Picea sitchensis"="F1", "Pinus albicaulis" = "4C88C488", 
+                                   "Populus balsamifera" = "solid", "Pinus ponderosa" = "12345678","Populus trichocarpa" = "dashed",
+                                   "Pseudotsuga menziesii" = "dotdash", "Quercus petraea"="dashed", "Tsuga heterophylla" ="4C88C488"))+
+  theme_classic()+
+  ylab("Fall event day of year\n") +                             		
+  xlab("\n  Spherical distance (meters)")+
+  theme(axis.text.x = element_text(size = 25))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 30))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 40)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))      +       # Legend text
+  theme(plot.title = element_text(size = 21))  +            # plot title
+  guides(col=guide_legend("Garden ID")) + 
+  labs(title = "Fall Event Day of Year (DOY) ~ Earth Surface Distance")+				
+  scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
+dev.off()
 
 
 # lat_diffo~spring

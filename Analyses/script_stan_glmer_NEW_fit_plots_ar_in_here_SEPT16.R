@@ -259,17 +259,17 @@ fitA_spring_earth_distance_slope_intercept_df$Species <- row.names(fitA_spring_e
 d <- full_join(d,fitA_spring_earth_distance_slope_intercept_df)
 
 
-# fall_earth_distance # couldn't calculate this
-coef(fitA_fall_earth_distance)$species
+# fall_earth_distance 
+coef(fitA_fall_earth_distance)$Species
 fitA_fall_earth_distance_slope_intercept_df <- as.data.frame(coef(fitA_fall_earth_distance)$Species)
 
 #rename columns
 fitA_fall_earth_distance_slope_intercept_df <- rename(fitA_fall_earth_distance_slope_intercept_df, 
                                                       fitA_fall_earth_distance_slope=earth_distance_from_garden, 
                                                       fitA_fall_earth_distance_intercept="(Intercept)")
-fitA_fall_earth_distance_slope_intercept_df$Species <- row.names(fitA_fall_earth_distance_slope_intercept_df)
+fitA_fall_earth_distance_slope_intercept_df$species <- row.names(fitA_fall_earth_distance_slope_intercept_df)
 # try joining
-d <- full_join(d,fitA_fall_earth_distance_slope_intercept_df, by = Species)
+d <- full_join(d,fitA_fall_earth_distance_slope_intercept_df)
 
 # spring_mat_diffo
 coef(fitA_spring_mat_diffo)$species

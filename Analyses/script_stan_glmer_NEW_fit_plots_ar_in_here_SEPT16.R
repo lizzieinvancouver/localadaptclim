@@ -119,8 +119,8 @@ fitC_fall_lat <- stan_glmer(fall_event~(lat_prov|species_garden), data = d)
 fitC_spring_mat <- stan_glmer(spring_event~(MAT_prov|species_garden), data = d)
 fitC_fall_mat <- stan_glmer(fall_event~(MAT_prov|species_garden), data = d)
 
-fitD_spring_lat <- stan_glmer(spring_gdd~(lat_prov|species), data = d)
-fitD_spring_mat <- stan_glmer(spring_gdd~(MAT_prov|species), data = d)
+fitD_spring_lat <- stan_glmer(gdd_10yr_mean~(lat_prov|species), data = d)
+fitD_spring_mat <- stan_glmer(gdd_10yr_mean~(MAT_prov|species), data = d)
 
 #save fit Sept 16, 2022
 saveRDS(fitA_spring_lat_diffo, file = "output/model_fit/fitA_spring_lat_diffo.RDS", ascii = FALSE, version = NULL,
@@ -167,9 +167,16 @@ saveRDS(fitA_fall_overlap, file = "output/model_fit/fitA_fall_overlap.RDS", asci
 saveRDS(fitA_fall_sd, file = "output/model_fit/fitA_fall_sd.RDS", ascii = FALSE, version = NULL,
         compress = TRUE, refhook = NULL)
 
-saveRDS(fitB_spring_percentage_sd , file = "output/model_fit/fitB_spring_percentage_sd .RDS", ascii = FALSE, version = NULL,
+saveRDS(fitB_spring_percentage_sd , file = "output/model_fit/fitB_spring_percentage_sd.RDS", ascii = FALSE, version = NULL,
         compress = TRUE, refhook = NULL)
-saveRDS(fitB_fall_percentage_sd , file = "output/model_fit/fitB_fall_percentage_sd .RDS", ascii = FALSE, version = NULL,
+saveRDS(fitB_fall_percentage_sd , file = "output/model_fit/fitB_fall_percentage_sd.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+
+
+saveRDS(fitD_spring_lat, file = "output/model_fit/fitD_spring_lat.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+
+saveRDS(fitD_spring_mat, file = "output/model_fit/fitD_spring_mat.RDS", ascii = FALSE, version = NULL,
         compress = TRUE, refhook = NULL)
 
 
@@ -191,8 +198,8 @@ fitA_fall_sd <- readRDS("output/model_fit/fitA_fall_sd.RDS")
 fitB_spring_percentage_sd<- readRDS("output/model_fit/fitB_spring_percentage_sd.RDS")
 fitB_fall_percentage_sd <- readRDS("output/model_fit/fitB_fall_percentage_sd.RDS")
 
-
-
+fitD_spring_mat <- readRDS("output/model_fit/fitD_spring_mat.RDS")
+fitD_spring_lat<- readRDS("output/model_fit/fitD_spring_lat.RDS")
 
 fitA_spring_lat_diffo <- readRDS("output/model_fit/fitA_spring_lat_diffo.RDS")
 fitA_fall_lat_diffo <- readRDS("output/model_fit/fitA_fall_lat_diffo.RDS")
@@ -244,6 +251,37 @@ fitA_fall_lat_diffo_slope_intercept_df <- rename(fitA_fall_lat_diffo_slope_inter
 fitA_fall_lat_diffo_slope_intercept_df$Species <- row.names(fitA_fall_lat_diffo_slope_intercept_df)
 # try joining
 d <- full_join(d,fitA_fall_lat_diffo_slope_intercept_df)
+
+
+
+# spring_gdd_lat
+coef(fitD_spring_lat)$species
+fitD_spring_lat_slope_intercept_df <- as.data.frame(coef(fitD_spring_lat)$species)
+
+#rename columns
+fitD_spring_lat_slope_intercept_df <- rename(fitD_spring_lat_slope_intercept_df, 
+                                             fitD_spring_lat_slope=lat_prov, 
+                                             fitD_spring_lat_intercept="(Intercept)")
+fitD_spring_lat_slope_intercept_df$species <- row.names(fitD_spring_lat_slope_intercept_df)
+# try joining
+d <- full_join(d,fitD_spring_lat_slope_intercept_df)
+
+
+# spring_gdd_mat
+coef(fitD_spring_mat)$species
+fitD_spring_mat_slope_intercept_df <- as.data.frame(coef(fitD_spring_mat)$species)
+
+#rename columns
+fitD_spring_mat_slope_intercept_df <- rename(fitD_spring_mat_slope_intercept_df, 
+                                             fitD_spring_mat_slope=MAT_prov, 
+                                             fitD_spring_mat_intercept="(Intercept)")
+fitD_spring_mat_slope_intercept_df$species <- row.names(fitD_spring_mat_slope_intercept_df)
+# try joining
+d <- full_join(d,fitD_spring_mat_slope_intercept_df)
+
+
+
+
 
 
 # spring_earth_distance

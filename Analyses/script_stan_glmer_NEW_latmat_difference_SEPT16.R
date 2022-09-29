@@ -13,15 +13,15 @@ library(ggplot2)
 #d$percentage_difference <- as.numeric(d$percentage_difference)
 
 #d<- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_May5.csv",header = TRUE)
-d<- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_Sept16.csv",header = TRUE)
+d<- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_gdd_Sept27.csv",header = TRUE)
 
 
 # write first so i don't lose progress
-name<-"input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_Sept16.csv"
+name<-"input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_gdd_Sept27.csv"
 write.csv(d,name, row.names = FALSE)
 
 
-test <- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_Sept16.csv", header = T)
+test <- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_gdd_Sept27.csv", header = T)
 
 d$MAT_diffo <- abs(d$MAT_prov - d$MAT_garden)
 
@@ -479,5 +479,111 @@ ggplot(d, aes(x=lat_prov, color=species_type)) +
 
 dev.off()
 
+
+
+
+
+# lat~spring_gdd
+png(filename="lat~spring_gdd_lines_added_fitD.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+
+ggplot(d, aes(lat_prov, gdd_10yr_mean, colour = garden_identifier, shape = Species)) +
+  geom_point(size = 3.5)+
+  geom_abline(data=d,aes(slope=fitD_spring_lat_slope,intercept=fitD_spring_lat_intercept,linetype = Species, color = garden_identifier))+
+  scale_shape_manual(values = c(0,1,15,16,17,2,3,4,5,6,7,8,9,18,10))+
+  scale_linetype_manual(values = c("Alnus rubra" = "solid", "Betula papyrifera" ="dashed", "Fagus sylvatica" = "dotted", 
+                                   "Fraxinus excelsior" = "dotdash", "Picea abies" = "longdash", "Picea engelmannii"="twodash", 
+                                   "Picea mariana"="1F", "Picea sitchensis"="F1", "Pinus albicaulis" = "4C88C488", 
+                                   "Populus balsamifera" = "solid", "Pinus ponderosa" = "12345678","Populus trichocarpa" = "dashed",
+                                   "Pseudotsuga menziesii" = "dotdash", "Quercus petraea"="dashed", "Tsuga heterophylla" ="4C88C488"))+
+  theme_classic()+
+  ylab("Growing Degree Days (\u00B0C) \n") +                             		
+  xlab("\n Provenance latitude (decimal degrees)")+
+  theme(axis.text.x = element_text(size = 25))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 30))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 40)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))      +       # Legend text
+  theme(plot.title = element_text(size = 21))  +            # plot title
+  guides(col=guide_legend("Garden ID")) + 
+  labs(title = "Growing Degree Days (GDD) ~ Provenance Latitude")+				
+  scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
+dev.off()
+
+
+
+
+
+# mat~spring_gdd
+png(filename="mat~spring_gdd_lines_added_fitD.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+
+ggplot(d, aes(MAT_prov, gdd_10yr_mean, colour = garden_identifier, shape = Species)) +
+  geom_point(size = 3.5)+
+  geom_abline(data=d,aes(slope=fitD_spring_mat_slope,intercept=fitD_spring_mat_intercept,linetype = Species, color = garden_identifier))+
+  scale_shape_manual(values = c(0,1,15,16,17,2,3,4,5,6,7,8,9,18,10))+
+  scale_linetype_manual(values = c("Alnus rubra" = "solid", "Betula papyrifera" ="dashed", "Fagus sylvatica" = "dotted", 
+                                   "Fraxinus excelsior" = "dotdash", "Picea abies" = "longdash", "Picea engelmannii"="twodash", 
+                                   "Picea mariana"="1F", "Picea sitchensis"="F1", "Pinus albicaulis" = "4C88C488", 
+                                   "Populus balsamifera" = "solid", "Pinus ponderosa" = "12345678","Populus trichocarpa" = "dashed",
+                                   "Pseudotsuga menziesii" = "dotdash", "Quercus petraea"="dashed", "Tsuga heterophylla" ="4C88C488"))+
+  theme_classic()+
+  ylab("Growing Degree Days (\u00B0C) \n") +                             		
+  xlab("\n Provenance MAT (\u00B0C)")+
+  theme(axis.text.x = element_text(size = 25))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 30))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 40)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))      +       # Legend text
+  theme(plot.title = element_text(size = 21))  +            # plot title
+  guides(col=guide_legend("Garden ID")) + 
+  labs(title = "Growing Degree Days (GDD) ~ Provenance Mean Annual Temperature")+				
+  scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
+dev.off()
+
+
+
+
+# mat~spring_gdd
+png(filename="mat~spring_gdd_lines_added_fitD.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=10, 
+    res=300)
+
+ggplot(d, aes(MAT_prov, gdd_10yr_mean, colour = garden_identifier, shape = Species)) +
+  geom_point(size = 3.5)+
+  geom_abline(data=d,aes(slope=fitD_spring_mat_slope,intercept=fitD_spring_mat_intercept,linetype = Species, color = garden_identifier))+
+  scale_shape_manual(values = c(0,1,15,16,17,2,3,4,5,6,7,8,9,18,10))+
+  scale_linetype_manual(values = c("Alnus rubra" = "solid", "Betula papyrifera" ="dashed", "Fagus sylvatica" = "dotted", 
+                                   "Fraxinus excelsior" = "dotdash", "Picea abies" = "longdash", "Picea engelmannii"="twodash", 
+                                   "Picea mariana"="1F", "Picea sitchensis"="F1", "Pinus albicaulis" = "4C88C488", 
+                                   "Populus balsamifera" = "solid", "Pinus ponderosa" = "12345678","Populus trichocarpa" = "dashed",
+                                   "Pseudotsuga menziesii" = "dotdash", "Quercus petraea"="dashed", "Tsuga heterophylla" ="4C88C488"))+
+  theme_classic()+
+  ylab("Growing Degree Days (\u00B0C) \n") +                             		
+  xlab("\n Provenance MAT (\u00B0C)")+
+  theme(axis.text.x = element_text(size = 25))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
+  theme(axis.title.x = element_text(size = 30))    +        # x-axis title
+  theme(axis.title.y = element_text(size = 40)) +           # y-axis title
+  theme(legend.title = element_text(size = 15))       +     # Legend title
+  theme(legend.text = element_text(size = 10))      +       # Legend text
+  theme(plot.title = element_text(size = 21))  +            # plot title
+  guides(col=guide_legend("Garden ID")) + 
+  labs(title = "Growing Degree Days (GDD) ~ Provenance Mean Annual Temperature")+				
+  scale_color_viridis(discrete = TRUE) # I dont think viridis is very helpful
+dev.off()
 
 

@@ -1,20 +1,6 @@
 # script to calculate gdd
-# Sept 20, 2022
+# Sept 20, 2022 # update Sept 27
 # alinazengziyun@yahoo.com
-
-
-
-# group by year??? or just look at one year
-
-
-# experiment
-
-data1 <- read.csv("output/dailyclim/dailytemp_provenance_EA FAGUSY Gömöry & Paule 2011_2011_2020.csv",header = TRUE)
-data3 <- read.csv("output/dailyclim/dailytemp_provenance_EA FRAXEX Rosique-Esplugas 2021_2011_2020.csv",header = TRUE)
-
-# later on I can combine all files in this folder so I can read at the same time
-# and then choose maybe just one year and merge with my master file, using label and doy
-
 
 
 
@@ -28,57 +14,51 @@ df <- list.files("Output/dailyclim", pattern="*.csv", full.names = TRUE) %>%
   bind_rows 
 
 
-write.csv(df,"Output/dailyclim/all_provenances_dailyclim.csv", row.names = FALSE)
-
+# dataframe to work with
 df <- read.csv("Output/dailyclim/all_provenances_dailyclim.csv",header = TRUE)
 df$gdd_numbers <- ifelse(df$temp > 0, df$temp, 0) # this step is just to filter out everything that is below 0 celsius degree
 
-# try grouping by studies and year
+# try grouping by studies and year, and provenance
 
 
+require(dplyr)
 df <- df %>% dplyr::group_by(label, year, identifier)
 
+testhhh <- summarize(df, ave_temp = mean(temp)) # can be used to calculate average gdd by day
+
+# proven that groups have been formed
 
 
-
-# do only 2011 first :))))
-df <- subset(df, df$year == "2011")
-
-df <- df %>% dplyr::group_by(label, identifier, year)
+df <- df %>% group_by(label, year, identifier)
+df <- df %>% mutate("gdd" = cumsum(gdd_numbers))# worked!!! happy
 
 
+# now i have gdd across 10 years, I will calculate the average
+df <- df %>% group_by(label, doy, identifier)
+
+gdd_10yr_mean <- summarize(df, gdd_10yr_mean = mean(gdd))
+gdd_10yr_mean$prov_identifier <- gdd_10yr_mean$identifier
+
+# correct label names
+gdd_10yr_mean$label <- ifelse(gdd_10yr_mean$label == "NA BETUPA Hawkins & Dhar 2012 K", "NA BETUPA Hawkins & Dhar 2012",gdd_10yr_mean$label)
+gdd_10yr_mean$label <- ifelse(gdd_10yr_mean$label == "ALT EA QUEPET Alberto et al 2011", "EA QUEPET Alberto et al 2011",gdd_10yr_mean$label)
+
+write.csv(gdd_10yr_mean,"Output/gdd_10yr_mean.csv", row.names = FALSE)
+
+# once mean is calculated, join by doy, identifier, label
+
+d<- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_Sept16.csv",header = TRUE)
+
+#hmmm need to first create doy column that is a rounded number of spring_event
+
+d$doy <- round(d$spring_event, digits = 0)
+head(d$doy) #worked
+
+d <- left_join(d, gdd_10yr_mean, by = c("doy","prov_identifier", "label"))
 
 
-df_test <- df%>% dplyr::group_by(label, identifier) %>% 
-  summarise(gdd = cumsum(df$gdd_numbers),
-            .groups = 'drop')
-            
-df_test <- df %>% dplyr::group_by(label, identifier, year) %>% 
-  mutate(gdd = cumsum(df$gdd_numbers))
+# write first so i don't lose progress
+name<-"input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_gdd_Sept27.csv"
+write.csv(d,name, row.names = FALSE)
 
-
-df_test2 <- df%>% dplyr::group_by(label, identifier, year) %>% 
-  summarise(gdd = cumsum(df$gdd_numbers))   
-
-
-
-df_test3 <- gapply(df, FUN = cumsum(df$gdd_numbers) )
-            
-df$gdd <- cumsum(df$gdd_numbers)
-
-
-# nothing seem to be working.... maybe i need to list the files and do for i in XXXXXX, but still need to group_by year even if i do that
-
-
-
-
-
-data2011 <- subset(data, data$year == "2011")
-
-data2011$gdd_numbers <- ifelse(data2011$temp > 0, data2011$temp, 0)
-data2011$gdd <- cumsum(data2011$gdd_numbers)
-
-#hmm lemme see if this works with group by year
-
-
-data <- dplyr::group_by(year)
+#yayyy done!

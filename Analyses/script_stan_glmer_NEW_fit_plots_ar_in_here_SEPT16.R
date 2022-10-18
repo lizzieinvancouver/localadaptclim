@@ -293,6 +293,8 @@ fitA_spring_earth_distance_slope_intercept_df <- rename(fitA_spring_earth_distan
                                                         fitA_spring_earth_distance_slope=earth_distance_from_garden, 
                                                         fitA_spring_earth_distance_intercept="(Intercept)")
 fitA_spring_earth_distance_slope_intercept_df$Species <- row.names(fitA_spring_earth_distance_slope_intercept_df)
+
+d<- 
 # try joining
 d <- full_join(d,fitA_spring_earth_distance_slope_intercept_df)
 

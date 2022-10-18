@@ -121,7 +121,7 @@ ggplot(d, aes(earth_distance_from_garden, spring_event, colour = garden_identifi
                                    "Pseudotsuga menziesii" = "dotdash", "Quercus petraea"="dashed", "Tsuga heterophylla" ="4C88C488"))+
   theme_classic()+
   ylab("Spring event day of year\n") +                             		
-  xlab("\n  Spherical distance (meters)")+
+  xlab("\n  Spherical distance (Kilometers)")+
   theme(axis.text.x = element_text(size = 25))+             # x-axis text size
   theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
   theme(axis.title.x = element_text(size = 30))    +        # x-axis title
@@ -156,7 +156,7 @@ ggplot(d, aes(earth_distance_from_garden, fall_event, colour = garden_identifier
                                    "Pseudotsuga menziesii" = "dotdash", "Quercus petraea"="dashed", "Tsuga heterophylla" ="4C88C488"))+
   theme_classic()+
   ylab("Fall event day of year\n") +                             		
-  xlab("\n  Spherical distance (meters)")+
+  xlab("\n  Spherical distance (Kilometers)")+
   theme(axis.text.x = element_text(size = 25))+             # x-axis text size
   theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
   theme(axis.title.x = element_text(size = 30))    +        # x-axis title

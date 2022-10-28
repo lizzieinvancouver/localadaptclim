@@ -9,10 +9,7 @@ library(ggplot2)
 
 
 
-#d <- read.csv("input/percentage_overlap_doy_difference_earth_calculated.csv", header = TRUE)
-#d$percentage_difference <- as.numeric(d$percentage_difference)
-
-#d<- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_May5.csv",header = TRUE)
+#most updated version
 d<- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_gdd_Sept27.csv",header = TRUE)
 
 
@@ -27,7 +24,7 @@ d$MAT_diffo <- abs(d$MAT_prov - d$MAT_garden)
 
 
 # plotting
-# d <- rename(d, species=Species)
+d <- rename(d, species=Species)
 d <- dplyr::rename(d, Species=species)
 d <- dplyr::rename(d, "Provenance_continent" =prov_continent)
 # color by garden, symbol by species

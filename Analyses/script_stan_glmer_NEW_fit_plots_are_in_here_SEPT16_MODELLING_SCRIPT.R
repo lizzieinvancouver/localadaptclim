@@ -16,7 +16,8 @@ library(viridisLite)
 library(viridis)
 library(svglite)
 
-d <- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included.csv", header = TRUE)  #680
+d<- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_gdd_Sept27.csv",header = TRUE)
+
 d$fall_event <- as.numeric(d$fall_event)
 d$spring_event <- as.numeric(d$spring_event)
 

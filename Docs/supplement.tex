@@ -1,0 +1,66 @@
+%%% start preambling . . .  %%%
+\documentclass{article}
+
+% required 
+\usepackage{Sweave}
+\usepackage{graphicx}
+
+
+% https://tex.stackexchange.com/questions/60209/how-to-add-an-extra-level-of-sections-with-headings-below-subsubsection
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+% recommended! Uncomment the below line and change the path for your computer!
+ 
+%put your figures in one place! Also, note that here 'figures' is the folder and 'demoFig' is what each 
+% figure produced will be titled plus its number or label (e.g., demoFig-nqpbetter.pdf')
+
+% make your captioning look better
+\usepackage[small]{caption}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+
+% optional: muck with spacing
+\topmargin -1.5cm        
+\oddsidemargin 0.5cm   
+\evensidemargin 0.5cm  % same as oddsidemargin but for left-hand pages
+\textwidth 15.59cm
+\textheight 21.94cm 
+% \renewcommand{\baselinestretch}{1.5} % 1.5 lines between lines
+\parindent 0pt		  % sets leading space for paragraphs
+% optional: cute, fancy headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LO]{November 2022}
+\fancyhead[RO]{Supplement}
+% more optionals! %
+\usepackage[hyphens]{url} % this wraps my URL versus letting it spill across the page, a bad habit LaTeX has
+
+%%% end preambling. %%%
+
+\begin{document}
+\input{/Users/alina/Documents/git/localadaptclim/Docs/figure_supp/demoFig-concordance} % For RStudio hiccups
+\title{{\huge Supplements for: Changes and trends in budburst and leaf flush across Europe and North America} \\A meta-analysis of local adaptation in spring phenology studies}
+\author{Ziyun Zeng \& E. M. Wolkovich}
+\date{November 2022}
+\maketitle 
+
+
+\section*{Methods}
+\subsection*{Table for all studies}
+\subsection*{Mapped locations for all studies}
+
+\section*{Results}
+
+\subsection*{Corrected DOY results}
+\subsection*{Fitting each species \& common garden instead of just species}
+\subsection*{MAT difference}
+\subsection*{Might want to include how the model looked when we included studies with disagreeing provenance \& gardens}
+% if we indeed include this.. need to update results section in manuscript
+
+\end{document}

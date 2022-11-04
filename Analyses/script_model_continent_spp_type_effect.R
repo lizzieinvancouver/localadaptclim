@@ -13,6 +13,8 @@ library(rstanarm)
 library(bayesplot)
 library(dplyr)
 library(ggplot2)
+library(viridis)
+install.packages("bayesplot")
 
 setwd("C:/Users/alina/Documents/git/localadaptclim")
 d <- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included.csv", header = TRUE)  #680
@@ -22,7 +24,8 @@ d$spring_event <- as.numeric(d$spring_event)
 #fit5 <- stan_glmer(spring_event~(lat_prov|species), data = d) 
 
 # fitA_spring_lat
-fitA_spring_lat <- stan_glmer(spring_event~(lat_prov|species), data = d)
+fitA_spring_lat <- readRDS("output/model_fit/fitA_spring_lat.RDS")
+fitA_spring_mat <- readRDS("output/model_fit/fitA_spring_mat.RDS")
 
 draws <- as.matrix(fitA_spring_lat)
 # the full posterior for Alnus rubra slope:
@@ -32,8 +35,6 @@ hist(alnrubslope)
 # To get the estimate for continent or evergreen/deciduous:
 # Here I show an incomplete example for evergreen/deciduous,
 # but we especially want to do for continent (group species by continent)
-d <- dplyr::group_by(d, prov_continent)
-d <- dplyr::group_by(d, Provenance_continent)
 # Add the posteriors of all the species in one group ...
 # Example ... many ways to do this, I just created different vectors (I made very incomplete lists!)
 colnames(draws)
@@ -87,8 +88,6 @@ mcmc_areas(leaftypeplot)+
   scale_y_discrete(labels = rev(new_labels_leaftype))
 dev.off()
 
-
-
 # for continental effects
 northamerican <- c("Alnus_rubra","Picea_engelmannii","Picea_sitchensis","Pinus_albicaulis",     
                    "Populus_trichocarpa","Tsuga_heterophylla", "Populus_balsamifera","Pseudotsuga_menziesii",
@@ -96,6 +95,7 @@ northamerican <- c("Alnus_rubra","Picea_engelmannii","Picea_sitchensis","Pinus_a
 
 european <- c("Fraxinus_excelsior", "Fagus_sylvatica" ,"Picea_abies", "Quercus_petraea")
 
+coef()
 
 # Get all the species of one type now
 northamericandraws <- matrix(data=NA,
@@ -119,6 +119,8 @@ europeanpost <- rowMeans(europeandraws)
 
 # And then you can plot them as we did before
 
+library(ggplot2)
+
 png(filename="continent_effect_lat_spring.png", 
     type="cairo", 
     units="in", 
@@ -126,11 +128,11 @@ png(filename="continent_effect_lat_spring.png",
     height=8, 
     res=300)
 continentplot <- as.matrix(cbind(northamericanpost, europeanpost ))
-plot_title <- ggtitle("Continental Effects on Spring DOY in Relation to Provenance Latitude")
+# plot_title <- ggtitle("Continental Effects on Spring DOY in Relation to Provenance Latitude")
 color_scheme_set("viridis") 
 new_labels_continent <- c("Europe","North America")
 mcmc_areas(continentplot)+ 
-  plot_title +
+  # plot_title +
   theme(axis.text.x = element_text(size = 40))+             # x-axis text size
   theme(axis.text.y = element_text(size = 40))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title

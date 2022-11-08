@@ -4,6 +4,16 @@
 % required 
 \usepackage{Sweave}
 \usepackage{graphicx}
+\usepackage{lipsum}                     % Dummytext % https://tex.stackexchange.com/questions/9796/how-to-add-todo-notes
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
 
 
 % https://tex.stackexchange.com/questions/60209/how-to-add-an-extra-level-of-sections-with-headings-below-subsubsection
@@ -57,27 +67,32 @@
 \newpage
 
 \section*{Abstract}
-\section{Introduction}
 
+\section{Introduction}
 \begin{itemize}
 \item Define spring event, fall event
-\item Background
+% \item Background \unsure{What else?}
 \item Research question (links to results)
 \end{itemize}
 
 \section{Methods}
-\begin{itemize}
-\item Literature search
-\item Provenance location and spring/fall DOY data gathering using ImageJ
-% note that we primarily focused on papers with spring data
+Our methods are divided into four main steps. 
+
+% \item Literature search
+\subsection{Literature Search}
+We searched Web of Science, Google Scholar, and Connected Papers for common garden experiments that documented the timing of spring events of woody plant species. To be included, studies needed to (a) focus on woody plants originating from either Europe or North America, (b) report spring event in units of calendar days instead of a quantitative scale on a particular day, (c) report locations of provenances and gardens. \change{will reword things later} 
   \begin{itemize}
 \item Read AB 2015 and A 2013, took paper with spring doy and provenance coordinates from them
 \item Searched online for more papers (explain criteria here)
 \item Out of 59 papers related to common garden/spring phenology that I read, only 22 can supply data that we need; Out of the 22, 4 studies have provenance and gardens on different continents, which were subsequently archived (can document in supplements)).
 \end{itemize}
-\item Present how many gardens, species, provenance we have using a table, which also documents the type of spring event they looked at, year, etc. 
-\item Insert mapped locations of studies
-\item Climate data gathering
+
+
+\subsection{Dataset Assembly}
+We reviewed all returned results and assembled a dataset of spring event dates, during which we used ImageJ to scrape data from figures whenever possible and necessary.
+We primarily focused on papers with spring data. \improvement{will elaborate later}
+
+\subsection{Climate Data Gathering \& Analyses}
   \begin{itemize}
   \item Simple climate matrix (MAT \& MSP/MAP) gathering
   \begin{itemize}
@@ -91,20 +106,29 @@ To this end, we estimated climate overlap in relevant months: For spring events,
   \item Europe daily climate data (gridded: NetCDF-4) retrieved from E-OBS 
   \end{itemize}
   \end{itemize}
-  \item Estimate climate overlap using daily climate data using Overlap R package
-  \item Calculated GDDs, spherical distances
-  \item Corrected for DOY (taking the difference), will put results in supplement
-  \item Mixed effects modelling: We used hierarchical Bayesian models where we partially pooled by species. We estimated effects of continent and species type (angiosperm VS gymnosperm) from posterior estimates, in relation to single predictors (including provenance latitude, MAT) and two predictors (climate overlap percentage and standard deviation).
-\end{itemize}
+
+\subsubsection{Estimate climate overlap using daily climate data using Overlap R package}
+\subsubsection{Calculated GDDs, spherical distances}
+\subsubsection{Corrected for DOY (taking the difference)}\todo{will put results in supplement}
+\subsection{Mixed effects modelling}
+
+We used hierarchical Bayesian models where we partially pooled by species. We estimated effects of continent and species type (angiosperm VS gymnosperm) from posterior estimates, in relation to single predictors (including provenance latitude, MAT) and two predictors (climate overlap percentage and standard deviation). \improvement{will elaborate later}
+
 
 \section{Results}
-%AZZNov04: all subsection titles are placeholders
+\todo[inline]{all subsection titles are placeholders}
+
+Out of the 59 papers on common garden experiments and spring phenology that we reviewed, only 22 supplied data met our criteria to be included: (a) focus on woody plants originating from either Europe or North America, (b) report spring event in units of calendar days instead of a quantitative scale on a particular day, (c) report locations of provenances and gardens. Out of the 22, four studies had provenances and common gardens on different continents. These studies were excluded from our main analysis, but we document them in our supplements.\change{need to reword}
+Our final dataset captures seven angiosperm and eight gymnosperm species from 19 common gardens, encompassing data from 384 North American provenances and 101 European provenances with observations from 1962 to 2019. Seven species had fall event information available. 
+It is worth noting that most common gardens included in this study only had observations of one species. Therefore, it is difficult for a model to interpret if variations across gardens are due to the species or the garden’s location and climate. \improvement{can refer to the fit we did where we fitted each species \& common garden instead of just species} We thus focused on estimating species effects because we expect a larger effect from species. 
+
+\todo[inline]{add map here}
+\todo[inline]{add a table documenting studies attributes}
 
 \subsection{Provenance latitude and MAT do not affect spring event timing}
 
-Overall, our models show that spring events are not related to provenance latitude or mean annual temperature in North America, and only weakly related in Europe (Figure \#). 
-\\
-\verb@Alina Says:@ Need to elaborate here. Note that all figures are subject to update for better resolution. I might add climate overlap plots here too.
+Overall, our models show that spring events are not related to provenance latitude or mean annual temperature in North America, and only weakly related in Europe (Fig. \ref{figure:springfall_latmat}). \unsure{Should I add climate overlap plots here too?}
+
 
 \begin{figure}[!h] 
     \centering
@@ -117,7 +141,7 @@ Overall, our models show that spring events are not related to provenance latitu
 \newpage
 
 \subsubsection {Similar results across provenance latitude, latitude difference, and distance}
-\verb@Alina says: need to find a name for each metric and stick to it.@
+\todo[inline]{need to find a name for each metric and stick to it.}
 Along with (a) provenance latitude, we also looked at how spring event timing is related to (b) the absolute difference between provenance latitude and garden latitude , as well as (c) the spherical distance between the garden and each provenance. All three metrics depict little to no relationship between spring event timing and the geographical location of the provenance \verb@(Supplement Figure #)@.
 % can show that figure in supplement
 
@@ -128,7 +152,9 @@ While comparing how similarity in climate relates to event dates, we observed ve
 
 \subsubsection {Strong relationship between provenance latitude, MAT, and GDDs}
 
-I am unsure about how to commment on what we are seeing in this plot. There is a strong relationship between GDDs of each event day recorded and the latitude and MAT, but isn't that self-apparent? also I don't know how to link (Fig. \#) in text with the corresponding figure being displayed. 
+\todo[inline]{Flagged for Lizzie: I am unsure about how to commment on what we are seeing in this plot. \newline There is a strong relationship between GDDs of each event day recorded and the latitude and MAT, but isn't that self-apparent? }
+
+Placeholder text (Fig. \ref{figure:gdd}).
 
 % all figures will be updated (color, font size, resolution)
 \begin{figure}[!h] 

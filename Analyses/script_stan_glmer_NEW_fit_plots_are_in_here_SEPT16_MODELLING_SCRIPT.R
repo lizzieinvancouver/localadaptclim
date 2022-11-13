@@ -3,6 +3,22 @@
 # 4/May/2022
 # alinazengziyun@yahoo.com
 
+
+# updated Nov-13, 2022 to try out model outputs
+
+install.packages('modelsummary')
+library(modelsummary)
+
+# test 
+modelsummary(fitA_spring_lat, statistic = "conf.int")
+
+
+# two models side by side
+models <- list(fitA_spring_lat, fitA_fall_lat)
+modelsummary(models,statistic = "conf.int")
+library(flextable)
+modelsummary(models,statistic = "conf.int",output = "tabletest.tex")
+
 # Housekeeping ----
 rm(list=ls()) 
 options(stringsAsFactors = FALSE)

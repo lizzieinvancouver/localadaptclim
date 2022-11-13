@@ -2,6 +2,10 @@
 \documentclass{article}
 
 % required 
+\usepackage{xr-hyper}
+\usepackage{hyperref}
+\externaldocument[supplement-]{supplement}
+\usepackage{booktabs,siunitx}
 \usepackage{Sweave}
 \usepackage{graphicx}
 \usepackage{lipsum}                     % Dummytext % https://tex.stackexchange.com/questions/9796/how-to-add-todo-notes
@@ -52,8 +56,7 @@
 \fancyhead[LO]{November 2022}
 \fancyhead[RO]{Manuscript}
 % more optionals! %
-\usepackage[hyphens]{url} % this wraps my URL versus letting it spill across the page, a bad habit LaTeX has
-
+% \usepackage[hyphens]{url} % this wraps my URL versus letting it spill across the page, a bad habit LaTeX has
 %%% end preambling. %%%
 
 \begin{document}
@@ -127,7 +130,7 @@ It is worth noting that most common gardens included in this study only had obse
 
 \subsection{Provenance latitude and MAT do not affect spring event timing}
 
-Overall, our models show that spring events are not related to provenance latitude or mean annual temperature in North America, and only weakly related in Europe (Fig. \ref{figure:springfall_latmat}). \unsure{Should I add climate overlap plots here too?}
+Overall, our models show that spring events are not related to provenance latitude or mean annual temperature in North America, and only weakly related in Europe (Fig. \ref{figure:springfall_latmat}) \& Supplement Table.\ref{supplement-table:model_sf_lat}). \unsure{Should I add climate overlap plots here too?}
 
 
 \begin{figure}[!h] 

@@ -2,8 +2,22 @@
 \documentclass{article}
 
 % required 
+\usepackage{xr-hyper}
+\usepackage{hyperref}
+\externaldocument[manuscript-]{manuscript}
+\usepackage{booktabs,siunitx}
 \usepackage{Sweave}
 \usepackage{graphicx}
+\usepackage{lipsum}                     % Dummytext % https://tex.stackexchange.com/questions/9796/how-to-add-todo-notes
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
 
 
 % https://tex.stackexchange.com/questions/60209/how-to-add-an-extra-level-of-sections-with-headings-below-subsubsection
@@ -14,6 +28,9 @@
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+
 % recommended! Uncomment the below line and change the path for your computer!
  
 %put your figures in one place! Also, note that here 'figures' is the folder and 'demoFig' is what each 
@@ -37,14 +54,14 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead[LO]{November 2022}
-\fancyhead[RO]{Supplement}
+\fancyhead[RO]{Manuscript}
 % more optionals! %
-\usepackage[hyphens]{url} % this wraps my URL versus letting it spill across the page, a bad habit LaTeX has
+%\usepackage[hyphens]{url} % this wraps my URL versus letting it spill across the page, a bad habit LaTeX has
 
 %%% end preambling. %%%
 
 \begin{document}
-\input{/Users/alina/Documents/git/localadaptclim/Docs/figure_supp/demoFig-concordance} % For RStudio hiccups
+\input{/Users/alina/Documents/git/localadaptclim/Docs/figure_ms/demoFig-concordance} % For RStudio hiccups
 \title{{\huge Supplements for: Changes and trends in budburst and leaf flush across Europe and North America} \\A meta-analysis of local adaptation in spring phenology studies}
 \author{Ziyun Zeng \& E. M. Wolkovich}
 \date{November 2022}
@@ -56,6 +73,42 @@
 \subsection*{Mapped locations for all studies}
 
 \section*{Results}
+
+\subsection*{Spring Lat VS. Fall Lat}
+\begin{table}
+\centering
+\caption{Model summary for the relationship between event day of year (DOY)and provenance latitude, fitted by species, in spring (left) and fall (right).}
+\todo[inline]{i'm not sure how to word this}
+\begin{tabular}[t]{lcc}
+\toprule
+  & $DOY_{Spring}~(Latitude|Species)$ & $DOY_{Fall}~(Latitude|Species)$\\
+\midrule
+Intercept & \num{114.219} & \num{316.736}\\
+ & {}[\num{100.511}, \num{127.680}] & {}[\num{272.545}, \num{415.373}]\\
+Sigma[Species × Intercept,Intercept] & \num{1148.104} & \num{12381.073}\\
+ & {}[\num{435.227}, \num{2825.532}] & {}[\num{6176.075}, \num{24554.731}]\\
+Sigma[Species × Latitude,Intercept] & \num{-13.454} & \num{-307.256}\\
+ & {}[\num{-41.733}, \num{-1.069}] & {}[\num{-621.049}, \num{-122.796}]\\
+Sigma[Species × Latitude,Latitude] & \num{0.374} & \num{10.159}\\
+ & {}[\num{0.111}, \num{1.030}] & {}[\num{5.266}, \num{33.131}]\\
+\midrule
+Num.Obs. & \num{671} & \num{349}\\
+R2 & \num{0.903} & \num{0.961}\\
+R2 Adj. & \num{0.902} & \num{0.960}\\
+R2 Marg. & \num{0.000} & \num{0.000}\\
+Log.Lik. & \num{-2340.362} & \num{-1217.949}\\
+ELPD & \num{-2358.2} & \num{-1231.9}\\
+ELPD s.e. & \num{27.8} & \num{22.1}\\
+LOOIC & \num{4716.4} & \num{2463.8}\\
+LOOIC s.e. & \num{55.6} & \num{44.2}\\
+WAIC & \num{4716.2} & \num{2463.3}\\
+RMSE & \num{7.87} & \num{8.44}\\
+r2.adjusted.marginal & \num{0.902} & \num{0.960}\\
+\bottomrule
+\end{tabular}
+\label{table:model_sf_lat}
+\end{table}
+
 
 \subsection*{Corrected DOY results}
 \subsection*{Fitting each species \& common garden instead of just species}

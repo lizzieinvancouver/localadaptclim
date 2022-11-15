@@ -10,12 +10,55 @@ install.packages('modelsummary')
 library(modelsummary)
 
 # test 
+fitA_spring_lat <- readRDS("output/model_fit/fitA_spring_lat.RDS")
+fitA_fall_lat <- readRDS("output/model_fit/fitA_fall_lat.RDS")
 modelsummary(fitA_spring_lat, statistic = "conf.int")
 
 
 # two models side by side
 models <- list(fitA_spring_lat, fitA_fall_lat)
 modelsummary(models,statistic = "conf.int")
+
+# this looks very good
+modelsummary::datasummary(fitA_spring_lat)
+datasummary_skim(fitA_spring_lat)
+
+#experiment
+datasummary_skim( (b[(Intercept) species:Alnus_rubra])~Mean + SD + P5 + P50 + P95, data = fitA_spring_lat)
+
+
+
+# another method https://cran.r-project.org/web/packages/tidybayes/vignettes/tidy-rstanarm.html
+
+install.packages("ggdist","tidybayes")
+install.packages("knitr")
+library(ggdist)
+library(tidybayes)
+library(tidyr)
+library(knitr)
+m = fitA_spring_lat
+get_variables(m) #  get a list of raw model variables names so that we know what variables we can extract from the model:
+
+m %>%   # tidy up the names for each row
+  spread_draws(b[term,group]) %>%
+  head(10)
+
+m %>%
+  spread_draws(b[,group]) %>%  #no need to have the term column
+  head(10)
+
+# m %>% 
+# spread_draws(b[,group]) %>%   # separate out species
+# separate(group, c("group", "species"), ":") %>%
+# head(10)
+
+#perfect!!!
+m %>%
+  spread_draws(b[,group]) %>% 
+  summarise_draws()     # https://cran.r-project.org/web/packages/tidybayes/vignettes/tidy-rstanarm.html
+                        # https://mc-stan.org/posterior/reference/draws_summary.html
+
+
 library(flextable)
 modelsummary(models,statistic = "conf.int",output = "tabletest.tex")
 

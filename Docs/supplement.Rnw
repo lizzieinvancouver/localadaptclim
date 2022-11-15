@@ -2,6 +2,7 @@
 \documentclass{article}
 
 % required 
+\usepackage[options]{natbib}
 \usepackage{xr-hyper}
 \usepackage{hyperref}
 \externaldocument[manuscript-]{manuscript}

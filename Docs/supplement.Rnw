@@ -2,7 +2,7 @@
 \documentclass{article}
 
 % required 
-\usepackage[options]{natbib}
+\usepackage{natbib}
 \usepackage{xr-hyper}
 \usepackage{hyperref}
 \externaldocument[manuscript-]{manuscript}
@@ -75,6 +75,65 @@
 
 \section*{Results}
 
+
+
+
+\subsection*{Corrected DOY results}
+\subsection*{Fitting each species \& common garden instead of just species}
+\subsection*{MAT difference}
+\subsection*{Might want to include how the model looked when we included studies with disagreeing provenance \& gardens}
+% if we indeed include this.. need to update results section in manuscript
+
+
+\subsection*{Similar results across provenance latitude, latitude difference, and distance}
+Placeholder text (Fig. \ref{figure:lat_distance}).
+\begin{figure}[!h] 
+    \centering
+ \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_supp/lat_latdiff_earth_distance.png}
+    \caption{Similar results across provenance latitude, latitude difference, and distance}
+    \label{figure:lat_distance}
+\end{figure}
+\todo[inline]{change caption later}
+
+\subsection* {Strong relationship between provenance latitude, MAT, and GDDs}
+\todo[inline]{Flagged for Lizzie: I am unsure about how to commment on what we are seeing in this plot. \newline There is a strong relationship between GDDs of each event day recorded and the latitude and MAT, but isn't that self-apparent? }
+
+Placeholder text (Fig. \ref{figure:gdd}).
+
+% all figures will be updated (color, font size, resolution)
+\begin{figure}[!h] 
+    \centering
+ \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_ms/gdd_ms.png}
+    \caption{Growing Degree Days (GDD)on each day of spring event in relation to provenance latitude and MAT, coded by symbol for species and color for garden with linear fits from hierarchical Bayesian models.}
+    \label{figure:gdd}
+\end{figure}
+
+
+\section {Don't have a specific sections for these ones yet}
+
+\begin{figure}[!h] 
+    \centering
+ \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_supp/climate_overlap_continent_comparison.png}
+    \caption{The closer a garden is to a provenance, the more overlap in temperature. 
+Higher extend of climate overlap in European studies.}
+    \label{figure:overlap_continent}
+\end{figure}
+
+\begin{figure}[!h] 
+    \centering
+ \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_supp/prov_lat_mat_continent.png}
+    \caption{Placeholder.}
+    \label{figure:lat_mat_continent}
+\end{figure}
+
+
+\begin{figure}[!h] 
+    \centering
+ \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_supp/spp_type_continent.png}
+    \caption{Placeholder}
+    \label{figure:spp_continent}
+\end{figure}
+
 \subsection*{Spring Lat VS. Fall Lat}
 \begin{table}
 \centering
@@ -109,12 +168,5 @@ r2.adjusted.marginal & \num{0.902} & \num{0.960}\\
 \end{tabular}
 \label{table:model_sf_lat}
 \end{table}
-
-
-\subsection*{Corrected DOY results}
-\subsection*{Fitting each species \& common garden instead of just species}
-\subsection*{MAT difference}
-\subsection*{Might want to include how the model looked when we included studies with disagreeing provenance \& gardens}
-% if we indeed include this.. need to update results section in manuscript
 
 \end{document}

@@ -73,13 +73,31 @@
 
 \section*{Abstract}
 
+
+We conducted the first cross-continental meta-analysis of published studies from the peer-reviewed literature that reported spring event dates for a mix of angiosperm and gymnosperm tree species in the northern hemisphere, capturing data from 384 North American provenances and 101 European provenances with observations from 1962 to 2019.
+
+
 \section{Introduction}
 \begin{itemize}
 \item Define spring event, fall event
-\item Background 
+\item Background
+\item Importance: An accurate understanding of how species distribution might be influenced by environmental conditions at a continental scale is critical for future range shift prediction. 
+\item Knowledge Gap: Anecdotally, the spring phenology of trees from European provenances appeared to exhibit stronger clines and less plasticity than in North American studies. Despite a growing interest in predicting local adaptation across locations, no study has comprehensively examined clines for spring and fall events and what factors may underlie differences observed across studies.
 \item Research question (links to results)
 \end{itemize}
 
+We ask: Across common garden studies, how strong are clines in spring and fall phenology?
+
+To better understand these clines, we also aim to examine:
+\begin{itemize}
+\item If differences in clines exist across Europe and North America.
+\item If differences in clines exist across angiosperm and gymnosperm species.
+\item If climate overlap (see Figure 1) between the provenance and garden explains the similarities and differences in clines.
+\end{itemize}
+To our knowledge, this marks the first study to synthesize spring phenology data retrieved from studies across North America and Europe. 
+
+
+\subsection*{Ref notes}
 \todo[inline]{Good background information.}
 \citep{AitkenBemmels16}\\
 "Geographic variation in trees has been investigated since the mid-18th century. Similar patterns of clinal variation have been observed along latitudinal and elevational gradients in common garden experiments for many temperate and boreal species."\\
@@ -136,17 +154,35 @@ Our methods are divided into four main steps.
 
 % \item Literature search
 \subsection{Literature Search}
-We searched Web of Science, Google Scholar, and Connected Papers for common garden experiments that documented the timing of spring events of woody plant species. To be included, studies needed to (a) focus on woody plants originating from either Europe or North America, (b) report spring event in units of calendar days instead of a quantitative scale on a particular day, (c) report locations of provenances and gardens. \change{will reword things later} 
+
+We searched the peer-reviewed literature for common garden experiments that documented the timing of spring events of woody plant species. We searched on the Web of Science (Thompson Reuters, New York, NY) using all combinations of the following terms as ‘titles’ including ‘common garden*’ or “provenance*’ and ‘leafout*’ or ‘leaf out*’ or ‘budburst’ or ‘spring phenolog*’. Our search was limited to journal articles published before November 3, 2021. The search returned 94 publications. 
+\\
+\todo[inline]{add these citations to bibtex?? do we cite them?}
+We read the methods and results of all publications returned and limited our subsequent analysis to the ones that (a) focused on woody plants originating from either Europe or North America, (b) reported spring events in units of calendar days (day of year or DOY) instead of a quantitative scale on a particular day, and (c) reported latitude and longitude of provenances and gardens. We had to exclude studies that reported spring events on a quantitative scale because (1) such studies usually only assessed where on the scale the spring event of a tree fell onto on the same days across different years (e.g. Robson et al., 2013; Vander et al., 2015; Santini et al., 2014; Schueler \& Liesebach, 2004), and (2) scales are not always consistent across different studies. Such factors made it impossible to back convert the quantitative scale to DOY.
+\\
+\\
+Some studies did not provide the exact latitude and longitude of the common garden (Bongarten, 1978) or the provenances (Hall et al., 2007; Soolanayakanahally et al., 2013), or they did not link the latitude and longitude of each provenance to the DOY of spring events (Deans and Harvey, 1996). We had to exclude these papers. Finally, studies that focused on examining how provenance altitude influenced local adaptation in spring phenology were excluded since we are interested in testing latitudinal effects (Vitasse et al., 2009; Vitasse et al., 2010; Li et al., 1997; Alberto et al., 2011; Acevedo-Rodríguez et al., 2006). 
+
+
   \begin{itemize}
-\item Read AB 2015 and A 2013, took paper with spring doy and provenance coordinates from them
-\item Searched online for more papers (explain criteria here)
-\item Out of 59 papers related to common garden/spring phenology that I read, only 22 can supply data that we need; Out of the 22, 4 studies have provenance and gardens on different continents, which were subsequently archived (can document in supplements)).
+\item Read AB 2015 and A 2013 for anything that we missed, took paper with spring doy and provenance coordinates from them 
+
+
+\item Out of XX papers related to common garden/spring phenology that we read, only 22 ultimately supplied the data that we needed (DOY of spring events, latitude and longitude of provenances and common gardens); Out of the 22, four studies had provenance and gardens on different continents, which were subsequently archived (can document in supplements)).
 \end{itemize}
 
 
 \subsection{Dataset Assembly}
-We reviewed all returned results and assembled a dataset of spring event dates, during which we used ImageJ to scrape data from figures whenever possible and necessary.
-We primarily focused on papers with spring data. \improvement{will elaborate later}
+We assembled a dataset that documents the DOY of spring events and coordinates of provenances, during which we used ImageJ (version XXXX, citation) to scrape data from figures whenever possible and necessary. 
+\\
+Everything was converted to day of year (some experiment counted not from january 1 but from march 1, etc. Need to talk about how we included data from field and indoor-experiment studies.\improvement{expand on this and give examples}
+\\
+\\
+It is worth noting that most common garden studies that supplied data only had observations of one species. Therefore, it is difficult for a model to interpret if variations across gardens are due to the species or the garden’s location and climate. We thus focused on estimating species effects because we expect a larger effect from species. Therefore, we considered unique gardens and tree species to represent independent data within publications, and fitted each species \& common gardens instead of just species. \improvement{need to phrase this better, and maybe put this somewhere in the modelling methods}
+\\
+\\
+Studies were distributed throughout North America and Europe, with the majority of data concentrated in XXXXX (Figure X). The distribution was skewed toward North America (n = X), with only X located in Europe. We primarily focused our analysis on spring events, and made use of the fall event DOYs present in X of the studies we included rather than searching for publications entirely on fall events online.
+
 
 \subsection{Climate Data Gathering \& Analyses}
   \begin{itemize}
@@ -172,10 +208,27 @@ We used hierarchical Bayesian models where we partially pooled by species. We es
 
 
 \section{Results}
-\todo[inline]{all subsection titles are placeholders}
 
-Out of the 59 papers on common garden experiments and spring phenology that we reviewed, only 22 supplied data met our criteria to be included: (a) focus on woody plants originating from either Europe or North America, (b) report spring event in units of calendar days instead of a quantitative scale on a particular day, (c) report locations of provenances and gardens. Out of the 22, four studies had provenances and common gardens on different continents. These studies were excluded from our main analysis, but we document them in our supplements.\change{need to reword}
+\verb@Research questions recap@
+\\
+Despite a growing interest in predicting local adaptation across locations, no study has comprehensively examined clines for spring and fall events and what factors may underlie differences observed across studies.
+
+We ask: Across common garden studies, how strong are clines in spring and fall phenology?
+
+To better understand these clines, we also aim to examine:
+\begin{itemize}
+\item If differences in clines exist across Europe and North America.
+\item If differences in clines exist across angiosperm and gymnosperm species.
+\item If climate overlap between the provenance and garden explains the similarities and differences in clines.
+\end{itemize}
+
+\todo[inline]{all subsection titles are placeholders}
+Out of the X papers on common garden experiments and spring phenology that we reviewed, only 22 supplied data met our criteria to be included: (a) focus on woody plants originating from either Europe or North America, (b) report spring event in units of calendar days instead of a quantitative scale on a particular day, (c) report locations of provenances and gardens. Out of the 22, four studies had provenances and common gardens on different continents. These studies were excluded from our main analysis, but we document them in our supplements.\change{need to reword}
+\\
+\\
 Our final dataset captures seven angiosperm and eight gymnosperm species from 19 common gardens, encompassing data from 384 North American provenances and 101 European provenances with observations from 1962 to 2019. Seven species had fall event information available. 
+\\
+\\
 It is worth noting that most common gardens included in this study only had observations of one species. Therefore, it is difficult for a model to interpret if variations across gardens are due to the species or the garden’s location and climate. \improvement{can refer to the fit we did where we fitted each species \& common garden instead of just species} We thus focused on estimating species effects because we expect a larger effect from species. 
 
 \todo[inline]{add map here}
@@ -198,30 +251,19 @@ Overall, our models show that spring events are not related to provenance latitu
 
 \subsubsection {Similar results across provenance latitude, latitude difference, and distance}
 \todo[inline]{need to find a name for each metric and stick to it.}
-Along with (a) provenance latitude, we also looked at how spring event timing is related to (b) the absolute difference between provenance latitude and garden latitude , as well as (c) the spherical distance between the garden and each provenance. All three metrics depict little to no relationship between spring event timing and the geographical location of the provenance \verb@(Supplement Figure #)@.
-% can show that figure in supplement
-
-\subsubsection {Climate overlap does not predict event dates much better than provenance latitude or MAT}
-
-While comparing how similarity in climate relates to event dates, we observed very weak effects of climate overlap on spring events, nearly identical across angiosperms and gymnosperms. Fall events diverge as climate overlap declines for both angiosperms and gymnosperms, but slightly more strongly for gymnosperms.
-% add figure here
-
-\subsubsection {Strong relationship between provenance latitude, MAT, and GDDs}
-
-\todo[inline]{Flagged for Lizzie: I am unsure about how to commment on what we are seeing in this plot. \newline There is a strong relationship between GDDs of each event day recorded and the latitude and MAT, but isn't that self-apparent? }
-
-Placeholder text (Fig. \ref{figure:gdd}).
-
-% all figures will be updated (color, font size, resolution)
-\begin{figure}[!h] 
-    \centering
- \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_ms/gdd_ms.png}
-    \caption{Growing Degree Days (GDD)on each day of spring event in relation to provenance latitude and MAT, coded by symbol for species and color for garden with linear fits from hierarchical Bayesian models.}
-    \label{figure:gdd}
-\end{figure}
-
+Along with (a) provenance latitude, we also looked at how spring event timing is related to (b) the absolute difference between provenance latitude and garden latitude , as well as (c) the spherical distance between the garden and each provenance. All three metrics depict little to no relationship between spring event timing and the geographical location of the provenance (Supplement Fig.\ref{supplement-figure:lat_distance}).
 
 \newpage
+\subsubsection {Climate overlap does not predict event dates much better than provenance latitude or MAT}
+
+While comparing how similarity in climate relates to event dates, we observed very weak effects of climate overlap on spring events, nearly identical across angiosperms and gymnosperms. Fall events diverge as climate overlap declines for both angiosperms and gymnosperms, but slightly more strongly for gymnosperms (Fig.\ref{figure:overlap}).
+
+\begin{figure}[!h] 
+    \centering
+ \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_ms/climate_overlap.png}
+    \caption{Caption placeholder}
+    \label{figure:overlap}
+\end{figure}
 
 
 \subsection{Stronger clines in fall events observed in North America than Europe}
@@ -236,12 +278,26 @@ Placeholder text (Fig. \ref{figure:gdd}).
 %  extract the mean estimate of the slope and report that instead of ~4 or such
 % hmmm i forgot the code :)))
 
-We find that fall events (budset, leaf senescence, leaf abcission) advance strongly with provenance latitude and mean annual temperature, meaning fall events are earlier where provenance mean annual temperature is lower (higher, more northern latitudes). This relationship, however, is observed mostly in North America where fall events advance 4.2 days per degree we move north, or 6.4 days when the MAT decreases by one $^{\circ}$C. In Europe, such relationship is weak: advance 0.5 days per degree we move north, or 0.6 days when the MAT decreases by one $^{\circ}$C.
-% add figure here
+We find that fall events (budset, leaf senescence, leaf abcission) advance strongly with provenance latitude and mean annual temperature, meaning fall events are earlier where provenance mean annual temperature is lower (higher, more northern latitudes). This relationship, however, is observed mostly in North America where fall events advance 4.2 days per degree we move north, or 6.4 days when the MAT decreases by 1 $^{\circ}$C (Fig. \ref{figure:continent}). In Europe, such relationship is weak: advance 0.5 days per degree we move north, or 0.6 days when the MAT decreases by 1 $^{\circ}$C(Fig. \ref{figure:continent}).
+
+\begin{figure}[!h] 
+    \centering
+ \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_ms/continent_histogram.png}
+    \caption{Caption placeholder}
+    \label{figure:continent}
+\end{figure}
+
 
 \subsection{Effects of MAT on spring events diverge across angiosperms and gymnosperms}
 
-Effects of provenance latitude on both spring and fall events are similar across angiosperms and gymnosperms. However, effects of MAT on spring events weakly diverge: spring events get earlier as MAT increases in angiosperms and delay as MAT increases in gymnosperms, except for \emph{Pseudotsuga menziesii}. Fall events delay in warmer locations for both species types, but slightly more so for gymnosperms (3.7 days VS. 6.2 days).
+Effects of provenance latitude on both spring and fall events are similar across angiosperms and gymnosperms. However, effects of MAT on spring events weakly diverge: spring events get earlier as MAT increases in angiosperms and delay as MAT increases in gymnosperms, except for \emph{Pseudotsuga menziesii}. Fall events delay in warmer locations for both species types, but slightly more so for gymnosperms (3.7 days VS. 6.2 days)(Fig. \ref{figure:spp_type}).
+
+\begin{figure}[!h] 
+    \centering
+ \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_ms/spp_type_histogram.png}
+    \caption{Caption placeholder}
+    \label{figure:spp_type}
+\end{figure}
 
 
 \section{Discussion}

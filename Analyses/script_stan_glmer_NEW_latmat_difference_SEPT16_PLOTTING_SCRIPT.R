@@ -6,6 +6,7 @@ library(Rcpp)
 library(rstanarm)
 library(bayesplot)
 library(ggplot2)
+library(viridis)
 
 
 

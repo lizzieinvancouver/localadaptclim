@@ -2,6 +2,7 @@
 \documentclass{article}
 
 % required 
+\usepackage{amsmath}
 \usepackage{natbib}
 \usepackage{xr-hyper}
 \usepackage{hyperref}

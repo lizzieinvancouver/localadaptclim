@@ -189,32 +189,31 @@ Most common garden studies that supplied data only had observations of one tree 
 
 
 \subsection{Climate Data Gathering \& Analyses}
-  \begin{itemize}
-  \item Simple climate matrix (MAT \& MSP/MAP) gathering
-  \begin{itemize}
-  \item ClimateNA by Dr. Tongli Wang
-  \item Climate Information Tool by FAO
-  \end{itemize}
-  \item Daily climate data gathering: Gridded daily climate data downloaded for all provenances and gardens: We hope that coarse metrics such as latitude and MAT ultimately represent how similar the climates are between the provenances and gardens in times that matter for the events. If climates are very similar, then we would expect similar timings [add more here].
-To this end, we estimated climate overlap in relevant months: For spring events, we considered overlap across March to May.
-  \begin{itemize}
-  \item North American daily climate data from Daymet R package
-  \item Europe daily climate data (gridded: NetCDF-4) retrieved from E-OBS 
-  \end{itemize}
-  \end{itemize}
+With information about provenance latitude, longitude, and elevation from original publications, we estimated the mean annual temperature (MAT) for each provenance using the Climate Information Tool by FAO (Food and Agriculture Organization of the United Nations, 2022) and ClimateWNA (Wang et al., 2012). 
+\\
+To assess climate overlap percentage (define this better), we extracted gridded daily climate data for 2011 to 2020 for all European and North American provenances and gardens from E-OBS and the built-in Daymet package in R respectively (Cornes et al., 2018; Thornton et al., 2020).
 
 \subsubsection{Estimate climate overlap using daily climate data using Overlap R package}
-\subsubsection{Calculate GDDs}
+We hope that coarse metrics such as latitude and MAT ultimately represent how similar the climates are between the provenances and gardens in times that matter for the events. If climates are very similar, then we would expect similar timings [add more here].
+To this end, we estimated climate overlap in relevant months: For spring events, we considered overlap across March to May.
+\\
+Using the Overlap package in R, we calculated the percentage overlap of the daily temperature of each provenance in spring months (March to May) from 2011 to 2020 in relation to the daily temperature of their corresponding gardens. 
 
+\subsubsection{Calculate GDDs}
 
 Growing degree days (GDD) is a commonly used heat accumulation measure to forecast phenological development in plants (Miller et al., 2001). We calculated GDD based on the accumulation of mean daily temperatures ($T_{m}$)from 2011 to 2022 above a baseline of 0$^{\circ}$C, from January 1 until budburst and leaf flush with the following formula: GDD = $\sum$($T_{m}$ - $0^{\circ}$C for $T_{m}$ $\ge$ $0^{\circ}$C; 0 for $T_{m}$ $\le$ $0^{\circ}$C) 
 
 
 \subsubsection{Spherical distances}
 
-
+hmmm need to better define this... 
+On top of taking the difference between provenance latitude and garden latitude (maybe I could write this in subscript), we also use the dism() function in the Geosphere package in R to estimate the geospherical distance between locations (accounting for Earth curvature).\improvement{maybe there are different/better terms}
 
 \subsubsection{Corrected for DOY (taking the difference)}\todo{will put results in supplement}
+(need to better define this as well)
+
+
+
 \subsection{Mixed effects modelling}
 
 We used hierarchical Bayesian models where we partially pooled by species. We estimated effects of continent and species type (angiosperm VS gymnosperm) from posterior estimates, in relation to single predictors (including provenance latitude, MAT) and two predictors (climate overlap percentage and standard deviation). \improvement{will elaborate later}

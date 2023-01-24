@@ -156,12 +156,14 @@ Our methods are divided into four main steps.
 
 % \item Literature search
 \subsection{Literature Search}
+%emw24Jan -- this section looks good; once you're happy with it, I can slim it down a little and suggest a few things to cut or move to supp. 
 
-We searched the peer-reviewed literature for common garden experiments that documented the timing of spring events of woody plant species. We searched on the Web of Science (Thompson Reuters, New York, NY) using all combinations of the following terms as ‘titles’ including ‘common garden*’ or “provenance*’ and ‘leafout*’ or ‘leaf out*’ or ‘budburst’ or ‘spring phenolog*’. Our search was limited to journal articles published before November 3, 2021. The search returned 94 publications. 
+We searched the peer-reviewed literature for common garden experiments that documented the timing of spring events of woody plant species on 14 December 2022 using Web of Science (Thompson Reuters, New York, NY). Our search terms using all combinations of the following terms as ‘titles’ including ‘common garden*’ or “provenance*’ and ‘leafout*’ or ‘leaf out*’ or ‘budburst’ or ‘spring phenolog*’. The search returned 94 publications. %emw24Jan -- see edits that address your question. We can just give the last date we searched. Also, can you check your terms? It's not clear what the search was. ... I would just write it out as we have in other papers. Here's an example:
+% TOPIC = (budburst OR leafout) AND (photoperiod or daylength) AND temperature*, which yielded 85 publications
 \\
 
-\todo[inline]{question for lizzie: I later checked 2022 publications too to make sure we didn't miss anything... Do I just say at the very beginning that our search is limited to publications before Dec 14, 2022, or do I say 'we later checked the literature again on XX-XX-2022 to ensure we did not miss any new publications?}
 \todo[inline]{I also think the reviewers might question why we had so few search results.... maybe I should mention that I also checked on Google Scholar and Connected Papers, and Aitken Bammals 2016/Alberto 2013, and emailed our list of papers to established researchers such as Aitken and Guy, etc. to make sure we didn't miss anything?}
+%emw24Jan -- I agree! You can say you also searched google scholar (but then you have to say how and when), and contacted authors of previous review papers to help further search the literature. The other thing you could do is your search with TOPIC instead of TITLE, as reviewers will find TITLE suspicious -- even though I suspect you have found all the main papers. 
 
 We read the methods and results of all publications returned and limited our subsequent analysis to the ones that (a) focused on woody plants originating from either Europe or North America, (b) had provenance trails and common gardens on the same continent, (c) reported spring events in units of calendar days (day of year or DOY) instead of a quantitative scale on a particular day, and (d) reported latitude and longitude of provenances and gardens. 
 \\
@@ -183,7 +185,7 @@ We assembled a data set that documents event DOY and geographic coordinates of p
 
 
 Some studies had more than one gardens (), two studies shared the same garden ().\improvement{can mention this in table caption}
-
+%emw24Jan -- yes, we can move the below to modeling section
 Most common garden studies that supplied data only had observations of one tree species, which makes it difficult for a model to interpret if variations across gardens are due to the species or the garden’s location and climate. We thus focused on estimating species effects because we expect a larger effect from species. Within publications, we considered unique gardens and species to represent independent data, and fitted each species \& common gardens instead of just species. \improvement{need to phrase this better, and maybe put this somewhere in the modelling methods}
 
 
@@ -203,7 +205,7 @@ Using the Overlap package in R, we calculated the percentage overlap of the dail
 
 Growing degree days (GDD) is a commonly used heat accumulation measure to forecast phenological development in plants (Miller et al., 2001). We calculated GDD based on the accumulation of mean daily temperatures ($T_{m}$)from 2011 to 2022 above a baseline of 0$^{\circ}$C, from January 1 until budburst and leaf flush with the following formula: GDD = $\sum$($T_{m}$ - $0^{\circ}$C for $T_{m}$ $\ge$ $0^{\circ}$C; 0 for $T_{m}$ $\le$ $0^{\circ}$C) 
 
-
+%emw24Jan -- I think we can delete this subsection (or move to supp for now). Just define clearly in caption what you mean. 
 \subsubsection{Spherical distances}
 
 hmmm need to better define this... 
@@ -213,7 +215,7 @@ On top of taking the difference between provenance latitude and garden latitude 
 (need to better define this as well)
 
 
-
+%emw24Jan -- I can add to this. 
 \subsection{Mixed effects modelling}
 
 We used hierarchical Bayesian models where we partially pooled by species. We estimated effects of continent and species type (angiosperm VS gymnosperm) from posterior estimates, in relation to single predictors (including provenance latitude, MAT) and two predictors (climate overlap percentage and standard deviation). \improvement{will elaborate later}
@@ -235,20 +237,22 @@ To better understand these clines, we also aim to examine:
 \end{itemize}
 
 \todo[inline]{all subsection titles are placeholders}
-Out of the X papers on common garden experiments and spring phenology that we reviewed, only 18(?) supplied data met our criteria to be included: (a) focus on woody plants originating from either Europe or North America, (b) report spring event in units of calendar days instead of a quantitative scale on a particular day, (c) report locations of provenances and gardens. 
+%emw24Jan -- the below is in the methods so not needed here. 
+% Out of the X papers on common garden experiments and spring phenology that we reviewed, only 18(?) supplied data met our criteria to be included: (a) focus on woody plants originating from either Europe or North America, (b) report spring event in units of calendar days instead of a quantitative scale on a particular day, (c) report locations of provenances and gardens. 
 
 % Out of the 22, four studies had provenances and common gardens on different continents. These studies were excluded from our main analysis, but we document them in our supplements.\change{need to reword}
+%emw24Jan -- below is great opening!
 Our final dataset captures seven angiosperm and eight gymnosperm species from 19 common gardens, encompassing data from 384 North American provenances and 101 European provenances with observations from 1962 to 2019. Seven species had fall event information available. 
 \\
-It is worth noting that most common gardens included in this study only had observations of one species. Therefore, it is difficult for a model to interpret if variations across gardens are due to the species or the garden’s location and climate. \improvement{can refer to the fit we did where we fitted each species \& common garden instead of just species} We thus focused on estimating species effects because we expect a larger effect from species. 
+%emw24Jan -- you can basically always delete 'we note' or anything similar. Also, I think this is in the methods or should be, so remove from here. 
+Most common gardens included in this study only had observations of one species. Therefore, it is difficult for a model to interpret if variations across gardens are due to the species or the garden’s location and climate. \improvement{can refer to the fit we did where we fitted each species \& common garden instead of just species} We thus focused on estimating species effects because we expect a larger effect from species. 
 
 \todo[inline]{add map here}
 \todo[inline]{add a table documenting studies attributes}
 
 \subsection{Provenance latitude and MAT do not affect spring event timing}
-
-Overall, our models show that spring events are not related to provenance latitude or mean annual temperature in North America, and only weakly related in Europe (Fig. \ref{figure:springfall_latmat} \& Supplement Table.\ref{supplement-table:model_sf_lat}). \unsure{Should I add climate overlap plots here too?}
-
+%emw24Jan -- below is good, can you also explain the direction of relationship in europe? Do events get later/earlier with higher/lower latitude and MAT?
+Overall, our models show that spring events are not related to provenance latitude or mean annual temperature in North America, and only weakly related in Europe (Fig. \ref{figure:springfall_latmat} \& Supplement Table. \ref{supplement-table:model_sf_lat}). \unsure{Should I add climate overlap plots here too?} %emw24Jan -- do you mean add a table of climate overlap to the supp? 
 
 \begin{figure}[!h] 
     \centering
@@ -278,6 +282,7 @@ While comparing how similarity in climate relates to event dates, we observed ve
 
 
 \subsection{Stronger clines in fall events observed in North America than Europe}
+%emw24Jan -- Nice! Also, results seem good, I can help trim text and collapse some sections. 
 
 % old graphs can be found in C:\Users\alina\Documents\git\localadaptclim\Output\plotMay15_two predictors_experiment
 % refer to analyses\script_model_continent_spp_type_effect

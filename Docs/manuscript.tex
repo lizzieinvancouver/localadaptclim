@@ -66,7 +66,7 @@
 \input{/Users/alina/Documents/git/localadaptclim/Docs/figure_ms/demoFig-concordance} % For RStudio hiccups
 \title{{\huge Changes and trends in budburst and leaf flush across Europe and North America} \\A meta-analysis of local adaptation in spring phenology studies}
 \author{Ziyun Zeng \& E. M. Wolkovich}
-\date{November 2022}
+\date{2023}
 \maketitle 
 
 
@@ -146,8 +146,23 @@ tbc...
 \todo[inline]{Alina says: I found AitkenBemmels2016's research question to be wonderfully phrased and think we can do something similar}
 \citep{AitkenBemmels16}\\
 "To what extent are patterns of local adaptation along climatic gradients similar among species within a given geographic region? If clines in phenotypic traits are similar, can average patterns of sympatric variation guide AGF or identify critical climatic variables as a first approximation for untested species? We reanalysed data from the literature on provenance trials in temperate tree species from western North America to address these questions. This is an ideal region of focus because of the many provenance trials conducted on native tree species that are important for forestry, and because its high topographic complexity means that turnover in climate occurs rapidly and heterogeneously over short geographic spaces. Clines along climate gradients are thus espcially likely to reflect local adaptation to climate, rather than non-adaptive phenomena resulting from population demographic history."
- 
+\\
 
+% alina_Jan27 -- I think we should have a section to define "spring events, fall events, distance between garden locations, difference of latitude, etc. Where do you think this section should go? Methods?
+
+% I am pasting a paragraph of the method section of Ettinger below to make reference to later on when I write the definition section. 
+"Defining budburst. Most studies defined budburst as initial ‘green tips’ (33 out of
+49 papers). Select studies defined budburst as a specific increment of growth (for
+example, ‘0.5 cm of new growth’) or as bud swell, leaf emergence, leaf unfolded,
+open bud scales or petiole emerged. The remaining papers (4 of 49) did not
+include a definition of budburst. Most papers using the above definitions (34 of 49)
+required only one bud to have met the defined criteria of budburst; however, the
+remaining studies implemented specific thresholds to be met (10–100\% of all buds
+on an individual needed to have bursted bud). For studies that quantified multiple
+measurements of percentage budburst over time (days), we extracted one value of
+‘days to budburst’ of these multiple measurements to make them comparable to
+other studies. To extract this summary value, we selected the days to budburst when
+percentage budburst was closest to 90\%, including estimates as low as 49.5\% budburst"
 
 
 
@@ -156,56 +171,46 @@ Our methods are divided into four main steps.
 
 % \item Literature search
 \subsection{Literature Search}
+%emw24Jan -- this section looks good; once you're happy with it, I can slim it down a little and suggest a few things to cut or move to supp. 
 
-We searched the peer-reviewed literature for common garden experiments that documented the timing of spring events of woody plant species. We searched on the Web of Science (Thompson Reuters, New York, NY) using all combinations of the following terms as ‘titles’ including ‘common garden*’ or “provenance*’ and ‘leafout*’ or ‘leaf out*’ or ‘budburst’ or ‘spring phenolog*’. Our search was limited to journal articles published before November 3, 2021. The search returned 94 publications. 
+We searched the peer-reviewed literature for common garden experiments that documented the timing of spring events of woody plant species on 14 December 2022 using Web of Science (Thompson Reuters, New York, NY)with the following terms:
 \\
-
-\todo[inline]{question for lizzie: I later checked 2022 publications too to make sure we didn't miss anything... Do I just say at the very beginning that our search is limited to publications before Dec 14, 2022, or do I say 'we later checked the literature again on XX-XX-2022 to ensure we did not miss any new publications?}
-\todo[inline]{I also think the reviewers might question why we had so few search results.... maybe I should mention that I also checked on Google Scholar and Connected Papers, and Aitken Bammals 2016/Alberto 2013, and emailed our list of papers to established researchers such as Aitken and Guy, etc. to make sure we didn't miss anything?}
-
-We read the methods and results of all publications returned and limited our subsequent analysis to the ones that (a) focused on woody plants originating from either Europe or North America, (b) had provenance trails and common gardens on the same continent, (c) reported spring events in units of calendar days (day of year or DOY) instead of a quantitative scale on a particular day, and (d) reported latitude and longitude of provenances and gardens. 
+\\
+TOPIC = (common garden* OR provenance*) AND (leafout* OR leaf out* OR budburst OR spring phenolog*). The search returned 122 publications. We also contacted authors of previous review papers, including S.N. Aitken and R.D. Guy to help further search the literature.
+\\
+\\
+We read the methods and results of all publications and limited our subsequent analysis to the ones that (a) focused on woody plants originating from either Europe or North America, (b) had provenance trails and common gardens on the same continent, (c) reported spring events in units of calendar days (day of year or DOY) instead of a quantitative scale on a particular day, and (d) reported latitude and longitude of provenances and gardens. 
+\\
 \\
 We had to exclude studies that reported spring events on a quantitative scale because (1) such studies usually only assessed where on the scale the spring event of a tree fell onto on the same days across different years (e.g. Robson et al., 2013; Vander et al., 2015; Santini et al., 2014; Schueler \& Liesebach, 2004), and (2) scales are not always consistent across different studies (Chmura \& Rozkowski 2002; Dhont et al., 2010; Wang et al., 2022). Such factors made it impossible to back convert the quantitative scale to DOY.
-\todo[inline]{add these citations to bibtex?? do we cite them?}
+\\
+\\
 
 Some studies did not provide the exact latitude and longitude of the common garden (Bongarten, 1978) or the provenances (Hall et al., 2007; Soolanayakanahally et al., 2013), or they did not link the latitude and longitude of each provenance to the DOY of spring events (Deans \& Harvey, 1996). We had to exclude these papers. We also left out studies in which woody plants from North American provenances were planted in common gardens in Europe because we wanted to test continental variations (Cannell et al., 1987; Lavadinovic et al., 2013). Finally, we excluded studies that focused on examining how provenance altitude influenced local adaptation in spring phenology since we are interested in testing latitudinal effects (Vitasse et al., 2009; Vitasse et al., 2010; Li et al., 1997; Alberto et al., 2011; Acevedo-Rodríguez et al., 2006). 
 
-% Read AB 2015 and A 2013 for anything that we missed, took paper with spring doy and provenance coordinates from them 
-
 \subsection{Dataset Assembly}
 
-Out of XX papers related to common garden/spring phenology that we read, only 18 (?) ultimately supplied the data that we needed (DOY of spring events, latitude and longitude of provenances and common gardens). \improvement{need to rewrite this; can display a table here} Studies were distributed throughout North America and Europe, with the majority of data concentrated in XXXXX (Figure X). The distribution was skewed toward North America (n = X), with only X located in Europe. We primarily focused our analysis on spring events, and made use of the fall event DOYs present in X of the studies we included rather than searching for publications entirely on fall events online. 
+Out of the 122 common garden studies on spring phenology that we read, only 18 (?) ultimately supplied the data that we needed (DOY of spring events, latitude and longitude of provenances and common gardens). Studies were distributed throughout North America and Europe, with the majority of data concentrated in XXXXX (Figure X). The distribution was skewed toward North America (n = X), with only X located in Europe. We primarily focused our analysis on spring events, and made use of the fall event DOYs present in X of the studies we included rather than searching for publications entirely on fall events online. \improvement{display a table and a map here, and in the caption, clarify that some studies had more than one gardens and two studies shared the same garden}
 \\
-% We retained studies that supplied DOY of spring events and geographic coordinates of provenances and common gardens. 
-
+\\
 We assembled a data set that documents event DOY and geographic coordinates of provenances and gardens, during which we used ImageJ (version 1.53k; Rasband, 1997-2022) to extract values from figures whenever possible and necessary. We pooled the timing of budburst and leaf flush into a single category of ‘spring events’ and the timing of bud set, leaf senescence, growth cessation, and leaf abscission into ‘fall events.’ Such pooling is justified because of the shared pressures from natural selection that govern these events (Gill et al., 2015). Some studies documented event dates relative to a reference date that is not January 1 (e.g. Cannel et al., 1987; Rehfeldt, 1994). In this case, we converted such dates to DOY using the Lubridate Package in R for standardization purposes.
-\\
-
-
-Some studies had more than one gardens (), two studies shared the same garden ().\improvement{can mention this in table caption}
-
-Most common garden studies that supplied data only had observations of one tree species, which makes it difficult for a model to interpret if variations across gardens are due to the species or the garden’s location and climate. We thus focused on estimating species effects because we expect a larger effect from species. Within publications, we considered unique gardens and species to represent independent data, and fitted each species \& common gardens instead of just species. \improvement{need to phrase this better, and maybe put this somewhere in the modelling methods}
-
-
 
 \subsection{Climate Data Gathering \& Analyses}
+\subsubsection {placeholder}
 With information about provenance latitude, longitude, and elevation from original publications, we estimated the mean annual temperature (MAT) for each provenance using the Climate Information Tool by FAO (Food and Agriculture Organization of the United Nations, 2022) and ClimateWNA (Wang et al., 2012). 
 \\
-To assess climate overlap percentage (define this better), we extracted gridded daily climate data for 2011 to 2020 for all European and North American provenances and gardens from E-OBS and the built-in Daymet package in R respectively (Cornes et al., 2018; Thornton et al., 2020).
-
-\subsubsection{Estimate climate overlap using daily climate data using Overlap R package}
-We hope that coarse metrics such as latitude and MAT ultimately represent how similar the climates are between the provenances and gardens in times that matter for the events. If climates are very similar, then we would expect similar timings [add more here].
-To this end, we estimated climate overlap in relevant months: For spring events, we considered overlap across March to May.
 \\
-Using the Overlap package in R, we calculated the percentage overlap of the daily temperature of each provenance in spring months (March to May) from 2011 to 2020 in relation to the daily temperature of their corresponding gardens. 
+We hope that coarse metrics such as latitude and MAT ultimately represent how similar the climates are between the provenances and gardens in times that matter for the events. If climates are very similar, then we would expect similar timings [add more here].
+To this end, we estimated climate overlap in relevant months: For spring events, we considered overlap across March to May. To assess climate overlap percentage (define this better), we extracted gridded daily temperature data for 2011 to 2020 for all European and North American provenances and gardens from E-OBS and the built-in Daymet package in R respectively (Cornes et al., 2018; Thornton et al., 2020). Using the Overlap package in R, we calculated the percentage overlap of the daily temperature of each provenance in spring months (March to May) from 2011 to 2020 in relation to the daily temperature of their corresponding gardens. 
 
 \subsubsection{Calculate GDDs}
 
 Growing degree days (GDD) is a commonly used heat accumulation measure to forecast phenological development in plants (Miller et al., 2001). We calculated GDD based on the accumulation of mean daily temperatures ($T_{m}$)from 2011 to 2022 above a baseline of 0$^{\circ}$C, from January 1 until budburst and leaf flush with the following formula: GDD = $\sum$($T_{m}$ - $0^{\circ}$C for $T_{m}$ $\ge$ $0^{\circ}$C; 0 for $T_{m}$ $\le$ $0^{\circ}$C) 
+\\
 
 
-\subsubsection{Spherical distances}
 
+define this in caption, no need to have is as a section: Spherical distances 
 hmmm need to better define this... 
 On top of taking the difference between provenance latitude and garden latitude (maybe I could write this in subscript), we also use the dism() function in the Geosphere package in R to estimate the geospherical distance between locations (accounting for Earth curvature).\improvement{maybe there are different/better terms}
 
@@ -213,8 +218,10 @@ On top of taking the difference between provenance latitude and garden latitude 
 (need to better define this as well)
 
 
-
+%emw24Jan -- I can add to this. 
 \subsection{Mixed effects modelling}
+
+Most tree species are only represented in one common garden study in our dataset. In such instances, it is difficult to statistically interpret if variations across gardens are due to the species or the garden’s location and climate. To address this, we focused on estimating species effects as we expect a larger effect from species. Within publications, we considered unique gardens and species to represent independent data, and fitted each species \& common gardens instead of just species.
 
 We used hierarchical Bayesian models where we partially pooled by species. We estimated effects of continent and species type (angiosperm VS gymnosperm) from posterior estimates, in relation to single predictors (including provenance latitude, MAT) and two predictors (climate overlap percentage and standard deviation). \improvement{will elaborate later}
 
@@ -235,20 +242,17 @@ To better understand these clines, we also aim to examine:
 \end{itemize}
 
 \todo[inline]{all subsection titles are placeholders}
-Out of the X papers on common garden experiments and spring phenology that we reviewed, only 18(?) supplied data met our criteria to be included: (a) focus on woody plants originating from either Europe or North America, (b) report spring event in units of calendar days instead of a quantitative scale on a particular day, (c) report locations of provenances and gardens. 
 
-% Out of the 22, four studies had provenances and common gardens on different continents. These studies were excluded from our main analysis, but we document them in our supplements.\change{need to reword}
+%emw24Jan -- below is great opening!
 Our final dataset captures seven angiosperm and eight gymnosperm species from 19 common gardens, encompassing data from 384 North American provenances and 101 European provenances with observations from 1962 to 2019. Seven species had fall event information available. 
 \\
-It is worth noting that most common gardens included in this study only had observations of one species. Therefore, it is difficult for a model to interpret if variations across gardens are due to the species or the garden’s location and climate. \improvement{can refer to the fit we did where we fitted each species \& common garden instead of just species} We thus focused on estimating species effects because we expect a larger effect from species. 
 
 \todo[inline]{add map here}
 \todo[inline]{add a table documenting studies attributes}
 
 \subsection{Provenance latitude and MAT do not affect spring event timing}
-
-Overall, our models show that spring events are not related to provenance latitude or mean annual temperature in North America, and only weakly related in Europe (Fig. \ref{figure:springfall_latmat} \& Supplement Table.\ref{supplement-table:model_sf_lat}). \unsure{Should I add climate overlap plots here too?}
-
+%emw24Jan -- below is good, can you also explain the direction of relationship in europe? Do events get later/earlier with higher/lower latitude and MAT? % alina_jan27 -- I believe I described that in later paragraphs. Would you like me to move it up?
+Overall, our models show that spring events are not related to provenance latitude or mean annual temperature in North America, and only weakly related in Europe (Fig. \ref{figure:springfall_latmat} \& Supplement Table. \ref{supplement-table:model_sf_lat}). \unsure{Should I add climate overlap plots here too?} %emw24Jan -- do you mean add a table of climate overlap to the supp? % alina_jan27 -- I meant if the plots where I plotted climate overlap percentage against DOY should be included here too, so easier for people to compare perhaps?
 
 \begin{figure}[!h] 
     \centering
@@ -278,6 +282,7 @@ While comparing how similarity in climate relates to event dates, we observed ve
 
 
 \subsection{Stronger clines in fall events observed in North America than Europe}
+%emw24Jan -- Nice! Also, results seem good, I can help trim text and collapse some sections. 
 
 % old graphs can be found in C:\Users\alina\Documents\git\localadaptclim\Output\plotMay15_two predictors_experiment
 % refer to analyses\script_model_continent_spp_type_effect

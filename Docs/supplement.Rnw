@@ -86,12 +86,12 @@
 % if we indeed include this.. need to update results section in manuscript
 
 
-\subsection*{Similar results across provenance latitude, latitude difference, and distance}
+\subsection*{Similar results across provenance latitude, absolute value of difference between provenance and garden latitude, and spherical distance}
 Placeholder text (Fig. \ref{figure:lat_distance}).
 \begin{figure}[!h] 
     \centering
  \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_supp/lat_latdiff_earth_distance.png}
-    \caption{Similar results across provenance latitude, latitude difference, and distance}
+    \caption{Similar results across provenance latitude, absolute value of difference between provenance and garden latitude, and spherical distance}
     \label{figure:lat_distance}
 \end{figure}
 \todo[inline]{change caption later}

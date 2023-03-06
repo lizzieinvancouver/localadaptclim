@@ -48,7 +48,7 @@
 % optional: cute, fancy headers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhead[LO]{November 2022}
+\fancyhead[LO]{March 2023}
 \fancyhead[RO]{Manuscript}
 % more optionals! %
 % \usepackage[hyphens]{url} % this wraps my URL versus letting it spill across the page, a bad habit LaTeX has
@@ -176,12 +176,12 @@ Based on these criteria we found 18 provenance/common garden studies, distribute
 To understand how climatic differences, in addition to geographical differences, shape local adaptation in spring events we extracted several types of climate data using information about provenance latitude, longitude, and elevation from original publications. We estimated the mean annual temperature (MAT) for each provenance using the Climate Information Tool by Food and Agriculture Organization of the United Nations \citep{FAO2022}and ClimateWNA \citep{wang2016}. To examine more explicitly climate near spring events, we used gridded daily temperature data for 2011 to 2020 for all European and North American provenances and gardens from E-OBS and the daymetr R package respectively \citep{cornes2018,hufkens2018}. Using these data we estimated how much the daily temperatures overlapped between garden and provenance locations, which we call `climate overlap.' For this we used the Overlap package in R to calculate the percentage overlap of the daily temperature of each provenance in spring months (March to May) from 2011 to 2020 in relation to the daily temperature of their corresponding gardens. Finally, using the daily data, we also calculated Growing degree days (GDD), a commonly used heat accumulation measure to forecast phenological development in plants (Miller et al., 2001), based on the accumulation of mean daily temperatures ($T_{m}$)from 2011 to 2022 above a baseline of 0$^{\circ}$C, from January 1 until budburst and leaf flush with the following formula: GDD = $\sum$($T_{m}$ - $0^{\circ}$C for $T_{m}$ $\ge$ $0^{\circ}$C; 0 for $T_{m}$ $\le$ $0^{\circ}$C).
 
 \subsection{Analyses}
-To estimate clines in spring and fall phenological events across species we used hierarchical Bayesian models. We regressed day of year (DOY) of events against geographical and climate predictors with partial pooling (sometimes called `random effects') on the intercept and slope for each species within each garden. Because most tree species were present in only one common garden in our dataset, it was impossible to fit garden and species separately, thus we treat each species within a garden as a unique group. Using posterior estimates for each species within a garden, we estimated effects of continent (North America vs. Europe) and species type (angiosperm vs. gymnosperm). All models were fit in rstanarm package (version 2.21.3; \citealp{brilleman2018}), using default priors, with 4 chains and 1000 sampling iterations per chain. We checked for model fit by ...
-%emw2Mar -- Check: Did you use 4 chains? And add info. It would be good if you have tidy code you can post with the data so folks can fit the models themselves. 
+To estimate clines in spring and fall phenological events across species we used hierarchical Bayesian models. We regressed day of year (DOY) of events against geographical and climate predictors with partial pooling (sometimes called `random effects') on the intercept and slope for each species within each garden. Because most tree species were present in only one common garden in our dataset, it was impossible to fit garden and species separately, thus we treat each species within a garden as a unique group. Using posterior estimates for each species within a garden, we estimated effects of continent (North America vs. Europe) and species type (angiosperm vs. gymnosperm). All models were fit in rstanarm package (version 2.21.3; \citealp{brilleman2018}), using default priors, with 4 chains and 1000 sampling iterations per chain for a total of 4000 samples. We checked for model fit by ... [ADD here]. We present estimates as mean $\pm$ 90\% uncertainty intervals, unless otherwise stated. 
+%emw2Mar -- It would be good if you have tidy code you can post with the data so folks can fit the models themselves. 
 %emw2Mar -- Did you use default priors? If so, can you figure out how to increase them threefold and see if answers change (they change run to run, but should not change dramatically)? Ideally they don't and then we can add 'increasing priors three-fold did not change results.'
 
 \section{Results}
-% START HERE Lizzie ... 
+%emw6Mar -- below opening and questions are good, but not appropriate for results. Move up to be at end of introduction. 
 \verb@Research questions recap@
 \\
 Despite a growing interest in predicting local adaptation across locations, no study has comprehensively examined clines for spring and fall events and what factors may underlie differences observed across studies.
@@ -198,32 +198,43 @@ To better understand these clines, we also aim to examine:
 \todo[inline]{all subsection titles are placeholders}
 
 %emw24Jan -- below is great opening!
-Our final dataset captures seven angiosperm and eight gymnosperm species from 19 common gardens, encompassing data from 384 North American provenances and 101 European provenances with observations from 1962 to 2019. Seven species had fall event information available. 
+%emw6Mar -- results are in past tense generally
+Our final dataset captured seven angiosperm and eight gymnosperm species from 19 common gardens, encompassing 384 North American provenances and 101 European provenances, with observations from 1962 to 2019. Seven species also had fall event information available. 
 \\
 
 \todo[inline]{add map here}
-\todo[inline]{add a table documenting studies attributes}
+\todo[inline]{add a table documenting studies attributes} %emw6Mar -- Tables should go in supplement. But we should add estimates to statements we make throughout. These should be added as mean +/- 90% unvertainty (posterior) intervals (UI) parenthetically using /Sexpr so they update automatically. 
+Overall, spring events were not related to provenance latitude or mean annual temperature in North America (insert the mean slope here, followed by the 90\% intervals ), and only weakly related in Europe (insert slope and UI), where springs events are slightly earlier where provenance mean annual temperature is lower (i.e., higher, more northern latitudes)(Fig. \ref{figure:springfall_latmat} \& Supplement Table. \ref{supplement-table:model_sf_lat}). Results were similar using other distance metrics in lieu of latitude (see Supplement Fig.\ref{supplement-figure:lat_distance} for results using the absolute value of the distance and the spherical distance difference between provenance and garden latitude). %emw6Mar -- this text from below -- "advanced strongly with provenance latitude and mean annual temperature, meaning fall events are earlier where provenance mean annual temperature is lower" is good, can you copy that phrasing here instead "where springs events are slightly earlier where provenance mean annual temperature is lower"? I think it would be something like 'delay slightly ...' 
 
-\subsection{Provenance latitude and MAT do not affect spring event timing}
-Overall, our models show that spring events are not related to provenance latitude or mean annual temperature in North America, and only weakly related in Europe, where springs events are slightly earlier where provenance mean annual temperature is lower (higher, more northern latitudes)(Fig. \ref{figure:springfall_latmat} \& Supplement Table. \ref{supplement-table:model_sf_lat}).
 
 \begin{figure}[!h] 
     \centering
  \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_ms/springfall_latmat.png}
-    \caption{Spring event Day of Year (DOY) in relation to provenance latitude and MAT, coded by symbol for species and color for garden with linear fits from hierarchical Bayesian models. Spring events shown on top and fall event at the bottom.}
+    \caption{Spring event Day of Year (DOY) in relation to provenance latitude and MAT, coded by symbol for species and color for garden with linear fits from hierarchical Bayesian models. Spring events shown on top and fall event at the bottom.} 
     \label{figure:springfall_latmat}
 \end{figure}
 
+In contrast, fall events (budset, leaf senescence, leaf abcission) advanced strongly with provenance latitude and mean annual temperature, meaning fall events are earlier where provenance mean annual temperature is lower (i.e., higher, more northern latitudes). This relationship, however, was observed mostly in North America where fall events advance 4.2 days per degree (UI), or 6.4 days (UI) per degree decline in MAT$^{\circ}$C (Fig. \ref{figure:continent}). In Europe, such relationship is weak: advance 0.5 days (UI) per degree we move north, or 0.6 days (UI) per degree decline in MAT $^{\circ}$C(Fig. \ref{figure:continent}). %emw6Mar -- above numbers (e.g., 4.2 should be done with /Sexpr and include UI in parentheses)
 
-\newpage
+\begin{figure}[!h] 
+    \centering
+ \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_ms/continent_histogram.png}
+    \caption{Caption placeholder}
+    \label{figure:continent}
+\end{figure}
 
-\subsubsection {Similar results across provenance latitude, absolute value of difference between provenance and garden latitude, and spherical distance}
-Along with (a) provenance latitude, we also looked at how spring event timing is related to (b) the absolute value of difference between provenance and garden latitude , as well as (c) the spherical distance between the garden and each provenance. All three metrics depict little to no relationship between spring event timing and the geographical location of the provenance (Supplement Fig.\ref{supplement-figure:lat_distance}).
+Effects of provenance latitude on both spring and fall events were similar across angiosperms and gymnosperms. However, effects of MAT on spring events weakly diverge: spring events get earlier as MAT increases in angiosperms and delay as MAT increases in gymnosperms, except for \emph{Pseudotsuga menziesii}. Fall events delay in warmer locations for both species types, but slightly more so for gymnosperms (3.7 days VS. 6.2 days)(Fig. \ref{figure:spp_type}). %emw6Mar -- Again, need numbers using /Sexpr here.
 
-\newpage
-\subsubsection {Climate overlap does not predict event dates much better than provenance latitude or MAT}
+We also tested whether climate effects on events may be stronger using metrics from seasonal windows closer to event dates, but results were not qualitatively different than using MAT. We observed very weak effects of climate overlap on spring events, nearly identical across angiosperms and gymnosperms. Fall events diverge as climate overlap declines for both angiosperms and gymnosperms, but slightly more strongly for gymnosperms (Fig.\ref{figure:overlap}).
 
-While comparing how similarity in climate relates to event dates, we observed very weak effects of climate overlap on spring events, nearly identical across angiosperms and gymnosperms. Fall events diverge as climate overlap declines for both angiosperms and gymnosperms, but slightly more strongly for gymnosperms (Fig.\ref{figure:overlap}).
+%emw6Mar -- I think we can skip subheaders in the results (yay!) but I need to read it again once you had added all the numbers and intervals. 
+\begin{figure}[!h] 
+    \centering
+ \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_ms/spp_type_histogram.png}
+    \caption{Caption placeholder}
+    \label{figure:spp_type}
+\end{figure}
+
 
 \begin{figure}[!h] 
     \centering
@@ -231,9 +242,11 @@ While comparing how similarity in climate relates to event dates, we observed ve
     \caption{Caption placeholder}
     \label{figure:overlap}
 \end{figure}
+%emw6Mar -- Climate overlap figures can go in supp. 
+
+%emw6Mar -- I could combine the current fig 3-4. Just be sure to label each panel. 
 
 
-\subsection{Stronger clines in fall events observed in North America than Europe}
 %emw24Jan -- Nice! Also, results seem good, I can help trim text and collapse some sections. 
 
 % old graphs can be found in C:\Users\alina\Documents\git\localadaptclim\Output\plotMay15_two predictors_experiment
@@ -245,27 +258,6 @@ While comparing how similarity in climate relates to event dates, we observed ve
 
 %  extract the mean estimate of the slope and report that instead of ~4 or such
 % hmmm i forgot the code :)))
-
-We find that fall events (budset, leaf senescence, leaf abcission) advance strongly with provenance latitude and mean annual temperature, meaning fall events are earlier where provenance mean annual temperature is lower (higher, more northern latitudes). This relationship, however, is observed mostly in North America where fall events advance 4.2 days per degree we move north, or 6.4 days when the MAT decreases by 1 $^{\circ}$C (Fig. \ref{figure:continent}). In Europe, such relationship is weak: advance 0.5 days per degree we move north, or 0.6 days when the MAT decreases by 1 $^{\circ}$C(Fig. \ref{figure:continent}).
-
-\begin{figure}[!h] 
-    \centering
- \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_ms/continent_histogram.png}
-    \caption{Caption placeholder}
-    \label{figure:continent}
-\end{figure}
-
-
-\subsection{Effects of MAT on spring events diverge across angiosperms and gymnosperms}
-
-Effects of provenance latitude on both spring and fall events are similar across angiosperms and gymnosperms. However, effects of MAT on spring events weakly diverge: spring events get earlier as MAT increases in angiosperms and delay as MAT increases in gymnosperms, except for \emph{Pseudotsuga menziesii}. Fall events delay in warmer locations for both species types, but slightly more so for gymnosperms (3.7 days VS. 6.2 days)(Fig. \ref{figure:spp_type}).
-
-\begin{figure}[!h] 
-    \centering
- \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_ms/spp_type_histogram.png}
-    \caption{Caption placeholder}
-    \label{figure:spp_type}
-\end{figure}
 
 
 \section{Discussion}

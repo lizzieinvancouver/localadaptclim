@@ -3,7 +3,7 @@
 # Dec 13, 2022
 
 
-# for previous fits, refer to script_stan_glmer_NEW_fit_plots_are_in_here
+# for previous fits, refer to script_rstanarm::stan_glmer_NEW_fit_plots_are_in_here
 
 
 
@@ -16,30 +16,40 @@ name<-"input/percentage_overlap_doy_difference_earth_calculated_garden_identifie
 write.csv(d,name, row.names = FALSE)
 
 
+library(dplyr)
+library(tidyr)
+library(Rcpp)
+library(rstanarm)
+library(bayesplot)
+library(ggplot2)
+library(viridis)
+
 
 # spring or fall DOY ~ lat or mat
-fitC_spring_lat <- stan_glmer(spring_event~(lat_prov|species_garden), data = d)
-fitC_fall_lat <- stan_glmer(fall_event~(lat_prov|species_garden), data = d)
-fitC_spring_mat <- stan_glmer(spring_event~(MAT_prov|species_garden), data = d)
-fitC_fall_mat <- stan_glmer(fall_event~(MAT_prov|species_garden), data = d)
-
-# lat diffo
-fitC_spring_lat_diffo <- stan_glmer(spring_event~(distance_from_garden|species_garden), data = d)
-fitC_fall_lat_diffo <- stan_glmer(fall_event~(distance_from_garden|species_garden), data = d)
-fitC_spring_earth_distance <- stan_glmer(spring_event~(earth_distance_from_garden|species_garden), data = d)
-fitC_fall_earth_distance <- stan_glmer(fall_event~(earth_distance_from_garden|species_garden), data = d)
-
-# mat diffo
-fitC_spring_mat_diffo <- stan_glmer(spring_event~(MAT_diffo|species_garden), data = d)
-fitC_fall_mat_diffo <- stan_glmer(fall_event~(MAT_diffo|species_garden), data = d)
+fitC_spring_lat <- rstanarm::stan_glmer(spring_event~(lat_prov|species_garden), data = d)
+fitC_fall_lat <- rstanarm::stan_glmer(fall_event~(lat_prov|species_garden), data = d)
+# already did lat ones and saved to d
+fitC_spring_mat <- rstanarm::stan_glmer(spring_event~(MAT_prov|species_garden), data = d)
+fitC_fall_mat <- rstanarm::stan_glmer(fall_event~(MAT_prov|species_garden), data = d)
 
 # climate overlap
-fitC_spring_overlap <- stan_glmer(spring_event~(percentage|species_garden), data = d)
-fitC_fall_overlap <- stan_glmer(fall_event~(percentage|species_garden), data = d)
+fitC_spring_overlap <- rstanarm::stan_glmer(spring_event~(percentage|species_garden), data = d)
+fitC_fall_overlap <- rstanarm::stan_glmer(fall_event~(percentage|species_garden), data = d)
+
+# still need to run the below
+# lat diffo
+fitC_spring_lat_diffo <- rstanarm::stan_glmer(spring_event~(distance_from_garden|species_garden), data = d)
+fitC_fall_lat_diffo <- rstanarm::stan_glmer(fall_event~(distance_from_garden|species_garden), data = d)
+fitC_spring_earth_distance <- rstanarm::stan_glmer(spring_event~(earth_distance_from_garden|species_garden), data = d)
+fitC_fall_earth_distance <- rstanarm::stan_glmer(fall_event~(earth_distance_from_garden|species_garden), data = d)
+
+# mat diffo
+fitC_spring_mat_diffo <- rstanarm::stan_glmer(spring_event~(MAT_diffo|species_garden), data = d)
+fitC_fall_mat_diffo <- rstanarm::stan_glmer(fall_event~(MAT_diffo|species_garden), data = d)
 
 # gdd
-fitD_spring_lat <- stan_glmer(gdd_10yr_mean~(lat_prov|species_garden), data = d)
-fitD_spring_mat <- stan_glmer(gdd_10yr_mean~(MAT_prov|species_garden), data = d)
+fitD_spring_lat <- rstanarm::stan_glmer(gdd_10yr_mean~(lat_prov|species_garden), data = d)
+fitD_spring_mat <- rstanarm::stan_glmer(gdd_10yr_mean~(MAT_prov|species_garden), data = d)
 
 
 
@@ -52,6 +62,11 @@ saveRDS(fitC_spring_mat, file = "output/model_fit/fitC_spring_mat.RDS", ascii = 
         compress = TRUE, refhook = NULL)
 saveRDS(fitC_fall_mat, file = "output/model_fit/fitC_fall_mat.RDS", ascii = FALSE, version = NULL,
         compress = TRUE, refhook = NULL)
+saveRDS(fitC_spring_overlap, file = "output/model_fit/fitC_spring_overlap.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+saveRDS(fitC_fall_overlap, file = "output/model_fit/fitC_fall_overlap.RDS", ascii = FALSE, version = NULL,
+        compress = TRUE, refhook = NULL)
+
 saveRDS(fitC_spring_lat_diffo, file = "output/model_fit/fitC_spring_lat_diffo.RDS", ascii = FALSE, version = NULL,
         compress = TRUE, refhook = NULL)
 saveRDS(fitC_fall_lat_diffo, file = "output/model_fit/fitC_fall_lat_diffo.RDS", ascii = FALSE, version = NULL,
@@ -64,10 +79,7 @@ saveRDS(fitC_spring_mat_diffo, file = "output/model_fit/fitC_spring_mat_diffo.RD
         compress = TRUE, refhook = NULL)
 saveRDS(fitC_fall_mat_diffo, file = "output/model_fit/fitC_fall_mat_diffo.RDS", ascii = FALSE, version = NULL,
         compress = TRUE, refhook = NULL)
-saveRDS(fitC_spring_overlap, file = "output/model_fit/fitC_spring_overlap.RDS", ascii = FALSE, version = NULL,
-        compress = TRUE, refhook = NULL)
-saveRDS(fitC_fall_overlap, file = "output/model_fit/fitC_fall_overlap.RDS", ascii = FALSE, version = NULL,
-        compress = TRUE, refhook = NULL)
+
 saveRDS(fitD_spring_lat, file = "output/model_fit/fitD_spring_lat.RDS", ascii = FALSE, version = NULL,
         compress = TRUE, refhook = NULL)
 saveRDS(fitD_spring_mat, file = "output/model_fit/fitD_spring_mat.RDS", ascii = FALSE, version = NULL,

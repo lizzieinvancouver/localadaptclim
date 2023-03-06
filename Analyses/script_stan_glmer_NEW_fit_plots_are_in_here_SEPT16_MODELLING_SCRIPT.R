@@ -82,7 +82,7 @@ d$spring_event <- as.numeric(d$spring_event)
 
 #export d cuz i have information abt intercept and slope
 
-name<-paste("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_May5.csv",sep="")
+name<-paste("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_gdd_Sept27",sep="")
 write.csv(d,name, row.names = FALSE)
 
 ### New bits by Lizzie on 1 May 2022
@@ -159,9 +159,6 @@ fitA_fall_diffo_sd <- stan_glmer(fall_event_difference~(sd|species), data = d)
 # plotting for two predictors
 fitB_spring_percentage_sd <- stan_glmer(spring_event~((percentage*sd)|species), data = d)
 fitB_fall_percentage_sd <- stan_glmer(fall_event~((percentage*sd)|species), data = d)
-
-
-
 
 # new addition Sept 16, 2022
 fitA_spring_lat_diffo <- stan_glmer(spring_event~(distance_from_garden|Species), data = d)

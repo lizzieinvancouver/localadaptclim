@@ -1,9 +1,8 @@
 %%% start preambling . . .  %%%
 \documentclass{article}
-
 % required 
 \usepackage{amsmath}
-\usepackage{natbib}
+\usepackage[semicolon]{natbib}
 \bibliographystyle{plainnat} %{unsrtnat}
 \usepackage{xr-hyper}
 \usepackage{hyperref}
@@ -14,15 +13,12 @@
 \usepackage{lipsum}                     % Dummytext % https://tex.stackexchange.com/questions/9796/how-to-add-todo-notes
 \usepackage{xargs}                      % Use more than one optional parameter in a new commands
 \usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
-
 \usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 \newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
 \newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
 \newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
 \newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
 \newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
-
-
 % https://tex.stackexchange.com/questions/60209/how-to-add-an-extra-level-of-sections-with-headings-below-subsubsection
 \usepackage{titlesec}
 \setcounter{secnumdepth}{4}
@@ -32,19 +28,15 @@
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-
-
 % recommended! Uncomment the below line and change the path for your computer!
 \SweaveOpts{prefix.string=/Users/alina/Documents/git/localadaptclim/Docs/figure_ms/demoFig, eps=FALSE} 
 %put your figures in one place! Also, note that here 'figures' is the folder and 'demoFig' is what each 
 % figure produced will be titled plus its number or label (e.g., demoFig-nqpbetter.pdf')
-
 % make your captioning look better
 \usepackage[small]{caption}
 \setlength{\captionmargin}{30pt}
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{10pt}
-
 % optional: muck with spacing
 \topmargin -1.5cm        
 \oddsidemargin 0.5cm   
@@ -167,43 +159,24 @@ percentage budburst was closest to 90\%, including estimates as low as 49.5\% bu
 
 
 \section{Methods}
-
-% \item Literature search
 \subsection{Data Collection}
 %emw2Mar: Try to open with WHY (goal/aim) you did something more than what you did, not a rule, but try to do when possible. 
 To locate common garden studies that documented the timing of spring events of woody plant species we searched and reviewed the peer-reviewed literature. On 14 December 2022 we searched Web of Science (Thompson Reuters, New York, NY) using the following terms:
 \begin{quote}
 TOPIC = (common garden* OR provenance*) AND (leafout* OR leaf out* OR budburst OR spring phenolog*)
 \end{quote}
-which returned 122 publications. We also contacted authors of previous review papers (CITES), to help further search the literature. We then reviewed the methods and results of all publications to refine to only studies that met the following criteria: (a) focused on woody plants originating from either Europe or North America, (b) had provenance trials/common gardens on the same continent, (c) reported spring events in units of calendar days (day of year or DOY) or could be converted into DOY (see `Additional Methods' section in the Supplement), and (d) reported latitude and longitude of provenances and gardens. 
-%emw2Mar -- From above ... We don't usually name the people, we would cite the papers and acknowledge the people in the acknowledgements section. So add the citations above in CITES and add the below to the acknowledgements
-% We thank S. Aitken,  I. Chuine, R. Guy, C Korner and Y. Vitasse for reviewing our list of papers for possible additional common garden studies. 
-\\
-%emw2Mar: Below and throughout ... You should switch to citing references using bibtex throughout! Making that change now will be much easier than later. Ask Deirdre if you get stuck (doing it soon would also be good as she will be away starting in May and so busier in April). 
-%emw2Mar -- mv the below paragraphs to an `Additional Methods' section of supp (also note how I added topic sentences here to guide the reader). 
-% START: Additional methods section:
-We had to exclude several studies that reported spring events on a quantitative scale. This was because (1) such studies usually only assessed where on the scale the spring event of a tree fell onto on the same days across different years (e.g. Robson et al., 2013; Vander et al., 2015; Santini et al., 2014; Schueler \& Liesebach, 2004), and (2) scales are not always consistent across different studies (Chmura \& Rozkowski 2002; Dhont et al., 2010; Wang et al., 2022). Such factors made it impossible to convert the quantitative scale to DOY.
+which returned 122 publications. We also contacted authors of previous review papers \citep{AitkenBemmels16, Alberto13}, to help further search the literature. We then reviewed the methods and results of all publications to refine to only studies that met the following criteria: (a) focused on woody plants originating from either Europe or North America, (b) had provenance trials/common gardens on the same continent, (c) reported spring events in units of calendar days (day of year or DOY) or could be converted into DOY (see `Additional Methods' section in the Supplement), and (d) reported latitude and longitude of provenances and gardens. 
 \\
 \\
-% @ alina_jan27: do we need to cite those paper indicated above that we didnt end up using through bibtex?? % EMW replies -- no, some journals will require a spreadsheet (what you discarded and why) though -- but until we pick a journal and know what's required we don't need to do any of that. 
-We additionally excluded several studies because we could not pinpoint their location, or because they focused on non-native species or elevational trends. We excluded studies that did not provide the exact latitude and longitude of the common garden (Bongarten, 1978) or the provenances (Hall et al., 2007; Soolanayakanahally et al., 2013), or they did not link the latitude and longitude of each provenance to the DOY of spring events (Deans \& Harvey, 1996). We also left out studies in which woody plants from North American provenances were planted in common gardens in Europe (Cannell et al., 1987; Lavadinovic et al., 2013) because we wanted to test continental variations. Finally, as we are focused on latitudinal trends we excluded studies that examined only provenance altitude (Vitasse et al., 2009; Vitasse et al., 2010; Li et al., 1997; Alberto et al., 2011; Acevedo-Rodríguez et al., 2006). 
-% END: Additional methods section:
-
-Based on these criteria we found 18 (?) provenance/common garden studies, distributed throughout North America and Europe, with the majority of data concentrated in XXXXX (Figure X). From each paper we extracted phenological data on spring events (budburst and leaf flush in DOY) and, when present in the same paper, fall events (bud set, leaf senescence, growth cessation, and leaf abscission) by species, provenance and garden location (geographic coordinates), using ImageJ (version 1.53k; Rasband, 1997-2022) to extract values from figures whenever necessary. For studies that reported event dates relative to a reference date other than 1 January (e.g. Cannel et al., 1987; Rehfeldt, 1994), we converted such dates to DOY using the Lubridate Package in R.
+Based on these criteria we found 18 provenance/common garden studies, distributed throughout North America and Europe, with the majority of data concentrated in North America (Figure X). From each paper we extracted phenological data on spring events (budburst and leaf flush in DOY) and, when present in the same paper, fall events (bud set, leaf senescence, growth cessation, and leaf abscission) by species, provenance and garden location (geographic coordinates). We used ImageJ (version 1.53k; \citealp{schneider_rasband_eliceiri_2012}) to extract values from figures whenever necessary. For studies that reported event dates relative to a reference date other than 1 January (e.g. \citealp{Rehfeldt1994}), we converted such dates to DOY using the Lubridate Package in R.
 \improvement{display a table and a map here, and in the caption, clarify that some studies had more than one gardens and two studies shared the same garden}
-%emw2Mar -- mv the following sentence to the caption of the map figure: The distribution was skewed toward North America (n = X), with only X located in Europe. 
+%emw2Mar -- mv the following sentence to the caption of the map figure: The distribution was skewed toward North America (n = X), with only X located in Europe. %alinaMar5:think abt displaying number of studies or provenances
 \\
 \\
-%emw2Mar -- save the below for now; may fit in the discussion or could add if reveiwers complain. For now, I added the events above -- it's quicker and IMHO we don't currently need to justify why we pooled these. 
-% We pooled the timing of budburst and leaf flush into a single category of ‘spring events’ and the timing of bud set, leaf senescence, growth cessation, and leaf abscission into ‘fall events.’ Such pooling is justified because of the shared pressures from natural selection that govern these events (Gill et al., 2015). 
-
-To understand how climatic differences, in addition to geographical differences, shape local adaptation in spring events we extracted several types of climate data using information about provenance latitude, longitude, and elevation from original publications. We estimated the mean annual temperature (MAT) for each provenance using the Climate Information Tool by FAO (Food and Agriculture Organization of the United Nations, 2022) and ClimateWNA (Wang et al., 2012). To examine more explicitly climate near spring events, we used gridded daily temperature data for 2011 to 2020 for all European and North American provenances and gardens from E-OBS and the built-in Daymet package in R respectively (Cornes et al., 2018; Thornton et al., 2020).  Using these data we estimated how much the daily temperatures overlapped between garden and provenance locations, which we call `climate overlap.' For this we used the Overlap package in R to calculate the percentage overlap of the daily temperature of each provenance in spring months (March to May) from 2011 to 2020 in relation to the daily temperature of their corresponding gardens. Finally, using the daily data, we also calculated Growing degree days (GDD), a commonly used heat accumulation measure to forecast phenological development in plants (Miller et al., 2001), based on the accumulation of mean daily temperatures ($T_{m}$)from 2011 to 2022 above a baseline of 0$^{\circ}$C, from January 1 until budburst and leaf flush with the following formula: GDD = $\sum$($T_{m}$ - $0^{\circ}$C for $T_{m}$ $\ge$ $0^{\circ}$C; 0 for $T_{m}$ $\le$ $0^{\circ}$C).
-
-%emw2Mar -- there's a delicate balance of how much rationale you can give for your methods in the methods (and similar for the results). I would move the below to the discussion section. 
-% While coarse metrics such as latitude and MAT may represent how similar the climates are between the provenances and gardens in times that matter for the events. If climates are very similar, then we would expect similar timings [add more here].
+To understand how climatic differences, in addition to geographical differences, shape local adaptation in spring events we extracted several types of climate data using information about provenance latitude, longitude, and elevation from original publications. We estimated the mean annual temperature (MAT) for each provenance using the Climate Information Tool by Food and Agriculture Organization of the United Nations \citep{FAO2022}and ClimateWNA \citep{wang2016}. To examine more explicitly climate near spring events, we used gridded daily temperature data for 2011 to 2020 for all European and North American provenances and gardens from E-OBS and the daymetr R package respectively \citep{cornes2018,hufkens2018}. Using these data we estimated how much the daily temperatures overlapped between garden and provenance locations, which we call `climate overlap.' For this we used the Overlap package in R to calculate the percentage overlap of the daily temperature of each provenance in spring months (March to May) from 2011 to 2020 in relation to the daily temperature of their corresponding gardens. Finally, using the daily data, we also calculated Growing degree days (GDD), a commonly used heat accumulation measure to forecast phenological development in plants (Miller et al., 2001), based on the accumulation of mean daily temperatures ($T_{m}$)from 2011 to 2022 above a baseline of 0$^{\circ}$C, from January 1 until budburst and leaf flush with the following formula: GDD = $\sum$($T_{m}$ - $0^{\circ}$C for $T_{m}$ $\ge$ $0^{\circ}$C; 0 for $T_{m}$ $\le$ $0^{\circ}$C).
 
 \subsection{Analyses}
-To estimate clines in spring and fall phenological events across species we used hierarchical Bayesian models. We regressed day of year (DOY) of events against geographical and climate predictors with partial pooling (sometimes called `random effects') on the intercept and slope for each species within each garden. Because most tree species were present in only one common garden in our dataset, it was impossible to fit garden and species separately, thus we treat each species within a garden as a unique group. Using posterior estimates for each each species within a garden, we estimated effects of continent and species type (angiosperm vs. gymnosperm). \improvement{will elaborate later ... ADD: All models were fit in XX package (give version number), using default priors, with 4 chains and XX sampling iterations per chain. We checked for model fit by ... }
+To estimate clines in spring and fall phenological events across species we used hierarchical Bayesian models. We regressed day of year (DOY) of events against geographical and climate predictors with partial pooling (sometimes called `random effects') on the intercept and slope for each species within each garden. Because most tree species were present in only one common garden in our dataset, it was impossible to fit garden and species separately, thus we treat each species within a garden as a unique group. Using posterior estimates for each species within a garden, we estimated effects of continent (North America vs. Europe) and species type (angiosperm vs. gymnosperm). All models were fit in rstanarm package (version 2.21.3; \citealp{brilleman2018}), using default priors, with 4 chains and 1000 sampling iterations per chain. We checked for model fit by ...
 %emw2Mar -- Check: Did you use 4 chains? And add info. It would be good if you have tidy code you can post with the data so folks can fit the models themselves. 
 %emw2Mar -- Did you use default priors? If so, can you figure out how to increase them threefold and see if answers change (they change run to run, but should not change dramatically)? Ideally they don't and then we can add 'increasing priors three-fold did not change results.'
 
@@ -296,9 +269,11 @@ Effects of provenance latitude on both spring and fall events are similar across
 
 
 \section{Discussion}
+%emw2Mar -- there's a delicate balance of how much rationale you can give for your methods in the methods (and similar for the results). I would move the below to the discussion section. 
+While coarse metrics such as latitude and MAT may represent how similar the climates are between the provenances and gardens in times that matter for the events. If climates are very similar, then we would expect similar timings [add more here].
 
-
-
+%emw2Mar -- save the below for now; may fit in the discussion or could add if reveiwers complain. For now, I added the events above -- it's quicker and IMHO we don't currently need to justify why we pooled these. 
+We pooled the timing of budburst and leaf flush into a single category of ‘spring events’ and the timing of bud set, leaf senescence, growth cessation, and leaf abscission into ‘fall events.’ Such pooling is justified because of the shared pressures from natural selection that govern these events \citep{Gill15}. 
 
 The weak relationship between spring event dates and provenance latitude and MAT that we find in European studies might be explained by the higher extent of climate overlap in those studies. The more similar the climate is between provenances and gardens, the less difference between spring event dates.
 \\
@@ -327,7 +302,8 @@ http://imagej.nih.gov/ij
 
 
 
-
+\section{Acknowledgement}
+We thank S. Aitken,  I. Chuine, R. Guy, C Korner and Y. Vitasse for reviewing our list of papers for possible additional common garden studies. 
 
 
 \end{document}

@@ -1,5 +1,5 @@
 # script model for continent and leaf type effects
-# May-7, 2022
+# updated on March 12, 2023
 
 
 ## Extracting model fits sidebar ...
@@ -21,15 +21,242 @@ d<- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_id
 d$fall_event <- as.numeric(d$fall_event)
 d$spring_event <- as.numeric(d$spring_event)
 
-#fit5 <- stan_glmer(spring_event~(lat_prov|species), data = d) 
+# fall first since we are more interested in those... well I need to tidy up this entire script
 
-# fitA_spring_lat
-fitA_spring_lat <- readRDS("output/model_fit/fitA_spring_lat.RDS")
-fitA_spring_mat <- readRDS("output/model_fit/fitA_spring_mat.RDS")
 
-draws <- as.matrix(fitA_spring_lat)
+# fitC_fall_lat
+fitC_fall_lat <- readRDS("output/model_fit/fitC_fall_lat.RDS")
+draws_fitC_fall_lat <- as.matrix(fitC_fall_lat)
+
+evergreens <- c("Picea engelmannii B","Picea sitchensis D","Tsuga heterophylla E")
+library(stringr)
+evergreens <- str_replace_all(evergreens," ","_")
+deciduous <- c("Alnus rubra A", "Fagus sylvatica R*","Fraxinus excelsior Q*",
+               "Populus trichocarpa D")
+deciduous <- str_replace_all(deciduous," ","_")
+
+# Get all the species of one type now
+evergreensdraws_fitC_fall_lat <- matrix(data=NA,
+                                        nrow=nrow(draws_fitC_fall_lat),
+                                        ncol=length(evergreens))
+for (i in c(1:length(evergreens))){
+  evergreensdraws_fitC_fall_lat[,i] <- draws_fitC_fall_lat[,paste("b[lat_prov species_garden:", evergreens[i], "]", sep="")]
+}
+
+deciduousdraws_fitC_fall_lat <- matrix(data=NA,
+                                       nrow=nrow(draws_fitC_fall_lat),
+                                       ncol=length(deciduous))
+for (i in c(1:length(deciduous))){
+  deciduousdraws_fitC_fall_lat[,i] <- draws_fitC_fall_lat[,paste("b[lat_prov species_garden:", deciduous[i], "]", sep="")]
+}
+
+# Now you can manipulate these posteriors with basic math ...  
+# We want the mean across all of each type -- you need to take the rowMeans because the samples are related and so you keep the rows together
+evergreenspost_fitC_fall_lat <- rowMeans(evergreensdraws_fitC_fall_lat)
+deciduouspost_fitC_fall_lat <- rowMeans(deciduousdraws_fitC_fall_lat)
+
+
+# And then you can plot them as we did before
+png(filename="leaf_effect_lat_fall.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=8, 
+    res=300)
+leaftypeplot <- as.matrix(cbind(evergreenspost_fitC_fall_lat, deciduouspost_fitC_fall_lat))
+plot_title <- ggtitle("Leaf Type Effects on Fall DOY in Relation to Provenance Latitude")
+color_scheme_set("viridis") 
+new_labels_leaftype <- c("Angiosperm","Gymnosperm")
+mcmc_areas(leaftypeplot)+ 
+  plot_title +
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(plot.title = element_text(size = 21))  +            # plot title
+  theme(text=element_text(family="sans"))+
+  scale_y_discrete(labels = rev(new_labels_leaftype))
+dev.off()
+
+
+
+
+# for continental effects
+northamerican <- c("Alnus rubra A", "Populus trichocarpa D",
+                   "Picea engelmannii B","Picea sitchensis D", "Tsuga heterophylla E")
+library(stringr)
+northamerican <- str_replace_all(northamerican," ","_")
+european <- c("Fagus sylvatica R*","Fraxinus excelsior Q*")
+european<- str_replace_all(european," ","_")
+
+# Get all the species of one type now
+northamericandraws_fitC_fall_lat <- matrix(data=NA,
+                                           nrow=nrow(draws_fitC_fall_lat),
+                                           ncol=length(northamerican))
+for (i in c(1:length(northamerican))){
+  northamericandraws_fitC_fall_lat[,i] <- draws_fitC_fall_lat[,paste("b[lat_prov species_garden:", northamerican[i], "]", sep="")]
+}
+
+europeandraws_fitC_fall_lat <- matrix(data=NA,
+                                      nrow=nrow(draws_fitC_fall_lat),
+                                      ncol=length(european))
+for (i in c(1:length(european))){
+  europeandraws_fitC_fall_lat[,i] <- draws_fitC_fall_lat[,paste("b[lat_prov species_garden:", european[i], "]", sep="")]
+}
+
+# Now you can manipulate these posteriors with basic math ...  
+# We want the mean across all of each type -- you need to take the rowMeans because the samples are related and so you keep the rows together
+northamericanpost <- rowMeans(northamericandraws_fitC_fall_lat)
+europeanpost <- rowMeans(europeandraws_fitC_fall_lat)
+
+# And then you can plot them as we did before
+
+png(filename="continent_effect_lat_fall.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=8, 
+    res=300)
+continentplot <- as.matrix(cbind(northamericanpost, europeanpost ))
+plot_title <- ggtitle("Continental Effects on Fall DOY in Relation to Provenance Latitude")
+color_scheme_set("viridis") 
+new_labels_continent <- c("Europe","North America")
+mcmc_areas(continentplot)+ 
+  plot_title +
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(plot.title = element_text(size = 21))  +            # plot title
+  theme(text=element_text(family="sans"))+
+  scale_y_discrete(labels = rev(new_labels_continent))
+dev.off()
+
+
+# fitC_fall_mat
+fitC_fall_mat <- readRDS("output/model_fit/fitC_fall_mat.RDS")
+draws_fitC_fall_mat <- as.matrix(fitC_fall_mat)
+
+evergreens <- c("Picea engelmannii B","Picea sitchensis D","Tsuga heterophylla E")
+library(stringr)
+evergreens <- str_replace_all(evergreens," ","_")
+deciduous <- c("Alnus rubra A", "Fagus sylvatica R*","Fraxinus excelsior Q*",
+               "Populus trichocarpa D")
+deciduous <- str_replace_all(deciduous," ","_")
+
+# Get all the species of one type now
+evergreensdraws_fitC_fall_mat <- matrix(data=NA,
+                                        nrow=nrow(draws_fitC_fall_mat),
+                                        ncol=length(evergreens))
+for (i in c(1:length(evergreens))){
+  evergreensdraws_fitC_fall_mat[,i] <- draws_fitC_fall_mat[,paste("b[MAT_prov species_garden:", evergreens[i], "]", sep="")]
+}
+
+deciduousdraws_fitC_fall_mat <- matrix(data=NA,
+                                       nrow=nrow(draws_fitC_fall_mat),
+                                       ncol=length(deciduous))
+for (i in c(1:length(deciduous))){
+  deciduousdraws_fitC_fall_mat[,i] <- draws_fitC_fall_mat[,paste("b[MAT_prov species_garden:", deciduous[i], "]", sep="")]
+}
+
+# Now you can manipulate these posteriors with basic math ...  
+# We want the mean across all of each type -- you need to take the rowMeans because the samples are related and so you keep the rows together
+evergreenspost_fitC_fall_mat <- rowMeans(evergreensdraws_fitC_fall_mat)
+deciduouspost_fitC_fall_mat <- rowMeans(deciduousdraws_fitC_fall_mat)
+
+> summary(evergreenspost_fitC_fall_mat)
+Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+4.698   5.905   6.231   6.230   6.567   8.018 
+
+> summary(deciduouspost_fitC_fall_mat)
+Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+1.381   3.295   3.701   3.692   4.079   5.795 
+
+
+# And then you can plot them as we did before
+png(filename="leaf_effect_mat_fall.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=8, 
+    res=300)
+leaftypeplot <- as.matrix(cbind(evergreenspost_fitC_fall_mat, deciduouspost_fitC_fall_mat))
+plot_title <- ggtitle("Leaf Type Effects on Fall DOY in Relation to Provenance MAT")
+color_scheme_set("viridis") 
+new_labels_leaftype <- c("Angiosperm","Gymnosperm")
+mcmc_areas(leaftypeplot)+ 
+  plot_title +
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(plot.title = element_text(size = 21))  +            # plot title
+  theme(text=element_text(family="sans"))+
+  scale_y_discrete(labels = rev(new_labels_leaftype))
+dev.off()
+
+
+
+
+# for continental effects
+northamerican <- c("Alnus rubra A", "Populus trichocarpa D",
+                   "Picea engelmannii B","Picea sitchensis D", "Tsuga heterophylla E")
+library(stringr)
+northamerican <- str_replace_all(northamerican," ","_")
+european <- c("Fagus sylvatica R*","Fraxinus excelsior Q*")
+european<- str_replace_all(european," ","_")
+
+# Get all the species of one type now
+northamericandraws_fitC_fall_mat <- matrix(data=NA,
+                                           nrow=nrow(draws_fitC_fall_mat),
+                                           ncol=length(northamerican))
+for (i in c(1:length(northamerican))){
+  northamericandraws_fitC_fall_mat[,i] <- draws_fitC_fall_mat[,paste("b[MAT_prov species_garden:", northamerican[i], "]", sep="")]
+}
+
+europeandraws_fitC_fall_mat <- matrix(data=NA,
+                                      nrow=nrow(draws_fitC_fall_mat),
+                                      ncol=length(european))
+for (i in c(1:length(european))){
+  europeandraws_fitC_fall_mat[,i] <- draws_fitC_fall_mat[,paste("b[MAT_prov species_garden:", european[i], "]", sep="")]
+}
+
+# Now you can manipulate these posteriors with basic math ...  
+# We want the mean across all of each type -- you need to take the rowMeans because the samples are related and so you keep the rows together
+northamericanpost_fitC_fall_mat <- rowMeans(northamericandraws_fitC_fall_mat)
+europeanpost_fitC_fall_mat <- rowMeans(europeandraws_fitC_fall_mat)
+
+# summary(northamericanpost_fitC_fall_mat)
+# Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+# 5.147   6.151   6.412   6.411   6.672   7.914 
+# summary(europeanpost_fitC_fall_mat)
+# Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+# -3.43430 -0.01449  0.68706  0.69925  1.41898  4.06387 
+
+# And then you can plot them as we did before
+
+png(filename="continent_effect_mat_fall.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=8, 
+    res=300)
+continentplot <- as.matrix(cbind(northamericanpost_fitC_fall_mat, europeanpost_fitC_fall_mat ))
+plot_title <- ggtitle("Continental Effects on Fall DOY in Relation to Provenance MAT")
+color_scheme_set("viridis") 
+new_labels_continent <- c("Europe","North America")
+mcmc_areas(continentplot)+ 
+  plot_title +
+  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(plot.title = element_text(size = 21))  +            # plot title
+  theme(text=element_text(family="sans"))+
+  scale_y_discrete(labels = rev(new_labels_continent))
+dev.off()
+
+
+
+# fitC_spring_lat
+fitC_spring_lat <- readRDS("output/model_fit/fitC_spring_lat.RDS")
+fitC_spring_mat <- readRDS("output/model_fit/fitC_spring_mat.RDS")
+
+draws <- as.matrix(fitC_spring_lat)
 # the full posterior for Alnus rubra slope:
-alnrubslope <- draws[,"b[lat_prov species:Alnus_rubra]"]
+alnrubslope <- draws[,"b[lat_prov species_garden:Alnus_rubra]"]
 hist(alnrubslope)
 
 # To get the estimate for continent or evergreen/deciduous:
@@ -38,29 +265,34 @@ hist(alnrubslope)
 # Add the posteriors of all the species in one group ...
 # Example ... many ways to do this, I just created different vectors (I made very incomplete lists!)
 colnames(draws)
-evergreens <- c("Picea_engelmannii",  "Picea_sitchensis","Pinus_albicaulis" ,
-                "Picea_mariana","Pinus_ponderosa" ,
-                "Tsuga_heterophylla","Picea_abies",   
-                "Pseudotsuga_menziesii") 
-deciduous <- c("Alnus_rubra",
-               "Betula_papyrifera",
-               "Fagus_sylvatica","Populus_trichocarpa","Fraxinus_excelsior" ,    
-               "Populus_balsamifera",         
-               "Quercus_petraea") 
+
+evergreens <- c("Picea abies S*","Picea engelmannii B",
+"Picea mariana I","Picea sitchensis D","Pinus albicaulis C","Pinus ponderosa J",
+"Pseudotsuga menziesii H", "Tsuga heterophylla E","Tsuga heterophylla G")
+library(stringr)
+evergreens <- str_replace_all(evergreens," ","_")
+deciduous <- c("Alnus rubra A",
+               "Betula papyrifera K",
+               "Betula papyrifera L",
+               "Betula papyrifera M","Fagus sylvatica R*","Fagus sylvatica T*",
+               "Fraxinus excelsior Q*",
+               "Populus balsamifera F","Populus trichocarpa D",
+               "Quercus petraea U*","Quercus petraea V*")
+deciduous <- str_replace_all(deciduous," ","_")
 
 # Get all the species of one type now
 evergreensdraws <- matrix(data=NA,
                           nrow=nrow(draws),
                           ncol=length(evergreens))
 for (i in c(1:length(evergreens))){
-  evergreensdraws[,i] <- draws[,paste("b[lat_prov species:", evergreens[i], "]", sep="")]
+  evergreensdraws[,i] <- draws[,paste("b[lat_prov species_garden:", evergreens[i], "]", sep="")]
 }
 
 deciduousdraws <- matrix(data=NA,
                          nrow=nrow(draws),
                          ncol=length(deciduous))
 for (i in c(1:length(deciduous))){
-  deciduousdraws[,i] <- draws[,paste("b[lat_prov species:", deciduous[i], "]", sep="")]
+  deciduousdraws[,i] <- draws[,paste("b[lat_prov species_garden:", deciduous[i], "]", sep="")]
 }
 
 # Now you can manipulate these posteriors with basic math ...  
@@ -89,27 +321,32 @@ mcmc_areas(leaftypeplot)+
 dev.off()
 
 # for continental effects
-northamerican <- c("Alnus_rubra","Picea_engelmannii","Picea_sitchensis","Pinus_albicaulis",     
-                   "Populus_trichocarpa","Tsuga_heterophylla", "Populus_balsamifera","Pseudotsuga_menziesii",
-                   "Picea_mariana","Pinus_ponderosa","Betula_papyrifera")
+northamerican <- c("Alnus rubra A","Betula papyrifera K",
+"Betula papyrifera L", "Picea engelmannii B","Picea sitchensis D", "Pinus albicaulis C",
+"Populus trichocarpa D", "Tsuga heterophylla E","Tsuga heterophylla G", "Populus balsamifera F",
+  "Picea mariana I","Pinus ponderosa J", "Pseudotsuga menziesii H", "Betula papyrifera M")
+library(stringr)
+northamerican <- str_replace_all(northamerican," ","_")
 
-european <- c("Fraxinus_excelsior", "Fagus_sylvatica" ,"Picea_abies", "Quercus_petraea")
+european <- c("Fagus sylvatica R*","Fagus sylvatica T*",
+              "Fraxinus excelsior Q*","Picea abies S*", "Quercus petraea U*","Quercus petraea V*")
+european<- str_replace_all(european," ","_")
 
-coef()
+#coef()
 
 # Get all the species of one type now
 northamericandraws <- matrix(data=NA,
                              nrow=nrow(draws),
                              ncol=length(northamerican))
 for (i in c(1:length(northamerican))){
-  northamericandraws[,i] <- draws[,paste("b[lat_prov species:", northamerican[i], "]", sep="")]
+  northamericandraws[,i] <- draws[,paste("b[lat_prov species_garden:", northamerican[i], "]", sep="")]
 }
 
 europeandraws <- matrix(data=NA,
                         nrow=nrow(draws),
                         ncol=length(european))
 for (i in c(1:length(european))){
-  europeandraws[,i] <- draws[,paste("b[lat_prov species:", european[i], "]", sep="")]
+  europeandraws[,i] <- draws[,paste("b[lat_prov species_garden:", european[i], "]", sep="")]
 }
 
 # Now you can manipulate these posteriors with basic math ...  
@@ -141,36 +378,41 @@ mcmc_areas(continentplot)+
 dev.off()
 
 
-# fitA_spring_mat
+# fitC_spring_mat
 
-fitA_spring_mat <- stan_glmer(spring_event~(MAT_prov|species), data = d)
-draws <- as.matrix(fitA_spring_mat)
+fitC_spring_mat <- stan_glmer(spring_event~(MAT_prov|species), data = d)
+draws <- as.matrix(fitC_spring_mat)
 
 # but we especially want to do for continent (group species by continent)
 d <- dplyr::group_by(d, prov_continent)
-evergreens <- c("Picea_engelmannii",  "Picea_sitchensis","Pinus_albicaulis" ,
-                "Picea_mariana","Pinus_ponderosa" ,
-                "Tsuga_heterophylla","Picea_abies",   
-                "Pseudotsuga_menziesii") 
-deciduous <- c("Alnus_rubra",
-               "Betula_papyrifera",
-               "Fagus_sylvatica","Populus_trichocarpa","Fraxinus_excelsior" ,    
-               "Populus_balsamifera",         
-               "Quercus_petraea") 
+evergreens <- c("Picea abies S*","Picea engelmannii B",
+                "Picea mariana I","Picea sitchensis D","Pinus albicaulis C","Pinus ponderosa J",
+                "Pseudotsuga menziesii H", "Tsuga heterophylla E","Tsuga heterophylla G")
+library(stringr)
+evergreens <- str_replace_all(evergreens," ","_")
+deciduous <- c("Alnus rubra A",
+               "Betula papyrifera K",
+               "Betula papyrifera L",
+               "Betula papyrifera M","Fagus sylvatica R*","Fagus sylvatica T*",
+               "Fraxinus excelsior Q*",
+               "Populus balsamifera F","Populus trichocarpa D",
+               "Quercus petraea U*","Quercus petraea V*")
+deciduous <- str_replace_all(deciduous," ","_")
+
 
 # Get all the species of one type now
 evergreensdraws <- matrix(data=NA,
                           nrow=nrow(draws),
                           ncol=length(evergreens))
 for (i in c(1:length(evergreens))){
-  evergreensdraws[,i] <- draws[,paste("b[MAT_prov species:", evergreens[i], "]", sep="")]
+  evergreensdraws[,i] <- draws[,paste("b[MAT_prov species_garden:", evergreens[i], "]", sep="")]
 }
 
 deciduousdraws <- matrix(data=NA,
                          nrow=nrow(draws),
                          ncol=length(deciduous))
 for (i in c(1:length(deciduous))){
-  deciduousdraws[,i] <- draws[,paste("b[MAT_prov species:", deciduous[i], "]", sep="")]
+  deciduousdraws[,i] <- draws[,paste("b[MAT_prov species_garden:", deciduous[i], "]", sep="")]
 }
 
 # Now you can manipulate these posteriors with basic math ...  
@@ -201,11 +443,17 @@ dev.off()
 
 
 # for continental effects
-northamerican <- c("Alnus_rubra","Picea_engelmannii","Picea_sitchensis","Pinus_albicaulis",     
-                   "Populus_trichocarpa","Tsuga_heterophylla", "Populus_balsamifera","Pseudotsuga_menziesii",
-                   "Picea_mariana","Pinus_ponderosa","Betula_papyrifera")
+northamerican <- c("Alnus rubra A","Betula papyrifera K",
+                   "Betula papyrifera L", "Picea engelmannii B","Picea sitchensis D", "Pinus albicaulis C",
+                   "Populus trichocarpa D", "Tsuga heterophylla E","Tsuga heterophylla G", "Populus balsamifera F",
+                   "Picea mariana I","Pinus ponderosa J", "Pseudotsuga menziesii H", "Betula papyrifera M")
+library(stringr)
+northamerican <- str_replace_all(northamerican," ","_")
 
-european <- c("Fraxinus_excelsior", "Fagus_sylvatica" ,"Picea_abies", "Quercus_petraea")
+european <- c("Fagus sylvatica R*","Fagus sylvatica T*",
+              "Fraxinus excelsior Q*","Picea abies S*", "Quercus petraea U*","Quercus petraea V*")
+european<- str_replace_all(european," ","_")
+
 
 
 # Get all the species of one type now
@@ -213,14 +461,14 @@ northamericandraws <- matrix(data=NA,
                              nrow=nrow(draws),
                              ncol=length(northamerican))
 for (i in c(1:length(northamerican))){
-  northamericandraws[,i] <- draws[,paste("b[MAT_prov species:", northamerican[i], "]", sep="")]
+  northamericandraws[,i] <- draws[,paste("b[MAT_prov species_garden:", northamerican[i], "]", sep="")]
 }
 
 europeandraws <- matrix(data=NA,
                         nrow=nrow(draws),
                         ncol=length(european))
 for (i in c(1:length(european))){
-  europeandraws[,i] <- draws[,paste("b[MAT_prov species:", european[i], "]", sep="")]
+  europeandraws[,i] <- draws[,paste("b[MAT_prov species_garden:", european[i], "]", sep="")]
 }
 
 # Now you can manipulate these posteriors with basic math ...  
@@ -250,37 +498,42 @@ mcmc_areas(continentplot)+
 dev.off()
 
 
-# fitA_spring_overlap
+# fitC_spring_overlap
 
-fitA_spring_overlap <- stan_glmer(spring_event~(percentage|species), data = d)
-draws <- as.matrix(fitA_spring_overlap)
+fitC_spring_overlap <- stan_glmer(spring_event~(percentage|species), data = d)
+draws <- as.matrix(fitC_spring_overlap)
 colnames(draws)
 
 # but we especially want to do for continent (group species by continent)
 d <- dplyr::group_by(d, prov_continent)
-evergreens <- c("Picea_engelmannii",  "Picea_sitchensis","Pinus_albicaulis" ,
-                "Picea_mariana","Pinus_ponderosa" ,
-                "Tsuga_heterophylla","Picea_abies",   
-                "Pseudotsuga_menziesii") 
-deciduous <- c("Alnus_rubra",
-               "Betula_papyrifera",
-               "Fagus_sylvatica","Populus_trichocarpa","Fraxinus_excelsior" ,    
-               "Populus_balsamifera",         
-               "Quercus_petraea") 
+evergreens <- c("Picea abies S*","Picea engelmannii B",
+                "Picea mariana I","Picea sitchensis D","Pinus albicaulis C","Pinus ponderosa J",
+                "Pseudotsuga menziesii H", "Tsuga heterophylla E","Tsuga heterophylla G")
+library(stringr)
+evergreens <- str_replace_all(evergreens," ","_")
+deciduous <- c("Alnus rubra A",
+               "Betula papyrifera K",
+               "Betula papyrifera L",
+               "Betula papyrifera M","Fagus sylvatica R*","Fagus sylvatica T*",
+               "Fraxinus excelsior Q*",
+               "Populus balsamifera F","Populus trichocarpa D",
+               "Quercus petraea U*","Quercus petraea V*")
+deciduous <- str_replace_all(deciduous," ","_")
+
 
 # Get all the species of one type now
 evergreensdraws <- matrix(data=NA,
                           nrow=nrow(draws),
                           ncol=length(evergreens))
 for (i in c(1:length(evergreens))){
-  evergreensdraws[,i] <- draws[,paste("b[percentage species:", evergreens[i], "]", sep="")]
+  evergreensdraws[,i] <- draws[,paste("b[percentage species_garden:", evergreens[i], "]", sep="")]
 }
 
 deciduousdraws <- matrix(data=NA,
                          nrow=nrow(draws),
                          ncol=length(deciduous))
 for (i in c(1:length(deciduous))){
-  deciduousdraws[,i] <- draws[,paste("b[percentage species:", deciduous[i], "]", sep="")]
+  deciduousdraws[,i] <- draws[,paste("b[percentage species_garden:", deciduous[i], "]", sep="")]
 }
 
 
@@ -311,26 +564,30 @@ dev.off()
 
 
 # for continental effects
-northamerican <- c("Alnus_rubra","Picea_engelmannii","Picea_sitchensis","Pinus_albicaulis",     
-                   "Populus_trichocarpa","Tsuga_heterophylla", "Populus_balsamifera","Pseudotsuga_menziesii",
-                   "Picea_mariana","Pinus_ponderosa","Betula_papyrifera")
+northamerican <- c("Alnus rubra A","Betula papyrifera K",
+                   "Betula papyrifera L", "Picea engelmannii B","Picea sitchensis D", "Pinus albicaulis C",
+                   "Populus trichocarpa D", "Tsuga heterophylla E","Tsuga heterophylla G", "Populus balsamifera F",
+                   "Picea mariana I","Pinus ponderosa J", "Pseudotsuga menziesii H", "Betula papyrifera M")
+library(stringr)
+northamerican <- str_replace_all(northamerican," ","_")
 
-european <- c("Fraxinus_excelsior", "Fagus_sylvatica" ,"Picea_abies", "Quercus_petraea")
-
+european <- c("Fagus sylvatica R*","Fagus sylvatica T*",
+              "Fraxinus excelsior Q*","Picea abies S*", "Quercus petraea U*","Quercus petraea V*")
+european<- str_replace_all(european," ","_")
 
 # Get all the species of one type now
 northamericandraws <- matrix(data=NA,
                              nrow=nrow(draws),
                              ncol=length(northamerican))
 for (i in c(1:length(northamerican))){
-  northamericandraws[,i] <- draws[,paste("b[percentage species:", northamerican[i], "]", sep="")]
+  northamericandraws[,i] <- draws[,paste("b[percentage species_garden:", northamerican[i], "]", sep="")]
 }
 
 europeandraws <- matrix(data=NA,
                         nrow=nrow(draws),
                         ncol=length(european))
 for (i in c(1:length(european))){
-  europeandraws[,i] <- draws[,paste("b[percentage species:", european[i], "]", sep="")]
+  europeandraws[,i] <- draws[,paste("b[percentage species_garden:", european[i], "]", sep="")]
 }
 
 # Now you can manipulate these posteriors with basic math ...  
@@ -360,34 +617,39 @@ mcmc_areas(continentplot)+
 dev.off()
 
 
-fitA_spring_sd <- stan_glmer(spring_event~(sd|species), data = d)
-draws <- as.matrix(fitA_spring_sd)
+fitC_spring_sd <- stan_glmer(spring_event~(sd|species), data = d)
+draws <- as.matrix(fitC_spring_sd)
 
 # but we especially want to do for continent (group species by continent)
 d <- dplyr::group_by(d, prov_continent)
-evergreens <- c("Picea_engelmannii",  "Picea_sitchensis","Pinus_albicaulis" ,
-                "Picea_mariana","Pinus_ponderosa" ,
-                "Tsuga_heterophylla","Picea_abies",   
-                "Pseudotsuga_menziesii") 
-deciduous <- c("Alnus_rubra",
-               "Betula_papyrifera",
-               "Fagus_sylvatica","Populus_trichocarpa","Fraxinus_excelsior" ,    
-               "Populus_balsamifera",         
-               "Quercus_petraea") 
+evergreens <- c("Picea abies S*","Picea engelmannii B",
+                "Picea mariana I","Picea sitchensis D","Pinus albicaulis C","Pinus ponderosa J",
+                "Pseudotsuga menziesii H", "Tsuga heterophylla E","Tsuga heterophylla G")
+library(stringr)
+evergreens <- str_replace_all(evergreens," ","_")
+deciduous <- c("Alnus rubra A",
+               "Betula papyrifera K",
+               "Betula papyrifera L",
+               "Betula papyrifera M","Fagus sylvatica R*","Fagus sylvatica T*",
+               "Fraxinus excelsior Q*",
+               "Populus balsamifera F","Populus trichocarpa D",
+               "Quercus petraea U*","Quercus petraea V*")
+deciduous <- str_replace_all(deciduous," ","_")
+
 
 # Get all the species of one type now
 evergreensdraws <- matrix(data=NA,
                           nrow=nrow(draws),
                           ncol=length(evergreens))
 for (i in c(1:length(evergreens))){
-  evergreensdraws[,i] <- draws[,paste("b[sd species:", evergreens[i], "]", sep="")]
+  evergreensdraws[,i] <- draws[,paste("b[sd species_garden:", evergreens[i], "]", sep="")]
 }
 
 deciduousdraws <- matrix(data=NA,
                          nrow=nrow(draws),
                          ncol=length(deciduous))
 for (i in c(1:length(deciduous))){
-  deciduousdraws[,i] <- draws[,paste("b[sd species:", deciduous[i], "]", sep="")]
+  deciduousdraws[,i] <- draws[,paste("b[sd species_garden:", deciduous[i], "]", sep="")]
 }
 
 
@@ -418,26 +680,30 @@ dev.off()
 
 
 # for continental effects
-northamerican <- c("Alnus_rubra","Picea_engelmannii","Picea_sitchensis","Pinus_albicaulis",     
-                   "Populus_trichocarpa","Tsuga_heterophylla", "Populus_balsamifera","Pseudotsuga_menziesii",
-                   "Picea_mariana","Pinus_ponderosa","Betula_papyrifera")
+northamerican <- c("Alnus rubra A","Betula papyrifera K",
+                   "Betula papyrifera L", "Picea engelmannii B","Picea sitchensis D", "Pinus albicaulis C",
+                   "Populus trichocarpa D", "Tsuga heterophylla E","Tsuga heterophylla G", "Populus balsamifera F",
+                   "Picea mariana I","Pinus ponderosa J", "Pseudotsuga menziesii H", "Betula papyrifera M")
+library(stringr)
+northamerican <- str_replace_all(northamerican," ","_")
 
-european <- c("Fraxinus_excelsior", "Fagus_sylvatica" ,"Picea_abies", "Quercus_petraea")
-
+european <- c("Fagus sylvatica R*","Fagus sylvatica T*",
+              "Fraxinus excelsior Q*","Picea abies S*", "Quercus petraea U*","Quercus petraea V*")
+european<- str_replace_all(european," ","_")
 
 # Get all the species of one type now
 northamericandraws <- matrix(data=NA,
                              nrow=nrow(draws),
                              ncol=length(northamerican))
 for (i in c(1:length(northamerican))){
-  northamericandraws[,i] <- draws[,paste("b[sd species:", northamerican[i], "]", sep="")]
+  northamericandraws[,i] <- draws[,paste("b[sd species_garden:", northamerican[i], "]", sep="")]
 }
 
 europeandraws <- matrix(data=NA,
                         nrow=nrow(draws),
                         ncol=length(european))
 for (i in c(1:length(european))){
-  europeandraws[,i] <- draws[,paste("b[sd species:", european[i], "]", sep="")]
+  europeandraws[,i] <- draws[,paste("b[sd species_garden:", european[i], "]", sep="")]
 }
 
 # Now you can manipulate these posteriors with basic math ...  
@@ -468,49 +734,31 @@ dev.off()
 
 
 
-# fitA_fall_lat
-fitA_fall_lat <- stan_glmer(fall_event~(lat_prov|species), data = d)
+# fitC_fall_lat
+fitC_fall_lat <- readRDS("output/model_fit/fitC_fall_lat.RDS")
+draws <- as.matrix(fitC_fall_lat)
 
-Warning messages:
-  1: There were 33 divergent transitions after warmup. See
-http://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup
-to find out why this is a problem and how to eliminate them. 
-2: Examine the pairs() plot to diagnose sampling problems
-
-3: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
-Running the chains for more iterations may help. See
-http://mc-stan.org/misc/warnings.html#bulk-ess
-
-draws <- as.matrix(fitA_fall_lat)
-# the full posterior for Alnus rubra slope:
-alnrubslope <- draws[,"b[lat_prov species:Alnus_rubra]"]
-hist(alnrubslope)
-
-# To get the estimate for continent or evergreen/deciduous:
-# Here I show an incomplete example for evergreen/deciduous,
-# but we especially want to do for continent (group species by continent)
-d <- dplyr::group_by(d, prov_continent)
-# Add the posteriors of all the species in one group ...
-# Example ... many ways to do this, I just created different vectors (I made very incomplete lists!)
 colnames(draws)
-evergreens <- c("Picea_engelmannii",  "Picea_sitchensis",
-                "Tsuga_heterophylla")
-deciduous <- c("Alnus_rubra",
-               "Fagus_sylvatica","Populus_trichocarpa","Fraxinus_excelsior")
+evergreens <- c("Picea engelmannii B","Picea sitchensis D","Tsuga heterophylla E")
+library(stringr)
+evergreens <- str_replace_all(evergreens," ","_")
+deciduous <- c("Alnus rubra A", "Fagus sylvatica R*","Fraxinus excelsior Q*",
+               "Populus trichocarpa D")
+              deciduous <- str_replace_all(deciduous," ","_")
 
 # Get all the species of one type now
 evergreensdraws <- matrix(data=NA,
                           nrow=nrow(draws),
                           ncol=length(evergreens))
 for (i in c(1:length(evergreens))){
-  evergreensdraws[,i] <- draws[,paste("b[lat_prov species:", evergreens[i], "]", sep="")]
+  evergreensdraws[,i] <- draws[,paste("b[lat_prov species_garden:", evergreens[i], "]", sep="")]
 }
 
 deciduousdraws <- matrix(data=NA,
                          nrow=nrow(draws),
                          ncol=length(deciduous))
 for (i in c(1:length(deciduous))){
-  deciduousdraws[,i] <- draws[,paste("b[lat_prov species:", deciduous[i], "]", sep="")]
+  deciduousdraws[,i] <- draws[,paste("b[lat_prov species_garden:", deciduous[i], "]", sep="")]
 }
 
 # Now you can manipulate these posteriors with basic math ...  
@@ -541,24 +789,30 @@ dev.off()
 
 
 # for continental effects
-northamerican <- c("Alnus_rubra","Picea_engelmannii","Picea_sitchensis",    
-                   "Populus_trichocarpa","Tsuga_heterophylla")
-european <- c("Fraxinus_excelsior", "Fagus_sylvatica")
+northamerican <- c("Alnus rubra A","Betula papyrifera K",
+                   "Betula papyrifera L", "Picea engelmannii B","Picea sitchensis D", "Pinus albicaulis C",
+                   "Populus trichocarpa D", "Tsuga heterophylla E","Tsuga heterophylla G", "Populus balsamifera F",
+                   "Picea mariana I","Pinus ponderosa J", "Pseudotsuga menziesii H", "Betula papyrifera M")
+library(stringr)
+northamerican <- str_replace_all(northamerican," ","_")
 
+european <- c("Fagus sylvatica R*","Fagus sylvatica T*",
+              "Fraxinus excelsior Q*","Picea abies S*", "Quercus petraea U*","Quercus petraea V*")
+european<- str_replace_all(european," ","_")
 
 # Get all the species of one type now
 northamericandraws <- matrix(data=NA,
                              nrow=nrow(draws),
                              ncol=length(northamerican))
 for (i in c(1:length(northamerican))){
-  northamericandraws[,i] <- draws[,paste("b[lat_prov species:", northamerican[i], "]", sep="")]
+  northamericandraws[,i] <- draws[,paste("b[lat_prov species_garden:", northamerican[i], "]", sep="")]
 }
 
 europeandraws <- matrix(data=NA,
                         nrow=nrow(draws),
                         ncol=length(european))
 for (i in c(1:length(european))){
-  europeandraws[,i] <- draws[,paste("b[lat_prov species:", european[i], "]", sep="")]
+  europeandraws[,i] <- draws[,paste("b[lat_prov species_garden:", european[i], "]", sep="")]
 }
 
 # Now you can manipulate these posteriors with basic math ...  
@@ -589,32 +843,49 @@ dev.off()
 
 
 d <- dplyr::group_by(d, prov_continent)
-evergreens <- c("Picea_engelmannii",  "Picea_sitchensis",
-                "Tsuga_heterophylla")
-deciduous <- c("Alnus_rubra",
-               "Fagus_sylvatica","Populus_trichocarpa","Fraxinus_excelsior")
-northamerican <- c("Alnus_rubra","Picea_engelmannii","Picea_sitchensis",    
-                   "Populus_trichocarpa","Tsuga_heterophylla")
-european <- c("Fraxinus_excelsior", "Fagus_sylvatica")
+evergreens <- c("Picea abies S*","Picea engelmannii B",
+                "Picea mariana I","Picea sitchensis D","Pinus albicaulis C","Pinus ponderosa J",
+                "Pseudotsuga menziesii H", "Tsuga heterophylla E","Tsuga heterophylla G")
+library(stringr)
+evergreens <- str_replace_all(evergreens," ","_")
+deciduous <- c("Alnus rubra A",
+               "Betula papyrifera K",
+               "Betula papyrifera L",
+               "Betula papyrifera M","Fagus sylvatica R*","Fagus sylvatica T*",
+               "Fraxinus excelsior Q*",
+               "Populus balsamifera F","Populus trichocarpa D",
+               "Quercus petraea U*","Quercus petraea V*")
+deciduous <- str_replace_all(deciduous," ","_")
 
-# fitA_fall_mat
+northamerican <- c("Alnus rubra A","Betula papyrifera K",
+                   "Betula papyrifera L", "Picea engelmannii B","Picea sitchensis D", "Pinus albicaulis C",
+                   "Populus trichocarpa D", "Tsuga heterophylla E","Tsuga heterophylla G", "Populus balsamifera F",
+                   "Picea mariana I","Pinus ponderosa J", "Pseudotsuga menziesii H", "Betula papyrifera M")
+library(stringr)
+northamerican <- str_replace_all(northamerican," ","_")
 
-fitA_fall_mat <- stan_glmer(fall_event~(MAT_prov|species), data = d)
-draws <- as.matrix(fitA_fall_mat)
+european <- c("Fagus sylvatica R*","Fagus sylvatica T*",
+              "Fraxinus excelsior Q*","Picea abies S*", "Quercus petraea U*","Quercus petraea V*")
+european<- str_replace_all(european," ","_")
+
+# fitC_fall_mat
+
+fitC_fall_mat <- stan_glmer(fall_event~(MAT_prov|species), data = d)
+draws <- as.matrix(fitC_fall_mat)
 
 # Get all the species of one type now
 evergreensdraws <- matrix(data=NA,
                           nrow=nrow(draws),
                           ncol=length(evergreens))
 for (i in c(1:length(evergreens))){
-  evergreensdraws[,i] <- draws[,paste("b[MAT_prov species:", evergreens[i], "]", sep="")]
+  evergreensdraws[,i] <- draws[,paste("b[MAT_prov species_garden:", evergreens[i], "]", sep="")]
 }
 
 deciduousdraws <- matrix(data=NA,
                          nrow=nrow(draws),
                          ncol=length(deciduous))
 for (i in c(1:length(deciduous))){
-  deciduousdraws[,i] <- draws[,paste("b[MAT_prov species:", deciduous[i], "]", sep="")]
+  deciduousdraws[,i] <- draws[,paste("b[MAT_prov species_garden:", deciduous[i], "]", sep="")]
 }
 
 # Now you can manipulate these posteriors with basic math ...  
@@ -651,14 +922,14 @@ northamericandraws <- matrix(data=NA,
                              nrow=nrow(draws),
                              ncol=length(northamerican))
 for (i in c(1:length(northamerican))){
-  northamericandraws[,i] <- draws[,paste("b[MAT_prov species:", northamerican[i], "]", sep="")]
+  northamericandraws[,i] <- draws[,paste("b[MAT_prov species_garden:", northamerican[i], "]", sep="")]
 }
 
 europeandraws <- matrix(data=NA,
                         nrow=nrow(draws),
                         ncol=length(european))
 for (i in c(1:length(european))){
-  europeandraws[,i] <- draws[,paste("b[MAT_prov species:", european[i], "]", sep="")]
+  europeandraws[,i] <- draws[,paste("b[MAT_prov species_garden:", european[i], "]", sep="")]
 }
 
 # Now you can manipulate these posteriors with basic math ...  
@@ -688,24 +959,24 @@ mcmc_areas(continentplot)+
 dev.off()
 
 
-# fitA_fall_overlap
+# fitC_fall_overlap
 
-fitA_fall_overlap <- stan_glmer(fall_event~(percentage|species), data = d)
-draws <- as.matrix(fitA_fall_overlap)
+fitC_fall_overlap <- stan_glmer(fall_event~(percentage|species), data = d)
+draws <- as.matrix(fitC_fall_overlap)
 
 # Get all the species of one type now
 evergreensdraws <- matrix(data=NA,
                           nrow=nrow(draws),
                           ncol=length(evergreens))
 for (i in c(1:length(evergreens))){
-  evergreensdraws[,i] <- draws[,paste("b[percentage species:", evergreens[i], "]", sep="")]
+  evergreensdraws[,i] <- draws[,paste("b[percentage species_garden:", evergreens[i], "]", sep="")]
 }
 
 deciduousdraws <- matrix(data=NA,
                          nrow=nrow(draws),
                          ncol=length(deciduous))
 for (i in c(1:length(deciduous))){
-  deciduousdraws[,i] <- draws[,paste("b[percentage species:", deciduous[i], "]", sep="")]
+  deciduousdraws[,i] <- draws[,paste("b[percentage species_garden:", deciduous[i], "]", sep="")]
 }
 
 
@@ -742,14 +1013,14 @@ northamericandraws <- matrix(data=NA,
                              nrow=nrow(draws),
                              ncol=length(northamerican))
 for (i in c(1:length(northamerican))){
-  northamericandraws[,i] <- draws[,paste("b[percentage species:", northamerican[i], "]", sep="")]
+  northamericandraws[,i] <- draws[,paste("b[percentage species_garden:", northamerican[i], "]", sep="")]
 }
 
 europeandraws <- matrix(data=NA,
                         nrow=nrow(draws),
                         ncol=length(european))
 for (i in c(1:length(european))){
-  europeandraws[,i] <- draws[,paste("b[percentage species:", european[i], "]", sep="")]
+  europeandraws[,i] <- draws[,paste("b[percentage species_garden:", european[i], "]", sep="")]
 }
 
 # Now you can manipulate these posteriors with basic math ...  
@@ -779,23 +1050,23 @@ mcmc_areas(continentplot)+
 dev.off()
 
 
-# fitA_fall_sd
-fitA_fall_sd <- stan_glmer(fall_event~(sd|species), data = d)
-draws <- as.matrix(fitA_fall_sd)
+# fitC_fall_sd
+fitC_fall_sd <- stan_glmer(fall_event~(sd|species), data = d)
+draws <- as.matrix(fitC_fall_sd)
 
 # Get all the species of one type now
 evergreensdraws <- matrix(data=NA,
                           nrow=nrow(draws),
                           ncol=length(evergreens))
 for (i in c(1:length(evergreens))){
-  evergreensdraws[,i] <- draws[,paste("b[sd species:", evergreens[i], "]", sep="")]
+  evergreensdraws[,i] <- draws[,paste("b[sd species_garden:", evergreens[i], "]", sep="")]
 }
 
 deciduousdraws <- matrix(data=NA,
                          nrow=nrow(draws),
                          ncol=length(deciduous))
 for (i in c(1:length(deciduous))){
-  deciduousdraws[,i] <- draws[,paste("b[sd species:", deciduous[i], "]", sep="")]
+  deciduousdraws[,i] <- draws[,paste("b[sd species_garden:", deciduous[i], "]", sep="")]
 }
 
 
@@ -831,14 +1102,14 @@ northamericandraws <- matrix(data=NA,
                              nrow=nrow(draws),
                              ncol=length(northamerican))
 for (i in c(1:length(northamerican))){
-  northamericandraws[,i] <- draws[,paste("b[sd species:", northamerican[i], "]", sep="")]
+  northamericandraws[,i] <- draws[,paste("b[sd species_garden:", northamerican[i], "]", sep="")]
 }
 
 europeandraws <- matrix(data=NA,
                         nrow=nrow(draws),
                         ncol=length(european))
 for (i in c(1:length(european))){
-  europeandraws[,i] <- draws[,paste("b[sd species:", european[i], "]", sep="")]
+  europeandraws[,i] <- draws[,paste("b[sd species_garden:", european[i], "]", sep="")]
 }
 
 # Now you can manipulate these posteriors with basic math ...  

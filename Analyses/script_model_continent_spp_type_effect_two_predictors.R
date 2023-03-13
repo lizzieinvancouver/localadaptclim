@@ -14,7 +14,7 @@ library(bayesplot)
 library(dplyr)
 library(ggplot2)
 
-d <- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included.csv", header = TRUE)  #680
+d<- read.csv("input/percentage_overlap_doy_difference_earth_calculated_garden_identifier_adjusted_fall_diffo_included_slope_intercept_gdd_Sept27.csv",header = TRUE)
 d$fall_event <- as.numeric(d$fall_event)
 d$spring_event <- as.numeric(d$spring_event)
 
@@ -29,7 +29,7 @@ alnrubslope <- draws[,"b[percentage:sd species:Alnus_rubra]"]
 hist(alnrubslope)
 
 
-
+# draws <- as.matrix()
 # To get the estimate for continent or evergreen/deciduous:
 # Here I show an incomplete example for evergreen/deciduous,
 # but we especially want to do for continent (group species by continent)

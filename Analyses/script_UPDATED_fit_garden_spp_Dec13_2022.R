@@ -23,14 +23,53 @@ library(rstanarm)
 library(bayesplot)
 library(ggplot2)
 library(viridis)
+library(rstantools)
 
+
+# attempting to make tables March 7
+summary(fitC_spring_mat)
+coef(fitC_spring_mat)$species
+posterior_interval(fitC_spring_mat, prob=0.80) # not like this...
+# following Issue # 16 to sum and average posteriors of one model
+
+draws <- as.matrix(fitC_spring_mat)
+all_spp_garden <- c("Alnus rubra A",
+                "Betula papyrifera K",
+                "Betula papyrifera L",
+                "Betula papyrifera M","Fagus sylvatica R*","Fagus sylvatica T*",
+                "Fraxinus excelsior Q*","Picea abies S*","Picea engelmannii B",
+                "Picea mariana I","Picea sitchensis D","Pinus albicaulis C","Pinus ponderosa J",
+                "Populus balsamifera F","Populus trichocarpa D","Pseudotsuga menziesii H",
+                "Quercus petraea U*","Quercus petraea V*","Tsuga heterophylla E","Tsuga heterophylla G") # put the rest of the species names in ... 
+
+library(stringr)
+all_spp_garden <- str_replace_all(all_spp_garden," ","_")
+
+# Get all the species of one type now
+all_spp_garden_draws <- matrix(data=NA,
+                          nrow=nrow(draws),
+                          ncol=length(all_spp_garden))
+
+for (i in c(1:length(all_spp_garden))){
+  all_spp_garden_draws[,i] <- draws[,paste("b[MAT_prov species_garden:", all_spp_garden[i], "]", sep="")]
+}
+
+# Now you can manipulate these posteriors with basic math ...  
+pe -- you need to take the rowMeans beacause the samples are related and so you keep the rows together
+all_spp_garden_post <- rowMeans(all_spp_garden_draws)
+
+quantile(all_spp_garden_post, probs = c(.1, .5, .9))
+
+10%         50%         90% 
+-0.28666551 -0.10987028  0.07123643 
 
 # spring or fall DOY ~ lat or mat
 fitC_spring_lat <- rstanarm::stan_glmer(spring_event~(lat_prov|species_garden), data = d)
-fitC_fall_lat <- rstanarm::stan_glmer(fall_event~(lat_prov|species_garden), data = d)
-# already did lat ones and saved to d
+fitC_fall_lat <- rstanarm::stan_glmer(fall_event~(lat_prov|species_garden), adapt_delta = 0.99, iter = 3000, warmup=2000, data = d)  # one divergent transition
 fitC_spring_mat <- rstanarm::stan_glmer(spring_event~(MAT_prov|species_garden), data = d)
-fitC_fall_mat <- rstanarm::stan_glmer(fall_event~(MAT_prov|species_garden), data = d)
+
+fitC_fall_mat <- rstanarm::stan_glmer(fall_event~(MAT_prov|species_garden), adapt_delta = 0.99, data = d)
+:stan_glmer(fall_event~(MAT_prov|species_garden), iter=4000,warmup=2000, data = d)
 
 # climate overlap
 fitC_spring_overlap <- rstanarm::stan_glmer(spring_event~(percentage|species_garden), data = d)
@@ -66,7 +105,6 @@ saveRDS(fitC_spring_overlap, file = "output/model_fit/fitC_spring_overlap.RDS", 
         compress = TRUE, refhook = NULL)
 saveRDS(fitC_fall_overlap, file = "output/model_fit/fitC_fall_overlap.RDS", ascii = FALSE, version = NULL,
         compress = TRUE, refhook = NULL)
-
 saveRDS(fitC_spring_lat_diffo, file = "output/model_fit/fitC_spring_lat_diffo.RDS", ascii = FALSE, version = NULL,
         compress = TRUE, refhook = NULL)
 saveRDS(fitC_fall_lat_diffo, file = "output/model_fit/fitC_fall_lat_diffo.RDS", ascii = FALSE, version = NULL,
@@ -75,6 +113,8 @@ saveRDS(fitC_spring_earth_distance, file = "output/model_fit/fitC_spring_earth_d
         compress = TRUE, refhook = NULL)
 saveRDS(fitC_fall_earth_distance, file = "output/model_fit/fitC_fall_earth_distance.RDS", ascii = FALSE, version = NULL,
         compress = TRUE, refhook = NULL)
+
+
 saveRDS(fitC_spring_mat_diffo, file = "output/model_fit/fitC_spring_mat_diffo.RDS", ascii = FALSE, version = NULL,
         compress = TRUE, refhook = NULL)
 saveRDS(fitC_fall_mat_diffo, file = "output/model_fit/fitC_fall_mat_diffo.RDS", ascii = FALSE, version = NULL,

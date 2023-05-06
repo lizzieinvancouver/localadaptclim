@@ -32,11 +32,32 @@ european <- c("Fagus sylvatica R*","Fraxinus excelsior Q*")
 european<- str_replace_all(european," ","_")
 
 
+# may 4, 2023 -> overall model results
+all_species_fall <- c("Picea engelmannii B","Picea sitchensis D","Tsuga heterophylla E","Alnus rubra A", "Fagus sylvatica R*","Fraxinus excelsior Q*",
+                      "Populus trichocarpa D")
+library(stringr)
+all_species_fall <- str_replace_all(all_species_fall," ","_")
+
 
 
 # fitC_fall_mat
 fitC_fall_mat <- readRDS("../output/model_fit/fitC_fall_mat.RDS")
+# fitC_fall_mat <- readRDS("C:/Users/alina/Documents/git/localadaptclim/output/model_fit/fitC_fall_mat.RDS")
 draws_fitC_fall_mat <- as.matrix(fitC_fall_mat)
+
+
+# Get all the species of one type now
+all_species_falldraws_fitC_fall_mat <- matrix(data=NA,
+                                              nrow=nrow(draws_fitC_fall_mat),
+                                              ncol=length(all_species_fall))
+for (i in c(1:length(all_species_fall))){
+  all_species_falldraws_fitC_fall_mat[,i] <- draws_fitC_fall_mat[,paste("b[MAT_prov species_garden:", all_species_fall[i], "]", sep="")]
+}
+
+# Now you can manipulate these posteriors with basic math ...  
+all_species_fallpost_fitC_fall_mat <- rowMeans(all_species_falldraws_fitC_fall_mat)
+
+
 # Get all the species of one type now
 evergreensdraws_fitC_fall_mat <- matrix(data=NA,
                                         nrow=nrow(draws_fitC_fall_mat),
@@ -76,12 +97,12 @@ png(filename="leaf_effect_mat_fall.png",
     res=300)
 leaftypeplot_fitC_fall_mat <- as.matrix(cbind(evergreenspost_fitC_fall_mat, deciduouspost_fitC_fall_mat))
 plot_title <- ggtitle("Leaf Type Effects on Fall DOY in Relation to Provenance MAT")
-color_scheme_set("viridis") 
+color_scheme_set("yellow")
 new_labels_leaftype <- c("Angiosperm","Gymnosperm")
-mcmc_areas(leaftypeplot_fitC_fall_mat)+ 
+mcmc_areas(leaftypeplot_fitC_fall_mat)+
   plot_title +
-  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
-  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.text.x = element_text(size = 35))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
   theme(text=element_text(family="sans"))+
   scale_y_discrete(labels = rev(new_labels_leaftype))
@@ -126,21 +147,37 @@ png(filename="continent_effect_mat_fall.png",
     res=300)
 continentplot_fitC_fall_mat <- as.matrix(cbind(northamericanpost_fitC_fall_mat, europeanpost_fitC_fall_mat ))
 plot_title <- ggtitle("Continental Effects on Fall DOY in Relation to Provenance MAT")
-color_scheme_set("viridis") 
+color_scheme_set("yellow")
 new_labels_continent <- c("Europe","North America")
 mcmc_areas(continentplot_fitC_fall_mat)+ 
   plot_title +
-  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
-  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.text.x = element_text(size = 35))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
   theme(text=element_text(family="sans"))+
   scale_y_discrete(labels = rev(new_labels_continent))
 dev.off()
 
-
 # fitC_fall_lat
 fitC_fall_lat <- readRDS("../output/model_fit/fitC_fall_lat.RDS")
+# fitC_fall_lat <- readRDS("C:/Users/alina/Documents/git/localadaptclim/output/model_fit/fitC_fall_lat.RDS")
 draws_fitC_fall_lat <- as.matrix(fitC_fall_lat)
+
+
+# Get all the species of one type now
+all_species_falldraws_fitC_fall_lat <- matrix(data=NA,
+                                              nrow=nrow(draws_fitC_fall_lat),
+                                              ncol=length(all_species_fall))
+for (i in c(1:length(all_species_fall))){
+  all_species_falldraws_fitC_fall_lat[,i] <- draws_fitC_fall_lat[,paste("b[lat_prov species_garden:", all_species_fall[i], "]", sep="")]
+}
+
+# Now you can manipulate these posteriors with basic lath ...  
+all_species_fallpost_fitC_fall_lat <- rowMeans(all_species_falldraws_fitC_fall_lat)
+
+
+
+
 
 # Get all the species of one type now
 evergreensdraws_fitC_fall_lat <- matrix(data=NA,
@@ -222,5 +259,73 @@ mcmc_areas(continentplot_fitC_fall_lat)+
   theme(text=element_text(family="sans"))+
   scale_y_discrete(labels = rev(new_labels_continent))
 dev.off()
+
+
+
+
+
+
+
+# fitC_fall_overlap
+fitC_fall_overlap <- readRDS("../output/model_fit/fitC_fall_overlap.RDS")
+
+# fitC_fall_overlap <- readRDS("C:/Users/alina/Documents/git/localadaptclim/Output/model_fit/fitC_fall_overlap.RDS")
+draws_fitC_fall_overlap <- as.matrix(fitC_fall_overlap)
+
+
+# Get all the species of one type now
+all_species_falldraws_fitC_fall_overlap <- matrix(data=NA,
+                                                  nrow=nrow(draws_fitC_fall_overlap),
+                                                  ncol=length(all_species_fall))
+for (i in c(1:length(all_species_fall))){
+  all_species_falldraws_fitC_fall_overlap[,i] <- draws_fitC_fall_overlap[,paste("b[percentage species_garden:", all_species_fall[i], "]", sep="")]
+}
+
+# Now you can manipulate these posteriors with basic math ...  
+all_species_fallpost_fitC_fall_overlap <- rowMeans(all_species_falldraws_fitC_fall_overlap)
+
+
+# Get all the species of one type now
+evergreensdraws_fitC_fall_overlap <- matrix(data=NA,
+                                            nrow=nrow(draws_fitC_fall_overlap),
+                                            ncol=length(evergreens))
+for (i in c(1:length(evergreens))){
+  evergreensdraws_fitC_fall_overlap[,i] <- draws_fitC_fall_overlap[,paste("b[percentage species_garden:", evergreens[i], "]", sep="")]
+}
+
+deciduousdraws_fitC_fall_overlap <- matrix(data=NA,
+                                           nrow=nrow(draws_fitC_fall_overlap),
+                                           ncol=length(deciduous))
+for (i in c(1:length(deciduous))){
+  deciduousdraws_fitC_fall_overlap[,i] <- draws_fitC_fall_overlap[,paste("b[percentage species_garden:", deciduous[i], "]", sep="")]
+}
+
+# Now you can manipulate these posteriors with basic math ...  
+evergreenspost_fitC_fall_overlap <- rowMeans(evergreensdraws_fitC_fall_overlap)
+deciduouspost_fitC_fall_overlap <- rowMeans(deciduousdraws_fitC_fall_overlap)
+
+
+# NEW
+png(filename="leaf_effect_overlap_fall.png", 
+    type="cairo", 
+    units="in", 
+    width=14, 
+    height=8, 
+    res=300)
+
+leaftypeplot_fitC_fall_overlap <- as.matrix(cbind(evergreenspost_fitC_fall_overlap, deciduouspost_fitC_fall_overlap))
+plot_title <- ggtitle("Leaf Type Effects on spring DOY in Relation to Provenance MAT")
+color_scheme_set("yellow") 
+new_labels_leaftype <- c("Angiosperm","Gymnosperm")
+mcmc_areas(leaftypeplot_fitC_fall_overlap)+ 
+  plot_title +
+  theme(axis.text.x = element_text(size = 35))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
+  theme(plot.title = element_text(size = 21))  +            # plot title
+  theme(text=element_text(family="sans"))+
+  scale_y_discrete(labels = rev(new_labels_leaftype))
+dev.off()
+
+
 
 

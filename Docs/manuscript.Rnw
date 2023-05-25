@@ -63,33 +63,58 @@
 
 
 \newpage
+% Journal ideas: Global Change Biology; Functional Ecology or Journal of Ecology next seem good ... maybe a biogeography journal (though I am not sure if we can afford one) ... maybe New Phytologist but I think they could be picky. 
 
-\section*{Abstract}
+% EMW recommends parskip now instead of \\ too much: https://www.overleaf.com/learn/latex/Articles/How_to_change_paragraph_spacing_in_LaTeX#The_parskip_package ... add \usepackage{parskip} to preamble, delete \\ and see how it looks
 
-
-% We conducted the first cross-continental meta-analysis of published studies from the peer-reviewed literature that reported spring event dates for a mix of angiosperm and gymnosperm tree species in the northern hemisphere, capturing data from 384 North American provenances and 101 European provenances with observations from 1962 to 2019.
+% Just jotting down and putting some bits you have for abstract for now. 
+\begin{abstract}
+Climate change forecasting .... plasticity.... adaptation. Spring tree phenology is critical to forecasting ... Despite a long history of study, however, the balance of local adaptation versus plasticity in determining environmental responses is not well understood, especially for spring events. We conducted the first cross-continental meta-analysis of published studies from the peer-reviewed literature that reported spring event dates for a mix of angiosperm and gymnosperm tree species in the northern hemisphere, capturing data from 384 North American provenances and 101 European provenances with observations from 1962 to 2019.  We found ... This is important because... 
+\end{abstract}
 
 
 \section{Introduction}
-To optimize ecosystem services for habitat conservation and understand how plants cope with environmental variations, predicting the biological impacts of climate change is of critical importance \citep{botero15}. One of the most important parts of accurate prediction is understanding the relative importance of local adaptation versus plasticity \citep{chevin10}. Local adaptation - how well the growth and adaptive characteristics of plants align with the local climate conditions - influences their ability to thrive and reproduce  \citep{casmey22, kawecki04, anderson12, kim13}. When the selection intensity exceeds gene flow in species that spread over diverse areas, clinal variations among environmental factors can result in populations with unique adaptations to the local climate and, therefore, greater fitness \citep{kremer12, rossi15, salmela13}. On the other hand, phenotypic plasticity describes an individual genotype’s ability to exhibit different phenotypes in response to environmental variations, enabling plants to adjust to new environmental conditions and survive in this rapidly changing world (also known as ‘plastic rescue’)  \citep{chevin10, chevin102, snell18}. \\
-\\
-Among the various population-level characteristics critical in synchronizing plant growth with the available growing season, phenology traits hold particular significance \citep{primack80, oneil97, chuine01}. Phenology governs the timing of plant transitions between dormancy and active growing, allowing them to time reproduction and utilize each growing season as best as possible \citep{chuine10, hanninen11}. Additionally, phenology provides insight into how climate change affects plant life cycles, regeneration capacity, and ecosystem management.\\
-\\
-Spring phenology, specifically the timing of budburst and leaf flush, plays a significant role in determining plant fitness and has been widely adopted as a useful tool to investigate plant adaptation mechanisms \citep{guo22, chuine01}. In temperate and boreal environments, the optimal timing for spring growth initiation is determined by a balance of avoiding late spring frost and having a long growing season \citep{alberto11, lenz16, allevato19}. Utilizing the early portion of the growing season can be especially critical for species in colder regions \citep{morin07, dantec15} and the ones with suboptimal shade tolerance \citep{richardson09}. Plants that budburst earlier can take advantage of a longer growing season and avoid competition  \citep{guo22}. \\
-\\
-In recent decades, there has been growing interest in how climate change influences plant phenology \citep{Gill15}. Trees exhibit immediate responses via phenotypic plasticity with the warming climate \citep{Nicotra10}, while the degree of adaptation dictated by climate change differs across different geographical areas \citep{Loarie09}. Phenological shifts in spring phenology due to recent temperature increases have been extensively observed \citep{Parmesan06}. For example, leaf unfolding in Europe advanced up to six days since the early 1960s due to the rise in spring temperature, and spring events have generally shifted more than fall events \citep{menzel99}. Studies have found that species that shift more with warming also appear to perform better \citep{Gill15}. For instance, research has demonstrated that the timing of budburst and senescence in deciduous plants can impact plant competition \citep{fridley12}, plant growth \citep{myneni97}, and the uptake of carbon by the ecosystem \citep{Barichivich12}. As leaf phenology shifts in response to climate, increasing evidence suggests how much a species shifts its phenology with warming may predict fitness consequences: Individuals, populations, and phenological events (spring versus fall) with more plasticity might fare better with climate change. Plasticity, however, likely varies across species and phenophases. An accurate understanding of how environmental conditions might influence species distribution at a continental scale is critical for future range shift prediction. \\
-\\
-Much spring phenology is driven by plasticity. For more than 250 years, researchers have been comparing populations of trees from different geographical origins under the same environmental conditions through common garden experiments to disentangle the effects of environmental and genetic variation on trees’ phenology and phenotype \citep{AitkenBemmels16, Alberto13}. Over time, comparable clinal variations have been observed in these experiments along latitudinal and elevational gradients for many temperate and boreal species. Fall bud set phenology and cold hardiness exhibit strong population differentiation and strong clines along different latitudes, altitudes, and continentality gradients \citep{Alberto13}. For example, low-latitude populations have shown significantly stronger delays in leaf senescence over time than high-latitude populations \citep{Gill15}. Spring events (budburst, leaf flush, etc.) show more substantial phenotypic plasticity and higher variability \citep{AitkenBemmels16}.\\
-\\
-Despite a growing interest in predicting local adaptation across locations, no study has comprehensively examined clines for spring and fall events and what factors may underlie differences observed across studies. We ask: To what extent are patterns of phenotypic plasticity and local adaptation along climate gradients similar across common garden studies? To better understand these clines, we also aim to examine the following:
+%emw: FYI this is a first draft -- meaning it still has lots of words, sentences and other bits to fix; but best to do that as we go. 
+%emw: I noticed a lot of papers on local adaptation don't always use the term 'local adaptation' so we may want to avoid using it too much? I suspect it may be contested. I also wonder if my advice about definitions was wrong ... but let's definitely save that text for now. 
+%emw: We need to 'funnel' in our intros -- until we submit to a plant journal focusing on plants too early is getting too narrow too fast. 
+
+% To optimize ecosystem services for habitat conservation and understand how plants cope with environmental variations, predicting the biological impacts of climate change is of critical importance \citep{botero15}. One of the most important parts of accurate prediction is understanding the relative importance of local adaptation versus plasticity \citep{chevin10}. 
+The increasing need to predict the biological impacts of climate change has made understanding how organisms cope with environmental variation more urgent \citep{botero15}. In particular, the relative importance of genetic adaptation versus plasticity is of paramount importance for prediction \citep{chevin10}, with plasticity expected to allow species to shift more rapidly with climate change than environmental responses based on local adaptations (CITES).
+
+% Local adaptation---how well the growth and adaptive characteristics align with the local climate conditions---influences their ability to thrive and reproduce  \citep{casmey22, kawecki04, anderson12, kim13}. When the selection intensity exceeds gene flow in species that spread over diverse areas, clinal variations among environmental factors can result in populations with unique adaptations to the local climate and, therefore, greater fitness \citep{kremer12, rossi15, salmela13}. On the other hand, phenotypic plasticity describes an individual genotype’s ability to exhibit different phenotypes in response to environmental variations, enabling plants to adjust to new environmental conditions and survive in this rapidly changing world (also known as `plastic rescue')  \citep{chevin10, chevin102, snell18}. 
+
+Many of the currently observed responses to climate change appear to be mostly plastic (CITES), including the most reported biological response to climate change---shifting phenology. Phenology (timing of recurring seasonal events) governs the timing of transitions between dormancy and active growth for many organisms, allowing them to time reproduction and fully exploit the resources of each growing season \citep{chuine10,hanninen11}. % add some animal refs -- Chuine Annual Review would be good: Process-Based Models of Phenology for Plants and Animals
+As such, phenology plays a significant role in determining fitness (CITES). Shifted phenology in recent decades---with many events moving several days per decade (CITES)---has thus led to concerns about fitness consequences, and the limits of possible future shifts. Future phenological shifts will depend on how much phenology is determined by adaptation versus plasticity will determine, yet our understanding of the balance of these two approaches to variation is limited, even for species groups that are critical to both forecasting and have been well studied, such as trees. 
+
+Tree phenology is critically important to climate change forecasting and has been an area of long-term study of adaptation and plasticity. The timing of budburst and senescence can impact plant competition \citep{fridley12}, growth \citep{myneni97}, and carbon sequestration \citep{Barichivich12}---thus effecting climate change itself. Hundreds of years of study have established common clines in fall phenology, as locations with shorter growing season (poleward, higher elevation) exhibit earlier stopping of growth (e.g., via budset), and connected these to an underlying proximate mechanism of changing photoperiod cues, driven by local adaptation to the local growing season and relevant photoperiod to stop growth (CITES). In contrast, spring phenology appears far more plastic (CITES) and determined more strongly by temperature (CITES). Many studies, however, have argued that spring phenology shows important levels of adaptation. 
+
+Evidence for local adaptation in spring phenology comes mostly from common garden studies. For more than 250 years, researchers have been comparing populations of trees from different geographical origins under the same environmental conditions through these experiments to disentangle the effects of environmental and genetic variation on trees’ phenology and phenotype \citep{AitkenBemmels16, Alberto13}. Studies have documented provenance differences of XX-XX days per (degree C or latitude??) for some species (\emph{Populus} and \emph{Fagus}?) where?? while others have not found any trends in budburst (give species and where). This has led to some debate over the prevalence and importance of adaptation in spring tree phenology. While clines of spring phenology have been found in studies in both Europe (CITES) and North America (CITES) they appear potentially more common in European studies. 
+
+Continental differences in patterns of adaptation versus plasticity could be driven by climatic differences, as North American springs are more variable across years than European ones (CITES). Such high temporal variability means that distant sites can effectively experience the same spring climate, but in different years. Studies of spring phenology in arboreta suggest cues for budburst may vary depending on continental climate (CITES), but are poorly controlled compared to traditional provenance trials, making them difficult to use for tests of plasticity versus adaptation. Even for more carefully designed common garden differences in study design---especially studied species---may complicate understanding what underlies potential trends across continents, with European studies focusing more on deciduous angiosperms and North American studies focusing often on conifers.  
+% Alberto shows elevation cline 
+% Soolananayakanahally et al 2013 finds weak cline ... I think there should also be Fagus studies. Vitasse has some elevational studies... 
+To test for evidence of adaptation in spring phenology and what factors may underlie differences observed across studies, we comprehensively examined clines for spring and fall events. We test for evidence of adaptation via provenance trends with latitude and climate. Further, to better understand these clines, we also examine the following:
 \begin{itemize}
 \item How different are clines between spring and fall phenology? 
-\item How different are clines across Europe and North America?
-\item If differences in clines exist across angiosperm and gymnosperm species?
-\item If climate overlap between the provenance and garden explains the similarities and differences in clines?
+\item How different are clines between Europe and North America?
+\item How different are clines between angiosperm and gymnosperm species?
 \end{itemize}
-To address these questions, we reanalyzed data from the literature on common garden experiments in temperate tree species across Europe and North America. 
+To address these questions, we combined a new meta-analysis of all common garden experiments in temperate tree species across Europe and North America reporting spring phenology with Bayesian hierarchical models. 
 
+ %REFS
+ % https://link.springer.com/article/10.1007/s00484-014-0900-y
+ % emw could not open bibliography_local_adaptation.bib so just adding my refs as separate file for now. 
+ % kharouba2018 for estimates of change across species per decade (could go with your menzel ref well)
+ % \cite{Cleland:2007or} classic on phenology and why it matters with climate change, carbon etc. -- easy read so I recommend it!
+ % \cite{chuinearees} covers both insect and plant phenology and discusses plasticity and adaptation
+ % bonamour2019 -- good paper on plasticity (whole issue of this journal was good) 
+ % savolainenAREES -- have not read recently but sounds relevant
+ % gauzere2020 -- cite and read
+ % \cite{ospreebbms,ospreephoto} -- relevant papers from the lab
+ % \cite{zohner2017} cover variation in spring climate across continents
+ % \cite{chang2021} and \cite{chuine2016} -- relevant for discussion of chilling
+ % See also Salk 2020 paper and some papers mentioned above
+ 
 
 \section{Methods}
 \subsection{Data Collection}
@@ -183,6 +208,34 @@ The inconsistent and weak clines in spring events that we found suggest high pla
 
 In contrast to spring events, we found strong latitudinal clines in fall events across both continents, with local adaptation appearing much stronger in North America than in Europe. Our results show that spring events are highly plastic, and thus may shift with warming, but data on more species and greater information on important factors, such as their geographic location in relation to their origins and elevation, are needed for forecasting. 
 
+\begin{enumerate}
+\item Opening: 1-2 paragraph overview of our findings (spring phenology show no real clines, some variation by continent and gymnosperm/angiosperm but hard to fully disentangle). Suggests some small clines of spring phenology in some studies, but no consistent effects
+ \item Subheader: Adaptation in spring vs fall phenology: Implications for climate change responses
+ \begin{enumerate}
+ \item Mostly unorganized list of things we may want to say in this section
+ \begin{enumerate}
+ \item Current advances in spring phenology may continue, but delays in fall phenology will depend on speed of adaptation
+ \item If current advances in spring phenology continues it could mean shifts in spring frost etc.
+  \item Spring phenology, specifically the timing of budburst and leaf flush, plays a significant role in determining plant fitness and has been widely adopted as a useful tool to investigate plant adaptation mechanisms \citep{guo22, chuine01}. In temperate and boreal environments, the optimal timing for spring growth initiation is determined by a balance of avoiding late spring frost and having a long growing season \citep{alberto11, lenz16, allevato19}. Utilizing the early portion of the growing season can be especially critical for species in colder regions \citep{morin07, dantec15} and the ones with suboptimal shade tolerance \citep{richardson09}. Plants that budburst earlier can take advantage of a longer growing season and avoid competition  \citep{guo22}.
+ \item Clines in fall phenology are stronger and more consistent while clines in spring phenology are weaker and can go either way  (highlight that some studies and we should include WHICH ones do show clines by XX days).
+ \item Mention some of of the co and counter-gradient studies here
+  \item  An accurate understanding of how environmental conditions might influence species distribution at a continental scale is critical for future range shift prediction.
+ \item Implications of small differences in spring phenology could mean different gene flow etc. 
+  \item the degree of adaptation dictated by climate change differs across different geographical areas \citep{Loarie09}. 
+  \item Need to cite elevation studies and discuss them somewhere here.
+  \item Somewhere mention results from chamber studies and local adaptation (which are hard to interpret given issues with chilling) 
+ \item What else?
+ \end{enumerate}
+  \end{enumerate}
+ \item Subheader: Variation across continents and species groupings
+ \begin{enumerate}
+ \item  Unorganized list of things we may want to say in this section
+ \begin{enumerate}
+ \item No strong evidence of continental differences, could make sense based on long-term climate history perhaps ... 
+\item discuss xylem (ring versus diffuse porous spp) and embolism but might be too in the weeds (see Salk article)
+ \end{enumerate}
+ \end{enumerate}
+\end{enumerate}
 
 % Must cover in discussion:
 

@@ -208,12 +208,12 @@ png(filename="leaf_effect_lat_fall.png",
     res=300)
 leaftypeplot_fitC_fall_lat <- as.matrix(cbind(evergreenspost_fitC_fall_lat, deciduouspost_fitC_fall_lat))
 plot_title <- ggtitle("Leaf Type Effects on Fall DOY in Relation to Provenance Latitude")
-color_scheme_set("viridis") 
+color_scheme_set("yellow")
 new_labels_leaftype <- c("Angiosperm","Gymnosperm")
 mcmc_areas(leaftypeplot_fitC_fall_lat)+ 
   plot_title +
-  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
-  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.text.x = element_text(size = 35))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
   theme(text=element_text(family="sans"))+
   scale_y_discrete(labels = rev(new_labels_leaftype))
@@ -249,12 +249,12 @@ png(filename="continent_effect_lat_fall.png",
 
 continentplot_fitC_fall_lat <- as.matrix(cbind(northamericanpost_fitC_fall_lat, europeanpost_fitC_fall_lat ))
 plot_title <- ggtitle("Continental Effects on Fall DOY in Relation to Provenance Latitude")
-color_scheme_set("viridis") 
+color_scheme_set("yellow")
 new_labels_continent <- c("Europe","North America")
 mcmc_areas(continentplot_fitC_fall_lat)+ 
   plot_title +
-  theme(axis.text.x = element_text(size = 15))+             # x-axis text size
-  theme(axis.text.y = element_text(size = 15))   +          # y-axis text size
+  theme(axis.text.x = element_text(size = 35))+             # x-axis text size
+  theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
   theme(text=element_text(family="sans"))+
   scale_y_discrete(labels = rev(new_labels_continent))

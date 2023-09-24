@@ -101,6 +101,7 @@ color_scheme_set("yellow")
 new_labels_leaftype <- c("Angiosperm","Gymnosperm")
 mcmc_areas(leaftypeplot_fitC_fall_mat)+
   plot_title +
+  lims(x= c(-2,8))+
   theme(axis.text.x = element_text(size = 35))+             # x-axis text size
   theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
@@ -151,6 +152,7 @@ color_scheme_set("yellow")
 new_labels_continent <- c("Europe","North America")
 mcmc_areas(continentplot_fitC_fall_mat)+ 
   plot_title +
+  lims(x= c(-2,8))+
   theme(axis.text.x = element_text(size = 35))+             # x-axis text size
   theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
@@ -212,6 +214,7 @@ color_scheme_set("yellow")
 new_labels_leaftype <- c("Angiosperm","Gymnosperm")
 mcmc_areas(leaftypeplot_fitC_fall_lat)+ 
   plot_title +
+  lims(x= c(-5,1))+
   theme(axis.text.x = element_text(size = 35))+             # x-axis text size
   theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
@@ -253,6 +256,7 @@ color_scheme_set("yellow")
 new_labels_continent <- c("Europe","North America")
 mcmc_areas(continentplot_fitC_fall_lat)+ 
   plot_title +
+  lims(x= c(-5,1))+
   theme(axis.text.x = element_text(size = 35))+             # x-axis text size
   theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
@@ -319,6 +323,7 @@ color_scheme_set("yellow")
 new_labels_leaftype <- c("Angiosperm","Gymnosperm")
 mcmc_areas(leaftypeplot_fitC_fall_overlap)+ 
   plot_title +
+  lims(x= c(-0.5,1.5))+
   theme(axis.text.x = element_text(size = 35))+             # x-axis text size
   theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title

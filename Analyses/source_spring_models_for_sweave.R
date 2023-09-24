@@ -123,6 +123,7 @@ color_scheme_set("viridis")
 new_labels_leaftype <- c("Angiosperm","Gymnosperm")
 mcmc_areas(leaftypeplot_fitC_spring_mat)+ 
   plot_title +
+  lims(x= c(-2,8))+
   theme(axis.text.x = element_text(size = 35))+             # x-axis text size
   theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
@@ -145,6 +146,7 @@ color_scheme_set("mix-teal-pink")
 new_labels_leaftype <- c("Angiosperm","Gymnosperm")
 mcmc_areas(leaftypeplot_fitC_spring_mat)+ 
   plot_title +
+  lims(x= c(-2,8))+
   theme(axis.text.x = element_text(size = 35))+             # x-axis text size
   theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
@@ -195,6 +197,7 @@ color_scheme_set("mix-teal-pink")
 new_labels_continent <- c("Europe","North America")
 mcmc_areas(continentplot_fitC_spring_mat)+ 
   plot_title +
+  lims(x= c(-2,8))+
   theme(axis.text.x = element_text(size = 35))+             # x-axis text size
   theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
@@ -254,6 +257,7 @@ color_scheme_set("mix-teal-pink")
 new_labels_leaftype <- c("Angiosperm","Gymnosperm")
 mcmc_areas(leaftypeplot_fitC_spring_lat)+ 
   plot_title +
+  lims(x= c(-5,1))+
   theme(axis.text.x = element_text(size = 35))+             # x-axis text size
   theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title
@@ -304,6 +308,7 @@ color_scheme_set("mix-teal-pink")
 new_labels_continent <- c("Europe","North America")
 mcmc_areas(continentplot_fitC_spring_lat)+ 
   plot_title +
+  lims(x= c(-5,1))+
   theme(axis.text.x = element_text(size = 35))+             # x-axis text size
   theme(axis.text.y = element_text(size = 35))   +          # y-axis text size
   theme(plot.title = element_text(size = 21))  +            # plot title

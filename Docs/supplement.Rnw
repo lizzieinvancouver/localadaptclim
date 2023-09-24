@@ -63,7 +63,10 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead[LO]{2023}
-\fancyhead[RO]{Manuscript}
+\fancyhead[RO]{Supplement}
+\usepackage{setspace}
+% Using \doublespacing in the preamble changes the text to double-line spacing
+\doublespacing
 % more optionals! %
 %\usepackage[hyphens]{url} % this wraps my URL versus letting it spill across the page, a bad habit LaTeX has
 
@@ -452,35 +455,35 @@ Sigma[species\_garden:MAT\_prov,MAT\_prov]                    & 40.8   & 28.3   
 
 
 
-\begin{figure}[!h] 
-    \centering
- \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_ms/gdd_ms.png}
-    \caption{Growing Degree Days (GDD)on each day of spring event in relation to provenance latitude and MAT, coded by symbol for species and color for garden with linear fits from hierarchical Bayesian models.}
-    \label{figure:gdd}
-\end{figure}
+% \begin{figure}[!h] 
+%     \centering
+%  \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_ms/gdd_ms.png}
+%     \caption{Growing Degree Days (GDD)on each day of spring event in relation to provenance latitude and MAT, coded by symbol for species and color for garden with linear fits from hierarchical Bayesian models.}
+%     \label{figure:gdd}
+% \end{figure}
 
-
-\begin{figure}[!h] 
-    \centering
- \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_supp/climate_overlap_continent_comparison.png}
-    \caption{The closer a garden is to a provenance, the more overlap in temperature. 
-Higher extend of climate overlap in European studies.}
-    \label{figure:overlap_continent}
-\end{figure}
-
-\begin{figure}[!h] 
-    \centering
- \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_supp/prov_lat_mat_continent.png}
-    \caption{Placeholder.}
-    \label{figure:lat_mat_continent}
-\end{figure}
-
-
-\begin{figure}[!h] 
-    \centering
- \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_supp/spp_type_continent.png}
-    \caption{Placeholder}
-    \label{figure:spp_continent}
-\end{figure}
-
-\end{document}
+% 
+% \begin{figure}[!h] 
+%     \centering
+%  \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_supp/climate_overlap_continent_comparison.png}
+%     \caption{The closer a garden is to a provenance, the more overlap in temperature. 
+% Higher extend of climate overlap in European studies.}
+%     \label{figure:overlap_continent}
+% \end{figure}
+% 
+% \begin{figure}[!h] 
+%     \centering
+%  \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_supp/prov_lat_mat_continent.png}
+%     \caption{Placeholder.}
+%     \label{figure:lat_mat_continent}
+% \end{figure}
+% 
+% 
+% \begin{figure}[!h] 
+%     \centering
+%  \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_supp/spp_type_continent.png}
+%     \caption{Placeholder}
+%     \label{figure:spp_continent}
+% \end{figure}
+% 
+ \end{document}

@@ -74,12 +74,38 @@
 
 \begin{document}
 \SweaveOpts{concordance=TRUE} % For RStudio hiccups
-\title{{\huge Supplements for: Changes and trends in budburst and leaf flush across Europe and North America} \\A meta-analysis of local adaptation in spring phenology studies}
-\author{Ziyun Zeng \& E. M. Wolkovich}
-\date{2023}
-\maketitle 
+\begin{flushright}
+Version dated: \today
+\end{flushright}
 
 
+\bigskip
+\medskip
+\begin{center}
+
+% Insert your title:
+\noindent{\Large {\bf Supporting Information: Weak evidence of provenance effects in spring phenology across Europe and North America}}\\ 
+\bigskip
+
+\noindent {\normalsize \sc
+Z. A. Zeng $^{1}$ \& E. M. Wolkovich$^{2}$}\\
+
+
+\noindent {\small \it
+$^1$ Forest Resources Management, Faculty of Forestry, University of British Columbia, 2424 Main Mall, Vancouver, BC V6T 1Z4\\
+$^2$ Forest \& Conservation Sciences, Faculty of Forestry, University of British Columbia, 2424 Main Mall, Vancouver, BC V6T 1Z4}
+\end{center}
+\medskip
+\noindent{\bf Corresponding author:} Z. A. Zeng, see $^{1}$ above ; E-mail: alinazengziyun@yahoo.com\\
+
+% \noindent Additional information: Zeng (0009-0000-4647-9457); Wolkovich (0000-0001-7653-893X)\\
+
+% \title{{\huge Supplements for: Changes and trends in budburst and leaf flush across Europe and North America} \\A meta-analysis of local adaptation in spring phenology studies}
+% \author{Ziyun Zeng \& E. M. Wolkovich}
+% \date{2023}
+% \maketitle 
+
+\newpage
 \section{Additional Methods}
 \label{section:addmethods}
 % @ alina_jan27: do we need to cite those paper indicated above that we didnt end up using through bibtex?? % EMW replies -- no, some journals will require a spreadsheet (what you discarded and why) though -- but until we pick a journal and know what's required we don't need to do any of that. 

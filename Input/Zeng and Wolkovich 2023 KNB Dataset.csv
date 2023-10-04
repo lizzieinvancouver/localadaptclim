@@ -1,0 +1,30 @@
+Each row of the data sheet represents a unique provenance and its event date of a specific year. ,
+Geographic and climatic data for each provenance are also provided.,
+,
+Variable definitions are as follows:,
+garden_identifier,a unique code to identify each garden included in this dataset
+prov_identifier,a secondary code to identify the provenance of the study subjects within each garden
+year,year in which the DOY was recorded
+spring_event,day of year (DOY) of spring event
+fall_event,day of year (DOY) of fall event
+species,species
+species_type,angiosperm vs. gymnosperm
+species_garden,Grouping of species and garden to fit together (see Method section)
+lat_prov,provenance latitude
+long_prov,provenance longitude
+elev_prov,provenance elevation
+MAT_prov,provenance mean annual temperature (ºC)
+MSP100_prov,provenance
+lat_garden,garden latitude
+long_garden,garden longitude
+elev_garden,garden elevation
+MAT_garden,garden mean annual temperature (ºC)
+MSP100_garden,garden mean summer precipitation (100 mm)
+prov_continent,provenance continent
+garden_continent,garden continent
+percentage,percentage of climate overlap 
+sd,standard deviation of climate overlap
+lat_diffo,difference between garden latitude and provenance latitude
+spherical_distance,spherical distance between garden and provenance
+MAT_diffo,difference between garden MAT and provenance MAT
+label,label of the original study from which DOY data was extracted

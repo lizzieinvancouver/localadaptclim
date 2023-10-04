@@ -13,6 +13,7 @@
 \externaldocument[supplement-]{supplement}
 \usepackage{booktabs,siunitx}
 \usepackage{Sweave}
+\usepackage{xurl}
 \usepackage{graphicx}
 \usepackage{lipsum}                     % Dummytext % https://tex.stackexchange.com/questions/9796/how-to-add-todo-notes
 \usepackage{xargs}                      % Use more than one optional parameter in a new commands
@@ -64,18 +65,45 @@
 
 \begin{document}
 \SweaveOpts{concordance=TRUE} % For RStudio hiccups
-\title{{\huge Weak evidence of provenance effects in spring phenology across Europe and North America}
-\author{Ziyun Zeng \& E. M. Wolkovich}
-\date{2023}
-\maketitle 
+\begin{flushright}
+Version dated: \today
+\end{flushright}
+
+\bigskip
+\medskip
+\begin{center}
+
+% Insert your title:
+\noindent{\Large {\bf Weak evidence of provenance effects in spring phenology across Europe and North America}}\\ 
+\bigskip
+
+\noindent {\normalsize \sc
+Z. A. Zeng $^{1}$ \& E. M. Wolkovich$^{2}$}\\
+
+
+\noindent {\small \it
+$^1$ Forest Resources Management, Faculty of Forestry, University of British Columbia, 2424 Main Mall, Vancouver, BC V6T 1Z4\\
+$^2$ Forest \& Conservation Sciences, Faculty of Forestry, University of British Columbia, 2424 Main Mall, Vancouver, BC V6T 1Z4}
+\end{center}
+\medskip
+\noindent{\bf Corresponding author:} Z. A. Zeng, see $^{1}$ above ; E-mail: alinazengziyun@yahoo.com\\
+
+\noindent Additional information: Zeng (0009-0000-4647-9457); Wolkovich (0000-0001-7653-893X)\\
+
+\noindent Running head: Clines in spring phenology
 
 
 \newpage
 % Journal ideas: Global Change Biology; Functional Ecology or Journal of Ecology next seem good ... maybe a biogeography journal (though I am not sure if we can afford one) ... maybe New Phytologist but I think they could be picky. 
 \linenumbers
 \begin{abstract}
-Forecasting the biological impacts of climate change requires understanding how species respond to warmer temperatures through both inter-annual flexible variation versus through adaptation to local conditions. Yet we often lack this information entirely, or find conflicting evidence across studies. The latter is the case for shifts in spring phenology---one of the most reported and consistent impacts of anthropogenic climate change, and also one of the most critical to forecasting, given its role in carbon sequestration. Some common garden studies have found evidence of important provenance effects, which suggest there may be local adaptation in the underlying cues of spring phenology and mirrors findings for fall events, while other studies find no evidence. Here we synthesize common garden studies across Europe and North America that reported spring event dates for a mix of angiosperm and gymnosperm tree species in the northern hemisphere, capturing data from 384 North American provenances and 101 European provenances with observations from 1962 to 2019, alongside fall event data when provided. Across continents we find no evidence of provenance effects in spring phenology, but strong clines with latitude and mean annual temperature (MAT) for fall events. These effects, however, appear to diverge by continent and species type (gymnosperm versus angiosperm), especially for fall events where clines with latitude and MAT are much stronger in North America. Our results suggest flexible, likely plastic responses, in spring phenology with warming, and potential limits---at least in the short term---due to provenance effects for fall phenology. They also highlight that, after over 50 years of common garden studies on tree phenology, we still lack a holistic predictive model of clines across species and phenological events. 
+Forecasting the biological impacts of climate change requires understanding how species respond to warmer temperatures through inter-annual flexible variation versus through adaptation to local conditions. Yet, we often lack this information entirely or find conflicting evidence across studies. The latter is the case for shifts in spring phenology---one of the most reported and consistent impacts of anthropogenic climate change, and also one of the most critical to forecasting, given its role in carbon sequestration. Some common garden studies have found evidence of important provenance effects, which suggest there may be local adaptation in the underlying cues of spring phenology and mirrors findings for fall events, while other studies find no evidence. Here, we synthesize common garden studies across Europe and North America that reported spring event dates for a mix of angiosperm and gymnosperm tree species in the northern hemisphere, capturing data from 384 North American provenances and 101 European provenances with observations from 1962 to 2019, alongside fall event data when provided. Across continents, we find no evidence of provenance effects in spring phenology, but strong clines with latitude and mean annual temperature (MAT) for fall events. These effects, however, appear to diverge by continent and species type (gymnosperm versus angiosperm), especially for fall events where clines with latitude and MAT are much stronger in North America. Our results suggest flexible, likely plastic responses, in spring phenology with warming, and potential limits---at least in the short term---due to provenance effects for fall phenology. They also highlight that, after over 250 years of common garden studies on tree phenology, we still lack a holistic predictive model of clines across species and phenological events. 
 \end{abstract} %Spring tree phenology is critical to forecasting ... Despite a long history of study, however, the balance of local adaptation versus plasticity in determining environmental responses is not well understood, especially for spring events. We conducted the first cross-continental meta-analysis of published studies from the peer-reviewed literature that reported spring event dates for a mix of angiosperm and gymnosperm tree species in the northern hemisphere, capturing data  for  seven angiosperm and eight gymnosperm species from 17 studies, from 384 North American provenances and 101 European provenances with observations from 1962 to 2019.  We found ... This is important because... 
+
+
+\noindent \emph{Keywords:} spring phenology, provenance, common gardens, budburst,
+leafout, budset, forests, climate change\\
+
 
 \section{Introduction}
 
@@ -92,16 +120,15 @@ Many of the currently observed responses to climate change appear to be mainly p
 
 Shifted phenology in recent decades---with many events moving several days per decade \citep{vita21,khar18,Menzel06}---has led to concerns about fitness consequences, and the limits of possible future shifts. While future phenological shifts will depend on how much phenology is determined by plasticity versus adaptation, our understanding of the balance of these two approaches to variation is limited. This is the case even for species groups that are critical to both forecasting and have been well studied, such as trees. 
 
-Tree phenology is important to climate change forecasting at both the community and ecosystem levels. The timing of budburst and senescence can impact plant competition, plant invasions and community assembly \citep{fridley12}. Shifts in phenology can affect tree growth \citep{myneni97}, scaling up to impact ecosystem-level carbon sequestration \citep{Barichivich12}, and thus forecasts of climate change. Growing evidence, however, suggests links between growth and phenology are not as consistent as previously predicted---or currently modelled \citep{dow22}---with recent work suggesting how much spring versus fall events shift may determine impacts on tree growth \citep{zohner23}. 
+Tree phenology is important to climate change forecasting at both the community and ecosystem levels. The timing of budburst and senescence can impact plant competition, plant invasions, and community assembly \citep{fridley12}. Shifts in phenology can affect tree growth \citep{myneni97}, scaling up to impact ecosystem-level carbon sequestration \citep{Barichivich12}, and thus forecasts of climate change. Growing evidence, however, suggests links between growth and phenology are not as consistent as previously predicted---or currently modelled \citep{dow22}---with recent work suggesting how much spring versus fall events shift may determine impacts on tree growth \citep{zohner23}. 
 
 Studies of adaptation versus plasticity in tree phenology have been conducted for centuries \citep{Cleland:2007or}, through common garden studies. In these studies---conducted often for forestry purposes---researchers grow trees of different geographical origins under the same environmental conditions to disentangle the effects of environmental and genetic variation on trees’ phenotypes \citep{AitkenBemmels16, Alberto13}. Such work has established common clines in fall phenology, as source locations with shorter growing seasons (poleward and higher elevations) exhibit earlier stopping of growth (such as budset). Research has connected these clines to an underlying proximate mechanism of changing photoperiod cues (i.e., shifts in the photoperiod threshold required to trigger budset), driven by adaptation to the local growing season \citep{Alberto13,Savolainen07}. In contrast, spring phenology appears more plastic \citep{AitkenBemmels16} and determined more strongly by temperature \citep{flynn18}. Many studies, however, have argued that spring phenology shows levels of adaptation that may be critical to forecasting and mitigation \citep{vitasse2009,Basler:2012}. 
 
-These contrasting studies highlight how inconsistent evidence for adaptation in tree spring phenology has been. Studies have documented provenance differences of 2-4 days per degree latitude in spring phenology for some species (\emph{Picea abies} in \citealp{sog08} and \emph{Quercus petraea} in \citealp{deans96}) while others have failed to find similar trends along latitudinal gradients (for example, \emph{Picea sitchensis} in \citealp{mimura07}, \emph{Picea glauca} in \citealp{Li97}, and \emph{Populus balsamifera} in \citealp{farmer93}). This has led to debate over the prevalence and importance of adaptation in spring tree phenology. Though clines of spring phenology have been found in both Europe \citep{sog08,deans96,von95} and North America \citep{rossi15, soo13, hannerz99}, there is continuing debate, especially in Europe \citep{deans96,vitasse2009,Basler:2012}, raising the possibility that they could vary by continent. %EMWSep4: Check deans96 is accurate ref I added. %alinaSep22: Hi lizzie I am not sure how you are trying to phrase "they may be more studies and debated in Europe" but I think it's slightly off. could you fix it?
-%EMWSep30: Yes, I have been struggling with this sentence .... it's tricky, but I think this works now.  Let me know what you think. 
+These contrasting studies highlight how inconsistent evidence for adaptation in tree spring phenology has been. Studies have documented provenance differences of 2-4 days per degree latitude in spring phenology for some species (\emph{Picea abies} in \citealp{sog08} and \emph{Quercus petraea} in \citealp{deans96}) while others have failed to find similar trends along latitudinal gradients (for example, \emph{Picea sitchensis} in \citealp{mimura07}, \emph{Picea glauca} in \citealp{Li97}, and \emph{Populus balsamifera} in \citealp{farmer93}). This has led to debate over the prevalence and importance of adaptation in spring tree phenology. Though clines of spring phenology have been found in both Europe \citep{sog08,deans96,von95} and North America \citep{rossi15, soo13, hannerz99}, there is continuing debate, especially in Europe \citep{deans96,vitasse2009,Basler:2012}, raising the possibility that they could vary by continent. 
 
 Continental differences in patterns of adaptation versus plasticity could be driven by climatic differences, especially as North American springs are more variable across years than European ones \citep{tward21,zohner2017,schwartz00}. Such high temporal variability means that distant sites can effectively experience the same spring climate, but in different years. Studies of spring phenology in arboreta suggest cues for budburst may vary depending on continental climate \citep{zohner2017}, but are poorly controlled compared to traditional common garden studies, making them difficult to use for inference of plasticity versus adaptation \citep{gauzere2020}. Even for more carefully designed common gardens, differences in species studied or other differences in design may complicate understanding what underlies potential trends across continents.  %EMWSep4: Moved last point to discussion.
 
-To test for evidence of adaptation in spring phenology and what factors may underlie differences observed across studies, we comprehensively examined clines for spring events, including fall events when possible. We tested for evidence of adaptation via provenance trends with latitude and climate and examined possible factors that underlie these clines, including for differences between: (1) spring and fall phenology, (2) studies in Europe and North America, (3) angiosperm and gymnosperm species. To address these questions, we combined Bayesian hierarchical models with a new meta-analysis of all common garden experiments in temperate tree species across Europe and North America reporting spring phenology. %EMWSep30: Questions were so similar, so I simplified into once sentence/ 
+To test for evidence of adaptation in spring phenology and what factors may underlie differences observed across studies, we comprehensively examined clines for spring events, including fall events when possible. We tested for evidence of adaptation via provenance trends with latitude and climate and examined possible factors that underlie these clines, including for differences between: (1) spring and fall phenology, (2) studies in Europe and North America, (3) angiosperm and gymnosperm species. To address these questions, we combined Bayesian hierarchical models with a new meta-analysis of all common garden experiments in temperate tree species across Europe and North America reporting spring phenology. 
 
 \section{Methods}
 \subsection{Data Collection}
@@ -113,12 +140,12 @@ which returned 122 publications. We also contacted authors of previous review pa
 
 Based on these criteria we found 19 common gardens distributed throughout North America and Europe, with the majority of data concentrated in North America (Fig. \ref{figure:map_gardens} \& Supplement Table.\ref{supplement-table:all_studies}). From each common garden study we extracted phenological data on spring events (budburst and leaf flush) in DOY and, when present in the same paper, fall events (bud set, leaf senescence, growth cessation, and leaf abscission) by species and the geographic information of provenances and gardens. We used ImageJ (version 1.53k; \citealp{schneider_rasband_eliceiri_2012}) to extract values from figures whenever necessary. For studies that reported event dates relative to a reference date other than 1 January (e.g. \citealp{Rehfeldt1994}), we converted such dates to DOY using the `lubridate' package in R \citep{Grolemund11}. 
 
-To understand how climatic differences, in addition to geographical differences, shape local adaptation in spring events we extracted several types of climate data using information about provenance latitude, longitude, and elevation from original publications. We estimated the mean annual temperature (MAT) from 1960-1991 for each provenance using the Climate Information Tool by Food and Agriculture Organization of the United Nations \citep{FAO2022}. We verified our calculated MAT was was similar to MAT calculated using ClimateWNA \citep{wang2016}, a source used in previous analyses. 
+To understand how climatic differences, in addition to geographical differences, shape local adaptation in spring events we extracted several types of climate data using information about provenance latitude, longitude, and elevation from original publications. We estimated each provenance's mean annual temperature (MAT) from 1960 to 1991 using the monthly temperature data in the Climate Information Tool by Food and Agriculture Organization of the United Nations \citep{FAO2022}. We verified our estimated MAT was similar to MAT calculated using ClimateWNA \citep{wang2016}, a source used in previous analyses. 
 
-To examine climate near spring events more explicitly than MAT allows, we used gridded daily temperature data for March-May for 2011 to 2020 for all provenances and gardens. We extracted data from E-OBS for European locations, and using the `daymetr' in R for North American locations \citep{cornes2018,hufkens2018}. Then, using these data and the `overlap' package in R, we estimated how much the daily temperatures overlapped between each provenance location and their corresponding gardens across the three months for our 10 year period, which we call `climate overlap.'  % Finally, using the daily temperature data, we also calculated growing degree days (GDD), a commonly used heat accumulation measure to forecast phenological development in plants \citep{miller01}, for each provenance and garden, based on the accumulation of mean daily temperatures ($T_{m}$)from 2011 to 2020 above a baseline of 0$^{\circ}$C, from January 1 until budburst and leaf flush with the following formula: GDD = $\sum$($T_{m}$ - $0^{\circ}$C for $T_{m}$ $\ge$ $0^{\circ}$C; 0 for $T_{m}$ $\le$ $0^{\circ}$C). % See notes on 31 Aug 2023 by Lizzie at https://github.com/lizzieinvancouver/localadaptclim/issues/26 for more methods on GDD.
+To examine climate near spring events more explicitly than MAT allows, we used gridded daily temperature data for March-May from 2011 to 2020 for all provenances and gardens. We extracted data from E-OBS for European locations and used the `daymetr' in R for North American locations \citep{cornes2018,hufkens2018}. Then, using these data and the `overlap' package in R, we estimated how much the daily temperatures overlapped between each provenance location and their corresponding gardens across the three months for our 10 year period, which we call `climate overlap.' Dataset containing event dates, geographic information, and climatic information of all provenances are archived in  Knowledge Network for Biocomplexity (KNB) \citep{zeng23}.  % Finally, using the daily temperature data, we also calculated growing degree days (GDD), a commonly used heat accumulation measure to forecast phenological development in plants \citep{miller01}, for each provenance and garden, based on the accumulation of mean daily temperatures ($T_{m}$)from 2011 to 2020 above a baseline of 0$^{\circ}$C, from January 1 until budburst and leaf flush with the following formula: GDD = $\sum$($T_{m}$ - $0^{\circ}$C for $T_{m}$ $\ge$ $0^{\circ}$C; 0 for $T_{m}$ $\le$ $0^{\circ}$C). % See notes on 31 Aug 2023 by Lizzie at https://github.com/lizzieinvancouver/localadaptclim/issues/26 for more methods on GDD.
 
 \subsection{Analyses}
-To estimate clines in spring and fall phenological events across species we used Bayesian hierarchical models. We regressed DOY of events against geographical and climate predictors with partial pooling (sometimes called `random effects') on the intercept and slope for each species within each garden. Because most tree species were present in only one common garden in our dataset, it was impossible to fit garden and species separately, thus we treat each species within a garden as a unique group. Using posterior estimates for each species within a garden, we estimated effects of continent (North America vs. Europe) and species type (angiosperm vs. gymnosperm). All models were fit in `rstanarm' package (version 2.21.3; \citealp{brilleman2018}) using default priors, with 4 chains and 1000 sampling iterations per chain for a total of 4000 samples. We checked for model fit by confirming no divergent transitions (which required setting \texttt{adapt\_delta} to 0.99 for some models), \^{R} values close to 1, and sufficient effective sample sizes. We present estimates as mean $\pm$ 90\% uncertainty intervals given parenthetically, unless otherwise stated. 
+To estimate clines in spring and fall phenological events across species we used Bayesian hierarchical models. We regressed DOY of events against geographical and climatic predictors with partial pooling (sometimes called `random effects') on the intercept and slope for each species within each garden. Because most tree species were present in only one common garden in our dataset, it was impossible to fit garden and species separately, thus we treat each species within a garden as a unique group. Using posterior estimates for each species within a garden, we estimated effects of continent (North America vs. Europe) and species type (angiosperm vs. gymnosperm). All models were fit in `rstanarm' package (version 2.21.3; \citealp{brilleman2018}) using default priors, with 4 chains and 1000 sampling iterations per chain for a total of 4000 samples. We checked for model fit by confirming no divergent transitions (which required setting \texttt{adapt\_delta} to 0.99 for some models), \^{R} values close to 1, and sufficient effective sample sizes. We present estimates as mean $\pm$ 90\% uncertainty intervals given parenthetically, unless otherwise stated. 
 
 % We pooled the timing of budburst and leaf flush into a single category of ‘spring events’ and the timing of bud set, leaf senescence, growth cessation, and leaf abscission into ‘fall events.’ Such pooling is justified because of the shared pressures from natural selection that govern these events \citep{Gill15}. 
 
@@ -177,8 +204,7 @@ Our results highlight that spring events show much weaker clines than fall event
 % Meanwhile, xylem anatomy also plays a part in determining spring timing due to the importance of vessel diameter to embolism risks induced by frost in spring. According to \citet{salk20}, species with narrow xylem such as coniferous gymnosperms and diffuse-porous angiosperms did not exhibit the consistent phenological trends shown in ring-porous species. Therefore, there might be additional differences if we have more species and more information on leafout timing and frost risk approach. 
 
 In our dataset, more data on fall events were reported in North America. In Europe, only two gardens reported fall event metrics, one studying \emph{Fagus sylvatica} and one studying \emph{Fraxinus excelsior}. Fall events were earlier in colder, more northern latitudes in both continents, which is consistent with previous literature \citep{AitkenBemmels16, Alberto13}. North American studies of both gymnosperm and angiosperm species reported strong clines, and most often focused on budset, while the two European gardens reported data on `leaf senescence' \citep{rosique22}, measured as percentage of tree crown that had changed color (Supplement Table.\ref{supplement-table:all_studies}). These different metrics could explain the different results. Research has shown that budset is more closely related to growth cessation and thus considered a more robust indicator of when plants stop investing in growth than leaf senescence; it is also more genetically controlled \citep[with different photoperiod thresholds required to trigger budset in different provenances,][]{Alberto13}. 
-%EMWSep30: I believe you never need 'note that' -- cutting it is almost ALWAYS a good way to simplify. 
-%Leaf senescence was visually inspected based on the percentage of the tree crown that had changed color when the assessor stood on the south-facing side of each tree. %EMWSep30: Good info, just too much detail; I edited. 
+%Leaf senescence was visually inspected based on the percentage of the tree crown that had changed color when the assessor stood on the south-facing side of each tree. 
 
 %EMWSep4 -- I like to have one paragraph in a paper (usually) focused on biases and limitations, so the below is that paragraph. I also aimed for it to have more of a message specific to this work beyond 'we need more data' (as we always need more data, you can write that in any paper). 
 Taken together, these results could explain some of the existing debate on the strength of spring clinal variation, but also highlight how data biases make disentangling the drivers of variation difficult. Angiosperm species showed a weak trend towards earlier budburst in populations from warmer locations. In contrast fall event clines in Europe were weak, but their fall event type (leaf senescence) is less likely to show clinal variation. Given European studies were biased towards studying angiosperms (3/4 species) that are often canopy-species (e.g., \emph{Fagus}, \emph{Quercus}) these results together could explain a greater focus on clinal variation in spring events across European studies \citep{Basler:2012,gauzere2020,sog08,deans96,von95}. Most North American gardens and provenances included in this study were limited to the Pacific Northwest region, and thus tended to focus on species from forests where gymnosperms are almost always the canopy species (\emph{Pseudotsuga, Tsuga, Picea, Pinus}) and angiosperms are much smaller, more opportunistic species (\emph{Alnus, Populus}). This might suggest a far different pattern if gardens included more evenly sampled North American tree species (Fig. \ref{figure:map_gardens}). Given the tremendous investment required for such gardens, however, it is not surprising they are often limited to one species---most often those relevant for forestry (e.g., \emph{Pseudotsuga menziesii, Tsuja plicata, Tsuga heterophylla, Picea sitchensis, Pinus albicaulis}). Our results, however, highlight the limited inference we may gain from such an approach to understand trends across species more broadly, a critical need for climate change forecasting.
@@ -211,10 +237,11 @@ Understanding environmental clines in phenology will ultimately be critical to p
  % \cite{chang2021} and \cite{chuine2016} -- relevant for discussion of chilling
  % See also Salk 2020 paper
  
- \section{Acknowledgement}
-%EMWSep30 -- check umlaut on Korner works
+\section{Acknowledgement}
 We thank S. Aitken,  I. Chuine, R. Guy, C K\"{o}rner and Y. Vitasse for reviewing our list of papers for possible additional common garden studies. 
 
+\section{Data Availability Statement}
+The data that support the findings of this study are openly available in the Knowledge Network for Biocomplexity (KNB) repository at \url{https://knb.ecoinformatics.org/view/urn\%3Auuid\%3Aa37258b9-23e7-4b0c-a20f-9185cbc27194}.
  
 \section{References} %EMWSep30: Check requested order by GCB ... I think it's usually acknowledgements, references then figures so I moved these section up. 
 \bibliography{bibliography_local_adaptation.bib}
@@ -227,7 +254,7 @@ We thank S. Aitken,  I. Chuine, R. Guy, C K\"{o}rner and Y. Vitasse for reviewin
 \begin{figure}[!h] 
     \centering
  \includegraphics[width=\textwidth]{..//..//localadaptclim/Docs/figure_ms/map_gardens.jpg}
-    \caption{Distribution of common gardens (denoted as stars) and provenances (denoted as circles) included in this meta-analysis. The distribution was skewed toward North America (12 North American studies versus 5 European studies). See Table.\ref{supplement-table:all_studies} in Supplement for information on selected studies. } %EMWSep30: These lines don't actually delineate study regions ... so I suggest you delete the whole sentence unless the journal requires it or you really want it; if you keep it in, it should be: Note: map lines do not necessarily depict accepted national boundaries.
+    \caption{Distribution of common gardens (denoted as stars) and provenances (denoted as circles) included in this meta-analysis. The distribution was skewed toward North America (12 North American studies versus 5 European studies). See Table.\ref{supplement-table:all_studies} in Supplement for information on selected studies. Note: map lines do not necessarily depict accepted national boundaries.}
     \label{figure:map_gardens}
 \end{figure}
 
@@ -260,9 +287,17 @@ We thank S. Aitken,  I. Chuine, R. Guy, C K\"{o}rner and Y. Vitasse for reviewin
 
 
 
-% helping with abstract language
-% Alberto16
-% "On the basis of the patterns of quantitative variation for 19 adaptation-related traits studied in 59 tree species (mostly temperate and boreal species from the Northern hemisphere), we found that genetic differentiation between populations and clinal variation along environmental gradients were very common (respectively, 90% and 78% of cases)."
+
+
+
+% A data availability statement which provides information about where the research data and other artifacts supporting the results reported in the paper can be found must be submitted. Links to the repository where the dataset(s) are publicly archived and DOIs must be included. A list of standard templates for the text for the ‘Data Availability Statement’ is available here.
+% Data must be cited within the text in the in the Materials and Methods section.
+% Data must be included as a formal citation in the reference section. More detail on how to do this can be found here.
+% Datasets containing population means from all studies are archived in Dryad
+
+% Data Archiving Statement
+% Data available from the Dryad Digital Repository: http://dx.doi.org/10.5061/dryad.rj15h
+
 
 % formatting code resources
 % https://github.com/lizzieinvancouver/ospree/blob/master/docs/ranges/ranges_outline.tex

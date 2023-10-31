@@ -6,8 +6,10 @@
 \usepackage{parskip}
 \usepackage{amsmath}
 \usepackage[T1]{fontenc}
-\usepackage[semicolon]{natbib}
-\bibliographystyle{plainnat} %{unsrtnat}
+% \usepackage[semicolon]{natbib} %apacite takes care of everything now
+% \bibliographystyle{plainnat} %{unsrtnat}
+\usepackage[natbibapa]{apacite}
+\bibliographystyle{apacite}
 \usepackage{xr-hyper}
 \usepackage{hyperref}
 \externaldocument[supplement-]{supplement}
@@ -128,7 +130,7 @@ These contrasting studies highlight how inconsistent evidence for adaptation in 
 
 Continental differences in patterns of adaptation versus plasticity could be driven by climatic differences, especially as North American springs are more variable across years than European ones \citep{tward21,zohner2017,schwartz00}. Such high temporal variability means that distant sites can effectively experience the same spring climate, but in different years. Studies of spring phenology in arboreta suggest cues for budburst may vary depending on continental climate \citep{zohner2017}, but are poorly controlled compared to traditional common garden studies, making them difficult to use for inference of plasticity versus adaptation \citep{gauzere2020}. Even for more carefully designed common gardens, differences in species studied or other differences in design may complicate understanding what underlies potential trends across continents.  %EMWSep4: Moved last point to discussion.
 
-To test for evidence of adaptation in spring phenology and what factors may underlie differences observed across studies, we comprehensively examined clines for spring events, including fall events when possible. We tested for evidence of adaptation via provenance trends with latitude and climate and examined possible factors that underlie these clines, including for differences between: (1) spring and fall phenology, (2) studies in Europe and North America, (3) angiosperm and gymnosperm species. To address these questions, we combined Bayesian hierarchical models with a new meta-analysis of all common garden experiments in temperate tree species across Europe and North America reporting spring phenology. 
+To test for evidence of adaptation in spring phenology and what factors may underlies differences observed across studies, we comprehensively examined clines for spring events, including fall events when possible. We tested for evidence of adaptation via provenance trends with latitude and climate and examined possible factors that underlie these clines, including for differences between: (1) spring and fall phenology, (2) studies in Europe and North America, (3) angiosperm and gymnosperm species. To address these questions, we combined Bayesian hierarchical models with a new meta-analysis of all common garden experiments in temperate tree species across Europe and North America reporting spring phenology. 
 
 \section{Methods}
 \subsection{Data Collection}
@@ -244,7 +246,8 @@ We thank S. Aitken,  I. Chuine, R. Guy, C K\"{o}rner and Y. Vitasse for reviewin
 The data that support the findings of this study are openly available in the Knowledge Network for Biocomplexity (KNB) repository at \url{https://knb.ecoinformatics.org/view/urn\%3Auuid\%3Aa37258b9-23e7-4b0c-a20f-9185cbc27194}.
  
 \section{References} %EMWSep30: Check requested order by GCB ... I think it's usually acknowledgements, references then figures so I moved these section up. 
-\bibliography{bibliography_local_adaptation.bib}
+
+\bibliography{..//..//localadaptclim/Docs/bibliography_local_adaptation.bib}
 
 
 \clearpage
